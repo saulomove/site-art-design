@@ -205,7 +205,7 @@ export function Header() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
+                        className="md:hidden bg-white border-t border-slate-100 overflow-y-auto max-h-[calc(100vh-80px)]"
                     >
                         <div className="container mx-auto px-4 py-8 flex flex-col gap-4">
                             {links.map((link) => (
