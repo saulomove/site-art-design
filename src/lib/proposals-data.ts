@@ -912,10 +912,10 @@ export const proposals: Proposal[] = [
 
     // ---- INVESTIMENTO ----
     investment: {
-      totalMonthly: "R$ 6.900",
-      totalLabel: "Pacote Integrado",
-      originalPrice: "R$ 9.100",
-      savings: "R$ 2.200",
+      totalMonthly: "R$ 2.900",
+      totalLabel: "Pacote Integrado — 2 Perfis",
+      originalPrice: "R$ 3.800",
+      savings: "R$ 900",
       profilePricing: [
         {
           profileName: "Ademicon Caçador",
@@ -928,7 +928,7 @@ export const proposals: Proposal[] = [
             "Tráfego Google Ads",
             "Google Meu Negócio",
           ],
-          total: "R$ 5.900",
+          total: "R$ 1.900",
         },
         {
           profileName: "Ariel Lopes",
@@ -936,10 +936,12 @@ export const proposals: Proposal[] = [
           services: [
             "Gestão de Redes Sociais",
             "Criação de Conteúdo",
-            "Roteiros Estratégicos",
-            "Captação de Vídeos",
+            "Captação de Imagens e Vídeos",
+            "Tráfego Meta Ads",
+            "Tráfego Google Ads",
+            "Google Meu Negócio",
           ],
-          total: "R$ 3.200",
+          total: "R$ 1.900",
         },
       ],
       packageIncludes: [
@@ -947,10 +949,9 @@ export const proposals: Proposal[] = [
         "Planejamento estratégico integrado",
         "Conteúdos para os dois perfis",
         "Captação de imagens e vídeos",
-        "Meta Ads",
+        "Meta Ads para ambos os perfis",
         "Google Ads",
         "Google Meu Negócio",
-        "Roteiros estratégicos",
         "Reuniões de alinhamento",
       ],
       setupItems: [
