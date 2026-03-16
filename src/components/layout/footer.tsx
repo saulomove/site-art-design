@@ -36,7 +36,7 @@ export function Footer() {
                         <h4 className="font-bold text-lg mb-6 text-foreground">Empresa</h4>
                         <ul className="space-y-4 text-base text-muted-foreground">
                             <li><Link href="/sobre" className="hover:text-primary transition-colors">Sobre Nós</Link></li>
-                            <li><Link href="/cases" className="hover:text-primary transition-colors">Cases</Link></li>
+                            <li><Link href="/blog" className="hover:text-primary transition-colors">Blog & Cases</Link></li>
                             <li><Link href="/planos" className="hover:text-primary transition-colors">Planos</Link></li>
                             <li><Link href="/contato" className="hover:text-primary transition-colors">Contato</Link></li>
                             <li><a href="https://www.instagram.com/artdesigntrafego/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-purple transition-colors">Instagram</a></li>

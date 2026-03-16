@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { FloatingWhatsapp } from "@/components/features/floating-whatsapp";
-import { AdminProvider } from "@/providers/admin-provider";
-import { AnalyticsScripts } from "@/components/features/analytics-scripts";
+import { LayoutWrapper } from "@/components/layout/layout-wrapper";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -32,15 +28,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <AdminProvider>
-          <AnalyticsScripts />
-          <Header />
-          <main className="flex-1 min-h-screen pt-20">
-            {children}
-          </main>
-          <Footer />
-          <FloatingWhatsapp />
-        </AdminProvider>
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );
