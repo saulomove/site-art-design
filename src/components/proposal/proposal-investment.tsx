@@ -51,6 +51,67 @@ export function ProposalInvestmentSection({ investment, clientName }: Props) {
         </div>
 
         <div className="max-w-4xl mx-auto">
+          {/* Profile Pricing Cards */}
+          {investment.profilePricing && investment.profilePricing.length > 0 && (
+            <div className="mb-8">
+              <motion.h3
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center text-sm font-bold text-slate-500 uppercase tracking-wider mb-6"
+              >
+                Valores por Perfil (individual)
+              </motion.h3>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                {investment.profilePricing.map((profile, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="bg-slate-50 rounded-2xl p-6 border border-slate-200"
+                  >
+                    <div className="mb-4">
+                      <h4 className="text-lg font-bold text-slate-900">
+                        {profile.profileName}
+                      </h4>
+                      <span className="text-sm text-slate-500">{profile.profileHandle}</span>
+                    </div>
+                    <div className="space-y-1.5 mb-5">
+                      {profile.services.map((service, j) => (
+                        <div key={j} className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                          <span className="text-sm text-slate-600">{service}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="pt-4 border-t border-slate-200">
+                      <span className="text-2xl font-black text-slate-900">
+                        {profile.total}
+                      </span>
+                      <span className="text-sm text-slate-500 font-medium ml-1">
+                        /mês
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-2"
+              >
+                <span className="text-sm text-slate-400 font-medium">
+                  Total individual:{" "}
+                  <span className="line-through font-bold text-slate-500">
+                    {investment.originalPrice}/mês
+                  </span>
+                </span>
+              </motion.div>
+            </div>
+          )}
           {/* Main Pricing Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -6,11 +6,13 @@ import { getProposalBySlug } from "@/lib/proposals-data";
 import { ProposalHero } from "@/components/proposal/proposal-hero";
 import { ProposalAbout } from "@/components/proposal/proposal-about";
 import { ProposalAnalysisSection } from "@/components/proposal/proposal-analysis";
+import { ProposalProfileAnalysis } from "@/components/proposal/proposal-profile-analysis";
 import { ProposalHighlights } from "@/components/proposal/proposal-highlights";
 import { ProposalScope } from "@/components/proposal/proposal-scope";
 import { ProposalPhases } from "@/components/proposal/proposal-phases";
 import { ProposalInvestmentSection } from "@/components/proposal/proposal-investment";
 import { ProposalDifferentials } from "@/components/proposal/proposal-differentials";
+import { ProposalOptionalServices } from "@/components/proposal/proposal-optional-services";
 import { ProposalCTA } from "@/components/proposal/proposal-cta";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -44,18 +46,26 @@ export default function ProposalPage({ params }: ProposalPageProps) {
       {/* 1. Hero */}
       <ProposalHero proposal={proposal} />
 
-      {/* 2. Sobre a ArtDesign (stats, countries, testimonials) */}
+      {/* 2. Sobre a ArtDesign */}
       <ProposalAbout />
 
-      {/* 3. Análise Estratégica (se houver) */}
-      {proposal.analysis && (
+      {/* 3a. Análise de Perfis (multi-perfil) */}
+      {proposal.profileAnalyses && proposal.profileAnalyses.length > 0 && (
+        <ProposalProfileAnalysis
+          profileAnalyses={proposal.profileAnalyses}
+          clientName={proposal.clientName}
+        />
+      )}
+
+      {/* 3b. Análise Estratégica (perfil único) */}
+      {!proposal.profileAnalyses && proposal.analysis && (
         <ProposalAnalysisSection
           analysis={proposal.analysis}
           clientName={proposal.clientName}
         />
       )}
 
-      {/* 4. Diferenciais/Highlights (se houver) */}
+      {/* 4. Destaques */}
       {proposal.highlights && proposal.highlights.length > 0 && (
         <ProposalHighlights
           highlights={proposal.highlights}
@@ -66,7 +76,7 @@ export default function ProposalPage({ params }: ProposalPageProps) {
       {/* 5. Escopo dos Serviços */}
       <ProposalScope services={proposal.services} />
 
-      {/* 6. Fases do Projeto (se houver) */}
+      {/* 6. Fases do Projeto */}
       {proposal.phases && proposal.phases.length > 0 && (
         <ProposalPhases phases={proposal.phases} />
       )}
@@ -77,12 +87,17 @@ export default function ProposalPage({ params }: ProposalPageProps) {
         clientName={proposal.clientName}
       />
 
-      {/* 8. Diferenciais ArtDesign (se houver) */}
+      {/* 8. Diferenciais */}
       {proposal.differentials && (
         <ProposalDifferentials differentials={proposal.differentials} />
       )}
 
-      {/* 9. CTA de Aceite */}
+      {/* 9. Serviços Opcionais */}
+      {proposal.optionalServices && proposal.optionalServices.length > 0 && (
+        <ProposalOptionalServices services={proposal.optionalServices} />
+      )}
+
+      {/* 10. CTA */}
       <ProposalCTA
         clientName={proposal.clientName}
         contactName={proposal.contactName}
