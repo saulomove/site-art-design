@@ -67,6 +67,23 @@ export interface ProposalContentPillar {
   objective: string;
 }
 
+export interface ContentCalendarDay {
+  day: number;
+  type: string;
+  format: string;
+  theme: string;
+  description: string;
+  objective: string;
+  cta?: string;
+}
+
+export interface ContentCalendarProfile {
+  profileName: string;
+  profileHandle: string;
+  objective: string[];
+  days: ContentCalendarDay[];
+}
+
 export interface Proposal {
   slug: string;
   clientName: string;
@@ -86,6 +103,7 @@ export interface Proposal {
   positioningStatement?: string;
   brandEssence?: string;
   optionalServices?: string[];
+  contentCalendar?: ContentCalendarProfile[];
 }
 
 // ============================================================
@@ -996,6 +1014,163 @@ export const proposals: Proposal[] = [
       "Produção de materiais comerciais",
       "Captação de depoimentos e cases",
       "Gestão de campanhas especiais",
+    ],
+
+    // ---- CALENDÁRIO DE CONTEÚDO ----
+    contentCalendar: [
+      {
+        profileName: "Ademicon Caçador",
+        profileHandle: "@ademiconcacador",
+        objective: [
+          "Fortalecer a marca da unidade",
+          "Educar o público sobre consórcio",
+          "Gerar confiança",
+          "Gerar leads para a equipe comercial",
+        ],
+        days: [
+          {
+            day: 1,
+            type: "Autoridade",
+            format: "Reels",
+            theme: "Por que o consórcio está crescendo tanto no Brasil",
+            description:
+              "Com os juros altos dos financiamentos, cada vez mais pessoas estão descobrindo uma alternativa mais inteligente: o consórcio. Sem juros, com planejamento e com poder de compra à vista.",
+            objective: "Gerar curiosidade, educar e posicionar como especialista",
+            cta: "Quer entender se consórcio faz sentido para você? Nos chame no WhatsApp.",
+          },
+          {
+            day: 2,
+            type: "Educação",
+            format: "Carrossel",
+            theme: "3 erros que impedem muitas pessoas de comprar um imóvel",
+            description:
+              "1️⃣ Esperar o momento perfeito \n2️⃣ Acreditar que precisa ter muito dinheiro \n3️⃣ Não ter planejamento \n\nÚltimo slide: Como o consórcio pode ajudar.",
+            objective: "Educar, gerar reflexão e atrair interessados",
+          },
+          {
+            day: 3,
+            type: "Prova Social",
+            format: "Reels",
+            theme: "Como funciona uma contemplação",
+            description:
+              "Explicação simples sobre assembleia, sorteio e lance. Conteúdo que tira dúvidas e gera segurança no público.",
+            objective: "Tirar dúvidas e gerar segurança",
+          },
+          {
+            day: 4,
+            type: "Autoridade Local",
+            format: "Post",
+            theme: "Por que escolher a Ademicon Caçador",
+            description:
+              "Atendimento local, consultoria personalizada, planejamento estratégico e presença forte na região.",
+            objective: "Reforçar confiança e fortalecer marca local",
+          },
+          {
+            day: 5,
+            type: "Educação",
+            format: "Reels",
+            theme: "Consórcio ou financiamento: qual a diferença?",
+            description:
+              "Explicação simples sobre juros, planejamento e poder de compra. Comparativo que esclarece e gera interesse.",
+            objective: "Esclarecer dúvidas e gerar interesse",
+          },
+          {
+            day: 6,
+            type: "Conversão",
+            format: "Reels",
+            theme: "Simulação simples",
+            description:
+              "Com cerca de R$350 a R$400 por mês você já pode iniciar um planejamento para um crédito de até R$100 mil.",
+            objective: "Gerar leads e despertar interesse",
+            cta: "Nos chame para fazer uma simulação.",
+          },
+          {
+            day: 7,
+            type: "Conexão Local",
+            format: "Post",
+            theme: "Ademicon Caçador — Planejamento para a região",
+            description:
+              "Mensagem reforçando atendimento próximo, planejamento financeiro e apoio ao crescimento das famílias da região.",
+            objective: "Fortalecer conexão local e humanizar a marca",
+          },
+        ],
+      },
+      {
+        profileName: "Ariel Lopes",
+        profileHandle: "@ariellopes_ademicon",
+        objective: [
+          "Fortalecer autoridade pessoal",
+          "Gerar conexão com o público",
+          "Atrair clientes e consultores",
+          "Posicionar Ariel como referência",
+        ],
+        days: [
+          {
+            day: 1,
+            type: "Mentalidade",
+            format: "Reels",
+            theme: "A maior mentira sobre estabilidade",
+            description:
+              "Muita gente acredita que estabilidade é ter um emprego fixo. Mas quando sua renda depende da decisão de outra pessoa… isso não é estabilidade.",
+            objective: "Gerar reflexão e aumentar alcance",
+          },
+          {
+            day: 2,
+            type: "Autoridade",
+            format: "Reels",
+            theme: "O que ninguém te conta sobre planejamento financeiro",
+            description:
+              "Planejamento não é para quem já tem dinheiro. Planejamento é justamente o caminho para construir patrimônio.",
+            objective: "Posicionar Ariel como especialista",
+          },
+          {
+            day: 3,
+            type: "Educação",
+            format: "Carrossel",
+            theme: "Consórcio pode ser investimento?",
+            description:
+              "1️⃣ Sim, quando usado com estratégia \n2️⃣ Permite planejamento \n3️⃣ Possibilidade de aquisição de imóveis \n4️⃣ Construção de patrimônio",
+            objective: "Educar e gerar curiosidade",
+          },
+          {
+            day: 4,
+            type: "Bastidores",
+            format: "Reels",
+            theme: "Bastidores de um dia de trabalho",
+            description:
+              "Mostrar reuniões, atendimentos, planejamento e gravação de conteúdos. Humanizar e gerar conexão.",
+            objective: "Humanizar e gerar conexão",
+          },
+          {
+            day: 5,
+            type: "Oportunidade",
+            format: "Reels",
+            theme: "Você quer crescer profissionalmente?",
+            description:
+              "Falar sobre oportunidade, carreira e crescimento dentro da Ademicon. Conteúdo voltado para recrutamento de consultores.",
+            objective: "Recrutamento de consultores",
+          },
+          {
+            day: 6,
+            type: "Reflexão",
+            format: "Reels",
+            theme: "O tempo vai passar de qualquer forma",
+            description:
+              "Daqui a 5 anos você pode olhar para trás e ver crescimento… ou perceber que não começou.",
+            objective: "Gerar reflexão e aumentar engajamento",
+          },
+          {
+            day: 7,
+            type: "Conversão",
+            format: "Reels",
+            theme: "Quanto você quer ganhar por mês?",
+            description:
+              "Me diga quanto você quer ganhar por mês. E nós mostramos o caminho para construir isso.",
+            objective: "Gerar oportunidades e iniciar conversas",
+            cta: "Digite SIM nos comentários.",
+          },
+        ],
+      },
     ],
   },
 ];

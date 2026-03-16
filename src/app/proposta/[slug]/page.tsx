@@ -13,6 +13,7 @@ import { ProposalPhases } from "@/components/proposal/proposal-phases";
 import { ProposalInvestmentSection } from "@/components/proposal/proposal-investment";
 import { ProposalDifferentials } from "@/components/proposal/proposal-differentials";
 import { ProposalOptionalServices } from "@/components/proposal/proposal-optional-services";
+import { ProposalContentCalendar } from "@/components/proposal/proposal-content-calendar";
 import { ProposalCTA } from "@/components/proposal/proposal-cta";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -79,6 +80,11 @@ export default function ProposalPage({ params }: ProposalPageProps) {
       {/* 6. Fases do Projeto */}
       {proposal.phases && proposal.phases.length > 0 && (
         <ProposalPhases phases={proposal.phases} />
+      )}
+
+      {/* 7. Calendário de Conteúdo */}
+      {proposal.contentCalendar && proposal.contentCalendar.length > 0 && (
+        <ProposalContentCalendar contentCalendar={proposal.contentCalendar} />
       )}
 
       {/* 7. Investimento */}
