@@ -112,86 +112,29 @@ export function ProposalInvestmentSection({ investment, clientName }: Props) {
               </motion.div>
             </div>
           )}
-          {/* Main Pricing Card */}
+          {/* Main Pricing — Individual vs Package side-by-side */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-800 overflow-hidden mb-8"
+            className="relative bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl shadow-2xl border border-slate-800 overflow-hidden mb-8"
           >
             {/* BG decoration */}
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-brand-green/10 to-transparent rounded-full blur-[80px]" />
             <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-gradient-to-tr from-brand-blue/10 to-transparent rounded-full blur-[60px]" />
 
-            <div className="relative z-10">
-              {investment.totalLabel && (
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <Package className="w-5 h-5 text-brand-green" />
-                  <span className="text-sm font-bold text-brand-green uppercase tracking-wider">
-                    {investment.totalLabel}
-                  </span>
-                </div>
-              )}
-
-              {/* Comparison */}
-              {hasComparison && (
-                <div className="text-center mb-3">
-                  <span className="text-slate-500 line-through text-xl font-medium">
-                    {investment.originalPrice}/mês
-                  </span>
-                </div>
-              )}
-
-              {/* Main Price */}
-              <div className="text-center mb-6">
-                <span className="text-5xl md:text-7xl font-black text-white tracking-tight">
-                  {investment.totalMonthly}
-                </span>
-                <span className="text-2xl text-slate-400 font-medium ml-2">
-                  /mês
-                </span>
-              </div>
-
-              {/* Savings Badge */}
-              {investment.savings && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  className="flex justify-center mb-8"
-                >
-                  <div className="inline-flex items-center gap-2 rounded-full bg-brand-green/20 border border-brand-green/30 px-5 py-2">
-                    <TrendingDown className="w-4 h-4 text-brand-green" />
-                    <span className="text-brand-green font-bold text-sm">
-                      Economia de {investment.savings}/mês
-                    </span>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Package Includes */}
-              {investment.packageIncludes && (
-                <div className="grid sm:grid-cols-2 gap-2 mb-8">
-                  {investment.packageIncludes.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2 p-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
-                      <span className="text-sm text-slate-300">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Breakdown Table */}
+            <div className="relative z-10 grid md:grid-cols-2">
+              {/* LEFT — Individual Breakdown */}
               {investment.breakdown && investment.breakdown.length > 0 && (
-                <div className="border-t border-slate-800 pt-6">
-                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">
-                    Composição do Valor (individual)
+                <div className="p-8 md:p-10 md:border-r border-slate-800">
+                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">
+                    Valores Individuais
                   </h4>
                   <div className="space-y-2">
                     {investment.breakdown.map((item, i) => (
                       <div
                         key={i}
-                        className="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-white/5 transition-colors"
+                        className="flex justify-between items-center py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors"
                       >
                         <span className="text-sm text-slate-400">
                           {item.item}
@@ -204,16 +147,79 @@ export function ProposalInvestmentSection({ investment, clientName }: Props) {
                     {investment.originalPrice && (
                       <div className="flex justify-between items-center py-3 px-3 rounded-lg bg-white/5 border-t border-slate-700 mt-2">
                         <span className="text-sm font-bold text-white">
-                          Total Individual
+                          Total avulso
                         </span>
-                        <span className="text-sm font-black text-slate-300 line-through">
-                          {investment.originalPrice}
+                        <span className="text-lg font-black text-red-400 line-through">
+                          {investment.originalPrice}/mês
                         </span>
                       </div>
                     )}
                   </div>
+                  <div className="mt-6 flex justify-center">
+                    <ArrowDown className="w-6 h-6 text-slate-600 md:hidden" />
+                  </div>
                 </div>
               )}
+
+              {/* RIGHT — Package Offer */}
+              <div className="p-8 md:p-10 flex flex-col items-center justify-center text-center bg-gradient-to-br from-brand-green/5 to-transparent border-t md:border-t-0 border-slate-800">
+                {investment.totalLabel && (
+                  <div className="flex items-center gap-2 mb-4">
+                    <Package className="w-5 h-5 text-brand-green" />
+                    <span className="text-sm font-bold text-brand-green uppercase tracking-wider">
+                      {investment.totalLabel}
+                    </span>
+                  </div>
+                )}
+
+                {/* Comparison */}
+                {hasComparison && (
+                  <div className="mb-2">
+                    <span className="text-slate-500 line-through text-lg font-medium">
+                      {investment.originalPrice}/mês
+                    </span>
+                  </div>
+                )}
+
+                {/* Main Price */}
+                <div className="mb-4">
+                  <span className="text-5xl md:text-6xl font-black text-white tracking-tight">
+                    {investment.totalMonthly}
+                  </span>
+                  <span className="text-xl text-slate-400 font-medium ml-2">
+                    /mês
+                  </span>
+                </div>
+
+                {/* Savings Badge */}
+                {investment.savings && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="mb-8"
+                  >
+                    <div className="inline-flex items-center gap-2 rounded-full bg-brand-green/20 border border-brand-green/30 px-5 py-2">
+                      <TrendingDown className="w-4 h-4 text-brand-green" />
+                      <span className="text-brand-green font-bold text-sm">
+                        Economia de {investment.savings}/mês
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Package Includes */}
+                {investment.packageIncludes && (
+                  <div className="grid gap-2 text-left w-full">
+                    {investment.packageIncludes.map((item, i) => (
+                      <div key={i} className="flex items-start gap-2 p-1.5">
+                        <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
+                        <span className="text-sm text-slate-300">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </motion.div>
 

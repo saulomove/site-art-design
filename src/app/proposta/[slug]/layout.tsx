@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import "../../globals.css";
-import { cn } from "@/lib/utils";
-
-const fontSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600", "700", "800"],
-});
 
 export const metadata: Metadata = {
   title: "Proposta Exclusiva | ArtDesign",
@@ -28,13 +20,9 @@ export default function ProposalLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div
-      className={cn(
-        "min-h-screen bg-background font-sans text-foreground antialiased",
-        fontSans.variable
-      )}
-    >
+    <div className="min-h-screen bg-background font-sans text-foreground antialiased">
       {children}
     </div>
   );
 }
+

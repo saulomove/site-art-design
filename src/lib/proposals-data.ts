@@ -1173,6 +1173,365 @@ export const proposals: Proposal[] = [
       },
     ],
   },
+
+  // ---- DR. RICARDO NICOLAS — ODONTOLOGIA ESPECIALIZADA ----
+  {
+    slug: "dr-ricardo-nicolas",
+    clientName: "Dr. Ricardo Nicolas — Odontologia Especializada",
+    contactName: "Ricardo",
+    greeting:
+      "Olá Dr. Ricardo! 👋 Preparamos uma proposta estratégica completa para transformar o perfil @odontologia_especializada_rn em uma máquina de agendamentos. Confira abaixo como vamos posicionar você como referência odontológica na região.",
+    validUntil: "2026-03-27",
+    whatsappNumber: "5549988446685",
+
+    highlights: [
+      "Estratégia dupla: entrada popular + ticket alto premium",
+      "Sem fidelização — permanência por resultado",
+      "Captação presencial de conteúdo profissional",
+      "+16 anos de experiência da agência",
+    ],
+
+    // ---- ANÁLISE ESTRATÉGICA ----
+    analysis: {
+      intro:
+        "Realizamos uma análise completa do perfil @odontologia_especializada_rn e identificamos um cenário com base sólida, mas com enorme potencial subutilizado. Com as estratégias certas, o Instagram pode se tornar o principal canal de captação de pacientes para a clínica.",
+      strengths: [
+        {
+          title: "Autoridade do Profissional",
+          description:
+            "A presença do dentista no conteúdo gera confiança imediata. Pacientes querem ver quem vai cuidar do sorriso deles — e isso é ouro no digital.",
+        },
+        {
+          title: "Ambiente Real da Clínica",
+          description:
+            "Mostrar a clínica real humaniza a marca, transmite profissionalismo e reduz a ansiedade de novos pacientes. Isso é um diferencial competitivo forte.",
+        },
+        {
+          title: "Uso de Vídeo (Reels)",
+          description:
+            "O perfil já começou a usar Reels — o formato que mais entrega alcance orgânico no Instagram atualmente. Isso mostra que há abertura para conteúdo dinâmico.",
+        },
+        {
+          title: "Tema 'Sorriso' Bem Explorado",
+          description:
+            "O nicho odontológico tem altíssimo potencial de viralização com conteúdos de estética, antes e depois, e transformações. O tema já está alinhado com o que funciona.",
+        },
+      ],
+      opportunities: [
+        {
+          title: "Frequência de Publicação",
+          description:
+            "Com apenas 4 posts, o perfil está praticamente 'morto' para o algoritmo. A frequência precisa ser diária no primeiro mês para reativar o alcance e ganhar tração.",
+        },
+        {
+          title: "Identidade Visual e Branding",
+          description:
+            "Falta padrão visual nas publicações. Um branding consistente com paleta de cores, tipografia e estilo fotográfico eleva a percepção de profissionalismo e valor do serviço.",
+        },
+        {
+          title: "Copywriting e CTA de Conversão",
+          description:
+            "As legendas atuais não direcionam para ação. Precisam de copywriting estratégico com chamadas claras para agendamento via WhatsApp, explorando dores e desejos dos pacientes.",
+        },
+        {
+          title: "Prova Social e Posicionamento",
+          description:
+            "Faltam antes/depois, depoimentos e casos reais que geram confiança. Também não há um posicionamento claro — é preciso definir se é premium, acessível ou especialista.",
+        },
+        {
+          title: "Exploração das Dores do Paciente",
+          description:
+            "O conteúdo não explora as dores emocionais do paciente: medo de dentista, insegurança com o sorriso, autoestima. Esses gatilhos são decisivos para gerar ação.",
+        },
+      ],
+      conclusion:
+        "O perfil já tem o ingrediente mais valioso: um profissional presente e disposto a aparecer. Com estratégia, frequência, conteúdo profissional e tráfego pago, vamos transformar o Instagram em canal de agendamentos e posicionar o Dr. Ricardo como referência odontológica da região.",
+    },
+
+    // ---- SERVIÇOS ----
+    services: [
+      {
+        name: "Gestão de Redes Sociais",
+        description:
+          "Estruturar e administrar o perfil do Instagram com foco em crescimento, autoridade e geração de agendamentos.",
+        icon: "megaphone",
+        items: [
+          "Planejamento estratégico mensal",
+          "1 post por dia (primeiros 30 dias)",
+          "Reels + Carrosséis + Posts educativos",
+          "Copywriting profissional (legendas que vendem)",
+          "Estratégia por pilar: Autoridade / Dor / Estética / Prova Social / Conversão",
+          "CTA focado em WhatsApp",
+          "Análise de métricas e relatórios",
+        ],
+        price: "R$ 1.000",
+        priceType: "monthly",
+      },
+      {
+        name: "Captação de Conteúdo Profissional",
+        description:
+          "Produção de fotos e vídeos reais na clínica — o diferencial que separa amador de profissional.",
+        icon: "camera",
+        items: [
+          "Visita presencial na clínica",
+          "Fotos profissionais (clínica + profissional)",
+          "Gravação de Reels estratégicos",
+          "Direcionamento e roteiro de conteúdo",
+          "Conteúdo de bastidores e atendimento",
+          "Material para anúncios",
+        ],
+        price: "R$ 700",
+        priceType: "monthly",
+      },
+      {
+        name: "Tráfego Pago (Meta Ads)",
+        description:
+          "Campanhas de performance no Instagram e Facebook para gerar agendamentos e alcance local.",
+        icon: "target",
+        items: [
+          "Campanhas de agendamento via WhatsApp",
+          "Campanhas de reconhecimento local",
+          "Campanhas por procedimento (alinhador, limpeza, estética)",
+          "Segmentação: Dor / Estética / Remarketing",
+          "Otimização semanal e testes A/B",
+          "Relatórios de performance",
+        ],
+        price: "R$ 600",
+        priceType: "monthly",
+        priceNote: "Investimento em anúncios não incluso (sugestão inicial: R$10/dia)",
+      },
+      {
+        name: "Google Meu Negócio",
+        description:
+          "Otimização da presença no Google para atrair pacientes que já estão pesquisando por dentista na região.",
+        icon: "mapPin",
+        items: [
+          "Otimização completa do perfil",
+          "Gestão de avaliações e respostas",
+          "Postagens semanais",
+          "SEO local para aparecer no Google",
+          "Melhoria de posicionamento regional",
+        ],
+        price: "R$ 400",
+        priceType: "monthly",
+      },
+      {
+        name: "Site Institucional",
+        description:
+          "Site profissional para aparecer no Google, gerar leads e aumentar a autoridade digital.",
+        icon: "globe",
+        items: [
+          "Design profissional e responsivo",
+          "Páginas de procedimentos",
+          "Formulário de agendamento",
+          "SEO otimizado",
+          "Integração com analytics e pixel",
+        ],
+        price: "R$ 3.500",
+        priceType: "project",
+        priceNote: "Apresentado como próximo passo estratégico de crescimento",
+      },
+    ],
+
+    // ---- FASES DO PROJETO ----
+    phases: [
+      {
+        number: 1,
+        title: "Ativação e Posicionamento",
+        objective:
+          "Reativar o perfil, criar identidade visual, iniciar produção de conteúdo diário e posicionar o Dr. Ricardo como referência.",
+        deliverables: [
+          "Diagnóstico e planejamento estratégico",
+          "Criação de identidade visual do perfil",
+          "Otimização completa do Instagram",
+          "Produção de conteúdo diário (30 dias)",
+          "Captação presencial de fotos e vídeos",
+          "Otimização do Google Meu Negócio",
+          "Setup de métricas e pixel",
+        ],
+        expectedResult:
+          "Perfil ativo, comunicação profissional, primeiros acessos e agendamentos orgânicos.",
+      },
+      {
+        number: 2,
+        title: "Tração e Conversão",
+        objective:
+          "Ativar tráfego pago, criar motor de agendamentos via WhatsApp e escalar a presença local.",
+        deliverables: [
+          "Início de campanhas Meta Ads",
+          "Campanhas por procedimento",
+          "Segmentação de públicos (Dor / Estética / Remarketing)",
+          "CTA inteligente integrado com WhatsApp",
+          "Captação recorrente de conteúdo",
+          "Prova social: depoimentos e antes/depois",
+          "Relatórios de performance",
+        ],
+        expectedResult:
+          "Geração consistente de agendamentos, aumento de visibilidade local e previsibilidade comercial.",
+      },
+      {
+        number: 3,
+        title: "Escala e Autoridade",
+        objective:
+          "Expandir presença digital com site, Google Ads e posicionamento como referência na região.",
+        deliverables: [
+          "Site institucional otimizado",
+          "Google Ads (pesquisa local)",
+          "SEO para Google orgânico",
+          "Funil de conteúdo avançado",
+          "Automação de agendamento",
+          "Conteúdos de alto impacto (transformações, cases)",
+          "Campanhas de branding regional",
+        ],
+        expectedResult:
+          "Autoridade digital consolidada, múltiplos canais de captação, crescimento sustentável de pacientes.",
+      },
+    ],
+
+    // ---- CALENDÁRIO DE CONTEÚDO ----
+    contentCalendar: [
+      {
+        profileName: "Dr. Ricardo Nicolas",
+        profileHandle: "@odontologia_especializada_rn",
+        objective: [
+          "Reativar o perfil com frequência diária",
+          "Posicionar como referência odontológica",
+          "Gerar agendamentos via WhatsApp",
+          "Criar autoridade e confiança",
+        ],
+        days: [
+          {
+            day: 1,
+            type: "Educação",
+            format: "Reels",
+            theme: "Você pode estar com problema e não sabe",
+            description:
+              "Conteúdo de alerta sobre problemas dentários silenciosos — cáries ocultas, gengivite, bruxismo. Gera curiosidade e preocupação saudável que leva o paciente a buscar avaliação.",
+            objective: "Gerar curiosidade, educar e ativar decisão",
+            cta: "Quando foi sua última avaliação? Chame no WhatsApp e agende.",
+          },
+          {
+            day: 2,
+            type: "Autoridade",
+            format: "Carrossel",
+            theme: "3 sinais de que você precisa ir ao dentista",
+            description:
+              "1️⃣ Sangramento na gengiva 2️⃣ Sensibilidade ao comer 3️⃣ Dor ao mastigar — Último slide: Se você tem algum desses sinais, não espere piorar.",
+            objective: "Educar e posicionar como especialista acessível",
+          },
+          {
+            day: 3,
+            type: "Estética",
+            format: "Reels",
+            theme: "Antes e depois — transformação do sorriso",
+            description:
+              "Mostrar resultado real de procedimento estético. Transição dramática com música impactante. Conteúdo com altíssimo potencial de viralização.",
+            objective: "Gerar desejo, prova social e alcance viral",
+            cta: "Quer transformar seu sorriso? O primeiro passo é uma avaliação.",
+          },
+          {
+            day: 4,
+            type: "Dor",
+            format: "Reels",
+            theme: "Dói usar alinhador invisível?",
+            description:
+              "Dr. Ricardo responde dúvida comum com linguagem acessível. Desmistifica o medo, mostra conforto e resultado. Formato falando para câmera.",
+            objective: "Quebrar objeções e gerar interesse em alinhador",
+          },
+          {
+            day: 5,
+            type: "Educação",
+            format: "Carrossel",
+            theme: "Quanto custa NÃO cuidar dos dentes?",
+            description:
+              "Comparativo: custo de uma limpeza preventiva vs. custo de um canal + coroa. Mostra que prevenir é MUITO mais barato. Gatilho financeiro poderoso.",
+            objective: "Gatilho de urgência e prevenção",
+          },
+          {
+            day: 6,
+            type: "Bastidores",
+            format: "Reels",
+            theme: "Um dia na clínica do Dr. Ricardo",
+            description:
+              "Bastidores reais: chegada na clínica, preparo, atendimento, equipe em ação. Humaniza o dentista, mostra profissionalismo e reduz medo dos pacientes.",
+            objective: "Humanizar, gerar conexão e reduzir ansiedade",
+          },
+          {
+            day: 7,
+            type: "Conversão",
+            format: "Reels",
+            theme: "Agenda aberta essa semana",
+            description:
+              "CTA direto com senso de urgência: vagas limitadas, agenda abrindo, aproveite. Formato rápido, objetivo, com link direto para WhatsApp.",
+            objective: "Gerar agendamentos diretos",
+            cta: "Vagas limitadas! Agende agora pelo WhatsApp.",
+          },
+        ],
+      },
+    ],
+
+    // ---- INVESTIMENTO ----
+    investment: {
+      totalMonthly: "R$ 1.250",
+      totalLabel: "Pacote Completo ArtDesign",
+      originalPrice: "R$ 2.700",
+      savings: "R$ 1.450",
+      packageIncludes: [
+        "Gestão completa do Instagram",
+        "Planejamento estratégico mensal",
+        "Conteúdo diário (1º mês)",
+        "Captação presencial de conteúdo",
+        "Gestão de tráfego Meta Ads",
+        "Google Meu Negócio",
+        "Relatórios de performance",
+        "Reuniões de alinhamento",
+      ],
+      breakdown: [
+        { item: "Gestão de Redes Sociais", value: "R$ 1.000" },
+        { item: "Captação de Conteúdo", value: "R$ 700" },
+        { item: "Tráfego Pago (Meta Ads)", value: "R$ 600" },
+        { item: "Google Meu Negócio", value: "R$ 400" },
+      ],
+      setupItems: [
+        { item: "Site Institucional (futuro)", value: "R$ 3.500" },
+      ],
+      paymentConditions: [
+        "Pagamento mensal via boleto ou PIX",
+        "Sem fidelização — cancele quando quiser",
+        "Contrato mensal — continua se gostar",
+        "Sem burocracia, sem multa",
+      ],
+      notes: [
+        "Investimento em mídia (Meta Ads) não incluso — sugestão inicial: R$10/dia",
+        "Domínio e hospedagem por conta do cliente (quando contratar site)",
+        "Custos de deslocamento para captação presencial informados previamente",
+        "Primeiros 30 dias = fase de aprendizado do algoritmo — resultados crescem progressivamente",
+      ],
+    },
+
+    // ---- DIFERENCIAIS ----
+    differentials: [
+      "Estratégia dupla: entrada popular (limpeza, avaliação) + ticket alto (estética, implantes)",
+      "Captação presencial profissional — fotos e vídeos reais na clínica",
+      "Transparência total de custos — sem margem sobre serviços externos",
+      "Nenhuma fidelização obrigatória — permanência por resultado",
+      "Cancelamento a qualquer momento, sem multa",
+      "Crescimento estruturado por fases",
+      "Foco em agendamentos reais e ROI mensurável",
+    ],
+
+    // ---- SERVIÇOS OPCIONAIS ----
+    optionalServices: [
+      "Google Ads (campanhas de pesquisa local)",
+      "Site institucional otimizado para Google",
+      "Landing pages por procedimento",
+      "Automação de agendamento via WhatsApp",
+      "Produção de depoimentos em vídeo",
+      "Campanhas de SEO orgânico",
+      "E-mail marketing para pacientes",
+      "Gestão de campanhas sazonais",
+    ],
+  },
 ];
 
 // ============================================================
