@@ -15,6 +15,10 @@ import { ProposalDifferentials } from "@/components/proposal/proposal-differenti
 import { ProposalOptionalServices } from "@/components/proposal/proposal-optional-services";
 import { ProposalContentCalendar } from "@/components/proposal/proposal-content-calendar";
 import { ProposalCTA } from "@/components/proposal/proposal-cta";
+import { ProposalCRMDiagnosis } from "@/components/proposal/proposal-crm-diagnosis";
+import { ProposalCRMFeatures } from "@/components/proposal/proposal-crm-features";
+import { ProposalCRMShowcase } from "@/components/proposal/proposal-crm-showcase";
+import { ProposalCRMKanban } from "@/components/proposal/proposal-crm-kanban";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 interface ProposalPageProps {
@@ -36,6 +40,8 @@ export default function ProposalPage({ params }: ProposalPageProps) {
     restDelta: 0.001,
   });
 
+  const isCRM = proposal.proposalType === "crm";
+
   return (
     <div className="flex flex-col gap-0 pb-0 overflow-x-hidden bg-background selection:bg-brand-purple/30">
       {/* Scroll Progress Bar */}
@@ -50,60 +56,97 @@ export default function ProposalPage({ params }: ProposalPageProps) {
       {/* 2. Sobre a ArtDesign */}
       <ProposalAbout />
 
-      {/* 3a. Análise de Perfis (multi-perfil) */}
-      {proposal.profileAnalyses && proposal.profileAnalyses.length > 0 && (
-        <ProposalProfileAnalysis
-          profileAnalyses={proposal.profileAnalyses}
-          clientName={proposal.clientName}
-        />
+      {isCRM ? (
+        <>
+          {/* CRM: Diagnóstico */}
+          <ProposalCRMDiagnosis />
+
+          {/* CRM: Destaques */}
+          {proposal.highlights && proposal.highlights.length > 0 && (
+            <ProposalHighlights
+              highlights={proposal.highlights}
+              clientName={proposal.clientName}
+            />
+          )}
+
+          {/* CRM: Módulos da Solução */}
+          <ProposalCRMFeatures />
+
+          {/* CRM: Showcase 24/7 */}
+          <ProposalCRMShowcase />
+
+          {/* CRM: Funil Kanban */}
+          <ProposalCRMKanban />
+
+          {/* CRM: Investimento */}
+          <ProposalInvestmentSection
+            investment={proposal.investment}
+            clientName={proposal.clientName}
+          />
+
+          {/* CRM: Diferenciais */}
+          {proposal.differentials && (
+            <ProposalDifferentials differentials={proposal.differentials} />
+          )}
+        </>
+      ) : (
+        <>
+          {/* Social Media: Análise de Perfis (multi-perfil) */}
+          {proposal.profileAnalyses && proposal.profileAnalyses.length > 0 && (
+            <ProposalProfileAnalysis
+              profileAnalyses={proposal.profileAnalyses}
+              clientName={proposal.clientName}
+            />
+          )}
+
+          {/* Social Media: Análise Estratégica (perfil único) */}
+          {!proposal.profileAnalyses && proposal.analysis && (
+            <ProposalAnalysisSection
+              analysis={proposal.analysis}
+              clientName={proposal.clientName}
+            />
+          )}
+
+          {/* Social Media: Destaques */}
+          {proposal.highlights && proposal.highlights.length > 0 && (
+            <ProposalHighlights
+              highlights={proposal.highlights}
+              clientName={proposal.clientName}
+            />
+          )}
+
+          {/* Social Media: Escopo dos Serviços */}
+          <ProposalScope services={proposal.services} />
+
+          {/* Social Media: Fases do Projeto */}
+          {proposal.phases && proposal.phases.length > 0 && (
+            <ProposalPhases phases={proposal.phases} />
+          )}
+
+          {/* Social Media: Calendário de Conteúdo */}
+          {proposal.contentCalendar && proposal.contentCalendar.length > 0 && (
+            <ProposalContentCalendar contentCalendar={proposal.contentCalendar} />
+          )}
+
+          {/* Social Media: Investimento */}
+          <ProposalInvestmentSection
+            investment={proposal.investment}
+            clientName={proposal.clientName}
+          />
+
+          {/* Social Media: Diferenciais */}
+          {proposal.differentials && (
+            <ProposalDifferentials differentials={proposal.differentials} />
+          )}
+
+          {/* Social Media: Serviços Opcionais */}
+          {proposal.optionalServices && proposal.optionalServices.length > 0 && (
+            <ProposalOptionalServices services={proposal.optionalServices} />
+          )}
+        </>
       )}
 
-      {/* 3b. Análise Estratégica (perfil único) */}
-      {!proposal.profileAnalyses && proposal.analysis && (
-        <ProposalAnalysisSection
-          analysis={proposal.analysis}
-          clientName={proposal.clientName}
-        />
-      )}
-
-      {/* 4. Destaques */}
-      {proposal.highlights && proposal.highlights.length > 0 && (
-        <ProposalHighlights
-          highlights={proposal.highlights}
-          clientName={proposal.clientName}
-        />
-      )}
-
-      {/* 5. Escopo dos Serviços */}
-      <ProposalScope services={proposal.services} />
-
-      {/* 6. Fases do Projeto */}
-      {proposal.phases && proposal.phases.length > 0 && (
-        <ProposalPhases phases={proposal.phases} />
-      )}
-
-      {/* 7. Calendário de Conteúdo */}
-      {proposal.contentCalendar && proposal.contentCalendar.length > 0 && (
-        <ProposalContentCalendar contentCalendar={proposal.contentCalendar} />
-      )}
-
-      {/* 7. Investimento */}
-      <ProposalInvestmentSection
-        investment={proposal.investment}
-        clientName={proposal.clientName}
-      />
-
-      {/* 8. Diferenciais */}
-      {proposal.differentials && (
-        <ProposalDifferentials differentials={proposal.differentials} />
-      )}
-
-      {/* 9. Serviços Opcionais */}
-      {proposal.optionalServices && proposal.optionalServices.length > 0 && (
-        <ProposalOptionalServices services={proposal.optionalServices} />
-      )}
-
-      {/* 10. CTA */}
+      {/* CTA — always shown */}
       <ProposalCTA
         clientName={proposal.clientName}
         contactName={proposal.contactName}

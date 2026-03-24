@@ -104,6 +104,7 @@ export interface Proposal {
   brandEssence?: string;
   optionalServices?: string[];
   contentCalendar?: ContentCalendarProfile[];
+  proposalType?: "social_media" | "crm";
 }
 
 // ============================================================
@@ -1530,6 +1531,109 @@ export const proposals: Proposal[] = [
       "Campanhas de SEO orgânico",
       "E-mail marketing para pacientes",
       "Gestão de campanhas sazonais",
+    ],
+  },
+
+  // ---- IMÓVEIS CONFIANÇA — ARTATENDE CRM ----
+  {
+    slug: "imoveis-confianca-artatende",
+    clientName: "Imóveis Confiança",
+    contactName: "Imóveis Confiança",
+    proposalType: "crm",
+    greeting:
+      "Olá! 👋 Preparamos esta proposta especialmente para a Imóveis Confiança. Aqui você vai entender como o ArtAtende vai transformar o WhatsApp de vocês em uma máquina de qualificação e vendas que funciona 24 horas por dia, 7 dias por semana — mesmo quando nenhum corretor está disponível.",
+    validUntil: "2026-04-07",
+    whatsappNumber: "5549991109591",
+    highlights: [
+      "Um único número para toda a equipe de corretores",
+      "IA que responde e qualifica leads às 22h30 do domingo",
+      "Funil Kanban visual para o gestor acompanhar cada negociação",
+      "Histórico blindado — nunca mais perde com saída de corretor",
+    ],
+    services: [
+      {
+        name: "Implantação e Onboarding",
+        description:
+          "Construção da máquina de atendimento personalizada para a Imóveis Confiança. Você não precisará se preocupar com nenhuma configuração técnica.",
+        icon: "settings",
+        items: [
+          "Mapeamento e engenharia de prompts da IA (persona, tom e limites)",
+          "Integração com o site imoveisconfianca.net.br (leitura de links)",
+          "Configuração do funil Kanban imobiliário (5 etapas)",
+          "Criação das etiquetas de segmentação de leads",
+          "Treinamento prático da equipe de corretores",
+          "Boas práticas anti-banimento do WhatsApp",
+        ],
+        price: "R$ 2.500",
+        priceType: "project",
+      },
+      {
+        name: "Licenciamento Mensal (SaaS)",
+        description:
+          "Acesso completo à plataforma ArtAtende para toda a equipe. Um único número oficial distribuindo atendimentos e a IA funcionando 24/7.",
+        icon: "zap",
+        items: [
+          "1 número de WhatsApp oficial da imobiliária",
+          "Até 5 corretores/atendentes simultâneos",
+          "Construtor de fluxos e automações (Drag & Drop)",
+          "Painel Kanban e funil de vendas",
+          "Dashboard com métricas em tempo real",
+          "Módulo de campanhas e etiquetas",
+          "Suporte técnico em horário comercial",
+        ],
+        price: "R$ 597",
+        priceType: "monthly",
+      },
+      {
+        name: "Inteligência Artificial (IA)",
+        description:
+          "A Imóveis Confiança tem total controle e transparência sobre o consumo de IA. O custo é repassado pelo valor exato de consumo, sem margens.",
+        icon: "cpu",
+        items: [
+          "Integração com ChatGPT (OpenAI) ou Claude (Anthropic)",
+          "Custo por token — Pay-as-you-go",
+          "Estimativa para imobiliária de médio porte: R$ 50 a R$ 150/mês",
+          "Limite de segurança configurado (evita custo excessivo)",
+          "IA treinada para qualificar e agendar — nunca negociar preços",
+        ],
+        price: "R$ 50 – R$ 150",
+        priceType: "monthly",
+        priceNote: "Custo variável direto de API — sem margem da agência",
+      },
+    ],
+    investment: {
+      totalMonthly: "R$ 597",
+      totalLabel: "Licenciamento Mensal ArtAtende",
+      breakdown: [
+        { item: "1 número WhatsApp oficial", value: "incluso" },
+        { item: "Até 5 corretores simultâneos", value: "incluso" },
+        { item: "Kanban imobiliário + automações", value: "incluso" },
+        { item: "Dashboard e relatórios", value: "incluso" },
+        { item: "Suporte técnico", value: "incluso" },
+      ],
+      setupItems: [
+        { item: "Implantação e Onboarding Completo", value: "R$ 2.500" },
+      ],
+      paymentConditions: [
+        "Taxa de implantação: pagamento único via PIX ou boleto",
+        "Mensalidade: cobrada todo dia 1° via PIX ou boleto",
+        "Implantação pode ser parcelada nas 2 primeiras mensalidades",
+        "Sem fidelização — cancele quando quiser",
+      ],
+      notes: [
+        "Custo de IA (OpenAI / Anthropic) faturado separadamente pelo valor exato de consumo",
+        "Estimativa de IA para imobiliária de médio porte: R$ 50 a R$ 150/mês",
+        "Número de WhatsApp e chip fornecidos pela Imóveis Confiança",
+        "Integrações externas (n8n, portais imobiliários) avaliadas caso a caso",
+      ],
+    },
+    differentials: [
+      "IA agnóstica: suporta ChatGPT, Claude, Gemini e Deepseek — você escolhe o melhor custo",
+      "Histórico de clientes 100% da empresa — jamais fica no celular do corretor",
+      "Construtor de fluxos visual — sem necessidade de código",
+      "Nenhuma fidelização obrigatória — permanência por resultado",
+      "Transparência total de custos — sem margem sobre serviços externos",
+      "Suporte técnico humano incluído no plano",
     ],
   },
 ];
