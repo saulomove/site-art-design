@@ -1636,6 +1636,319 @@ export const proposals: Proposal[] = [
       "Suporte técnico humano incluído no plano",
     ],
   },
+
+  // ---- ESPAÇOLASER CAÇADOR ----
+  {
+    slug: "espacolaser-cacador",
+    clientName: "Espaçolaser Caçador",
+    contactName: "Equipe Espaçolaser",
+    proposalType: "social_media",
+    greeting:
+      "Olá equipe da Espaçolaser Caçador! 💙 Analisamos de perto a presença digital da unidade. Vemos uma marca forte com muito potencial. Preparamos um diagnóstico e uma estratégia (um Sistema de Crescimento Local) focada em transformar carinho em agendamentos recorrentes. Confira abaixo o Método Pele que Converte que desenhamos pra vocês.",
+    validUntil: "2026-03-30",
+    whatsappNumber: "5549989094043", // Número do perfil
+
+    highlights: [
+      "Agenda limitada de captação por mês na região (Urgência) 🚨",
+      "Foco local: O objetivo não é viralizar no Brasil, é dominar Caçador 📍",
+      "Sem fidelidade — transparência e parceria de resultados 🤝",
+      "Metodologia validada: 'Método Pele que Converte' 💎",
+    ],
+
+    // ---- ANÁLISE ESTRATÉGICA ----
+    analysis: {
+      intro:
+        "Fizemos um raio-x estratégico no perfil da unidade para entender onde estamos perdendo oportunidades e como podemos estruturar a captação inteligente de leads da região de Caçador.",
+      strengths: [
+        {
+          title: "Força da Marca e Confiança (Autoridade)",
+          description:
+            "A unidade já tem presença ativa, linguagem próxima e carisma. A marca já carrega autoridade e segurança nacional da Espaçolaser, facilitando muito a conversão local.",
+        },
+        {
+          title: "Engajamento com Bastidores",
+          description:
+            "Conteúdos variados, como os de rotina, humor e trends performam bem, o que prova que existe potencial real de conexão do público com a equipe de Caçador.",
+        },
+      ],
+      opportunities: [
+        {
+          title: "Cenário de Perda (O que NÃO fazer) 🚨",
+          description:
+            "Depender só de trend/meme, focar só em posts promocionais e não aproveitar o WhatsApp gera perda de oportunidades. O risco é o cliente lembrar do vídeo engraçado, mas ir na concorrência porque faltou clareza de contato e educação de mercado.",
+        },
+        {
+          title: "Antes vs. Depois (Transformação do Cenário)",
+          description:
+            "Hoje: Perfil reativo vendendo laser. Depois: Uma máquina de gerar desejo (Mostrando resultados, segurança, e comodidade), levando as avaliações direto para o WhatsApp a partir de estratégias ativas intencionais.",
+        },
+        {
+          title: "Construção de Funil de Conteúdo 🎯",
+          description:
+            "Implementação de 4 etapas: Conteúdo que atrai as pessoas certas, Educa (quebra de objeções rapidamente), Gera Desejo por uma pele livre e Converte via convite irrecusável. O gancho de entrada é mostrar à mulher e ao homem da cidade o que ele perde todos os dias sofrendo com métodos tradicionais.",
+        },
+        {
+          title: "Projeção de Resultado 📈",
+          description:
+            "Nosso foco real será: 1) Aumentar e dominar o alcance na cidade e região. 2) Ampliar volume diário de conversas no WhatsApp (esse será o principal KPI). 3) Apoiar a conversão final para o agendamento de sessões com conteúdo.",
+        },
+      ],
+      conclusion:
+        "Não é sobre postar mais e de forma aleatória. É sobre postar as coisas certas e no ritmo exato pra quem toma decisão. Quando transformamos um perfil reativo num funil, a mágica acontece. O Instagram atrai, mas o WhatsApp é quem de fato fecha.",
+    },
+
+    // ---- SERVIÇOS ----
+    services: [
+      {
+        name: "Gestão de Redes Sociais",
+        description:
+          "Planejamento mensal inteligente focado em dominar a praça local, com foco 100% estratégico.",
+        icon: "smartphone",
+        items: [
+          "Definição mensal de temas focados",
+          "Criação de linha editorial com SEO Local (depilação a laser em Caçador)",
+          "Direcionamento criativo e arte",
+          "Acompanhamento analítico e retenção",
+        ],
+        price: "R$ 1.490",
+        priceType: "monthly",
+      },
+      {
+        name: "Estratégia e Inteligência (O Funil)",
+        description:
+          "Nosso Método: Mapeamento detalhado dos 4 pilares: Alcance(35%), Autoridade(25%), Desejo(20%), Conversão(20%).",
+        icon: "brainCircuit",
+        items: [
+          "Análise do que performa vs cliente ideal",
+          "Micro-histórias focadas em mulheres 18-45 e homens focados em praticidade/irritações",
+          "Construção da linguagem e blocos de quebras de objeção",
+        ],
+        price: "R$ 590",
+        priceType: "monthly",
+      },
+      {
+        name: "Gestão do Cronograma",
+        description:
+          "Distribuição semanal do conteúdo (O mapa tático comercial).",
+        icon: "calendarCheck",
+        items: [
+          "Otimização e divisão entre Reels, Carrosséis e Fixo",
+          "Rotina cadenciada com o time de vendas",
+          "Sincronização sazonal e de campanhas pontuais via direct",
+        ],
+        price: "R$ 390",
+        priceType: "monthly",
+      },
+      {
+        name: "Tráfego Pago — Meta Ads 🚀",
+        description:
+          "Campanhas altamente locais direcionadas a Caçador.",
+        icon: "target",
+        items: [
+          "Gestão de Campanhas de Alcance (Marca Forte)",
+          "Gestão de Campanhas de Conversão (Lead pro WhatsApp)",
+          "Segmentações super avançadas geográficas",
+          "Acompanhamento de conversão",
+        ],
+        price: "R$ 890",
+        priceType: "monthly",
+        priceNote: "Verba da Meta: Sugerimos apenas R$ 25/dia = R$375 mensais direto para a Meta.",
+      },
+      {
+        name: "Captação Viva (Imagens e Vídeos)",
+        description:
+          "A materialização no digital. Todo conteúdo pronto, estruturado e visualizado pra rodar.",
+        icon: "camcorder",
+        items: [
+          "1 Diária cheia planejada na unidade por mês",
+          "Cenas gravadas com clientes focando nas dores (Antes vs. Depois real!)",
+          "Equipe da matriz focada, mostrando atendimento",
+          "Vídeos curtos estilo 'Dúvidas' gerando alta humanização",
+        ],
+        price: "R$ 790",
+        priceType: "monthly",
+      },
+    ],
+
+    // ---- FASES DO PROJETO ----
+    phases: [
+      {
+        number: 1,
+        title: "Os Primeiros 30 Dias (Kickoff)",
+        objective: "Tangibilizar as vitórias rápidas e organizar a casa para escalar agendamentos.",
+        deliverables: [
+          "Aprovação e alinhamento",
+          "Análise profunda do material atual e configuração de tráfego",
+          "Produção dos 2 primeiros cronogramas de semana (1 e 2)",
+          "1ª Captação já focada nas grandes objeções",
+          "Campanhas ativas rodando",
+        ],
+        expectedResult: "Primeiros contatos qualificados e elevação perceptiva da qualidade do perfil.",
+      },
+      {
+        number: 2,
+        title: "Próximos Passos (Sem Atrito)",
+        objective: "Dar sequência rápida com total transparência.",
+        deliverables: [
+          "1️⃣ Autorização da Proposta no botão final",
+          "2️⃣ Reunião rápida de Onboarding (30 min)",
+          "3️⃣ Início das Campanhas e do Método Imediatamente",
+        ],
+        expectedResult: "Começar rapidamente a lucrar e parar a perda diária no perfil desorganizado.",
+      },
+    ],
+
+    // ---- PILARES DE CONTEÚDO E IDEIAS REAIS ----
+    contentPillars: [
+      {
+        title: "Pilar 1: Alcance & Identificação",
+        examples: [
+          "Reels cômico sobre 'quem adia a sessão e corre pro Carnaval' c/ CTA pro Agendamento",
+          "Bastidores descontraídos do time",
+          "Mostrando o dia com agendas cheias (Urgência natural)",
+        ],
+        objective: "Virar assunto em Caçador",
+      },
+      {
+        title: "Pilar 2: Autoridade e Educação",
+        examples: [
+          "Carrossel: Mitos e verdades (Dói? Homem faz? Posso depilar com gilete?)",
+          "Vídeo ensinando pq a máquina Candela é superior ao que tem em Caçador",
+          "Quanto custa de fato ter pele livre o ano todo?",
+        ],
+        objective: "Antecipação e confiança. O paciente chega pronto.",
+      },
+      {
+        title: "Pilar 3: Desejo Impossível de Ignorar",
+        examples: [
+          "Fotos do Antes vs. Depois: O cenário de foliculite c/ fim vs. a pele lisa do lado de cá",
+          "Micro-histórias reais (depoimento focado)",
+          "Autocuidado = Tempo ganho no fim de semana para focar em outras coisas",
+        ],
+        objective: "Mudar a percepção! Não vender laser, vender paz mental e beleza constante.",
+      },
+      {
+        title: "Pilar 4: Conversão Pura no WhatsApp",
+        examples: [
+          "Dia de 'Agenda Aberta': Story forte com Urgência chamando pro link",
+          "Campanha direcionada ao Meta. Postagens 'Vitrine'",
+          "Benefícios rápidos e de alto giro",
+        ],
+        objective: "Bater metas diárias no celular da Espaçolaser.",
+      },
+    ],
+
+    // ---- CRONOGRAMA 7 DIAS ----
+    contentCalendar: [
+      {
+        profileName: "Espaçolaser",
+        profileHandle: "@espacolaser.cacador",
+        objective: ["Amostra tática de 1 semana estratégica na nossa metodologia."],
+        days: [
+          {
+            day: 1,
+            type: "Autoridade + Quebra de Objeção",
+            format: "Reels Pílula",
+            theme: "Ainda acham que Laser é tortura?",
+            description: "Conteúdo focado em mostrar o lado amigável, um 'hook' direto que atinge a mente de quem usa lâminas e sofre.",
+            objective: "Educação rápida; CTA forte para o zap e stories interagindo 'você acha que dói?'",
+            cta: "'Pare de sofrer atoa, clica no link e avalie a resistência agora'",
+          },
+          {
+            day: 2,
+            type: "Autoridade Local & Desejo",
+            format: "Carrossel Dinâmico",
+            theme: "5 Motivos pra fazer depilação com a equipe em Caçador",
+            description: "Usando as dores (1. Economia 10x sem cera, 2. Adeus foliculite, 3. Praticidade extrema, etc).",
+            objective: "Conteúdo denso salvável (Bomba SEO Local).",
+            cta: "'Agenda liberada. Chama nossa Unidade!'",
+          },
+          {
+            day: 3,
+            type: "Desejo Puro e Imagem Limpa",
+            format: "Post Fixo",
+            theme: "Sua Pele, Sua Confiança",
+            description: "Post institucional forte e elegante da marca Espaçolaser. Foco no conforto feminino e na praticidade aos homens de barba rala (se aplicável).",
+            objective: "Posicionamento visual.",
+          },
+          {
+            day: 4,
+            type: "Contexto Engraçado + Venda",
+            format: "Reels / Trend",
+            theme: "A famosa 'correria' do último segundo da viagem",
+            description: "Uma situação que a mulher ou o homem que fazem esporte esquecem, mas que o laser resolve para a vida toda.",
+            objective: "Alcance gigantesco e identificação",
+            cta: "Não sofra mais. Garanta e invista em conforto no link na Bio",
+          },
+          {
+            day: 5,
+            type: "Quebra de Objeção Tática",
+            format: "Carrossel Explicativo",
+            theme: "Sessões: Preciso de 100 pra dar resultado?",
+            description: "Falar claramente como o método se organiza. Uma desmistificação completa respondendo dúvidas reais.",
+            objective: "Mudar clientes indecisos em Agendamentos na hora (Link WhatsApp Stories na sequência).",
+          },
+          {
+            day: 6,
+            type: "Conversão 'Urgente'",
+            format: "Sequência Forte nos Stories",
+            theme: "Últimas Vagas de Avaliação da Semana",
+            description: "Enquete de aproximação -> Foto da Unidade Caçador -> Link ativo com poucas Vagas.",
+            objective: "Converter os expectadores da semana em atendimentos físicos.",
+          },
+          {
+            day: 7,
+            type: "Prova Social Local",
+            format: "Reels Entrevista Rápida",
+            theme: "Bate-papo c/ Consumidor",
+            description: "Trecho c/ cliente sorrindo e o 'Por que eu amo vir na Unidade Caçador'.",
+            objective: "Geração pesada de confiança via prova social comunitária.",
+          },
+        ],
+      },
+    ],
+
+    // ---- DIFERENCIAIS DA AGÊNCIA ----
+    differentials: [
+      "Sem 'venda de ilusões': Método testado focando em ROI (Taxa de Agendamentos Reais).",
+      "Experiência com processos clínicos: Sabemos abordar a insegurança e fragilidade do cliente na área de beleza e saúde.",
+      "Livre total: Sem contrato punitivo ou fidelidade trancada. Fica porque vale a pena.",
+      "Execução que você vê e pega: Fotos locais, vídeos com seu time, sem usar apenas banco de imagens da franqueadora.",
+      "Contraste de Custo-Benefício: O pacote integrado da proposta é desenhado para se pagar com as próprias conversões adicionais que nosso esforço vai gerar.",
+    ],
+
+    // ---- INVESTIMENTO ----
+    investment: {
+      totalMonthly: "R$ 1.600",
+      totalLabel: "Pacote 360: O Método Completo",
+      originalPrice: "R$ 4.150",
+      savings: "R$ 2.550",
+      packageIncludes: [
+        "Gestão de Redes Sociais com Foco Local",
+        "Configuração e Estratégias do Funil Tático",
+        "Gestão Semanal de Calendário (4 pilares)",
+        "Gestão Integral de Tráfego Pago na Meta",
+        "1 Dia Extenso de Captação Fílmica/Fotográfica Mensal na Clínica",
+      ],
+      breakdown: [
+        { item: "Gestão (Conteúdo + Estrutura)", value: "R$ 1.490" },
+        { item: "Estratégia e Funil", value: "R$ 590" },
+        { item: "Gestão Diária / Cronograma", value: "R$ 390" },
+        { item: "Gestão de Tráfego / Performance", value: "R$ 890" },
+        { item: "Produção e Captação (Dia Real)", value: "R$ 790" },
+      ],
+      paymentConditions: [
+        "Faturamento mensal sem burocracia (Boleto/PIX).",
+        "Isento de multas rescisórias (Você tem a liberdade de romper sem sustos nos primeiros 30 ou 60 dias).",
+        "Um pacote de depilação a laser vendido na Unidade Caçador já paga boa parcela (ou todo) do nosso serviço no mês. Isso é mudança do foco em 'Custo' para o 'ROI'.",
+      ],
+      notes: [
+        "Verba do tráfego (direcionado a Meta) a cargo do cliente. Recomendamos algo enxuto como 25 a 30 reais diários no cartão da gerência.",
+        "Equipe local da ArtDesign estará na clínica para a captação visual todo mês em datas a conformar.",
+        "Se fizer sentido pra vocês iniciarmos a revolução do Instagram ainda nesta semana, clique abaixo no WhatsApp da proposta e mande: ESTAMOS PRONTOS.",
+      ],
+    },
+  },
 ];
 
 // ============================================================
