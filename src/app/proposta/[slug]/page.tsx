@@ -6,6 +6,7 @@ import { getProposalBySlug } from "@/lib/proposals-data";
 import { ProposalHero } from "@/components/proposal/proposal-hero";
 import { ProposalAbout } from "@/components/proposal/proposal-about";
 import { ProposalAnalysisSection } from "@/components/proposal/proposal-analysis";
+import { ProposalBeforeAfter } from "@/components/proposal/proposal-before-after";
 import { ProposalProfileAnalysis } from "@/components/proposal/proposal-profile-analysis";
 import { ProposalHighlights } from "@/components/proposal/proposal-highlights";
 import { ProposalScope } from "@/components/proposal/proposal-scope";
@@ -91,6 +92,14 @@ export default function ProposalPage({ params }: ProposalPageProps) {
         </>
       ) : (
         <>
+          {/* Social Media: Antes & Depois */}
+          {proposal.beforeAfter && (
+            <ProposalBeforeAfter
+              beforeAfter={proposal.beforeAfter}
+              clientName={proposal.clientName}
+            />
+          )}
+
           {/* Social Media: Análise de Perfis (multi-perfil) */}
           {proposal.profileAnalyses && proposal.profileAnalyses.length > 0 && (
             <ProposalProfileAnalysis
@@ -152,6 +161,7 @@ export default function ProposalPage({ params }: ProposalPageProps) {
         contactName={proposal.contactName}
         validUntil={proposal.validUntil}
         whatsappNumber={proposal.whatsappNumber}
+        closingQuestion={proposal.closingQuestion}
       />
     </div>
   );

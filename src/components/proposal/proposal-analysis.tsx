@@ -39,120 +39,146 @@ export function ProposalAnalysisSection({ analysis, clientName }: Props) {
             </span>
           </motion.h2>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-600 leading-relaxed"
+            className="text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto space-y-8"
           >
-            {analysis.intro}
-          </motion.p>
-        </div>
+            <p className="whitespace-pre-line">{analysis.intro}</p>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-          {/* Strengths */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-brand-green/5 to-white rounded-3xl p-8 border border-brand-green/15 shadow-lg"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-brand-green/20 flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-brand-green" />
+            {analysis.audience && analysis.audience.length > 0 && (
+              <div className="pt-2">
+                <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
+                  <span>🎯</span> Público-Alvo Identificado
+                </h4>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  {analysis.audience.map((item, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center px-4 py-2 rounded-full bg-brand-purple/5 border border-brand-purple/20 text-brand-purple font-medium text-sm shadow-sm"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900">
-                Pontos Fortes
-              </h3>
-            </div>
-
-            <div className="space-y-5">
-              {analysis.strengths.map((point, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 mt-0.5 rounded-full bg-brand-green/20 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-4 h-4 text-brand-green" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 mb-1">
-                        {point.title}
-                      </h4>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        {point.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Opportunities */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-brand-orange/5 to-white rounded-3xl p-8 border border-brand-orange/15 shadow-lg"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-brand-orange/20 flex items-center justify-center">
-                <AlertTriangle className="w-5 h-5 text-brand-orange" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900">
-                Oportunidades de Crescimento
-              </h3>
-            </div>
-
-            <div className="space-y-5">
-              {analysis.opportunities.map((point, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 mt-0.5 rounded-full bg-brand-orange/20 flex items-center justify-center shrink-0">
-                      <AlertTriangle className="w-3.5 h-3.5 text-brand-orange" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 mb-1">
-                        {point.title}
-                      </h4>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        {point.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            )}
           </motion.div>
         </div>
+
+        {(analysis.strengths.length > 0 || analysis.opportunities.length > 0) && (
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+            {/* Strengths */}
+            {analysis.strengths.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-brand-green/5 to-white rounded-3xl p-8 border border-brand-green/15 shadow-lg"
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-10 h-10 rounded-xl bg-brand-green/20 flex items-center justify-center">
+                    <TrendingUp className="w-5 h-5 text-brand-green" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">
+                    Pontos Fortes
+                  </h3>
+                </div>
+
+                <div className="space-y-5">
+                  {analysis.strengths.map((point, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className="group"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 mt-0.5 rounded-full bg-brand-green/20 flex items-center justify-center shrink-0">
+                          <CheckCircle2 className="w-4 h-4 text-brand-green" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-slate-900 mb-1">
+                            {point.title}
+                          </h4>
+                          <p className="text-sm text-slate-600 leading-relaxed">
+                            {point.description}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Opportunities */}
+            {analysis.opportunities.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-brand-orange/5 to-white rounded-3xl p-8 border border-brand-orange/15 shadow-lg"
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-10 h-10 rounded-xl bg-brand-orange/20 flex items-center justify-center">
+                    <AlertTriangle className="w-5 h-5 text-brand-orange" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">
+                    Oportunidades de Crescimento
+                  </h3>
+                </div>
+
+                <div className="space-y-5">
+                  {analysis.opportunities.map((point, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className="group"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 mt-0.5 rounded-full bg-brand-orange/20 flex items-center justify-center shrink-0">
+                          <AlertTriangle className="w-3.5 h-3.5 text-brand-orange" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-slate-900 mb-1">
+                            {point.title}
+                          </h4>
+                          <p className="text-sm text-slate-600 leading-relaxed">
+                            {point.description}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </div>
+        )}
 
         {/* Conclusion */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto mt-12 text-center"
-        >
-          <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-            <p className="text-slate-700 font-semibold leading-relaxed text-lg">
-              {analysis.conclusion}
-            </p>
-          </div>
-        </motion.div>
+        {analysis.conclusion && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto mt-12 text-center"
+          >
+            <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+              <p className="text-slate-700 font-semibold leading-relaxed text-lg">
+                {analysis.conclusion}
+              </p>
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );

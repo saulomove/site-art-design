@@ -40,6 +40,7 @@ export interface ProposalAnalysisPoint {
 
 export interface ProposalAnalysis {
   intro: string;
+  audience?: string[];
   strengths: ProposalAnalysisPoint[];
   opportunities: ProposalAnalysisPoint[];
   conclusion: string;
@@ -84,6 +85,14 @@ export interface ContentCalendarProfile {
   days: ContentCalendarDay[];
 }
 
+export interface ProposalBeforeAfter {
+  beforeTitle: string;
+  beforeItems: string[];
+  afterTitle: string;
+  afterItems: string[];
+  expectedResults: string;
+}
+
 export interface Proposal {
   slug: string;
   clientName: string;
@@ -105,6 +114,8 @@ export interface Proposal {
   optionalServices?: string[];
   contentCalendar?: ContentCalendarProfile[];
   proposalType?: "social_media" | "crm";
+  closingQuestion?: string;
+  beforeAfter?: ProposalBeforeAfter;
 }
 
 // ============================================================
@@ -1949,6 +1960,306 @@ export const proposals: Proposal[] = [
       ],
     },
   },
+
+  // ---- FABY MAGAZINE ----
+  {
+    slug: "faby-magazine",
+    clientName: "Faby Magazine",
+    contactName: "Faby",
+    greeting: "Olá Faby! 👋 Analisamos o perfil da loja e preparamos um plano estratégico direto ao ponto para transformar seguidores em clientes reais.",
+    validUntil: "2026-03-30",
+    whatsappNumber: "5549988097625",
+    closingQuestion: "Faz sentido pra você esse próximo passo de posicionar a Faby Magazine de forma mais estratégica e aumentar as vendas através do Instagram?",
+
+    highlights: [
+      "Estratégia focada em conversão para loja física",
+      "Experiência com o mercado de moda e comércio local",
+      "Estratégias testadas e validadas no mercado",
+      "Sem contrato de fidelidade — resultados falam mais alto",
+    ],
+
+    analysis: {
+      intro: "Analisamos o cenário atual. O perfil tem nome conhecido, frequência de posts, variedade de produtos, apelo promocional e ponto físico. Mas falta postar com estratégia. O foco é transformar a Faby Magazine de 'loja que posta promoção' para marca que vende 'estilo + experiência + facilidade'.",
+      audience: [
+        "Mulheres que querem se vestir bem sem pagar caro",
+        "Homens que buscam praticidade e estilo",
+        "Pessoas que valorizam parcelamento",
+        "Público local de Caçador que converte na loja"
+      ],
+      strengths: [],
+      opportunities: [],
+      conclusion: ""
+    },
+
+    beforeAfter: {
+      beforeTitle: "A realidade de hoje (O ANTES)",
+      beforeItems: [
+        "Postagens sem estratégia comercial estruturada",
+        "Baixa interação e poucos comentários reais",
+        "Foco quase exclusivo em preço e descontos",
+        "Pouca retenção de atenção nos vídeos",
+        "Instagram atuando apenas como vitrine/panfleto digital"
+      ],
+      afterTitle: "O que acontece com a nossa estratégia? (O DEPOIS)",
+      afterItems: [
+        "Conteúdo que ativa o desejo verdadeiro de compra",
+        "Aumento agudo de interação e respostas",
+        "Reels dinâmicos com altíssimo alcance regional",
+        "Marca sendo lembrada como referência de moda em Caçador",
+        "Perfil gerando clientes reais e caixa direto"
+      ],
+      expectedResults: "🚀 Projeção de Resultados: Com consistência, anúncios direcionados e conteúdo estratégico, é possível aumentar o alcance da loja de 2x a 5x nos primeiros 30 dias, gerando uma fila diária de mensagens no WhatsApp e aumentando o fluxo físico na loja para transformar seguidores num ativo real de lucros."
+    },
+
+    phases: [
+      {
+        number: 1,
+        title: "Fase 1: ATRAIR",
+        objective: "Trazer novas pessoas para conhecer a Faby Magazine.",
+        deliverables: [
+          "Reels dinâmicos de Moda (transições, antes/depois)",
+          "Conteúdo altamente compartilhável (dicas rápidas)",
+          "Campanhas de Alcance no Meta Ads focadas em Caçador"
+        ],
+        expectedResult: "Aumento considerável nas visualizações e alcance local."
+      },
+      {
+        number: 2,
+        title: "Fase 2: ENGAJAR",
+        objective: "Fazer o público interagir com os conteúdos da loja.",
+        deliverables: [
+          "Carrosséis educativos (Dicas de estilo, combinações)",
+          "Stories interativos (Enquetes, batalhas de looks)",
+          "Bastidores da loja (Humanização)"
+        ],
+        expectedResult: "Aumento nos salvamentos, comentários e respostas aos stories."
+      },
+      {
+        number: 3,
+        title: "Fase 3: GERAR DESEJO",
+        objective: "Transformar interesse em vontade de comprar.",
+        deliverables: [
+          "Fotos de alta qualidade dos looks",
+          "Prova social de clientes vestindo Faby Magazine",
+          "Demonstração de caimento e detalhes das peças"
+        ],
+        expectedResult: "Público perguntando 'qual o valor?', 'tem meu tamanho?'"
+      },
+      {
+        number: 4,
+        title: "Fase 4: CONVERTER",
+        objective: "Fechar a venda e levar fluxo para a loja.",
+        deliverables: [
+          "CTA forte e claro para o WhatsApp",
+          "Campanhas de Mensagem no Meta Ads",
+          "Anúncios de urgência e condições facilitadas"
+        ],
+        expectedResult: "Mensagens diárias de clientes prontos para comprar."
+      }
+    ],
+
+    contentPillars: [
+      {
+        title: "Desejo & Estilo",
+        examples: [
+          "3 looks com a mesma peça",
+          "Look completo por menos de R$ 199",
+          "Aquele look que veste bem para o jantar"
+        ],
+        objective: "Mostrar usabilidade, caimento e combinações."
+      },
+      {
+        title: "Conversão & Ofertas",
+        examples: [
+          "Promoção urgente 48h",
+          "Pagamento facilitado em 10x sem juros",
+          "Chegou novidade e você precisa ver isso"
+        ],
+        objective: "Chamar atenção e levar pro WhatsApp direto."
+      },
+      {
+        title: "Relacionamento & Bastidores",
+        examples: [
+          "Organizando as araras",
+          "Escolha da equipe do look do dia",
+          "Enquetes: 'A ou B', o que você usaria?"
+        ],
+        objective: "Gerar proximidade com a Faby."
+      },
+      {
+        title: "Autoridade Comercial",
+        examples: [
+          "O caçado que combina com tudo",
+          "Como montar um look elegante sem gastar muito",
+          "Cores em alta da nova estação"
+        ],
+        objective: "Mostrar que a loja entende de moda."
+      }
+    ],
+
+    contentCalendar: [
+      {
+        profileName: "Faby Magazine",
+        profileHandle: "@fabymagazine",
+        objective: [
+          "Aumentar movimento da loja.",
+          "Crescer o alcance local.",
+          "Receber contatos de venda no WhatsApp."
+        ],
+        days: [
+          {
+            day: 1,
+            type: "Post Fixo",
+            format: "Foto",
+            theme: "Look da semana",
+            description: "Foto forte de um look feminino ou masculino completo com foco no desejo e na chamada para loja.",
+            objective: "Desejo + Visita",
+            cta: "Chame no WhatsApp ou venha provar na loja"
+          },
+          {
+            day: 2,
+            type: "Stories",
+            format: "Interativo",
+            theme: "Prova social + Enquete",
+            description: "Mostrar 3 peças e perguntar qual o público usaria.",
+            objective: "Interação",
+            cta: "Responda a enquete"
+          },
+          {
+            day: 3,
+            type: "Carrossel",
+            format: "Slider",
+            theme: "5 looks para ocasiões diferentes",
+            description: "Looks para trabalho, jantar, passeio, balada.",
+            objective: "Retenção + Salvar",
+            cta: "Salve esse post para se inspirar depois"
+          },
+          {
+            day: 4,
+            type: "Reels",
+            format: "Vídeo dinâmico",
+            theme: "1 peça, 3 formas de usar",
+            description: "Vídeo curto de transição com música em alta.",
+            objective: "Alcance de novos seguidores",
+            cta: "Comenta qual look é a sua cara"
+          },
+          {
+            day: 5,
+            type: "Post Fixo",
+            format: "Oferta",
+            theme: "Oferta Estratégica",
+            description: "Peça foco com condição facilitada e urgência sem parecer panfleto.",
+            objective: "Conversão",
+            cta: "Envie esse post para quem ama promoção boa"
+          },
+          {
+            day: 6,
+            type: "Stories",
+            format: "Bastidores",
+            theme: "Chegada de novidades",
+            description: "Caixa abrindo, detalhes, arara montada pela equipe.",
+            objective: "Humanização + Proximidade",
+            cta: "Deslize para reservar"
+          },
+          {
+            day: 7,
+            type: "Reels / Carrossel",
+            format: "Dica",
+            theme: "Tendência de estilo",
+            description: "Cores em alta ou calçados coringas.",
+            objective: "Autoridade comercial",
+            cta: "Quer mais dicas assim? Comenta EU QUERO"
+          }
+        ]
+      }
+    ],
+
+    services: [
+      {
+        name: "Gestão de Redes Sociais",
+        description: "Planejamento, criação e acompanhamento estratégico do Instagram com foco em posicionamento, relacionamento e vendas.",
+        icon: "megaphone",
+        items: [
+          "Organização do calendário de postagens",
+          "Definição de temas alinhados aos produtos",
+          "Criação de legendas estratégicas com SEO",
+          "Ajustes de linguagem para fortalecer a marca"
+        ],
+        price: "R$ 1.497",
+        priceType: "monthly"
+      },
+      {
+        name: "Estratégia + Cronograma",
+        description: "Construção da linha editorial, pilares, tom de voz e planejamento mensal claro de cada postagem (Reels, Carrossel, Stories).",
+        icon: "fileText",
+        items: [
+          "Definição dos pilares de atração e conversão",
+          "Calendário organizado (fixo, Reels, stories)",
+          "Sequência inteligente para Campanhas",
+          "Posicionamento local"
+        ],
+        price: "R$ 1.194",
+        priceType: "monthly"
+      },
+      {
+        name: "Tráfego Pago – Meta Ads",
+        description: "Gestão de anúncios para Caçador: \n\n🎯 Campanha 1 (Alcance): Mostrar a loja para quem ainda não conhece.\n🎯 Campanha 2 (Engajamento): Fazer o público interagir com os looks.\n🎯 Campanha 3 (Conversão/WhatsApp): Levar direto para o seu vendedor.",
+        icon: "target",
+        items: [
+          "Planejamento das 3 campanhas essenciais",
+          "Criação e segmentação para o raio da loja",
+          "Otimização constante",
+          "Acompanhamento de conversões"
+        ],
+        price: "R$ 850",
+        priceType: "monthly",
+        priceNote: "Investimento de mídia sugerido: R$ 25/dia (R$ 375 na quinzena inicial)."
+      },
+      {
+        name: "Captação de Imagens e Vídeos",
+        description: "Ação presencial! Durante esse dia, vamos produzir: 10 a 20 vídeos curtos (Reels), fotos de looks, bastidores, prova de produto e material para anúncios. Uma diária gera conteúdo para o mês todo.",
+        icon: "camera",
+        items: [
+          "1 diária mensal de captação agendada",
+          "Vídeos comerciais e dinâmicos para Reels",
+          "Fotos de produtos e prova de caimento",
+          "Conteúdo voltado diretamente para conversão"
+        ],
+        price: "R$ 1.200",
+        priceType: "monthly"
+      }
+    ],
+
+    investment: {
+      totalMonthly: "R$ 1.600",
+      totalLabel: "Pacote Completo - Faby Magazine🍒",
+      originalPrice: "R$ 4.741",
+      savings: "R$ 3.141",
+      packageIncludes: [
+        "Gestão Integrada de Redes Sociais",
+        "Desenvolvimento do Cronograma Editorial Mensal",
+        "Estratégia de Linha Editorial Completa",
+        "Gestão de Tráfego Pago (Instagram e Facebook)",
+        "01 Diária Mensal para Captação de Imagens e Vídeos",
+      ],
+      breakdown: [
+        { item: "Valor Individual dos Serviços", value: "R$ 4.741" },
+        { item: "Economia no Pacote Completo", value: "R$ 3.141 todo mês" },
+        { item: "🎁 BÔNUS INCLUSO 1", value: "Otimização Biografia e Destaques" },
+        { item: "🎁 BÔNUS INCLUSO 2", value: "Organização do SEO no Perfil" },
+      ],
+      paymentConditions: [
+        "Trabalhamos de forma simples e justa: Pagamento Mensal.",
+        "Sem contato de fidelidade. Fechou, trabalhamos 30 dias. Geração de resultados retém clientes melhor que multas.",
+        "Trabalhamos com vagas limitadas para lojistas na região para manter nossa altíssima entrega. Reserve a sua."
+      ],
+      notes: [
+        "O valor do investimento em Meta Ads (Plataforma) não está incluso neste pacote.",
+        "Para iniciar conosco, recomendamos os R$ 375 investidos em cartão diretamente na conta de anúncios para os primeiros 15 dias de teste acelerado.",
+        "Caso seja necessário mais diárias de gravação num mês de lançamento, cobramos avulso o valor negociado previamente."
+      ]
+    }
+  }
 ];
 
 // ============================================================

@@ -10,6 +10,7 @@ interface ProposalCTAProps {
   contactName: string;
   validUntil: string;
   whatsappNumber: string;
+  closingQuestion?: string;
 }
 
 function useCountdown(targetDate: string) {
@@ -54,6 +55,7 @@ export function ProposalCTA({
   contactName,
   validUntil,
   whatsappNumber,
+  closingQuestion,
 }: ProposalCTAProps) {
   const countdown = useCountdown(validUntil);
 
@@ -141,11 +143,17 @@ export function ProposalCTA({
               </span>{" "}
               seus resultados?
             </h2>
-            <p className="text-lg md:text-xl text-white/70 font-light max-w-xl mx-auto">
-              Estamos a um clique de transformar o digital da{" "}
-              <strong className="text-white font-semibold">{clientName}</strong>. Aceite a proposta
-              e vamos começar!
-            </p>
+            {closingQuestion ? (
+              <p className="text-lg md:text-xl text-white/90 font-medium max-w-2xl mx-auto italic px-4 py-4 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm">
+                "{closingQuestion}"
+              </p>
+            ) : (
+              <p className="text-lg md:text-xl text-white/70 font-light max-w-xl mx-auto">
+                Estamos a um clique de transformar o digital da{" "}
+                <strong className="text-white font-semibold">{clientName}</strong>. Aceite a proposta
+                e vamos começar!
+              </p>
+            )}
           </motion.div>
 
           {/* CTA Buttons */}
