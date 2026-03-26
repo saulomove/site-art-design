@@ -120,6 +120,13 @@ export interface Proposal {
   faq?: { question: string; answer: string }[];
   ecommerceAnalysis?: { title: string; items: string[] };
   bonus?: { title: string; items: string[] };
+  commissionModel?: {
+    title: string;
+    subtitle: string;
+    description: string;
+    features: { title: string; description: string }[];
+    closingText: string;
+  };
 }
 
 // ============================================================
@@ -2547,11 +2554,28 @@ export const proposals: Proposal[] = [
       }
     ],
 
+    commissionModel: {
+      title: "O Modelo de Parceria",
+      subtitle: "Nós apostamos com você.",
+      description: "Custo operacional digital pesa, principalmente ao tracionar múltiplas lojas. Para não estrangular o orçamento da MSI Voltz e iniciarmos com tração total nas 3 unidades (Videira, Fraiburgo e Curitibanos) de uma só vez, aplicamos nosso formato de **Coparticipação Digital de Risco**.",
+      features: [
+        {
+          title: "Base Operacional Ultra-Acessível",
+          description: "Nossa agência subsidia a maior parte do custo da operação para viabilizar as 3 lojas de uma vez. O que custaria um fixo de R$ 6.940, reduzimos para R$ 1.750 mensais na parcela."
+        },
+        {
+          title: "Ganha-Ganha: 3% das Vendas",
+          description: "Como somos nós operando o tráfego e as ferramentas online de venda, nós recebemos um Success Fee de apenas 3% de cada venda concretizada por sua Nuvemshop ou Marketplaces ativados. Simples e justo."
+        }
+      ],
+      closingText: "Sabe por que fazemos isso? Porque o nosso real lucro não virá da manutenção de R$ 1.750. Virá do volume de motos que vamos ajudar a vender no seu digital. Nossos objetivos agora são os mesmos."
+    },
+
     investment: {
-      totalMonthly: "R$ 4.990",
-      totalLabel: "Pacote Estrutura Digital MSI+",
+      totalMonthly: "R$ 1.750",
+      totalLabel: "Pacote Estrutura Digital MSI+ (Fixo)",
       originalPrice: "R$ 6.940",
-      savings: "R$ 1.950",
+      savings: "R$ 5.190",
       packageIncludes: [
         "Plano Executivo de Redes Sociais Mensal",
         "Engenharia da Grade e Fatores de Atração dos Posts",
@@ -2561,13 +2585,15 @@ export const proposals: Proposal[] = [
         "Apoios na Geração das descrições do Marketplace"
       ],
       breakdown: [
-        { item: "Mensalidade do Combo Especial Limitado", value: "R$ 4.990 fixos" },
-        { item: "Economia Financeira e Otimizada P/ Nós Absorver Toda Linha Tática", value: "R$ 1.950 Garantidos!" }
+        { item: "Valor Individual dos Serviços", value: "R$ 6.940 mensais" },
+        { item: "Parcela Fixa Subsidiada das 3 Lojas", value: "R$ 1.750 fixos" },
+        { item: "Coparticipação (Success Fee Partner)", value: "Apenas 3% por venda online" },
+        { item: "Economia Fixa Ancorada", value: "R$ 5.190 todo mês economizado" }
       ],
       paymentConditions: [
         "Sem contato forçado e estúpido de fidelidade a longo prazo. Renovação super descomplicada e cíclica.",
-        "Trabalharmos para gerar resultados consistentes, esse é o motivo do cliente não evadir. Simples.",
-        "Se não for proveitoso depois das etapas, feche o negócio com dignidade sem taxas surpresas."
+        "Trabalharmos para gerar resultados consistentes, esse é o motivo do cliente não evadir.",
+        "A taxa de Coparticipação (3%) ocorre exclusivamente sobre as vendas viabilizadas ou convertidas diretamente na Nuvemshop C/ nosso tráfego ou Marketplaces estruturados."
       ],
       notes: [
         "A verba extra (Budget injetado) da própria inteligência nos Meta Ads Platform não compõe essa precificação de gestão estratégica listada em nossa gestão supracitada. Será injetado sempre pelo cliente após discussões de investimentos."

@@ -24,6 +24,7 @@ import { ProposalSimulation } from "@/components/proposal/proposal-simulation";
 import { ProposalEcommerceAnalysis } from "@/components/proposal/proposal-ecommerce-analysis";
 import { ProposalFAQ } from "@/components/proposal/proposal-faq";
 import { ProposalBonus } from "@/components/proposal/proposal-bonus";
+import { ProposalCommissionModel } from "@/components/proposal/proposal-commission-model";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 interface ProposalPageProps {
@@ -149,6 +150,11 @@ export default function ProposalPage({ params }: ProposalPageProps) {
           {/* Social Media: Calendário de Conteúdo */}
           {proposal.contentCalendar && proposal.contentCalendar.length > 0 && (
             <ProposalContentCalendar contentCalendar={proposal.contentCalendar} />
+          )}
+
+          {/* Social Media: Parceria Compartilhada (NEW) */}
+          {proposal.commissionModel && (
+            <ProposalCommissionModel commissionModel={proposal.commissionModel} />
           )}
 
           {/* Social Media: Investimento */}
