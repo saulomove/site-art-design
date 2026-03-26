@@ -116,6 +116,10 @@ export interface Proposal {
   proposalType?: "social_media" | "crm";
   closingQuestion?: string;
   beforeAfter?: ProposalBeforeAfter;
+  simulation?: { title: string; items: string[] };
+  faq?: { question: string; answer: string }[];
+  ecommerceAnalysis?: { title: string; items: string[] };
+  bonus?: { title: string; items: string[] };
 }
 
 // ============================================================
@@ -2259,6 +2263,352 @@ export const proposals: Proposal[] = [
         "Caso seja necessário mais diárias de gravação num mês de lançamento, cobramos avulso o valor negociado previamente."
       ]
     }
+  },
+
+  // ---- MSI VOLTZ ----
+  {
+    slug: "msi-voltz",
+    clientName: "MSI Voltz",
+    contactName: "Equipe",
+    greeting: "Preparamos uma proposta-base estratégica, pensada e montada exclusivamente para a MSI Voltz, com foco total em conversão comercial. 🔥",
+    validUntil: "2026-04-05",
+    whatsappNumber: "5549999094360",
+
+    analysis: {
+      intro: "Realizamos uma análise do seu perfil e ecossistema digital para identificar pontos fortes, de atenção e oportunidades táticas.",
+      strengths: [
+        { title: "Apelo comercial muito forte", description: "O produto se vende com benefícios claros: economia, praticidade, mobilidade e inovação sem depender de gasolina." },
+        { title: "Nicho com alto potencial", description: "Alto poder de desejo local e regional em Curitibanos, Videira e Fraiburgo." },
+        { title: "Interesse real na compra", description: "Vários comentários de usuários reais giram em torno de valor, localização e formas de adquirir." },
+        { title: "Bons formatos em ação", description: "Conteúdos que trazem evento, contexto humano, novidade ou lifestyle da equipe alcançam boas métricas." }
+      ],
+      opportunities: [
+        { title: "Vício do 'Post Promocional'", description: "Atualmente, muita vitrine pura de produto e preço. Faz girar no início, mas não alavanca o crescimento extremo da marca." },
+        { title: "Falta de consistência geral", description: "Pouca robustez de identidade visual e de cruzamento de posicionamento entre as unidades." },
+        { title: "Escala nas legendas", description: "Legendas sendo sub-utilizadas para tráfego orgânico via SEO (pesquisa regional)." },
+        { title: "Objeções ocultas", description: "Falta responder fortemente nas postagens as grandes dores: Precisa CNH? Tem bateria? Posso parcelar? Tem a manutenção na própria loja?" },
+        { title: "Risco de comotização", description: "No Instagram atual, ser só vitrine isola a marca da conectividade com o cliente final." }
+      ],
+      conclusion: "A proposta ideal para a MSI Voltz não deve vender só 'postagem'. Ela precisa entregar uma \n\nESTRUTURA COMERCIAL DIGITAL ATIVA:\n1. Fortalecimento da Marca (confiança).\n2. Geração de Demanda (volume de mensagens).\n3. Otimização das Ferramentas da Loja Física na forma Digital (E-commerce e Site)."
+    },
+
+    ecommerceAnalysis: {
+      title: "Mini Diagnóstico Extra — Loja Online (Nuvemshop)",
+      items: [
+        "A aparência do portal pode melhorar para transmitir seriedade de uma concessionária moderna.",
+        "Existe falta de hierarquia visual e vitrines destacadas por seções.",
+        "Produtos sem destaque adequado ou descrições ricas, focando mais na transação mecânica do que na jornada do cliente.",
+        "Experiência e categorizações pouco elaboradas impedem navegabilidade.",
+        "Possui um altíssimo potencial de personalização dentro da própria lógica da Nuvemshop a ser escalada."
+      ]
+    },
+
+    beforeAfter: {
+      beforeTitle: "Situação atual",
+      beforeItems: [
+        "Postagens muitas vezes curtas, sem estratégia ou objetivo definido",
+        "Concentração num só canal, muito em preço/descontos e venda isolada",
+        "Baixo engajamento ou relacionamento prolongado no funil digital",
+        "Menor diferenciação ou descolamento estético dos concorrentes online"
+      ],
+      afterTitle: "Potencial Absoluto",
+      afterItems: [
+        "Conteúdos que fisgam o cliente e trabalham até a tomada de decisão",
+        "Educação e quebra constante de objeções comuns de mobilidade",
+        "Aceleração de contatos de demanda no Whatsapp com tráfego inteligente",
+        "Marca extremamente forte e loja fluindo em Vendas de Autopropelidos"
+      ],
+      expectedResults: "Chegou a hora de sair de apenas mais uma loja virtual de motos, e tornar um Ecossistema que atrai e retém desejo humano das ruas na sua máquina corporativa digital."
+    },
+
+    simulation: {
+      title: "O que pode acontecer nos primeiros 30 dias",
+      items: [
+        "Alcance maciço de público na cidade com lembrança de marca reforçada diariamente.",
+        "Crescimento real de novas pessoas te descobrindo e chamando no botão de WhatsApp.",
+        "Sinal e movimentação percebida nas visitas diretamente na loja física/unidade.",
+        "Reconhecimento como a principal referência regional em veículos elétricos e economia.",
+        "Visual orgulhoso e muito profissional refletindo o valor dos produtos expostos."
+      ]
+    },
+
+    phases: [
+      {
+        number: 1,
+        title: "Semana 1: Alinhamento e Visual",
+        objective: "Criar fundação do cenário.",
+        deliverables: [
+          "Alinhamento estratégico rigoroso e base do negócio",
+          "Organização extrema do perfil no feed e destaques",
+          "Definições oficiais de identidade e comunicação verbal"
+        ],
+        expectedResult: "Casa Arrumada."
+      },
+      {
+        number: 2,
+        title: "Semana 2: O Motor Gira",
+        objective: "Plano no terreno.",
+        deliverables: [
+          "Início pontual das postagens ativas de conteúdo",
+          "Abertura em campo da 1ª grande Campanha no Meta Ads (Facebook/Instagram)"
+        ],
+        expectedResult: "Tráfego ativado e girando pessoas."
+      },
+      {
+        number: 3,
+        title: "Semana 3: Captação",
+        objective: "Combustível de Conversões.",
+        deliverables: [
+          "Materialização do Dia de Captação e Imagens Profissionais",
+          "Ajustes de copy nas campanhas vigentes",
+          "Acompanhamento da volumetria no Whatsapp"
+        ],
+        expectedResult: "Bateria carregada de novidades."
+      },
+      {
+        number: 4,
+        title: "Semana 4: Velocidade Cruzeiro",
+        objective: "Otimizar e Ampliar.",
+        deliverables: [
+          "Otimização geral dos criativos e segmentação no Tráfego Pago",
+          "Leitura dos resultados parciais para escalabilidade",
+          "Engatilhamento natural das próximas estratégias de escala"
+        ],
+        expectedResult: "Previsibilidade Comercial iniciada."
+      }
+    ],
+
+    contentPillars: [
+      {
+        title: "Atração e Topo (40%)",
+        examples: ["Economia em Gasolina", "Sensação Lifestyle", "Rotinas Urbanas com fluidez"],
+        objective: "Atrair base fria para o negócio."
+      },
+      {
+        title: "Autoridade Certa (30%)",
+        examples: ["Bastidores da própria loja física", "Estrutura de mecânica ativa e suporte rápido", "Atendimentos Reais"],
+        objective: "Construção local de extrema credibilidade perante rivais."
+      },
+      {
+        title: "Destranca Objeção (20%)",
+        examples: ["Mas gasta bateria e energia?", "O emplacamento?", "Não tem força?", "E as chuvas?"],
+        objective: "Informar antes do lead chegar armado de inseguranças."
+      },
+      {
+        title: "Foco Oferta Forte (10%)",
+        examples: ["Condições Avassaladoras", "Super parcelamentos das linhas exclusivas", "Calls To Action"],
+        objective: "Fechamento Direto na boca do funil."
+      }
+    ],
+
+    contentCalendar: [
+      {
+        profileName: "MSI Voltz | Piloto Principal",
+        profileHandle: "@msi_voltz",
+        objective: ["Exemplo Tático de Grade de Publicação do Material Semanal"],
+        days: [
+          {
+            day: 1,
+            type: "Atração de Impacto",
+            format: "Reels / Vídeo Curto",
+            theme: "'Quanto você pode economizar trocando a gasolina por um motor elétrico hoje?'",
+            description: "Conteúdo focado com imagens fortes do deslocamento nas cidades de atuação + letreiros gigantes.",
+            objective: "Atração via dores latentes atuais e fáceis (Gasolina cara) e gatilhos comparativos lógicos.",
+            cta: "Aciona nosso time ali no Whatsapp agora mesmo!"
+          },
+          {
+            day: 2,
+            type: "Forte Objeção (Explicador)",
+            format: "Carrossel Gráfico (Slides)",
+            theme: "As '5 grandes dúvidas' travadas na garganta da galera local.",
+            description: "Dúvidas essenciais no ar destrinchadas num conteúdo visual (Ex: Precisa emplacar? Agilidade no morro? CNH?)",
+            objective: "Eliminar a vergonha do provável comprador via educação.",
+            cta: "Chega de dúvida: Salve esse guia."
+          },
+          {
+            day: 3,
+            type: "Decisão Comercial",
+            format: "Post Fixo C/ Produto Único",
+            theme: "Destaque Pesado do Scooter/Moto da Quinzena.",
+            description: "Uma headline insana ressaltando apenas aquele modelo na sua melhor luz fotográfica.",
+            objective: "Despertar urgência focal num tipo de produto.",
+            cta: "Unidades limitadíssimas pra essa cor."
+          },
+          {
+            day: 4,
+            type: "Autoridade Visceral",
+            format: "Reels Institucional Dinâmico",
+            theme: "A Força Genuína Oculta nos seus Bastidores.",
+            description: "Cenas empolgantes ou bem estruturadas mostrando a mecânica em volta e do atendimento sério do time.",
+            objective: "Provocar a prova real social nas cabeças difusas das pessoas comparando a MSI em relação a lojinha local sem porte.",
+            cta: "Nós só paramos, quando resolvemos o percurso inteiro pra você."
+          },
+          {
+            day: 5,
+            type: "Conexão Pessoal Estilo",
+            format: "Carrossel Dinâmico",
+            theme: "O Match Ideal: Para quem exatamente esse veículo x faz sentido bruto?",
+            description: "Listagem apontada com o dedo do estilo que mais serve se para motoboys e rotina maluca, e qual foca mais num simples traslado leve, isolando o foco de atenção de cada target sem eles saírem do Instagram de vocês.",
+            objective: "Nicho. Segmentar e isolar a tribo.",
+            cta: "Fala pra gente nos cometários, em qual rota dessas o autopropelido é a sua salvação atual?"
+          },
+          {
+            day: 6,
+            type: "Tiro Corto Story Varejista",
+            format: "Super Sequência de Stories",
+            theme: "Oferta e Oportunidades no calor.",
+            description: "Táticas de aproximação real dos bastidores do final de semana na loja. Acompanhando de um Story link direto para a loja preta do site com o botão oficial sem travamento.",
+            objective: "Acordar os 'espectadores' para tomadores de ação orgânica no D-1 e fim do mês.",
+            cta: "Link ali e agende um simples Test Drive para hoje ainda."
+          },
+          {
+            day: 7,
+            type: "Fechamento Exclusivo",
+            format: "Post Fixo / Story em conjunto.",
+            theme: "A Segurança da compra em 3 unificações na sua loja matriz e filiais.",
+            description: "Bater a chancela sobre o serviço completo desde o pré e o incrível suporte pós venda super acessível com a MSI Voltz, focada na segurança do local/pessoa certa e garantida de estar operando sério pra ti onde quer que a moto esteja.",
+            objective: "Fechar na balança como marca líder invicta.",
+            cta: "Mande direct pra fechar parceria conosco via agendamento."
+          }
+        ]
+      }
+    ],
+
+    services: [
+      {
+        name: "Gestão Operacional das Redes Sociais",
+        description: "Transformar os feeds do Instagram da sua vitrine parada para serem o seu canal com ativa escala comercial tática local e forte presença humana.",
+        icon: "monitorPlay",
+        items: [
+          "Planejamento robusto de estratégias mensais em mídias orgânicas",
+          "Execução rígida de pautas da linha focada no SEO de pesquisas locais da região",
+          "Direções de conteúdos (Carrosséis atrativos, Dinâmicos em Reels)",
+          "Acompanhamento da régua de performance gerada"
+        ],
+        price: "R$ 1.490",
+        priceType: "monthly"
+      },
+      {
+        name: "Estratégia e Cronogramas do Material Vertical",
+        description: "Alinharemos não só 'uma postagem', e sim toda a grade e inteligência da rede por inteiro visando os próximos passos de compra dos clientes.",
+        icon: "clipboardList",
+        items: [
+          "Calendário visual estrutural das deficiências mapeadas pra vendas",
+          "Estudado alinhamento sobre quebras de dores focais atreladas no mês e calendário varejo comercial sazonal"
+        ],
+        price: "R$ 690",
+        priceType: "monthly"
+      },
+      {
+        name: "Captação Premium Híbrida em Imagens e Vídeos",
+        description: "Vamos pessoalmente fazer o seu banco real sem usar apenas materiais robóticos dos grandes fabricantes industrias. Mostrando como ela opera com vocês nas suas dependências com humanos.",
+        icon: "video",
+        items: [
+          "1 poderosa Diária fechada presencial em rotinas pra suprir conteúdo na quinzena inteira",
+          "Gravação de ganchos que performam, conteúdos educacionais ou pautas 'trend' do momento para surfe livre nas ondas da web. Tira a estaca morta de foto na luz fria."
+        ],
+        price: "R$ 1.290",
+        priceType: "monthly"
+      },
+      {
+        name: "Gerenciamento Avançado Meta Ads (Tráfego Pago)",
+        description: "Comprar inteligência da rede social visando segmentar e forçar o aparecimento da sua nova comunicação estritamente para pessoas das 3 cidades das filiais ou regiões em um raio hiper quente em potencial.",
+        icon: "rocket",
+        items: [
+          "Estrutura e Gestão dos seus orçamentos dentro da Meta de Inteligência Comercial (Alcance ou Cadastro/Mensagens via Whats).",
+          "Testes de A/B agressivos de cópia nas campanhas de performance",
+          "Ajustes métricos para escalar as verbas iniciais propostas com responsabilidade ao invés de jogar aos ventos dos boosts comuns."
+        ],
+        price: "R$ 890",
+        priceType: "monthly",
+        priceNote: "Para aquecimento ágil inicial: +R$ 375 de Verba Adicional Mínima pra depositar via banco/cartão no algoritmo Ads gerindo uns incríveis primeiros 15 dias de disparo base de teste (Sugerido)."
+      },
+      {
+        name: "Auxílio Em Escalabilidade nos Marketplaces",
+        description: "Garantir a expansão além apenas dos sites e instagram. O comércio tá pegando fogo e onde podemos te dar suporte estratégico lá estamos para auxiliar fortemente com direções de uso.",
+        icon: "packagePlus",
+        items: [
+          "Organização de padronagens fotográficas e título forte de alcance lá",
+          "Frentes estratégicas competitivas orientando entrada e melhora visual para briga com concessionárias menores no país"
+        ],
+        price: "R$ 890",
+        priceType: "monthly"
+      },
+      {
+        name: "Remodelação Pesada na Loja Oficial Online e Edição (Nuvemshop)",
+        description: "O Site é o principal funil ou poço sem fundo dos seus leads. Não aceitaremos a estrutura anterior simples frente ao nosso trabalho árduo. Iremos moldar as bases com carinho.",
+        icon: "shoppingCart",
+        items: [
+          "Geração do novo Layout e reorganização da vitrine (Banners de alto nível e confiança de segurança no site)",
+          "Arquitetura de sub-seções facilitadas nas páginas nativas do fornecedor para os produtos e clareza total de conversões sem susto em copys fáceis."
+        ],
+        price: "R$ 1.690",
+        priceType: "monthly"
+      }
+    ],
+
+    investment: {
+      totalMonthly: "R$ 4.990",
+      totalLabel: "Pacote Estrutura Digital MSI+",
+      originalPrice: "R$ 6.940",
+      savings: "R$ 1.950",
+      packageIncludes: [
+        "Plano Executivo de Redes Sociais Mensal",
+        "Engenharia da Grade e Fatores de Atração dos Posts",
+        "Investida Focada nas Campanhas Patrocinadas Regionais",
+        "01 Diária de Captação Físico Audiovisual na Unidade Combinada",
+        "Transformação Completa Estética na Nuvemshop Interna do Negócio",
+        "Apoios na Geração das descrições do Marketplace"
+      ],
+      breakdown: [
+        { item: "Mensalidade do Combo Especial Limitado", value: "R$ 4.990 fixos" },
+        { item: "Economia Financeira e Otimizada P/ Nós Absorver Toda Linha Tática", value: "R$ 1.950 Garantidos!" }
+      ],
+      paymentConditions: [
+        "Sem contato forçado e estúpido de fidelidade a longo prazo. Renovação super descomplicada e cíclica.",
+        "Trabalharmos para gerar resultados consistentes, esse é o motivo do cliente não evadir. Simples.",
+        "Se não for proveitoso depois das etapas, feche o negócio com dignidade sem taxas surpresas."
+      ],
+      notes: [
+        "A verba extra (Budget injetado) da própria inteligência nos Meta Ads Platform não compõe essa precificação de gestão estratégica listada em nossa gestão supracitada. Será injetado sempre pelo cliente após discussões de investimentos."
+      ]
+    },
+
+    bonus: {
+      title: "Cerejas do Bolo para Acionamento Inicial do Pacote!",
+      items: [
+        "Limpeza Imediata e Re-engenharia de Copywriting na Bio do Perfil do Instagram 🚀",
+        "Desenvolvimentos Estéticos Completos dos seus Destaques do Instagram em Alto Padrão Digital 🎨",
+        "Tiro Inicial no Sistema E-commerce para você e os clientes passíveis notarem visibilidade e confiança na 1ª Semana 🛡",
+        "Pé na tábua das contas Ads na Meta para geração das primeiras campanhas não se arrastando ⚙"
+      ]
+    },
+
+    faq: [
+      {
+        question: "Isso da certo mesmo para o porte da cidade X na sub-região e interior?",
+        answer: "Pode apostar que funciona incrivelmente bem! Ao contrário dos grandes pólos metropolitanos enlouquecidos e caros no leilão virtual dos acessos; investir pesado inteligentemente e hiper-segmentado nesses nichos curtos rendem vendas expressivas e posicionamento de titã frente na rua central rapidamente e a curtos preços no digital diário."
+      },
+      {
+        question: "Será que nossa equipe vai saber lidar com tráfego e gravações das pautas?",
+        answer: "Sem burocracias pesadas. O banco de captação que faremos alimenta com e sem uso estressante da imagem ou desgaste dos donos ou frente de vendas em vídeos com cara de 'apresentador'. Usa os que querem. No tráfego nós gerenciamos os fluxões pesados e lincamos no botões. Você atende os negócios pelo CRM local já."
+      },
+      {
+        question: "Teríamos que colocar quantias gigantes para divulgar nos anúncios?",
+        answer: "Teste escalável. Falei para darmos o primeiro bote com uns simples e potentes R$ 375 injetados no cartões fracionados em módicos quinzenais testando a máquina de interesse. Ao se validar na prática a taxa de retorno positivo, você mesmo vai colocar mais verbas no pote mês a mês feliz com os leads caindo quentíssimos aí."
+      },
+      {
+        question: "E demora que os clientes vejam 'esse antes x depois' de vocês?",
+        answer: "Do dia zero a diferença é assustadora já em pouquíssimo tempo pro cliente recorrente (Ele nota a mudança de casa). E a geração dos contatos de anúncios se bem enquadradas já podem jorrar perguntas nos Whatsapp do seu funil entre a marcação dos 5 a 14 dias incialmente do mês 1, enquanto escalamos!"
+      }
+    ],
+
+    differentials: [
+      "Visão 360 Graus. Sem pensar só 'No postzinho' sem métrica.",
+      "Análise aprofundada nos dados da Loja E-Commerce Virtual (Um abismo não trabalhado antes).",
+      "Experiências completas das marcas fortes em mercado Digital Moderno."
+    ],
+    closingQuestion: "E aí equipe MSI Voltz, fechado a proposta pra alavancarmos como devem?\nA ArtDesign já tá preparadíssima!\nVamos subir a régua das negociações de mobilidade online em 30 dias juntos. Aguardo o alinhamento definitivo nos telefones/wpp hoje."
   }
 ];
 

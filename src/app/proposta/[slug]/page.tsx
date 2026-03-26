@@ -20,6 +20,10 @@ import { ProposalCRMDiagnosis } from "@/components/proposal/proposal-crm-diagnos
 import { ProposalCRMFeatures } from "@/components/proposal/proposal-crm-features";
 import { ProposalCRMShowcase } from "@/components/proposal/proposal-crm-showcase";
 import { ProposalCRMKanban } from "@/components/proposal/proposal-crm-kanban";
+import { ProposalSimulation } from "@/components/proposal/proposal-simulation";
+import { ProposalEcommerceAnalysis } from "@/components/proposal/proposal-ecommerce-analysis";
+import { ProposalFAQ } from "@/components/proposal/proposal-faq";
+import { ProposalBonus } from "@/components/proposal/proposal-bonus";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 interface ProposalPageProps {
@@ -100,6 +104,11 @@ export default function ProposalPage({ params }: ProposalPageProps) {
             />
           )}
 
+          {/* Social Media: Simulação (O que acontece em 30 dias) */}
+          {proposal.simulation && (
+            <ProposalSimulation simulation={proposal.simulation} />
+          )}
+
           {/* Social Media: Análise de Perfis (multi-perfil) */}
           {proposal.profileAnalyses && proposal.profileAnalyses.length > 0 && (
             <ProposalProfileAnalysis
@@ -114,6 +123,11 @@ export default function ProposalPage({ params }: ProposalPageProps) {
               analysis={proposal.analysis}
               clientName={proposal.clientName}
             />
+          )}
+
+          {/* Social Media: Análise de E-commerce */}
+          {proposal.ecommerceAnalysis && (
+            <ProposalEcommerceAnalysis ecommerceAnalysis={proposal.ecommerceAnalysis} />
           )}
 
           {/* Social Media: Destaques */}
@@ -143,6 +157,11 @@ export default function ProposalPage({ params }: ProposalPageProps) {
             clientName={proposal.clientName}
           />
 
+          {/* Social Media: Bônus Exclusivos */}
+          {proposal.bonus && (
+            <ProposalBonus bonus={proposal.bonus} />
+          )}
+
           {/* Social Media: Diferenciais */}
           {proposal.differentials && (
             <ProposalDifferentials differentials={proposal.differentials} />
@@ -151,6 +170,11 @@ export default function ProposalPage({ params }: ProposalPageProps) {
           {/* Social Media: Serviços Opcionais */}
           {proposal.optionalServices && proposal.optionalServices.length > 0 && (
             <ProposalOptionalServices services={proposal.optionalServices} />
+          )}
+
+          {/* Social Media: Dúvidas Frequentes (FAQ) */}
+          {proposal.faq && proposal.faq.length > 0 && (
+            <ProposalFAQ faq={proposal.faq} />
           )}
         </>
       )}
