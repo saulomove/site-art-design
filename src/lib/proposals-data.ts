@@ -46,6 +46,13 @@ export interface ProposalAnalysis {
   conclusion: string;
 }
 
+export interface ProposalEcosystemAnalysisItem {
+  title: string;
+  subtitle?: string;
+  strengths: ProposalAnalysisPoint[];
+  opportunities: ProposalAnalysisPoint[];
+}
+
 export interface ProposalProfileAnalysisItem {
   profileName: string;
   profileHandle: string;
@@ -127,6 +134,7 @@ export interface Proposal {
     features: { title: string; description: string }[];
     closingText: string;
   };
+  ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
 }
 
 // ============================================================
@@ -134,6 +142,330 @@ export interface Proposal {
 // ============================================================
 
 export const proposals: Proposal[] = [
+  // ---- DR JAMES OLAYA ----
+  {
+    slug: "dr-james-olaya",
+    clientName: "Dr. James Olaya",
+    contactName: "James",
+    greeting: "Preparamos uma proposta estratégica completa para estruturar e escalar seu ecossistema digital.",
+    validUntil: "2026-04-10",
+    whatsappNumber: "5549988446685",
+    highlights: [
+      "Foco não é apenas 'crescer', é organizar para escalar",
+      "Ecossistema completo: Instagram, Loja, Academy e Laser",
+      "Design de marca pessoal com autoridade técnica real",
+      "Estratégia comprovada focada em conversão"
+    ],
+    analysis: {
+      intro: "Baseado em uma análise profunda do Instagram e dos perfis associados, estas são as conclusões sobre seu momento digital atual:",
+      strengths: [
+        {
+          title: "Autoridade técnica extremamente bem posicionada",
+          description: "Conteúdos com profundidade real. Explicações técnicas que te colocam acima de 90% do mercado."
+        },
+        {
+          title: "Conteúdo que educa + vende ao mesmo tempo",
+          description: "Estrutura forte de problema → explicação → solução → CTA."
+        },
+        {
+          title: "Uso estratégico de Call-to-Actions (CTAs)",
+          description: "Alto engajamento que gera leads orgânicos e abertura de conversas reais na DM."
+        },
+        {
+          title: "Potencial massivo de viralização",
+          description: "Demonstrado através de casos com mais de 142 mil curtidas, indicando alta conexão emocional."
+        }
+      ],
+      opportunities: [
+        {
+          title: "Falta de estrutura clara de funil",
+          description: "As publicações retêm atenção, mas existe uma falha entre conteúdo e a venda. O lead não desce com facilidade, perdendo conversões."
+        },
+        {
+          title: "Excesso de foco em microlabial",
+          description: "Grande volume de conteúdo num ponto único limita a percepção dos outros serviços e da própria Academy e Laser."
+        },
+        {
+          title: "Falta de segmentação de público",
+          description: "Misturar cliente final, iniciantes e avançados na mesma linha contínua reduz a eficiência e não direciona para o ticket mais alto."
+        },
+        {
+          title: "Séries de conteúdos de valor contínuo",
+          description: "Falta criar narrativas longas - séries diárias ou análises de casos reais que ativem os gatilhos emocionais da retenção profunda."
+        }
+      ],
+      conclusion: "Você já é uma grande autoridade, já possui um excelente produto e já constrói bastante engajamento. O próximo passo lógico do negócio não é esticar o que você faz hoje, mas sim montar um sistema focado puramente em escalar suas vendas via automação da estrutura."
+    },
+    ecosystemAnalyses: [
+      {
+        title: "Jay Loja",
+        subtitle: "E-Commerce",
+        strengths: [
+          {
+            title: "Branding forte",
+            description: "Produtos com marca própria formam uma base sólida."
+          },
+          {
+            title: "Boa estrutura comercial inicial",
+            description: "Condições como Pix, Parcelamento e Combos integrados."
+          }
+        ],
+        opportunities: [
+          {
+            title: "Produtos esgotados",
+            description: "Uma imensa perda de vendas e gatilhos por falhas logísticas."
+          },
+          {
+            title: "Baixa integração social",
+            description: "Inexistência de storytelling forte ligando os conteúdos do Instagram à Loja."
+          }
+        ]
+      },
+      {
+        title: "Jay Academy",
+        subtitle: "Educação & Cursos",
+        strengths: [
+          {
+            title: "Autoridade técnica incontestável",
+            description: "Referência absoluta para o aluno."
+          },
+          {
+            title: "Promessa clara de transformação",
+            description: "Gera valor de vida real para a carreira dos alunos."
+          }
+        ],
+        opportunities: [
+          {
+            title: "Dispersão de entrada",
+            description: "Múltiplas páginas confundem o caminho da venda."
+          },
+          {
+            title: "Falta de funil e UPSELL contínuo",
+            description: "Não existe esteira estruturada de produtos para conduzir o aluno do início ao ticket alto avançado."
+          }
+        ]
+      },
+      {
+        title: "Jayo Laser",
+        subtitle: "Tecnologia & Equipamento",
+        strengths: [
+          {
+            title: "Produto de altíssima demanda",
+            description: "Soluciona grande dor do mercado estético atual."
+          },
+          {
+            title: "Posicionamento técnico premium",
+            description: "Perfeito complemento para o hub do profissional."
+          }
+        ],
+        opportunities: [
+          {
+            title: "Limitações da estrutura digital atual",
+            description: "As plataformas atuais não suportam nem escalam a demanda gerada, com sérios desafios em captação de prospects."
+          }
+        ]
+      },
+      {
+        title: "Google Meu Negócio",
+        subtitle: "Clínica Local & Posicionamento",
+        strengths: [
+          {
+            title: "Selo de existência digital",
+            description: "Estrutura básica registrada para contato rápido de indicações."
+          }
+        ],
+        opportunities: [
+          {
+            title: "SEO Local inativo",
+            description: "Inúmeras oportunidades de gerar pacientes quentes locais são perdidas diariamente."
+          },
+          {
+            title: "Gestão inteligente de avaliações",
+            description: "Não existe ação robusta pedindo reviews, essenciais para criar prova social maciça offline x online."
+          }
+        ]
+      }
+    ],
+    services: [
+      {
+        name: "Posicionamento & Estratégia de Marca",
+        description: "Estruturação da comunicação (autoridade + conversão) entre clínica, cursos, produtos e tecnologia.",
+        icon: "compass",
+        items: [
+          "Análise e estruturação estratégica",
+          "Organização do ecossistema",
+          "Definição de linha editorial",
+          "Direcionamento de crescimento"
+        ],
+        price: "R$ 2.500",
+        priceType: "monthly"
+      },
+      {
+        name: "Gestão de Redes Sociais",
+        description: "Gestão completa do Instagram e organização do feed focando em retenção.",
+        icon: "instagram",
+        items: [
+          "Planejamento mensal",
+          "Publicação de conteúdos",
+          "Acompanhamento analítico",
+          "Ajustes estratégicos semanais"
+        ],
+        price: "R$ 2.000",
+        priceType: "monthly"
+      },
+      {
+        name: "Planejamento de Conteúdo",
+        description: "Organização por objetivos reais (engajamento, autoridade e conversão).",
+        icon: "calendar",
+        items: [
+          "Cronograma temático",
+          "Ideias via algoritmos",
+          "Definição clara de pilares",
+          "Distribuição de frequência"
+        ],
+        price: "R$ 1.500",
+        priceType: "monthly"
+      },
+      {
+        name: "Criação de Conteúdo & Copy",
+        description: "Cópias focadas puramente em retenção psicológica e SEO nativo.",
+        icon: "penTool",
+        items: [
+          "Legendas estratégicas",
+          "Copywriting persuasivo",
+          "SEO avançado",
+          "Roteirização direcional"
+        ],
+        price: "R$ 2.000",
+        priceType: "monthly"
+      },
+      {
+        name: "Roteiros de Vídeos",
+        description: "Os scripts estruturados que seguram o espectador desde os primeiros 2s.",
+        icon: "film",
+        items: [
+          "Roteiros para Reels/Ads",
+          "Hooks de alto impacto",
+          "Estratégia dor → CTA",
+          "Direcionamento de gravações"
+        ],
+        price: "R$ 2.000",
+        priceType: "monthly"
+      },
+      {
+        name: "Edição Profissional de Vídeos",
+        description: "Cortando e montando material para maximizar a retenção média online.",
+        icon: "video",
+        items: [
+          "Legendas hiper-dinâmicas",
+          "Recorte de retenção",
+          "Efeitos e ilustrações ativas",
+          "Trilhas virais"
+        ],
+        price: "R$ 2.500",
+        priceType: "monthly"
+      },
+      {
+        name: "Tráfego Pago Completo (Meta/Google)",
+        description: "Distribuindo suas mensagens globalmente para atrair aluno, paciente e consumidor.",
+        icon: "target",
+        items: [
+          "Campanhas de Cursos/Clínica",
+          "Funis Topo ao Fundo",
+          "Pesquisa na Rede Google",
+          "Remarketing constante"
+        ],
+        price: "R$ 2.000",
+        priceType: "monthly",
+        priceNote: "Verba direta dos anúncios calculada junto à empresa"
+      },
+      {
+        name: "Google Meu Negócio & SEO",
+        description: "Explodindo as vendas locais no radar dos clientes mais próximos.",
+        icon: "mapPin",
+        items: [
+          "Otimização da Ficha",
+          "Atualização diária",
+          "Geração massiva de reviews",
+          "Estratégia clínica pura"
+        ],
+        price: "R$ 800",
+        priceType: "monthly"
+      },
+      {
+        name: "Gestão do Ecossistema Digital",
+        description: "Integração viva da Loja, Links, Cursos e Plataformas em um funil só.",
+        icon: "share2",
+        items: [
+          "Gestão Linktree e Sites",
+          "Tradução inter-plataforma",
+          "CRO (Conversion Rate Opt.)",
+          "Coesão analítica global"
+        ],
+        price: "R$ 1.500",
+        priceType: "monthly"
+      },
+      {
+        name: "Desenvolvimento Web & LP",
+        description: "Engenharia tecnológica onde se constrói pontes perfeitas de páginas.",
+        icon: "code",
+        items: [
+          "Sites altíssima performance",
+          "Landing pages isoladas",
+          "Captação e eventos exclus."
+        ],
+        price: "Sob demanda",
+        priceNote: "Adotado avulsamente por projetos complexos extras"
+      },
+      {
+        name: "Design de Materiais & Branding",
+        description: "Elevar o nível institucional estético online de todo curso e serviço.",
+        icon: "palette",
+        items: [
+          "PDFs Premium Alunos",
+          "Apresentações de Alta Vida",
+          "Folders VIPs"
+        ],
+        price: "R$ 1.000",
+        priceType: "monthly"
+      }
+    ],
+    investment: {
+      totalMonthly: "R$ 14.900",
+      totalLabel: "Pacote Gestão Ecossistema Total",
+      originalPrice: "R$ 21.800",
+      savings: "R$ 6.900",
+      packageIncludes: [
+        "Estratégia de Marca & Ecossistema",
+        "Redes Sociais e Copy Premium",
+        "Roteiros e Edição Profissional",
+        "Tráfego Pago",
+        "Google Local, Links & Web Mngmt"
+      ],
+      breakdown: [
+        { item: "Posicionamento & Marca", value: "R$ 2.500" },
+        { item: "Redes & Planejamento", value: "R$ 3.500" },
+        { item: "Conteúdo, Copy e Roteiros", value: "R$ 4.000" },
+        { item: "Edição Fria de Câmeras", value: "R$ 2.500" },
+        { item: "Ads, Tráfego e Ecossistema", value: "R$ 4.300" },
+        { item: "Estúdio, Gráfica e PDFs", value: "R$ 1.000" }
+      ],
+      paymentConditions: [
+        "Geração direta de faturamento sem limites escalável",
+        "Não existe taxa de comissão aplicada aos cursos",
+        "Deslocamento + Viagens taxado separadamente do plano caso uso local externo fora de sua unidade."
+      ],
+      notes: [
+        "Investimento repassável às operadoras Facebook (Meta)/Google estão ISOLADAS deste investimento de gestão operacional de equipe. Faremos alinhamentos diários ou bimestrais das injeções de R$ de mídia conforme tracionar a captação."
+      ]
+    },
+    differentials: [
+      "Operação com Funil Total Integrado: Da Bio do Instagram até o Pós Compra na Loja Virtual",
+      "Escada de Produtos Ativada: Up-selling com alunos já mapeado (Ticket Baixo x Médio x Mentoria).",
+      "Entregamos estrutura, não apensação simples de perfis vazios e dependentes de trends."
+    ]
+  },
+  
   // ---- PROPOSTA EXEMPLO ----
   {
     slug: "empresa-exemplo-marco-2026",

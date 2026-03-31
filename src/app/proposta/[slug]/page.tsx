@@ -6,6 +6,7 @@ import { getProposalBySlug } from "@/lib/proposals-data";
 import { ProposalHero } from "@/components/proposal/proposal-hero";
 import { ProposalAbout } from "@/components/proposal/proposal-about";
 import { ProposalAnalysisSection } from "@/components/proposal/proposal-analysis";
+import { ProposalEcosystemAnalysis } from "@/components/proposal/proposal-ecosystem-analysis";
 import { ProposalBeforeAfter } from "@/components/proposal/proposal-before-after";
 import { ProposalProfileAnalysis } from "@/components/proposal/proposal-profile-analysis";
 import { ProposalHighlights } from "@/components/proposal/proposal-highlights";
@@ -122,6 +123,14 @@ export default function ProposalPage({ params }: ProposalPageProps) {
           {!proposal.profileAnalyses && proposal.analysis && (
             <ProposalAnalysisSection
               analysis={proposal.analysis}
+              clientName={proposal.clientName}
+            />
+          )}
+
+          {/* Social Media: Análise do Ecossistema */}
+          {proposal.ecosystemAnalyses && proposal.ecosystemAnalyses.length > 0 && (
+            <ProposalEcosystemAnalysis
+              ecosystemAnalyses={proposal.ecosystemAnalyses}
               clientName={proposal.clientName}
             />
           )}
