@@ -135,6 +135,7 @@ export interface Proposal {
     closingText: string;
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
+  theme?: "standard" | "premium";
 }
 
 // ============================================================
@@ -147,6 +148,7 @@ export const proposals: Proposal[] = [
     slug: "dr-james-olaya",
     clientName: "Dr. James Olaya",
     contactName: "James",
+    theme: "premium",
     greeting: "Preparamos uma proposta estratégica completa para estruturar e escalar seu ecossistema digital.",
     validUntil: "2026-04-10",
     whatsappNumber: "5549988446685",

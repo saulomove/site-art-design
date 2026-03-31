@@ -17,6 +17,7 @@ import { ProposalDifferentials } from "@/components/proposal/proposal-differenti
 import { ProposalOptionalServices } from "@/components/proposal/proposal-optional-services";
 import { ProposalContentCalendar } from "@/components/proposal/proposal-content-calendar";
 import { ProposalCTA } from "@/components/proposal/proposal-cta";
+import { ProposalThemeDispatcher } from "@/components/proposal-premium/proposal-theme-dispatcher";
 import { ProposalCRMDiagnosis } from "@/components/proposal/proposal-crm-diagnosis";
 import { ProposalCRMFeatures } from "@/components/proposal/proposal-crm-features";
 import { ProposalCRMShowcase } from "@/components/proposal/proposal-crm-showcase";
@@ -57,151 +58,8 @@ export default function ProposalPage({ params }: ProposalPageProps) {
         style={{ scaleX }}
       />
 
-      {/* 1. Hero */}
-      <ProposalHero proposal={proposal} />
-
-      {/* 2. Sobre a ArtDesign */}
-      <ProposalAbout />
-
-      {isCRM ? (
-        <>
-          {/* CRM: Diagnóstico */}
-          <ProposalCRMDiagnosis />
-
-          {/* CRM: Destaques */}
-          {proposal.highlights && proposal.highlights.length > 0 && (
-            <ProposalHighlights
-              highlights={proposal.highlights}
-              clientName={proposal.clientName}
-            />
-          )}
-
-          {/* CRM: Módulos da Solução */}
-          <ProposalCRMFeatures />
-
-          {/* CRM: Showcase 24/7 */}
-          <ProposalCRMShowcase />
-
-          {/* CRM: Funil Kanban */}
-          <ProposalCRMKanban />
-
-          {/* CRM: Investimento */}
-          <ProposalInvestmentSection
-            investment={proposal.investment}
-            clientName={proposal.clientName}
-          />
-
-          {/* CRM: Diferenciais */}
-          {proposal.differentials && (
-            <ProposalDifferentials differentials={proposal.differentials} />
-          )}
-        </>
-      ) : (
-        <>
-          {/* Social Media: Antes & Depois */}
-          {proposal.beforeAfter && (
-            <ProposalBeforeAfter
-              beforeAfter={proposal.beforeAfter}
-              clientName={proposal.clientName}
-            />
-          )}
-
-          {/* Social Media: Simulação (O que acontece em 30 dias) */}
-          {proposal.simulation && (
-            <ProposalSimulation simulation={proposal.simulation} />
-          )}
-
-          {/* Social Media: Análise de Perfis (multi-perfil) */}
-          {proposal.profileAnalyses && proposal.profileAnalyses.length > 0 && (
-            <ProposalProfileAnalysis
-              profileAnalyses={proposal.profileAnalyses}
-              clientName={proposal.clientName}
-            />
-          )}
-
-          {/* Social Media: Análise Estratégica (perfil único) */}
-          {!proposal.profileAnalyses && proposal.analysis && (
-            <ProposalAnalysisSection
-              analysis={proposal.analysis}
-              clientName={proposal.clientName}
-            />
-          )}
-
-          {/* Social Media: Análise do Ecossistema */}
-          {proposal.ecosystemAnalyses && proposal.ecosystemAnalyses.length > 0 && (
-            <ProposalEcosystemAnalysis
-              ecosystemAnalyses={proposal.ecosystemAnalyses}
-              clientName={proposal.clientName}
-            />
-          )}
-
-          {/* Social Media: Análise de E-commerce */}
-          {proposal.ecommerceAnalysis && (
-            <ProposalEcommerceAnalysis ecommerceAnalysis={proposal.ecommerceAnalysis} />
-          )}
-
-          {/* Social Media: Destaques */}
-          {proposal.highlights && proposal.highlights.length > 0 && (
-            <ProposalHighlights
-              highlights={proposal.highlights}
-              clientName={proposal.clientName}
-            />
-          )}
-
-          {/* Social Media: Escopo dos Serviços */}
-          <ProposalScope services={proposal.services} />
-
-          {/* Social Media: Fases do Projeto */}
-          {proposal.phases && proposal.phases.length > 0 && (
-            <ProposalPhases phases={proposal.phases} />
-          )}
-
-          {/* Social Media: Calendário de Conteúdo */}
-          {proposal.contentCalendar && proposal.contentCalendar.length > 0 && (
-            <ProposalContentCalendar contentCalendar={proposal.contentCalendar} />
-          )}
-
-          {/* Social Media: Parceria Compartilhada (NEW) */}
-          {proposal.commissionModel && (
-            <ProposalCommissionModel commissionModel={proposal.commissionModel} />
-          )}
-
-          {/* Social Media: Investimento */}
-          <ProposalInvestmentSection
-            investment={proposal.investment}
-            clientName={proposal.clientName}
-          />
-
-          {/* Social Media: Bônus Exclusivos */}
-          {proposal.bonus && (
-            <ProposalBonus bonus={proposal.bonus} />
-          )}
-
-          {/* Social Media: Diferenciais */}
-          {proposal.differentials && (
-            <ProposalDifferentials differentials={proposal.differentials} />
-          )}
-
-          {/* Social Media: Serviços Opcionais */}
-          {proposal.optionalServices && proposal.optionalServices.length > 0 && (
-            <ProposalOptionalServices services={proposal.optionalServices} />
-          )}
-
-          {/* Social Media: Dúvidas Frequentes (FAQ) */}
-          {proposal.faq && proposal.faq.length > 0 && (
-            <ProposalFAQ faq={proposal.faq} />
-          )}
-        </>
-      )}
-
-      {/* CTA — always shown */}
-      <ProposalCTA
-        clientName={proposal.clientName}
-        contactName={proposal.contactName}
-        validUntil={proposal.validUntil}
-        whatsappNumber={proposal.whatsappNumber}
-        closingQuestion={proposal.closingQuestion}
-      />
+      {/* Dynamic Theme Renderer based on isPremium Flag */}
+      <ProposalThemeDispatcher proposal={proposal} />
     </div>
   );
 }
