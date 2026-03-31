@@ -297,7 +297,7 @@ export const proposals: Proposal[] = [
           "Definição de linha editorial",
           "Direcionamento de crescimento"
         ],
-        price: "R$ 2.500",
+        price: "R$ 1.875",
         priceType: "monthly"
       },
       {
@@ -310,7 +310,7 @@ export const proposals: Proposal[] = [
           "Acompanhamento analítico",
           "Ajustes estratégicos semanais"
         ],
-        price: "R$ 2.000",
+        price: "R$ 1.500",
         priceType: "monthly"
       },
       {
@@ -323,7 +323,7 @@ export const proposals: Proposal[] = [
           "Definição clara de pilares",
           "Distribuição de frequência"
         ],
-        price: "R$ 1.500",
+        price: "R$ 1.125",
         priceType: "monthly"
       },
       {
@@ -336,7 +336,7 @@ export const proposals: Proposal[] = [
           "SEO avançado",
           "Roteirização direcional"
         ],
-        price: "R$ 2.000",
+        price: "R$ 1.500",
         priceType: "monthly"
       },
       {
@@ -349,7 +349,7 @@ export const proposals: Proposal[] = [
           "Estratégia dor → CTA",
           "Direcionamento de gravações"
         ],
-        price: "R$ 2.000",
+        price: "R$ 1.500",
         priceType: "monthly"
       },
       {
@@ -362,7 +362,7 @@ export const proposals: Proposal[] = [
           "Efeitos e ilustrações ativas",
           "Trilhas virais"
         ],
-        price: "R$ 2.500",
+        price: "R$ 1.875",
         priceType: "monthly"
       },
       {
@@ -375,7 +375,7 @@ export const proposals: Proposal[] = [
           "Pesquisa na Rede Google",
           "Remarketing constante"
         ],
-        price: "R$ 2.000",
+        price: "R$ 1.500",
         priceType: "monthly",
         priceNote: "Verba direta dos anúncios calculada junto à empresa"
       },
@@ -389,7 +389,7 @@ export const proposals: Proposal[] = [
           "Geração massiva de reviews",
           "Estratégia clínica pura"
         ],
-        price: "R$ 800",
+        price: "R$ 600",
         priceType: "monthly"
       },
       {
@@ -402,7 +402,7 @@ export const proposals: Proposal[] = [
           "CRO (Conversion Rate Opt.)",
           "Coesão analítica global"
         ],
-        price: "R$ 1.500",
+        price: "R$ 1.125",
         priceType: "monthly"
       },
       {
@@ -426,15 +426,15 @@ export const proposals: Proposal[] = [
           "Apresentações de Alta Vida",
           "Folders VIPs"
         ],
-        price: "R$ 1.000",
+        price: "R$ 750",
         priceType: "monthly"
       }
     ],
     investment: {
-      totalMonthly: "R$ 14.900",
+      totalMonthly: "R$ 2.250",
       totalLabel: "Pacote Gestão Ecossistema Total",
-      originalPrice: "R$ 21.800",
-      savings: "R$ 6.900",
+      originalPrice: "R$ 13.350",
+      savings: "R$ 11.100",
       packageIncludes: [
         "Estratégia de Marca & Ecossistema",
         "Redes Sociais e Copy Premium",
@@ -443,12 +443,12 @@ export const proposals: Proposal[] = [
         "Google Local, Links & Web Mngmt"
       ],
       breakdown: [
-        { item: "Posicionamento & Marca", value: "R$ 2.500" },
-        { item: "Redes & Planejamento", value: "R$ 3.500" },
-        { item: "Conteúdo, Copy e Roteiros", value: "R$ 4.000" },
-        { item: "Edição Fria de Câmeras", value: "R$ 2.500" },
-        { item: "Ads, Tráfego e Ecossistema", value: "R$ 4.300" },
-        { item: "Estúdio, Gráfica e PDFs", value: "R$ 1.000" }
+        { item: "Posicionamento & Marca", value: "R$ 1.875" },
+        { item: "Redes & Planejamento", value: "R$ 2.625" },
+        { item: "Conteúdo, Copy e Roteiros", value: "R$ 3.000" },
+        { item: "Edição Fria de Câmeras", value: "R$ 1.875" },
+        { item: "Ads, Tráfego e Ecossistema", value: "R$ 3.225" },
+        { item: "Estúdio, Gráfica e PDFs", value: "R$ 750" }
       ],
       paymentConditions: [
         "Geração direta de faturamento sem limites escalável",
