@@ -18,10 +18,6 @@ import { ProposalOptionalServices } from "@/components/proposal/proposal-optiona
 import { ProposalContentCalendar } from "@/components/proposal/proposal-content-calendar";
 import { ProposalCTA } from "@/components/proposal/proposal-cta";
 import { ProposalThemeDispatcher } from "@/components/proposal-premium/proposal-theme-dispatcher";
-import { ProposalCRMDiagnosis } from "@/components/proposal/proposal-crm-diagnosis";
-import { ProposalCRMFeatures } from "@/components/proposal/proposal-crm-features";
-import { ProposalCRMShowcase } from "@/components/proposal/proposal-crm-showcase";
-import { ProposalCRMKanban } from "@/components/proposal/proposal-crm-kanban";
 import { ProposalSimulation } from "@/components/proposal/proposal-simulation";
 import { ProposalEcommerceAnalysis } from "@/components/proposal/proposal-ecommerce-analysis";
 import { ProposalFAQ } from "@/components/proposal/proposal-faq";

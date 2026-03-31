@@ -17,6 +17,10 @@ import { ProposalEcommerceAnalysis } from "@/components/proposal/proposal-ecomme
 import { ProposalFAQ } from "@/components/proposal/proposal-faq";
 import { ProposalBonus } from "@/components/proposal/proposal-bonus";
 import { ProposalCommissionModel } from "@/components/proposal/proposal-commission-model";
+import { ProposalCRMDiagnosis } from "@/components/proposal/proposal-crm-diagnosis";
+import { ProposalCRMFeatures } from "@/components/proposal/proposal-crm-features";
+import { ProposalCRMShowcase } from "@/components/proposal/proposal-crm-showcase";
+import { ProposalCRMKanban } from "@/components/proposal/proposal-crm-kanban";
 
 // Premium imports
 import { ProposalPremiumHero } from "@/components/proposal-premium/proposal-hero";
@@ -80,6 +84,8 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
     );
   }
 
+  const isCRM = proposal.proposalType === "crm";
+
   // STANDARD THEME RENDER (Original logic)
   return (
     <>
@@ -89,7 +95,42 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
       {/* 2. Sobre a ArtDesign */}
       <ProposalAbout />
 
-      {/* Social Media: Antes & Depois */}
+      {isCRM ? (
+        <>
+          {/* CRM: Diagnóstico */}
+          <ProposalCRMDiagnosis />
+
+          {/* CRM: Destaques */}
+          {proposal.highlights && proposal.highlights.length > 0 && (
+            <ProposalHighlights
+              highlights={proposal.highlights}
+              clientName={proposal.clientName}
+            />
+          )}
+
+          {/* CRM: Módulos da Solução */}
+          <ProposalCRMFeatures />
+
+          {/* CRM: Showcase 24/7 */}
+          <ProposalCRMShowcase />
+
+          {/* CRM: Funil Kanban */}
+          <ProposalCRMKanban />
+
+          {/* CRM: Investimento */}
+          <ProposalInvestmentSection
+            investment={proposal.investment}
+            clientName={proposal.clientName}
+          />
+
+          {/* CRM: Diferenciais */}
+          {proposal.differentials && (
+            <ProposalDifferentials differentials={proposal.differentials} />
+          )}
+        </>
+      ) : (
+        <>
+          {/* Social Media: Antes & Depois */}
       {proposal.beforeAfter && (
         <ProposalBeforeAfter
           beforeAfter={proposal.beforeAfter}
@@ -181,6 +222,8 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
       {/* Social Media: Dúvidas Frequentes (FAQ) */}
       {proposal.faq && proposal.faq.length > 0 && (
         <ProposalFAQ faq={proposal.faq} />
+      )}
+        </>
       )}
 
       {/* CTA — always shown */}
