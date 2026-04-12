@@ -10,8 +10,9 @@ import { AnalyticsScripts } from "@/components/features/analytics-scripts";
 export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isProposalPage = pathname.startsWith("/proposta");
+  const isContractPage = pathname.startsWith("/contrato");
 
-  if (isProposalPage) {
+  if (isProposalPage || isContractPage) {
     return (
       <AdminProvider>
         <AnalyticsScripts />
