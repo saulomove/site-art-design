@@ -53,7 +53,7 @@ export const contracts: Record<string, ContractEntry> = {
     slug: "dr-james-olaya-ecommerce",
     template: "ecommerce",
     contractNumber: "050/2026",
-    startDate: "",
+    startDate: "15/04/2026",
     clientName: "James Olaya",
     clientDocument: "",
     clientAddress: "",
