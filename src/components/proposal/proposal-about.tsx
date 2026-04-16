@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
 
 const stats = [
-  { number: "50+", label: "Clientes Atendidos", icon: Users },
+  { number: "449", label: "Clientes Atendidos", icon: Users },
   { number: "16+", label: "Anos de Mercado", icon: Award },
   { number: "8", label: "Países com Clientes", icon: Globe2 },
   { number: "200+", label: "Projetos Entregues", icon: Rocket },
