@@ -2981,7 +2981,7 @@ export const proposals: Proposal[] = [
     validUntil: "2026-04-23",
     whatsappNumber: "5549988446685",
     highlights: [
-      "15 anos de experiência e +3.000 clientes — é hora de o digital refletir isso",
+      "15 anos de experiência e 449 clientes — é hora de o digital refletir isso",
       "Seus concorrentes já aparecem no Google. Você ainda não.",
       "Solução completa: Instagram, Google, Site e Tráfego Pago",
       "Sem fidelidade. Foco total em resultado."
@@ -3000,7 +3000,7 @@ export const proposals: Proposal[] = [
         },
         {
           title: "Bio funcional com CTA direto para WhatsApp",
-          description: "Menciona 15 anos de experiência, +3.000 clientes e tem link direto para WhatsApp com mensagem pré-preenchida. Funcional e objetivo."
+          description: "Menciona 15 anos de experiência, 449 clientes e tem link direto para WhatsApp com mensagem pré-preenchida. Funcional e objetivo."
         },
         {
           title: "Conteúdo com prova social e autoridade técnica",
@@ -3029,7 +3029,7 @@ export const proposals: Proposal[] = [
           description: "Para 15 anos de atuação, faltam destaques como: Frota, Antes e Depois, Depoimentos, Sobre Nós, Obras Realizadas. Prejudica quem visita o perfil pela primeira vez."
         }
       ],
-      conclusion: "O Dudu Guinchos tem um produto sólido — 15 anos, +3.000 clientes, frota própria e identidade visual. Mas está praticamente invisível digitalmente. Os concorrentes já estão no Google, já recebem avaliações e já captam clientes que deveriam ser seus. O potencial de crescimento com uma gestão profissional é enorme."
+      conclusion: "O Dudu Guinchos tem um produto sólido — 15 anos, 449 clientes, frota própria e identidade visual. Mas está praticamente invisível digitalmente. Os concorrentes já estão no Google, já recebem avaliações e já captam clientes que deveriam ser seus. O potencial de crescimento com uma gestão profissional é enorme."
     },
 
     beforeAfter: {
@@ -3049,9 +3049,9 @@ export const proposals: Proposal[] = [
         "Conteúdo estratégico que atrai e converte clientes ideais",
         "Destaques organizados: Frota, Obras, Depoimentos, Serviços",
         "Tráfego pago gerando orçamentos direto no WhatsApp",
-        "SEO local para dominar buscas como 'guincho Farroupilha'"
+        "SEO local para dominar buscas em Garibaldi, Carlos Barbosa, Bento Gonçalves, Farroupilha e Caxias"
       ],
-      expectedResults: "Em 90 dias, o Dudu Guinchos será encontrado por quem precisa de guincho na Serra Gaúcha — no Google, no Instagram e com site próprio. Clientes entrando pelo WhatsApp todos os dias."
+      expectedResults: "Em 90 dias, o Dudu Guinchos será encontrado por quem precisa de guincho em Garibaldi, Carlos Barbosa e Bento Gonçalves — depois expandindo para Farroupilha e Caxias. No Google, no Instagram e com site próprio. Clientes entrando pelo WhatsApp todos os dias."
     },
 
     simulation: {
@@ -3088,7 +3088,7 @@ export const proposals: Proposal[] = [
         icon: "MapPin",
         items: [
           "Criação completa do perfil no Google Meu Negócio",
-          "Otimização com palavras-chave locais (Farroupilha, Caxias, Serra Gaúcha)",
+          "Otimização com palavras-chave locais (Garibaldi, Carlos Barbosa, Bento Gonçalves, Farroupilha, Caxias, Serra Gaúcha)",
           "Inserção de fotos profissionais da frota e operações",
           "Configuração detalhada de todos os serviços",
           "Estratégia ativa de coleta de avaliações 5 estrelas",
@@ -3107,7 +3107,7 @@ export const proposals: Proposal[] = [
           "Página Home com impacto imediato e CTA para WhatsApp",
           "Página de Serviços (Guincho, Içamento, Transporte de Cargas)",
           "Seção de Prova Social (fotos reais, obras, depoimentos)",
-          "Página Sobre (15 anos, +3.000 clientes, história da empresa)",
+          "Página Sobre (15 anos, 449 clientes, história da empresa)",
           "Página de Contato com botão WhatsApp e clique para ligar",
           "SEO otimizado para aparecer nas buscas do Google",
           "Site leve, rápido, responsivo e focado em conversão"
@@ -3122,7 +3122,7 @@ export const proposals: Proposal[] = [
         icon: "Target",
         items: [
           "Campanhas segmentadas para WhatsApp (geração de leads)",
-          "Segmentação regional: Serra Gaúcha, Caxias do Sul, Farroupilha, Bento Gonçalves",
+          "Segmentação regional: Garibaldi, Carlos Barbosa, Bento Gonçalves (foco principal) + Farroupilha e Caxias do Sul",
           "Público com intenção de contratação (construtoras, obras, empresas)",
           "Campanhas de pesquisa no Google para palavras-chave de compra",
           "Remarketing para quem visitou o perfil ou site",
@@ -3163,7 +3163,7 @@ export const proposals: Proposal[] = [
       {
         title: "Autoridade & Experiência (40%)",
         examples: [
-          "15 anos de mercado + 3.000 clientes atendidos",
+          "15 anos de mercado + 449 clientes atendidos",
           "Bastidores de operações reais de içamento",
           "Apresentação da frota e equipamentos",
           "Cases de obras realizadas com antes e depois"
@@ -3217,7 +3217,7 @@ export const proposals: Proposal[] = [
             type: "Autoridade",
             format: "Reels",
             theme: "15 anos no mercado",
-            description: "Reel impactante mostrando a trajetória: 15 anos, +3.000 clientes, frota própria. Imagens reais da operação com texto de impacto.",
+            description: "Reel impactante mostrando a trajetória: 15 anos, 449 clientes, frota própria. Imagens reais da operação com texto de impacto.",
             objective: "Posicionar como referência absoluta da região",
             cta: "Solicite seu orçamento — link na bio"
           },
@@ -3246,7 +3246,7 @@ export const proposals: Proposal[] = [
             theme: "Antes e depois de obra",
             description: "Carrossel com fotos reais: antes da obra (terreno/construção) e depois com o material içado. Depoimento do cliente se possível.",
             objective: "Prova social visual que elimina objeções",
-            cta: "Mais de 3.000 clientes satisfeitos"
+            cta: "Mais de 449 clientes satisfeitos"
           },
           {
             day: 5,

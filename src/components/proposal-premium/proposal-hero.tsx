@@ -14,7 +14,7 @@ export function ProposalPremiumHero({ proposal }: Props) {
   const formattedDate = `${day}/${month}/${year}`;
 
   return (
-    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-white selection:bg-brand-blue/20">
+    <section className="relative min-h-[95vh] flex flex-col items-center justify-center overflow-hidden bg-white selection:bg-brand-blue/20 pt-20 pb-24 sm:pt-0 sm:pb-0">
       {/* Liquid Glass Background Effects */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-[100%] bg-gradient-to-r from-brand-blue/10 to-brand-purple/5 blur-[120px] mix-blend-multiply opacity-70 animate-pulse" style={{ animationDuration: '8s' }} />
@@ -94,7 +94,7 @@ export function ProposalPremiumHero({ proposal }: Props) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400"
+        className="relative z-10 mt-16 sm:mt-0 sm:absolute sm:bottom-12 sm:left-1/2 sm:-translate-x-1/2 flex flex-col items-center gap-2 text-slate-400"
       >
         <span className="text-xs font-semibold tracking-widest uppercase">Rolar para ler</span>
         <motion.div
