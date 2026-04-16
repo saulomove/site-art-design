@@ -2969,6 +2969,385 @@ export const proposals: Proposal[] = [
       "Experiências completas das marcas fortes em mercado Digital Moderno."
     ],
     closingQuestion: "E aí equipe MSI Voltz, fechado a proposta pra alavancarmos como devem?\nA ArtDesign já tá preparadíssima!\nVamos subir a régua das negociações de mobilidade online em 30 dias juntos. Aguardo o alinhamento definitivo nos telefones/wpp hoje."
+  },
+
+  // ---- DUDU GUINCHOS ----
+  {
+    slug: "dudu-guinchos",
+    clientName: "Dudu Guinchos",
+    contactName: "Dudu",
+    theme: "premium",
+    greeting: "Preparamos uma proposta estratégica completa para transformar o Dudu Guinchos na referência digital de guincho e içamento da Serra Gaúcha.",
+    validUntil: "2026-04-23",
+    whatsappNumber: "5549988446685",
+    highlights: [
+      "15 anos de experiência e +3.000 clientes — é hora de o digital refletir isso",
+      "Seus concorrentes já aparecem no Google. Você ainda não.",
+      "Solução completa: Instagram, Google, Site e Tráfego Pago",
+      "Sem fidelidade. Foco total em resultado."
+    ],
+
+    analysis: {
+      intro: "Analisamos profundamente o perfil @dudupaese.guinchos, a presença no Google e o posicionamento digital atual. Estas são as conclusões sobre o momento atual da empresa:",
+      strengths: [
+        {
+          title: "Identidade visual consistente e profissional",
+          description: "Logo definido, paleta de cores aplicada (laranja, preto e branco) nos posts. Transmite profissionalismo e diferencial frente aos concorrentes do setor."
+        },
+        {
+          title: "Volume de conteúdo publicado impressionante",
+          description: "Com 204 posts, a empresa demonstra constância e comprometimento. Não é um perfil abandonado — há investimento real em presença digital."
+        },
+        {
+          title: "Bio funcional com CTA direto para WhatsApp",
+          description: "Menciona 15 anos de experiência, +3.000 clientes e tem link direto para WhatsApp com mensagem pré-preenchida. Funcional e objetivo."
+        },
+        {
+          title: "Conteúdo com prova social e autoridade técnica",
+          description: "Posts com frases como 'Altura não é obstáculo, é onde a gente trabalha', apresentação da frota e serviços reforçam credibilidade real."
+        }
+      ],
+      opportunities: [
+        {
+          title: "Invisível no Google Maps — concorrentes dominam",
+          description: "O Dudu Guinchos NÃO aparece no Google Maps. Concorrentes como García Guincho (5.0★, 54 avaliações) e G. Mincarone (4.9★) estão captando seus clientes agora mesmo."
+        },
+        {
+          title: "Sem site profissional — credibilidade limitada",
+          description: "Nenhum site próprio indexado no Google. A ausência impede SEO, dificulta fechar contratos maiores com construtoras e limita a apresentação dos serviços."
+        },
+        {
+          title: "Baixo alcance orgânico — 854 seguidores para 204 posts",
+          description: "Proporção muito baixa indica que o conteúdo não está sendo distribuído estrategicamente. Sem hashtags otimizadas, SEO no Instagram ou tráfego pago."
+        },
+        {
+          title: "Conteúdo focado na empresa, não nas dores do cliente",
+          description: "Falta conteúdo como 'O que acontece quando você contrata um guincho sem experiência?' ou 'Como escolher içamento seguro?'. Esse tipo de conteúdo gera muito mais engajamento."
+        },
+        {
+          title: "Destaques quase inexistentes — apenas 1 ativo",
+          description: "Para 15 anos de atuação, faltam destaques como: Frota, Antes e Depois, Depoimentos, Sobre Nós, Obras Realizadas. Prejudica quem visita o perfil pela primeira vez."
+        }
+      ],
+      conclusion: "O Dudu Guinchos tem um produto sólido — 15 anos, +3.000 clientes, frota própria e identidade visual. Mas está praticamente invisível digitalmente. Os concorrentes já estão no Google, já recebem avaliações e já captam clientes que deveriam ser seus. O potencial de crescimento com uma gestão profissional é enorme."
+    },
+
+    beforeAfter: {
+      beforeTitle: "Situação Atual",
+      beforeItems: [
+        "Invisível no Google Maps — clientes encontram concorrentes",
+        "Sem site profissional — perde credibilidade em contratos maiores",
+        "854 seguidores para 204 posts — conteúdo não chega nas pessoas certas",
+        "Apenas 1 destaque nos Stories — experiência ruim para visitantes",
+        "Zero tráfego pago — depende 100% de indicação",
+        "Sem Google Meu Negócio — perde leads quentes diariamente"
+      ],
+      afterTitle: "Com a ArtDesign",
+      afterItems: [
+        "Presença dominante no Google Maps com avaliações 5 estrelas",
+        "Site profissional que vende serviço e gera credibilidade",
+        "Conteúdo estratégico que atrai e converte clientes ideais",
+        "Destaques organizados: Frota, Obras, Depoimentos, Serviços",
+        "Tráfego pago gerando orçamentos direto no WhatsApp",
+        "SEO local para dominar buscas como 'guincho Farroupilha'"
+      ],
+      expectedResults: "Em 90 dias, o Dudu Guinchos será encontrado por quem precisa de guincho na Serra Gaúcha — no Google, no Instagram e com site próprio. Clientes entrando pelo WhatsApp todos os dias."
+    },
+
+    simulation: {
+      title: "O que esperar nos primeiros 30 dias",
+      items: [
+        "Google Meu Negócio criado e otimizado — visibilidade imediata no Google Maps",
+        "Perfil do Instagram reorganizado com destaques profissionais completos",
+        "Bio otimizada com foco em conversão e palavras-chave locais",
+        "7 conteúdos estratégicos publicados (autoridade + prova social + conversão)",
+        "Estrutura de site em desenvolvimento com SEO local",
+        "Primeiras avaliações 5 estrelas sendo coletadas no Google"
+      ]
+    },
+
+    services: [
+      {
+        name: "Gestão de Redes Sociais",
+        description: "Instagram estratégico focado em gerar autoridade, confiança e conversão para o Dudu Guinchos.",
+        icon: "Instagram",
+        items: [
+          "Planejamento estratégico mensal de conteúdo",
+          "Criação de posts para feed e Reels",
+          "Copywriting persuasivo com SEO e CTAs",
+          "Conteúdo focado nas dores do cliente (não só na empresa)",
+          "Organização completa dos Destaques (Frota, Obras, Depoimentos, Serviços)",
+          "Otimização de bio e posicionamento profissional da marca"
+        ],
+        price: "R$ 800,00",
+        priceType: "monthly"
+      },
+      {
+        name: "Google Meu Negócio & SEO Local",
+        description: "Aparecer no Google quando alguém buscar guincho na Serra Gaúcha. Prioridade máxima.",
+        icon: "MapPin",
+        items: [
+          "Criação completa do perfil no Google Meu Negócio",
+          "Otimização com palavras-chave locais (Farroupilha, Caxias, Serra Gaúcha)",
+          "Inserção de fotos profissionais da frota e operações",
+          "Configuração detalhada de todos os serviços",
+          "Estratégia ativa de coleta de avaliações 5 estrelas",
+          "Postagens semanais dentro do Google",
+          "Gestão mensal contínua e otimização"
+        ],
+        price: "R$ 600,00 setup + R$ 200,00/mês",
+        priceType: "project",
+        priceNote: "Setup único de R$ 600 + gestão mensal de R$ 200"
+      },
+      {
+        name: "Criação de Site Profissional",
+        description: "Site que vende serviço, não só mostra empresa. Focado em conversão e SEO local.",
+        icon: "Globe",
+        items: [
+          "Página Home com impacto imediato e CTA para WhatsApp",
+          "Página de Serviços (Guincho, Içamento, Transporte de Cargas)",
+          "Seção de Prova Social (fotos reais, obras, depoimentos)",
+          "Página Sobre (15 anos, +3.000 clientes, história da empresa)",
+          "Página de Contato com botão WhatsApp e clique para ligar",
+          "SEO otimizado para aparecer nas buscas do Google",
+          "Site leve, rápido, responsivo e focado em conversão"
+        ],
+        price: "R$ 1.200,00",
+        priceType: "project",
+        priceNote: "Valor único de desenvolvimento"
+      },
+      {
+        name: "Gestão de Tráfego Pago",
+        description: "Campanhas pagas para gerar clientes de forma rápida e escalável via Meta Ads e Google Ads.",
+        icon: "Target",
+        items: [
+          "Campanhas segmentadas para WhatsApp (geração de leads)",
+          "Segmentação regional: Serra Gaúcha, Caxias do Sul, Farroupilha, Bento Gonçalves",
+          "Público com intenção de contratação (construtoras, obras, empresas)",
+          "Campanhas de pesquisa no Google para palavras-chave de compra",
+          "Remarketing para quem visitou o perfil ou site",
+          "Relatórios mensais de performance e otimização contínua"
+        ],
+        price: "R$ 500,00",
+        priceType: "monthly",
+        priceNote: "Investimento em mídia paga (budget dos anúncios) é separado — sugerido a partir de R$ 10/dia"
+      }
+    ],
+
+    investment: {
+      totalMonthly: "R$ 1.200,00",
+      totalLabel: "Pacote Completo Mensal",
+      originalPrice: "R$ 3.100,00",
+      savings: "R$ 1.900,00 de economia",
+      packageIncludes: [
+        "Gestão completa de Redes Sociais (Instagram)",
+        "Google Meu Negócio — criação e gestão mensal",
+        "Site profissional com SEO local (incluso no pacote)",
+        "Gestão de Tráfego Pago (Meta Ads + Google Ads)",
+        "Estratégia completa de posicionamento digital",
+        "Relatórios mensais de resultado"
+      ],
+      paymentConditions: [
+        "Pagamento mensal: R$ 1.200,00/mês via PIX ou boleto",
+        "Sem fidelidade — cancelamento a qualquer momento",
+        "Budget de anúncios: responsabilidade do cliente (a partir de R$ 10/dia)"
+      ],
+      notes: [
+        "O investimento em mídia paga (budget Meta Ads e Google Ads) é separado e de responsabilidade do cliente",
+        "Sugerimos iniciar tráfego pago a partir do 2º ou 3º mês — no início, focamos em estrutura + orgânico",
+        "Nosso objetivo é simples: gerar resultado para você querer continuar"
+      ]
+    },
+
+    contentPillars: [
+      {
+        title: "Autoridade & Experiência (40%)",
+        examples: [
+          "15 anos de mercado + 3.000 clientes atendidos",
+          "Bastidores de operações reais de içamento",
+          "Apresentação da frota e equipamentos",
+          "Cases de obras realizadas com antes e depois"
+        ],
+        objective: "Posicionar o Dudu Guinchos como a referência em guincho e içamento da região"
+      },
+      {
+        title: "Educativo & Dores do Cliente (30%)",
+        examples: [
+          "O que acontece quando você contrata um guincho sem experiência?",
+          "Como escolher um serviço de içamento seguro?",
+          "Quando você PRECISA de um guincho na obra?",
+          "Erros que podem causar acidentes em içamento"
+        ],
+        objective: "Gerar engajamento abordando as dores e dúvidas reais do público"
+      },
+      {
+        title: "Prova Social & Resultados (20%)",
+        examples: [
+          "Fotos e vídeos de obras realizadas",
+          "Depoimentos de clientes satisfeitos",
+          "Antes e depois de operações complexas",
+          "Números e conquistas da empresa"
+        ],
+        objective: "Criar confiança e eliminar objeções através de resultados reais"
+      },
+      {
+        title: "Conversão & Oferta (10%)",
+        examples: [
+          "Precisa de guincho agora? Chame no WhatsApp",
+          "Orçamento sem compromisso em 5 minutos",
+          "Atendimento 24h para emergências",
+          "Cobertura em toda Serra Gaúcha"
+        ],
+        objective: "Converter audiência em leads qualificados via WhatsApp"
+      }
+    ],
+
+    contentCalendar: [
+      {
+        profileName: "Dudu Guinchos",
+        profileHandle: "@dudupaese.guinchos",
+        objective: [
+          "Gerar autoridade e confiança imediata",
+          "Mostrar resultado rápido nos primeiros 7 dias",
+          "Converter seguidores em leads no WhatsApp"
+        ],
+        days: [
+          {
+            day: 1,
+            type: "Autoridade",
+            format: "Reels",
+            theme: "15 anos no mercado",
+            description: "Reel impactante mostrando a trajetória: 15 anos, +3.000 clientes, frota própria. Imagens reais da operação com texto de impacto.",
+            objective: "Posicionar como referência absoluta da região",
+            cta: "Solicite seu orçamento — link na bio"
+          },
+          {
+            day: 2,
+            type: "Educativo",
+            format: "Reels",
+            theme: "Erro que pode causar acidente",
+            description: "Reel educativo: 'Erro que pode causar acidente em içamento'. Mostrar riscos de contratar sem experiência, com cenas reais de segurança.",
+            objective: "Gerar engajamento abordando medo real do público",
+            cta: "Não arrisque. Fale com quem tem 15 anos de experiência."
+          },
+          {
+            day: 3,
+            type: "Bastidor",
+            format: "Reels",
+            theme: "Operação real de içamento",
+            description: "Bastidor: 'Olha como funciona um içamento seguro'. Mostrar a operação do início ao fim, equipe trabalhando, equipamento.",
+            objective: "Humanizar a marca e mostrar competência técnica",
+            cta: "Precisou de guincho? Chama no WhatsApp"
+          },
+          {
+            day: 4,
+            type: "Prova Social",
+            format: "Carrossel",
+            theme: "Antes e depois de obra",
+            description: "Carrossel com fotos reais: antes da obra (terreno/construção) e depois com o material içado. Depoimento do cliente se possível.",
+            objective: "Prova social visual que elimina objeções",
+            cta: "Mais de 3.000 clientes satisfeitos"
+          },
+          {
+            day: 5,
+            type: "Educativo",
+            format: "Reels",
+            theme: "Quando você PRECISA de um guincho?",
+            description: "Reel listando as 5 situações em que um guincho é essencial: obras em altura, material pesado, acesso difícil, emergência, prazo apertado.",
+            objective: "Educar o público sobre quando contratar",
+            cta: "Se identificou? Peça orçamento sem compromisso"
+          },
+          {
+            day: 6,
+            type: "Autoridade Técnica",
+            format: "Reels",
+            theme: "Equipamento certo faz toda diferença",
+            description: "Apresentação dos equipamentos e da frota. Mostrar o diferencial técnico que só 15 anos de experiência trazem.",
+            objective: "Diferenciação técnica frente aos concorrentes",
+            cta: "Equipamento profissional + experiência = segurança"
+          },
+          {
+            day: 7,
+            type: "Conversão",
+            format: "Reels + Stories",
+            theme: "Precisa de guincho agora?",
+            description: "Reel direto ao ponto: 'Precisa de guincho? Atendemos toda Serra Gaúcha. Orçamento em 5 minutos no WhatsApp.' + Sequência de Stories com CTA.",
+            objective: "Conversão direta — gerar mensagens no WhatsApp",
+            cta: "📲 Clique no link da bio e peça seu orçamento"
+          }
+        ]
+      }
+    ],
+
+    phases: [
+      {
+        number: 1,
+        title: "Estruturação Digital (Semana 1-2)",
+        objective: "Montar toda a base digital profissional do Dudu Guinchos",
+        deliverables: [
+          "Criação do Google Meu Negócio completo e otimizado",
+          "Reorganização do perfil do Instagram (bio, destaques, identidade)",
+          "Início do desenvolvimento do site profissional",
+          "Planejamento estratégico do 1º mês de conteúdo",
+          "Definição da linha editorial e pilares de conteúdo"
+        ],
+        expectedResult: "Base digital completa montada. Presença no Google Maps ativa. Instagram profissionalizado."
+      },
+      {
+        number: 2,
+        title: "Conteúdo & Autoridade (Semana 3-4)",
+        objective: "Lançar conteúdo estratégico e construir autoridade online",
+        deliverables: [
+          "Publicação dos primeiros 7 conteúdos estratégicos",
+          "Entrega do site profissional publicado",
+          "Início da coleta de avaliações no Google",
+          "Primeiras postagens no Google Meu Negócio",
+          "Otimização de SEO local no site"
+        ],
+        expectedResult: "Perfil ativo com conteúdo de alta qualidade. Site no ar. Google Maps com primeiras avaliações."
+      },
+      {
+        number: 3,
+        title: "Aceleração & Tráfego (Mês 2-3)",
+        objective: "Escalar resultados com tráfego pago e otimização contínua",
+        deliverables: [
+          "Lançamento de campanhas de tráfego pago (Meta Ads + Google Ads)",
+          "Campanhas segmentadas por região (Serra Gaúcha)",
+          "Otimização contínua do Google Meu Negócio",
+          "Conteúdo mensal estratégico no Instagram",
+          "Relatórios de performance e ajustes"
+        ],
+        expectedResult: "Fluxo constante de orçamentos via WhatsApp. Dominância no Google local. Marca reconhecida digitalmente."
+      }
+    ],
+
+    differentials: [
+      "Estratégia completa, não só postagens — do Instagram ao Google, tudo integrado",
+      "Foco em geração de clientes reais, não métricas de vaidade",
+      "Conhecimento de mercado local e segmentação regional precisa",
+      "Sem fidelidade — nosso objetivo é gerar resultado para você querer continuar"
+    ],
+
+    faq: [
+      {
+        question: "Preciso ter muito conteúdo gravado para começar?",
+        answer: "Não! Nos primeiros dias, direcionamos exatamente o que gravar — roteiros simples e objetivos. Bastidores da operação, frota e obras já são conteúdo poderoso. Você grava no dia a dia e nós transformamos em conteúdo profissional."
+      },
+      {
+        question: "Em quanto tempo vou ver resultado?",
+        answer: "O Google Meu Negócio gera visibilidade quase imediata. No Instagram, os primeiros 30 dias já mostram diferença no posicionamento e engajamento. Com tráfego pago (a partir do 2º mês), os orçamentos começam a chegar diretamente no WhatsApp."
+      },
+      {
+        question: "O investimento em anúncios está incluso?",
+        answer: "Não. O valor do pacote cobre toda a gestão e estratégia. O budget dos anúncios (Meta Ads e Google Ads) é pago diretamente às plataformas pelo cliente. Sugerimos começar com R$ 10/dia e escalar conforme resultados."
+      },
+      {
+        question: "E se eu quiser cancelar?",
+        answer: "Sem fidelidade, sem multa. Você cancela quando quiser com 30 dias de antecedência. Nosso compromisso é gerar resultado — se gera resultado, você fica. Simples assim."
+      }
+    ],
+
+    closingQuestion: "Dudu, hoje você já faz o serviço com excelência há 15 anos.\nAgora é hora de fazer o cliente te encontrar.\n\nVamos transformar o Dudu Guinchos na referência digital de guincho da Serra Gaúcha?"
   }
 ];
 
