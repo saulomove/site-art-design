@@ -30,10 +30,38 @@ import { ProposalPremiumScope } from "@/components/proposal-premium/proposal-sco
 import { ProposalPremiumInvestment } from "@/components/proposal-premium/proposal-investment";
 import { ProposalPremiumCta } from "@/components/proposal-premium/proposal-cta";
 
+// Legal imports
+import { ProposalLegalHero } from "@/components/proposal-legal/proposal-hero";
+import { ProposalLegalAnalysis } from "@/components/proposal-legal/proposal-analysis";
+import { ProposalLegalScope } from "@/components/proposal-legal/proposal-scope";
+import { ProposalLegalInvestment } from "@/components/proposal-legal/proposal-investment";
+import { ProposalLegalCta } from "@/components/proposal-legal/proposal-cta";
+
 import type { Proposal } from "@/lib/proposals-data";
 
 export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
+  const isLegal = proposal.theme === "legal";
   const isPremium = proposal.theme === "premium";
+
+  if (isLegal) {
+    return (
+      <>
+        <ProposalLegalHero proposal={proposal} />
+        {proposal.analysis && (
+          <ProposalLegalAnalysis
+            analysis={proposal.analysis}
+            clientName={proposal.clientName}
+          />
+        )}
+        <ProposalLegalScope services={proposal.services} />
+        <ProposalLegalInvestment
+          investment={proposal.investment}
+          clientName={proposal.clientName}
+        />
+        <ProposalLegalCta proposal={proposal} />
+      </>
+    );
+  }
 
   if (isPremium) {
     return (

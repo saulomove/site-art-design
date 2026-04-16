@@ -135,7 +135,7 @@ export interface Proposal {
     closingText: string;
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
-  theme?: "standard" | "premium";
+  theme?: "standard" | "premium" | "legal";
 }
 
 // ============================================================
@@ -3348,6 +3348,184 @@ export const proposals: Proposal[] = [
     ],
 
     closingQuestion: "Dudu, hoje você já faz o serviço com excelência há 15 anos.\nAgora é hora de fazer o cliente te encontrar.\n\nVamos transformar o Dudu Guinchos na referência digital de guincho da Serra Gaúcha?"
+  },
+
+  // ---- DR. FERNANDO REUTER ----
+  {
+    slug: "dr-fernando-reuter",
+    clientName: "Dr. Fernando Reuter",
+    contactName: "Dr. Fernando",
+    theme: "legal",
+    greeting: "Preparamos uma estratégia digital sob medida para posicionar o escritório Dr. Fernando Reuter como referência em advocacia trabalhista patronal e direito do produtor rural em Santa Cecília/SC.",
+    validUntil: "2026-04-23",
+    whatsappNumber: "5549988446685",
+    highlights: [
+      "Nicho de alto valor: trabalhista patronal e produtor rural",
+      "Google Meu Negócio já cadastrado — vamos profissionalizar",
+      "Reels estratégicos para ganhar alcance em 2026",
+      "Site próprio + SEO jurídico local"
+    ],
+
+    analysis: {
+      intro: "Analisamos o perfil @reuterfernando, o Google Meu Negócio, redes sociais e posicionamento digital atual. Estas são as conclusões objetivas do momento presente:",
+      strengths: [
+        {
+          title: "Identidade profissional e nicho bem definidos",
+          description: "A bio comunica com clareza o nicho: advocacia trabalhista patronal, produtor rural e revisão de contratos. Diferencial importante para advogados — mercado com alta capacidade de investimento."
+        },
+        {
+          title: "Base de conteúdo já construída",
+          description: "Com 105 posts, há investimento prévio em presença digital. Existem artes seguindo padrão visual com logo, telefone e e-mail no rodapé."
+        },
+        {
+          title: "Google Meu Negócio já existe",
+          description: "O escritório já está no Google Maps com endereço, telefone e horário. Ponto de partida positivo — vamos otimizar e transformar em máquina de captação local."
+        },
+        {
+          title: "Presença em múltiplas plataformas",
+          description: "Instagram, Facebook, LinkedIn e Threads — demonstra iniciativa. Com gestão profissional, todas essas frentes podem ser potencializadas em uma estratégia unificada."
+        },
+        {
+          title: "Foto de perfil adequada e nicho com demanda real",
+          description: "Terno, postura séria, ambiente de escritório. Transmite credibilidade. Direito trabalhista patronal e defesa do produtor rural são nichos com excelente potencial de mercado em SC."
+        }
+      ],
+      opportunities: [
+        {
+          title: "Pouquíssimos Reels — praticamente zero vídeo",
+          description: "Apenas 2 reels publicados. Em 2026, vídeos são o principal motor de alcance orgânico. Sem reels frequentes, o perfil praticamente não cresce. Os dois existentes não têm edição, legenda nem CTA."
+        },
+        {
+          title: "Engajamento muito baixo (menos de 1%)",
+          description: "3 a 5 curtidas e 0 a 1 comentário por post para 692 seguidores. Taxa abaixo de 1% — o conteúdo não está chegando ao público certo nem gerando interação."
+        },
+        {
+          title: "Mistura de conteúdo pessoal e profissional sem estratégia",
+          description: "Feed com fotos da família e posts jurídicos na mesma linha do tempo. Dilui autoridade profissional e confunde o visitante sobre o posicionamento."
+        },
+        {
+          title: "Banco de imagens genéricas substituindo conteúdo autoral",
+          description: "Posts profissionais usam stock photos (homem negro com computador, pessoa assinando contrato). Reduz identificação com o advogado e não gera conexão com o público local."
+        },
+        {
+          title: "Google Meu Negócio incompleto e com status irregular",
+          description: "Aparece como 'Fecha em breve', sem fotos do escritório, sem avaliações visíveis e sem descrição do negócio. Está indexado — mas não converte."
+        },
+        {
+          title: "Sem site próprio — credibilidade limitada",
+          description: "Link na bio aponta para plataforma de terceiros (meucontato.adv.br). Impede SEO, limita apresentação dos serviços e prejudica credibilidade para contratos maiores."
+        },
+        {
+          title: "Bio sem CTA claro e nome inconsistente com o escritório",
+          description: "Bio descreve áreas de atuação mas não orienta o visitante (sem link direto para WhatsApp). Nome 'Adv. Reuter' difere de 'Escritório Dr. Fernando Reuter' usado no Google e Facebook — dificulta que quem pesquisa o escritório encontre o Instagram."
+        }
+      ],
+      conclusion: "O Dr. Fernando tem nicho bem definido, base iniciada e identidade profissional. O que falta é estratégia, consistência e qualidade de execução. É o perfil que vai valorizar resultados visíveis — crescimento, leads no WhatsApp e autoridade digital na região. Gestão de redes + Google + site + captação de fotos/vídeos são complementares e necessários."
+    },
+
+    services: [
+      {
+        name: "Gestão de Redes Sociais",
+        description: "Instagram estratégico para posicionar o Dr. Fernando como autoridade em trabalhista patronal e direito rural.",
+        icon: "Instagram",
+        items: [
+          "Planejamento estratégico mensal de conteúdo jurídico",
+          "Criação de posts, carrosséis e Reels semanais",
+          "Copywriting persuasivo com linguagem acessível ao empresário e produtor rural",
+          "Padronização visual completa do feed",
+          "Destaques profissionais: Áreas de Atuação, Sobre, Depoimentos, Bastidores",
+          "Reformulação da bio com CTA direto para WhatsApp",
+          "Gestão de comentários e mensagens"
+        ],
+        price: "R$ 1.200,00",
+        priceType: "monthly",
+        priceNote: "Mensalidade"
+      },
+      {
+        name: "Captação de Fotos e Vídeos",
+        description: "1 diária mensal de produção audiovisual: ensaio profissional e banco de Reels para 30 dias de conteúdo.",
+        icon: "Camera",
+        items: [
+          "Ensaio fotográfico profissional do Dr. Fernando (autoridade)",
+          "Fotos do escritório, fachada e ambiente de atendimento",
+          "Gravação de 8 a 12 Reels em 1 dia de produção",
+          "Edição profissional com legendas, cortes e CTAs",
+          "Fotos adicionais para Google Meu Negócio e site",
+          "Banco de conteúdo organizado para a equipe"
+        ],
+        price: "R$ 900,00",
+        priceType: "monthly",
+        priceNote: "1 diária/mês"
+      },
+      {
+        name: "Google Meu Negócio & SEO Local",
+        description: "Transformar o Google Meu Negócio em canal de captação real — aparecer quando alguém buscar 'advogado trabalhista Santa Cecília'.",
+        icon: "MapPin",
+        items: [
+          "Correção completa de horários e dados do perfil",
+          "Descrição otimizada com palavras-chave locais",
+          "Inserção de fotos profissionais do escritório e do advogado",
+          "Estratégia ativa de coleta de avaliações 5 estrelas",
+          "Postagens semanais dentro do Google (novidades, artigos, CTAs)",
+          "Configuração detalhada de todos os serviços",
+          "Monitoramento de posicionamento local"
+        ],
+        price: "R$ 500,00",
+        priceType: "monthly",
+        priceNote: "Mensalidade"
+      },
+      {
+        name: "Site Profissional",
+        description: "Site próprio com domínio personalizado, SEO jurídico e foco em conversão via WhatsApp.",
+        icon: "Globe",
+        items: [
+          "Domínio próprio (ex.: drfernandoreuter.adv.br)",
+          "Página Home com autoridade e CTA direto para WhatsApp",
+          "Páginas de Áreas de Atuação detalhadas",
+          "Página Sobre o Advogado (trajetória, OAB, especializações)",
+          "Blog jurídico para SEO (ranqueamento orgânico no Google)",
+          "Página de Contato com formulário, WhatsApp e localização",
+          "SEO otimizado para buscas locais (Santa Cecília/SC e região)",
+          "Site responsivo, rápido e focado em conversão"
+        ],
+        price: "R$ 2.200,00",
+        priceType: "project",
+        priceNote: "Valor único de desenvolvimento"
+      }
+    ],
+
+    investment: {
+      totalMonthly: "R$ 1.200,00",
+      totalLabel: "Pacote Completo Mensal",
+      originalPrice: "R$ 2.600,00/mês + R$ 2.200 site",
+      savings: "R$ 1.400,00/mês + site incluso",
+      breakdown: [
+        { item: "Gestão de Redes Sociais", value: "R$ 1.200/mês" },
+        { item: "Captação de Fotos e Vídeos (1 diária)", value: "R$ 900/mês" },
+        { item: "Google Meu Negócio", value: "R$ 500/mês" },
+        { item: "Site Profissional (único)", value: "R$ 2.200" }
+      ],
+      packageIncludes: [
+        "Gestão completa do Instagram",
+        "Captação mensal de fotos e vídeos",
+        "Gestão profissional do Google Meu Negócio",
+        "Site profissional com domínio próprio (incluso, sem custo extra)",
+        "Relatórios mensais de performance",
+        "Acompanhamento estratégico contínuo"
+      ],
+      paymentConditions: [
+        "Pagamento mensal: R$ 1.200,00/mês via PIX ou boleto",
+        "Sem fidelidade — cancelamento a qualquer momento com 30 dias de aviso",
+        "Site profissional incluso no pacote (sem valor adicional)"
+      ],
+      notes: [
+        "Contratando separadamente, o investimento seria R$ 2.600/mês + R$ 2.200 de site",
+        "O pacote completo representa mais de 50% de economia em relação aos serviços avulsos",
+        "Nosso compromisso: gerar autoridade digital real para o escritório em 90 dias"
+      ]
+    },
+
+    closingQuestion: "Dr. Fernando, o nicho que o senhor atende é exatamente o que tem maior capacidade de pagar por um advogado online.\n\nO que falta não é o conhecimento técnico — é a estratégia digital para que esse público encontre o escritório.\n\nVamos construir essa presença juntos?"
   }
 ];
 
