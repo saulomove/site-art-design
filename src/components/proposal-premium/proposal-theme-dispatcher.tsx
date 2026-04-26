@@ -41,7 +41,12 @@ import { ProposalLegalCta } from "@/components/proposal-legal/proposal-cta";
 import { ProposalExecutiveHero } from "@/components/proposal-executive/proposal-hero";
 import { ProposalExecutiveStats } from "@/components/proposal-executive/proposal-stats";
 import { ProposalExecutiveAnalysis } from "@/components/proposal-executive/proposal-analysis";
+import { ProposalExecutiveBeforeAfter } from "@/components/proposal-executive/proposal-before-after";
 import { ProposalExecutiveScope } from "@/components/proposal-executive/proposal-scope";
+import { ProposalExecutiveContentIdeas } from "@/components/proposal-executive/proposal-content-ideas";
+import { ProposalExecutiveRoadmap } from "@/components/proposal-executive/proposal-roadmap";
+import { ProposalExecutiveRoi } from "@/components/proposal-executive/proposal-roi";
+import { ProposalExecutiveDifferentials } from "@/components/proposal-executive/proposal-differentials";
 import { ProposalExecutiveInvestment } from "@/components/proposal-executive/proposal-investment";
 import { ProposalExecutiveCta } from "@/components/proposal-executive/proposal-cta";
 
@@ -68,11 +73,32 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
             clientName={proposal.clientName}
           />
         )}
+        {proposal.beforeAfter && (
+          <ProposalExecutiveBeforeAfter
+            beforeAfter={proposal.beforeAfter}
+            clientName={proposal.clientName}
+          />
+        )}
         <ProposalExecutiveScope services={proposal.services} />
+        {proposal.contentSuggestions && proposal.contentSuggestions.length > 0 && (
+          <ProposalExecutiveContentIdeas contentSuggestions={proposal.contentSuggestions} />
+        )}
+        {proposal.phases && proposal.phases.length > 0 && (
+          <ProposalExecutiveRoadmap phases={proposal.phases} />
+        )}
+        {proposal.roiAnalysis && (
+          <ProposalExecutiveRoi
+            roiAnalysis={proposal.roiAnalysis}
+            clientName={proposal.clientName}
+          />
+        )}
         <ProposalExecutiveInvestment
           investment={proposal.investment}
           clientName={proposal.clientName}
         />
+        {proposal.differentials && proposal.differentials.length > 0 && (
+          <ProposalExecutiveDifferentials differentials={proposal.differentials} />
+        )}
         <ProposalExecutiveCta proposal={proposal} />
       </>
     );

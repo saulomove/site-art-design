@@ -137,6 +137,24 @@ export interface Proposal {
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
   theme?: "standard" | "premium" | "legal" | "executive";
   stats?: { value: string; label: string; subtext?: string }[];
+  contentSuggestions?: {
+    format: string;
+    theme: string;
+    hook: string;
+    description: string;
+  }[];
+  roiAnalysis?: {
+    intro: string;
+    scenarios: {
+      label: string;
+      monthlyClients: string;
+      avgTicket: string;
+      avgCommission: string;
+      annualRevenue: string;
+      roi: string;
+    }[];
+    conclusion: string;
+  };
 }
 
 // ============================================================
@@ -3701,6 +3719,163 @@ export const proposals: Proposal[] = [
         "Meta de 90 dias: 2.500 seguidores, alcance médio acima de 3.000 views por Reel, 1ª posição no Google local"
       ]
     },
+
+    beforeAfter: {
+      beforeTitle: "Cenário atual do @mateus_ademicon_videira",
+      beforeItems: [
+        "1.464 seguidores e crescimento lento (~1,5% engajamento)",
+        "9 curtidas por post estático em média",
+        "Apenas 2 Reels publicados em todo o histórico",
+        "1.500+ stories de clientes/contemplados arquivados sem reaproveitamento",
+        "Bio sem CTA direto para WhatsApp ou simulação",
+        "Subdomínio genérico da Ademicon — sem ativo digital próprio",
+        "2º lugar no Google local por falta de 4 avaliações",
+        "LinkedIn praticamente parado (~15 conexões)",
+        "Perfil pessoal misturado com institucional Ademicon"
+      ],
+      afterTitle: "Posicionamento alcançado",
+      afterItems: [
+        "2.500+ seguidores com taxa de engajamento acima de 3%",
+        "Reels semanais com média de 3.000+ views",
+        "1.500 stories convertidos em pílulas de conteúdo de alto impacto",
+        "Bio profissional com link único e CTA direto para WhatsApp",
+        "Landing page própria como destino do tráfego (orgânico e pago)",
+        "1ª posição no Google local em \"consórcio Videira SC\"",
+        "LinkedIn ativo com B2B (construtoras, contadores, advogados)",
+        "Personal brand do Mateus claramente diferenciada da Ademicon institucional"
+      ],
+      expectedResults: "Em 90 dias o Mateus deixa de ser \"mais um licenciado Ademicon\" e passa a ser o consultor de consórcio referência em Videira e Joaçaba — com leads chegando todos os dias direto no WhatsApp."
+    },
+
+    phases: [
+      {
+        number: 1,
+        title: "Fundação & Diagnóstico",
+        objective: "Estruturar o ecossistema digital do Mateus, separar personal brand da marca institucional Ademicon e gerar os primeiros sinais visíveis de movimento no perfil.",
+        deliverables: [
+          "Reestruturação completa da bio com link único e CTA para WhatsApp",
+          "Auditoria e organização dos 7 grupos de Highlights (capas padronizadas)",
+          "Definição dos 4 pilares de conteúdo (autoridade, educação, prova social, conversão)",
+          "Calendário editorial de 90 dias entregue antes do mês 2",
+          "Banco visual exclusivo (templates de feed, Reels e carrossel)",
+          "Otimização do Google Meu Negócio Videira + criação Joaçaba",
+          "Início da campanha de captação de avaliações (meta: +5 reviews em 30 dias)",
+          "Reativação do LinkedIn (foto, headline, primeira semana de posts)",
+          "Primeiros 5 Reels publicados com identidade visual nova"
+        ],
+        expectedResult: "Perfil reposicionado, calendário pronto, 1ª avaliação extra no Google e os primeiros Reels já no ar — o algoritmo começa a entender que o perfil voltou a ser ativo."
+      },
+      {
+        number: 2,
+        title: "Escala de Conteúdo & Autoridade",
+        objective: "Atingir frequência total de 5 publicações semanais, reciclar o banco de stories em material de feed e dominar o Google local.",
+        deliverables: [
+          "20+ publicações no mês (Reels semanais + carrosséis + stories estratégicos)",
+          "Reciclagem de 30 stories de Contemplados em Reels de prova social",
+          "Reels educativos sobre golpes em consórcio (alto engajamento previsto)",
+          "Carrosséis comparativos consórcio x financiamento com gráficos",
+          "Lançamento da landing page de conversão",
+          "Avaliações no Google ultrapassando o concorrente líder",
+          "Posts no LinkedIn 2x/semana focados em B2B (construtoras, contadores)",
+          "Relatório quinzenal com métricas de alcance, engajamento e leads"
+        ],
+        expectedResult: "Crescimento mensurável: alcance médio dos Reels acima de 1.500 views, engajamento dobrando, primeiros leads chegando no WhatsApp pela landing page."
+      },
+      {
+        number: 3,
+        title: "Conversão & Liderança Digital",
+        objective: "Consolidar o Mateus como autoridade pessoal em consórcio na região, com leads consistentes e a Ademicon Videira na 1ª posição do Google local.",
+        deliverables: [
+          "5 publicações semanais mantidas com qualidade premium",
+          "Reels com performance acima de 3.000 views (média)",
+          "1ª posição no Google em \"consórcio Videira SC\" e \"consórcio Joaçaba\"",
+          "Mínimo de 5 a 10 leads/mês qualificados via Direct + landing page",
+          "Banco de Reels reserva para 60 dias seguintes",
+          "Plano sugerido de tráfego pago (Meta + Google) para o mês 4",
+          "Relatório consolidado de 90 dias com ROI mensurado"
+        ],
+        expectedResult: "Mateus deixa de \"postar\" e passa a operar uma máquina previsível de geração de autoridade e leads. A próxima fase já vem com tráfego pago somado para acelerar o crescimento."
+      }
+    ],
+
+    contentSuggestions: [
+      {
+        format: "Reel",
+        theme: "Por que o financiamento custa 3x mais que você imagina",
+        hook: "\"Ninguém te conta isso na hora da assinatura — mas eu vou te contar agora.\"",
+        description: "Reel direto à câmera com o Mateus mostrando, no whiteboard ou em uma planilha, a diferença real entre R$ 300 mil financiados e a mesma carta no consórcio. Termina com CTA \"chama no Direct que eu te mando a simulação\". Formato campeão de salvamentos."
+      },
+      {
+        format: "Carrossel",
+        theme: "5 sinais de que o consórcio que você assinou é golpe",
+        hook: "\"Antes de pagar a próxima parcela, leia até o final.\"",
+        description: "Carrossel educativo de 8 lâminas alavancando os 110 stories de Golpes que o Mateus já produziu. Aproveita o nicho de consultor confiável e convoca quem está em consórcios suspeitos a buscar revisão. Gera DMs."
+      },
+      {
+        format: "Reel",
+        theme: "Ele esperava 8 anos. Saiu em 14 meses.",
+        hook: "\"Esse cliente entrou achando que ia esperar 8 anos. Olha o que aconteceu.\"",
+        description: "Reel emocional com áudio de tendência usando 1 dos 268 stories de Contemplados. Foto do cliente recebendo a carta + texto sobreposto contando a história em 3 atos. Tipo de conteúdo que o Mateus nunca produziu para feed e que tem alto potencial viral."
+      },
+      {
+        format: "Reel",
+        theme: "O que separa um licenciado A de um licenciado comum",
+        hook: "\"Existem mais de 700 licenciados Ademicon no Brasil. Apenas alguns recebem o Rating A.\"",
+        description: "Posicionamento direto puxando a credencial do Rating A 2025. Mostra o troféu, o prêmio no Graciosa, e termina com \"se você vai contratar consórcio, contrate com quem a própria Ademicon reconhece como referência\". Diferenciação imediata."
+      },
+      {
+        format: "Carrossel",
+        theme: "Como funciona a contemplação por lance — sem mistério",
+        hook: "\"O lance é a estratégia mais subutilizada do consórcio. Mostro o porquê.\"",
+        description: "Educativo de alto valor percebido. 7 lâminas explicando lance livre, lance fixo e estratégias para sair antes da hora. Usa dados e gráficos. Posiciona o Mateus como o consultor que ENSINA — não só vende."
+      },
+      {
+        format: "Reel",
+        theme: "Bastidor: dia de entrega de carta",
+        hook: "\"Esse foi o melhor momento do nosso mês.\"",
+        description: "Conteúdo emocional aproveitando os 307 stories de Entregas. Cliente recebendo a carta, abraço, agradecimento. Trilha sonora emotiva. É o tipo de conteúdo que humaniza o vendedor e converte por gatilho de prova social."
+      }
+    ],
+
+    roiAnalysis: {
+      intro: "Investir R$ 2.000/mês em estratégia digital significa R$ 24.000/ano. Vamos olhar quantos clientes esse investimento precisa gerar para se pagar — e o que acontece a partir do segundo cliente.",
+      scenarios: [
+        {
+          label: "Cenário Conservador",
+          monthlyClients: "1 cliente / 2 meses",
+          avgTicket: "R$ 150.000",
+          avgCommission: "~R$ 4.500",
+          annualRevenue: "R$ 27.000",
+          roi: "1,1x · paga o ano"
+        },
+        {
+          label: "Cenário Esperado",
+          monthlyClients: "1 cliente / mês",
+          avgTicket: "R$ 200.000",
+          avgCommission: "~R$ 6.000",
+          annualRevenue: "R$ 72.000",
+          roi: "3x · sobra R$ 48k"
+        },
+        {
+          label: "Cenário Otimista",
+          monthlyClients: "2 clientes / mês",
+          avgTicket: "R$ 250.000",
+          avgCommission: "~R$ 7.500",
+          annualRevenue: "R$ 180.000",
+          roi: "7,5x · sobra R$ 156k"
+        }
+      ],
+      conclusion: "Mateus, no cenário mais conservador (1 cliente a cada 2 meses) o investimento já se paga. No cenário esperado — perfeitamente alcançável dado o seu Reel de 6.910 views orgânicos — você multiplica por 3 o que investe. O consórcio é um dos poucos produtos onde 1 carta paga meses inteiros de marketing."
+    },
+
+    differentials: [
+      "Equipe multidisciplinar: design, código, tráfego e estratégia sob o mesmo teto",
+      "Tecnologia proprietária: ArtAtende CRM para gestão de WhatsApp e qualificação de leads",
+      "Especialistas em personal brand para profissionais liberais e franqueados",
+      "Metodologia própria com foco em ROI e métricas mensuráveis",
+      "Suporte dedicado: cada cliente tem um gestor responsável direto",
+      "Produção audiovisual premium com cinema quality e drone 4K"
+    ],
 
     closingQuestion: "Mateus, seu próprio perfil já provou que 1 Reel pode chegar a 6.910 pessoas sem gastar R$ 1 em anúncio.\n\nA pergunta não é se funciona — é quanto cliente você ainda vai deixar passar antes de transformar isso em rotina.\n\nVamos construir essa máquina juntos?"
   }
