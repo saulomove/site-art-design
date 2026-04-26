@@ -135,7 +135,8 @@ export interface Proposal {
     closingText: string;
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
-  theme?: "standard" | "premium" | "legal";
+  theme?: "standard" | "premium" | "legal" | "executive";
+  stats?: { value: string; label: string; subtext?: string }[];
 }
 
 // ============================================================
@@ -3526,6 +3527,182 @@ export const proposals: Proposal[] = [
     },
 
     closingQuestion: "Dr. Fernando, o nicho que o senhor atende é exatamente o que tem maior capacidade de pagar por um advogado online.\n\nO que falta não é o conhecimento técnico — é a estratégia digital para que esse público encontre o escritório.\n\nVamos construir essa presença juntos?"
+  },
+
+  // ---- MATEUS — LICENCIADO ADEMICON VIDEIRA ----
+  {
+    slug: "mateus-ademicon-videira",
+    clientName: "Mateus Ferreira",
+    contactName: "Mateus",
+    theme: "executive",
+    greeting: "Você já provou que o algoritmo entrega seu conteúdo. Os números do seu próprio perfil mostram o caminho. Falta só estratégia para transformar esse alcance em clientes contemplados.",
+    validUntil: "2026-05-03",
+    whatsappNumber: "5549988446685",
+    highlights: [
+      "Rating A Ademicon 2025 — entre as melhores unidades do Brasil",
+      "Seu melhor Reel: 6.910 views (4,7x seu número de seguidores)",
+      "1.500+ stories arquivados — banco de conteúdo praticamente inexplorado",
+      "2º lugar no Google local — perdendo por 4 avaliações"
+    ],
+
+    stats: [
+      { value: "6.910", label: "Views no melhor Reel", subtext: "4,7x seu número de seguidores — alcance orgânico real" },
+      { value: "1.500+", label: "Stories arquivados", subtext: "Banco de conteúdo de clientes, contemplados e entregas" },
+      { value: "5,0★", label: "Nota no Google Maps", subtext: "Maior avaliação da região — 6 reviews" },
+      { value: "<1,5%", label: "Engajamento atual", subtext: "9 curtidas em posts recentes vs. potencial de milhares" }
+    ],
+
+    analysis: {
+      intro: "Análise completa do @mateus_ademicon_videira, do Google Meu Negócio Ademicon Videira e da concorrência local em Videira/SC. Os dados são públicos e foram coletados nas plataformas oficiais — sem suposições.",
+      strengths: [
+        {
+          title: "Credenciais excepcionais subaproveitadas",
+          description: "Rating A Ademicon 2025 (Graciosa Country Clube), unidade eleita uma das melhores do Brasil pelo 2º ano consecutivo, participação no podcast CONCAST com André Marini, formação em Direito. Hoje, quase nada disso aparece visualmente no perfil."
+        },
+        {
+          title: "Banco de 1.500+ stories como ativo dormente",
+          description: "311 stories de Clientes, 268 de Contemplados, 307 de Entregas, 275 de Comparação consórcio x financiamento, 110 sobre Golpes (educativo) e 237 de Serviços. É matéria-prima para meses de Reels de alto impacto."
+        },
+        {
+          title: "Reels com alcance orgânico comprovado",
+          description: "O melhor Reel chegou a 6.910 views (4,7x seguidores) — o algoritmo está entregando para quem ainda não te segue. Outros Reels: 2.894, 2.342, 2.070, 1.671 views. A prova de que o formato funciona é o próprio perfil."
+        },
+        {
+          title: "Google Meu Negócio com nota máxima",
+          description: "5,0★ — a mais alta da região para 'consórcio Videira SC'. Cadastrado, ativo e com o endereço correto. Falta só estratégia de captação de avaliações para assumir a 1ª posição local."
+        },
+        {
+          title: "Identidade visual alinhada e perfil consistente",
+          description: "244 publicações, paleta vermelha e preta da Ademicon respeitada, foto de perfil profissional, presença em Instagram, Facebook, LinkedIn, Threads e YouTube. Base sólida pra escalar."
+        }
+      ],
+      opportunities: [
+        {
+          title: "Formato errado: estáticos com 9 curtidas vs. Reels de 6.910",
+          description: "O mesmo conteúdo que chega a quase 7 mil pessoas em vídeo, quando vira card estático, recebe 9 curtidas. O problema não é o que você fala — é o formato escolhido. Migrar para Reels semanais é a alavanca número um."
+        },
+        {
+          title: "Perfil pessoal misturado com institucional Ademicon",
+          description: "Seu @ funciona como repositório institucional da franquia — não como canal de autoridade do Mateus. Quem busca consultor confiável quer ver o consultor, não só a marca. Personal brand é o que diferencia franqueado bom de franqueado A+."
+        },
+        {
+          title: "Sem site ou landing page próprios",
+          description: "Você depende 100% de Instagram e Google. Se o algoritmo muda ou o Insta cair, sua presença digital some. Não há ativo digital próprio (drmateus.com ou similar) — e o subdomínio genérico da Ademicon não posiciona seu nome no Google."
+        },
+        {
+          title: "2º lugar no Google local por falta de avaliações",
+          description: "Você tem nota 5,0 (a mais alta) mas perde a 1ª posição para concorrente com 4,5 e 10 avaliações. Faltam 5 a 10 reviews para virar a chave. Com 268 stories de contemplados, conquistar isso em 30 dias é trivial."
+        },
+        {
+          title: "LinkedIn praticamente parado",
+          description: "~15 conexões para um empresário do seu porte. LinkedIn é o canal certo pra B2B, parcerias com construtoras, advogados e contadores que indicam consórcio. Hoje está zerado."
+        }
+      ],
+      conclusion: "Mateus, você já tem tudo que a maioria dos consultores passa anos tentando construir: prêmios reais, clientes reais, histórias reais e credibilidade real. O que falta não é conteúdo — é estratégia para transformar esse ativo em audiência e essa audiência em clientes. Um Reel seu já chegou a 6.910 pessoas. Com gestão profissional, a meta é que isso seja a média — e não o pico."
+    },
+
+    services: [
+      {
+        name: "Gestão de Redes Sociais — Personal Brand",
+        description: "Posicionar o Mateus como autoridade pessoal em consórcio em Videira e Joaçaba — separando o consultor da marca institucional Ademicon.",
+        icon: "Instagram",
+        items: [
+          "5 publicações semanais (2 Reels + 2 carrosséis/estáticos + 1 stories estratégico)",
+          "Calendário editorial de 90 dias com pilares de conteúdo definidos",
+          "Copywriting com CTAs voltados a captura no WhatsApp",
+          "Otimização da bio com link de conversão",
+          "Gestão do Direct e qualificação de leads",
+          "Reativação do LinkedIn (2 publicações/semana — B2B e parcerias)",
+          "Relatório quinzenal + reunião mensal de estratégia"
+        ],
+        price: "R$ 1.500,00",
+        priceType: "monthly",
+        priceNote: "Mensalidade"
+      },
+      {
+        name: "Captação & Reciclagem de Conteúdo",
+        description: "Transformar os 1.500+ stories arquivados em Reels de alto impacto + scripts personalizados para o Mateus gravar.",
+        icon: "Camera",
+        items: [
+          "Reciclagem dos Highlights (Contemplados, Entregas, Comparação, Golpes)",
+          "Scripts de Reels personalizados — só o Mateus grava",
+          "Edição profissional com legendas, cortes e CTAs",
+          "Banco de identidades visuais únicas (mantendo padrão Ademicon)",
+          "Templates exclusivos para feed, Reels e stories",
+          "Capas padronizadas para Highlights"
+        ],
+        price: "R$ 600,00",
+        priceType: "monthly",
+        priceNote: "Mensalidade"
+      },
+      {
+        name: "Google Meu Negócio + SEO Local",
+        description: "Assumir a 1ª posição na busca 'consórcio Videira SC' — hoje você está em 2º por falta de 4 avaliações.",
+        icon: "MapPin",
+        items: [
+          "Otimização completa do perfil (descrição, serviços, fotos, horários)",
+          "Estratégia ativa de captação de avaliações 5★ via clientes contemplados",
+          "Postagens semanais dentro do Google",
+          "Inserção de fotos profissionais da unidade e da equipe",
+          "Monitoramento mensal de posicionamento local",
+          "Replicação da estratégia para a unidade Joaçaba"
+        ],
+        price: "R$ 500,00",
+        priceType: "monthly",
+        priceNote: "Mensalidade · cobre as duas unidades"
+      },
+      {
+        name: "Landing Page de Conversão",
+        description: "Página própria com CTA direto para WhatsApp — o destino ideal das suas campanhas de tráfego pago.",
+        icon: "Globe",
+        items: [
+          "Apresentação do Mateus (foto, credenciais, premiações)",
+          "Tipos de consórcio disponíveis (imóveis, veículos, serviços)",
+          "Depoimentos em vídeo de clientes contemplados",
+          "Formulário de captura de leads + CTA para WhatsApp",
+          "SEO local (consórcio Videira, consórcio Joaçaba SC)",
+          "Domínio próprio + Google Analytics integrado"
+        ],
+        price: "R$ 1.500,00",
+        priceType: "project",
+        priceNote: "Valor único de desenvolvimento"
+      }
+    ],
+
+    investment: {
+      totalMonthly: "R$ 2.000,00",
+      totalLabel: "Pacote Personal Brand · Crescimento",
+      originalPrice: "R$ 2.600/mês + R$ 1.500 LP",
+      savings: "R$ 600/mês + LP inclusa",
+      breakdown: [
+        { item: "Gestão de Redes Sociais", value: "R$ 1.500/mês" },
+        { item: "Captação & Reciclagem", value: "R$ 600/mês" },
+        { item: "Google Meu Negócio", value: "R$ 500/mês" },
+        { item: "Landing Page (único)", value: "R$ 1.500" }
+      ],
+      packageIncludes: [
+        "Gestão completa do Instagram pessoal + LinkedIn",
+        "5 posts semanais (2 Reels + 2 estáticos + 1 stories estratégico)",
+        "Reciclagem dos 1.500+ stories arquivados em conteúdo de feed",
+        "Google Meu Negócio das duas unidades (Videira e Joaçaba)",
+        "Estratégia de captação ativa de avaliações 5★",
+        "Landing page de conversão (incluída no pacote)",
+        "Relatório quinzenal + reunião mensal estratégica"
+      ],
+      paymentConditions: [
+        "Pagamento mensal: R$ 2.000,00/mês via PIX ou boleto",
+        "Sem fidelidade — cancelamento a qualquer momento com 30 dias de aviso",
+        "Landing page inclusa no pacote (sem valor adicional)",
+        "Tráfego pago disponível como upgrade futuro (verba de mídia separada)"
+      ],
+      notes: [
+        "Contratando separadamente, o investimento seria R$ 2.600/mês + R$ 1.500 de LP",
+        "O ticket médio do consórcio (R$ 100k a R$ 500k) torna o ROI altamente favorável",
+        "Meta de 90 dias: 2.500 seguidores, alcance médio acima de 3.000 views por Reel, 1ª posição no Google local"
+      ]
+    },
+
+    closingQuestion: "Mateus, seu próprio perfil já provou que 1 Reel pode chegar a 6.910 pessoas sem gastar R$ 1 em anúncio.\n\nA pergunta não é se funciona — é quanto cliente você ainda vai deixar passar antes de transformar isso em rotina.\n\nVamos construir essa máquina juntos?"
   }
 ];
 

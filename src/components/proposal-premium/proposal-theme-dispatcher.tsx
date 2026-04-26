@@ -37,11 +37,46 @@ import { ProposalLegalScope } from "@/components/proposal-legal/proposal-scope";
 import { ProposalLegalInvestment } from "@/components/proposal-legal/proposal-investment";
 import { ProposalLegalCta } from "@/components/proposal-legal/proposal-cta";
 
+// Executive imports (financial / consórcio / B2B)
+import { ProposalExecutiveHero } from "@/components/proposal-executive/proposal-hero";
+import { ProposalExecutiveStats } from "@/components/proposal-executive/proposal-stats";
+import { ProposalExecutiveAnalysis } from "@/components/proposal-executive/proposal-analysis";
+import { ProposalExecutiveScope } from "@/components/proposal-executive/proposal-scope";
+import { ProposalExecutiveInvestment } from "@/components/proposal-executive/proposal-investment";
+import { ProposalExecutiveCta } from "@/components/proposal-executive/proposal-cta";
+
 import type { Proposal } from "@/lib/proposals-data";
 
 export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isLegal = proposal.theme === "legal";
+  const isExecutive = proposal.theme === "executive";
   const isPremium = proposal.theme === "premium";
+
+  if (isExecutive) {
+    return (
+      <>
+        <ProposalExecutiveHero proposal={proposal} />
+        {proposal.stats && proposal.stats.length > 0 && (
+          <ProposalExecutiveStats
+            stats={proposal.stats}
+            clientName={proposal.clientName}
+          />
+        )}
+        {proposal.analysis && (
+          <ProposalExecutiveAnalysis
+            analysis={proposal.analysis}
+            clientName={proposal.clientName}
+          />
+        )}
+        <ProposalExecutiveScope services={proposal.services} />
+        <ProposalExecutiveInvestment
+          investment={proposal.investment}
+          clientName={proposal.clientName}
+        />
+        <ProposalExecutiveCta proposal={proposal} />
+      </>
+    );
+  }
 
   if (isLegal) {
     return (
