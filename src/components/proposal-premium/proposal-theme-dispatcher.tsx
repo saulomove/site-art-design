@@ -50,12 +50,57 @@ import { ProposalExecutiveDifferentials } from "@/components/proposal-executive/
 import { ProposalExecutiveInvestment } from "@/components/proposal-executive/proposal-investment";
 import { ProposalExecutiveCta } from "@/components/proposal-executive/proposal-cta";
 
+// Executive system (sistema/SaaS variant)
+import { ProposalExecutiveSystemHero } from "@/components/proposal-executive/proposal-system-hero";
+import { ProposalExecutiveSystemPain } from "@/components/proposal-executive/proposal-system-pain";
+import { ProposalExecutiveSystemModules } from "@/components/proposal-executive/proposal-system-modules";
+import { ProposalExecutiveSystemSprints } from "@/components/proposal-executive/proposal-system-sprints";
+import { ProposalExecutiveSystemStack } from "@/components/proposal-executive/proposal-system-stack";
+import { ProposalExecutiveSystemPricing } from "@/components/proposal-executive/proposal-system-pricing";
+import { ProposalExecutiveSystemComparison } from "@/components/proposal-executive/proposal-system-comparison";
+
 import type { Proposal } from "@/lib/proposals-data";
 
 export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isLegal = proposal.theme === "legal";
   const isExecutive = proposal.theme === "executive";
   const isPremium = proposal.theme === "premium";
+
+  if (isExecutive && proposal.proposalType === "sistema") {
+    return (
+      <>
+        <ProposalExecutiveSystemHero proposal={proposal} />
+        {proposal.systemPain && (
+          <ProposalExecutiveSystemPain pain={proposal.systemPain} />
+        )}
+        {proposal.systemModules && proposal.systemModules.length > 0 && (
+          <ProposalExecutiveSystemModules modules={proposal.systemModules} />
+        )}
+        {proposal.systemSprints && proposal.systemSprints.length > 0 && (
+          <ProposalExecutiveSystemSprints sprints={proposal.systemSprints} />
+        )}
+        {proposal.systemStack && proposal.systemStack.length > 0 && (
+          <ProposalExecutiveSystemStack stack={proposal.systemStack} />
+        )}
+        {proposal.systemPricing && (
+          <ProposalExecutiveSystemPricing
+            pricing={proposal.systemPricing}
+            clientName={proposal.clientName}
+          />
+        )}
+        {proposal.systemComparison && (
+          <ProposalExecutiveSystemComparison comparison={proposal.systemComparison} />
+        )}
+        {proposal.faq && proposal.faq.length > 0 && (
+          <ProposalFAQ faq={proposal.faq} />
+        )}
+        {proposal.differentials && proposal.differentials.length > 0 && (
+          <ProposalExecutiveDifferentials differentials={proposal.differentials} />
+        )}
+        <ProposalExecutiveCta proposal={proposal} />
+      </>
+    );
+  }
 
   if (isExecutive) {
     return (

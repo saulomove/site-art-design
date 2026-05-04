@@ -120,7 +120,7 @@ export interface Proposal {
   brandEssence?: string;
   optionalServices?: string[];
   contentCalendar?: ContentCalendarProfile[];
-  proposalType?: "social_media" | "crm";
+  proposalType?: "social_media" | "crm" | "sistema";
   closingQuestion?: string;
   beforeAfter?: ProposalBeforeAfter;
   simulation?: { title: string; items: string[] };
@@ -154,6 +154,45 @@ export interface Proposal {
       roi: string;
     }[];
     conclusion: string;
+  };
+  systemPain?: {
+    title: string;
+    intro?: string;
+    before: { dayLabel: string; title: string; items: string[]; result: string };
+    after: { dayLabel: string; title: string; items: string[]; result: string };
+  };
+  systemModules?: {
+    icon: string;
+    title: string;
+    description: string;
+    features: string[];
+  }[];
+  systemSprints?: {
+    number: number;
+    weeks: string;
+    title: string;
+    deliverables: string[];
+    milestone: string;
+  }[];
+  systemStack?: {
+    category: string;
+    items: { name: string; role: string }[];
+  }[];
+  systemPricing?: {
+    setup: { value: string; label: string; includes: string[]; payment: string };
+    monthly: { value: string; label: string; includes: string[]; annualValue?: string; annualNote?: string };
+    year1Total: string;
+    paybackDays: string;
+    notes?: string[];
+  };
+  systemComparison?: {
+    competitorName: string;
+    rows: {
+      feature: string;
+      excel: string;
+      competitor: string;
+      artdesign: string;
+    }[];
   };
 }
 
@@ -3878,6 +3917,396 @@ export const proposals: Proposal[] = [
     ],
 
     closingQuestion: "Mateus, seu próprio perfil já provou que 1 Reel pode chegar a 6.910 pessoas sem gastar R$ 1 em anúncio.\n\nA pergunta não é se funciona — é quanto cliente você ainda vai deixar passar antes de transformar isso em rotina.\n\nVamos construir essa máquina juntos?"
+  },
+
+  // ---- ADEMICON CHAPECÓ & SMO — SISTEMA FINANCEIRO ----
+  {
+    slug: "ademicon-chapeco-smo",
+    clientName: "Ademicon Chapecó & SMO",
+    contactName: "Equipe Ademicon",
+    theme: "executive",
+    proposalType: "sistema",
+    greeting: "Sistema financeiro multi-filial sob medida + Bot WhatsApp inteligente para Chapecó Centro, EFAPI e São Miguel do Oeste. Acabar com o Excel, ganhar 3 horas por mês e ter rastreabilidade completa de cada centavo.",
+    validUntil: "2026-06-03",
+    whatsappNumber: "5549988446685",
+
+    services: [],
+    investment: { totalMonthly: "R$ 199,00" },
+
+    systemPain: {
+      title: "Hoje vs. Depois do Sistema",
+      intro: "A diferença não está no software. Está no tempo que volta pro seu dia, na confiança nos números e na rastreabilidade que vocês passam a ter.",
+      before: {
+        dayLabel: "Segunda-feira · 8h",
+        title: "Como é hoje",
+        items: [
+          "Abrem 3 planilhas: Chapecó Centro, EFAPI e SMO",
+          "Consolidam manualmente em uma aba \"CONSOLIDADO\"",
+          "Criam fórmulas SUM para juntar receitas e despesas",
+          "Mandam para o contador por email",
+          "Contador volta: \"a coluna D não bateu com a nota\"",
+          "Mais 1 hora caçando o erro nas planilhas",
+          "Ninguém sabe quem alterou o quê (zero auditoria)"
+        ],
+        result: "3 horas perdidas, 1 erro encontrado depois, zero rastreabilidade."
+      },
+      after: {
+        dayLabel: "Segunda-feira · 8h",
+        title: "Como vai ser",
+        items: [
+          "Abre o sistema (qualquer dispositivo, 24/7)",
+          "Clica em \"Relatório · Consolidado\"",
+          "Vê em 10 segundos: receita, despesa, resultado por filial",
+          "Exporta PDF e manda para o contador",
+          "Contador não precisa conferir — sistema tem auditoria completa",
+          "Bot WhatsApp pergunta o saldo de qualquer filial em segundos",
+          "Cada lançamento tem nome, hora e IP de quem fez"
+        ],
+        result: "10 minutos, zero erros, rastreabilidade total. Time pode focar em vender consórcio."
+      }
+    },
+
+    systemModules: [
+      {
+        icon: "LayoutDashboard",
+        title: "Dashboard Inteligente",
+        description: "Painel consolidado de todas as filiais em tempo real. Tudo que você precisa saber em uma tela.",
+        features: [
+          "Saldo consolidado das 3 filiais (Chapecó Centro + EFAPI + SMO)",
+          "Receita vs. Despesa dos últimos 30 dias",
+          "Gráficos de fluxo de caixa em tempo real",
+          "Alertas de contas vencidas em destaque",
+          "Últimas 10 transações com filtro por filial",
+          "Acesso por permissão (cada usuário vê o que pode)"
+        ]
+      },
+      {
+        icon: "ArrowLeftRight",
+        title: "Lançamento de Transações",
+        description: "Entrada e saída em segundos, com categorização automática que aprende com o tempo.",
+        features: [
+          "Lançamento entrada/saída com 1 clique",
+          "Categoria automática (sistema aprende seus padrões)",
+          "Método de pagamento: PIX, boleto, dinheiro, TED, CC",
+          "Status: pendente, pago, agendado",
+          "Edição com regra de 24h + auditoria completa",
+          "Cancelamento por soft-delete (mantém histórico)"
+        ]
+      },
+      {
+        icon: "Calendar",
+        title: "Contas a Pagar / Receber",
+        description: "Visão clara de tudo que entra e tudo que sai — agrupado por urgência e filial.",
+        features: [
+          "Contas vencidas em destaque vermelho",
+          "Vencimentos próximos (1-7 dias) em alerta amarelo",
+          "Marcar como pago em 1 clique",
+          "Histórico de pagamentos por fornecedor",
+          "Filtros por status, vencimento, filial e categoria",
+          "Notificações automáticas por email e WhatsApp"
+        ]
+      },
+      {
+        icon: "FileBarChart",
+        title: "Relatórios Profissionais",
+        description: "Fluxo de caixa, despesa por categoria, receita por filial — tudo exportável em Excel e PDF.",
+        features: [
+          "Fluxo de caixa mensal consolidado ou por filial",
+          "Despesa por categoria com gráficos comparativos",
+          "Receita por filial (Chapecó Centro vs EFAPI vs SMO)",
+          "Comparativo: este mês vs mês anterior",
+          "Auditoria completa: quem fez, quando, o quê",
+          "Export Excel, PDF e CSV"
+        ]
+      },
+      {
+        icon: "MessageSquare",
+        title: "Bot WhatsApp Integrado",
+        description: "Lance transações, consulte saldos e receba alertas pelo WhatsApp — sem abrir o sistema.",
+        features: [
+          "\"Aluguel Centro 12 mil\" → bot lança automaticamente",
+          "\"Qual meu saldo?\" → bot responde com saldo das 3 filiais",
+          "\"Contas vencendo hoje?\" → bot lista tudo",
+          "\"Corrigir, era 12.5\" → bot atualiza valor",
+          "Notificação diária 8h: contas a pagar do dia",
+          "Alertas de saldo baixo em tempo real"
+        ]
+      },
+      {
+        icon: "Users",
+        title: "Permissões Granulares",
+        description: "Cada usuário vê e faz só o que pode. Admin total, gerente por filial, contador, visualizador.",
+        features: [
+          "Admin: acesso total a todas as filiais",
+          "Gerente Filial: acesso restrito à sua unidade",
+          "Contador: leitura/escrita em todas as filiais",
+          "Visualizador: leitura apenas (relatórios)",
+          "Trilha de auditoria de toda ação (quem, quando, IP)",
+          "Desconexão automática após 30 min de inatividade"
+        ]
+      },
+      {
+        icon: "ShieldCheck",
+        title: "Segurança & LGPD",
+        description: "HTTPS de ponta a ponta, backup diário automático, conformidade LGPD garantida.",
+        features: [
+          "Criptografia HTTPS em toda a aplicação",
+          "Backup automático diário (recuperação em 24h)",
+          "Conformidade LGPD: dados protegidos por lei",
+          "Auditoria 100% rastreável",
+          "Login com senha forte + recuperação por email",
+          "Direito de export de dados a qualquer momento"
+        ]
+      },
+      {
+        icon: "Zap",
+        title: "Performance & Disponibilidade",
+        description: "99,9% de uptime garantido. Sistema rápido, responsivo, acessível de qualquer dispositivo.",
+        features: [
+          "Uptime garantido de 99,9% (máx 2h down/mês)",
+          "Dashboard carrega em menos de 2 segundos",
+          "Acesso 24/7 de qualquer dispositivo (PWA)",
+          "Funciona em desktop, tablet e celular",
+          "Infraestrutura escalável (cresce com você)",
+          "Monitoramento ativo (Sentry para erros)"
+        ]
+      }
+    ],
+
+    systemSprints: [
+      {
+        number: 1,
+        weeks: "Semana 1",
+        title: "Kick-off & Fundação",
+        deliverables: [
+          "Reunião de alinhamento (1h via Zoom)",
+          "Recebimento das planilhas históricas",
+          "Setup completo da infraestrutura (Vercel + Supabase + n8n)",
+          "Modelagem do banco de dados (8 tabelas)",
+          "Definição de permissões por usuário"
+        ],
+        milestone: "Infra pronta, banco modelado, equipe alinhada — pronto para começar a codar."
+      },
+      {
+        number: 2,
+        weeks: "Semana 2",
+        title: "Auth & Dashboard",
+        deliverables: [
+          "Login/cadastro com email + senha",
+          "Recuperação de senha por email",
+          "Middleware de permissões (RBAC)",
+          "Dashboard básico com saldos consolidados",
+          "Painel admin: criar usuários e filiais"
+        ],
+        milestone: "Você consegue fazer login, criar usuários e ver os primeiros números no dashboard."
+      },
+      {
+        number: 3,
+        weeks: "Semana 3",
+        title: "Transações & Categorias",
+        deliverables: [
+          "Formulário de lançamento (entrada/saída)",
+          "CRUD completo de transações",
+          "Edição com regra de 24h + auditoria",
+          "Cancelamento por soft-delete",
+          "CRUD de categorias pré-populado"
+        ],
+        milestone: "Time já consegue lançar transações reais — substitui o Excel a partir daqui."
+      },
+      {
+        number: 4,
+        weeks: "Semana 4",
+        title: "Contas & Notificações",
+        deliverables: [
+          "Visão de contas a pagar/receber",
+          "Filtros por urgência, filial e categoria",
+          "Marcar como pago em 1 clique",
+          "Notificações por email para contas vencendo",
+          "Job diário de checagem de vencimentos"
+        ],
+        milestone: "Sistema avisa antes de vencer. Ninguém mais é pego de surpresa."
+      },
+      {
+        number: 5,
+        weeks: "Semana 5",
+        title: "Relatórios & Auditoria",
+        deliverables: [
+          "Fluxo de caixa consolidado e por filial",
+          "Despesa por categoria com gráficos",
+          "Receita por filial (comparativo)",
+          "Tela de auditoria (admin only)",
+          "Export Excel + PDF + CSV"
+        ],
+        milestone: "Contador recebe relatório pronto. Não precisa mais conferir manualmente."
+      },
+      {
+        number: 6,
+        weeks: "Semana 6",
+        title: "Bot WhatsApp + n8n",
+        deliverables: [
+          "Endpoint /api/bot/intent (parser de mensagens)",
+          "Workflow n8n integrando UazAPI",
+          "5 intents: nova_transacao, listar, saldo, atualizar, confirmar",
+          "Notificações proativas via WhatsApp",
+          "Logs completos de todas as conversas"
+        ],
+        milestone: "Bot ativo. Você lança transação no WhatsApp e cai direto no sistema."
+      },
+      {
+        number: 7,
+        weeks: "Semana 7",
+        title: "QA, Migração & Go-Live",
+        deliverables: [
+          "Migração de dados históricos (até 12 meses)",
+          "Validação de saldos (deve bater com Excel)",
+          "Testes end-to-end de todos os fluxos",
+          "Treinamento de 2h via Zoom para a equipe",
+          "Deploy em produção + suporte intensivo"
+        ],
+        milestone: "Sistema 100% no ar, dados migrados, equipe treinada. Excel pode ser arquivado."
+      }
+    ],
+
+    systemStack: [
+      {
+        category: "Frontend",
+        items: [
+          { name: "Next.js 14", role: "Framework React de ponta com renderização híbrida" },
+          { name: "TypeScript", role: "Tipagem forte para zero bugs em runtime" },
+          { name: "Tailwind + shadcn/ui", role: "Interface elegante e consistente" },
+          { name: "Recharts", role: "Gráficos interativos profissionais" }
+        ]
+      },
+      {
+        category: "Backend",
+        items: [
+          { name: "Next.js API Routes", role: "Servidor Node.js serverless" },
+          { name: "Prisma ORM", role: "Acesso ao banco com type-safety" },
+          { name: "NextAuth.js v5", role: "Autenticação JWT segura" },
+          { name: "Zod", role: "Validação de schemas em runtime" }
+        ]
+      },
+      {
+        category: "Infraestrutura",
+        items: [
+          { name: "Vercel", role: "Deploy automático com SSL e CDN global" },
+          { name: "Supabase (PostgreSQL)", role: "Banco gerenciado com backup diário" },
+          { name: "Sentry", role: "Monitoramento de erros em tempo real" },
+          { name: "Resend/SendGrid", role: "Envio transacional de emails" }
+        ]
+      },
+      {
+        category: "Bot & Integração",
+        items: [
+          { name: "n8n", role: "Orquestrador de workflows (no nosso VPS)" },
+          { name: "UazAPI", role: "Gateway WhatsApp Business" },
+          { name: "REST API customizada", role: "Endpoint /api/bot/intent" },
+          { name: "Cron Jobs", role: "Notificações diárias automáticas" }
+        ]
+      }
+    ],
+
+    systemPricing: {
+      setup: {
+        value: "R$ 7.500,00",
+        label: "Implantação completa",
+        payment: "50% no início (R$ 3.750) + 50% no go-live (R$ 3.750)",
+        includes: [
+          "Setup técnico de toda a plataforma",
+          "Migração de dados históricos (até 12 meses)",
+          "Criação de usuários iniciais e configuração de filiais",
+          "Setup completo do bot WhatsApp",
+          "Treinamento de 2h via Zoom para a equipe",
+          "Primeiro mês de suporte prioritário"
+        ]
+      },
+      monthly: {
+        value: "R$ 199,00",
+        label: "SaaS mensal",
+        annualValue: "R$ 1.990,00/ano",
+        annualNote: "equivale a R$ 165,83/mês — economia de 17%",
+        includes: [
+          "Até 3 filiais (cobre Chapecó Centro, EFAPI e SMO)",
+          "Usuários ilimitados",
+          "Transações ilimitadas",
+          "Bot WhatsApp completo com notificações",
+          "Backup automático diário",
+          "Auditoria 100% rastreável",
+          "Suporte 24-48h via email/WhatsApp",
+          "Uptime garantido de 99,9%"
+        ]
+      },
+      year1Total: "R$ 9.888,00",
+      paybackDays: "17 dias",
+      notes: [
+        "Garantia de reembolso integral da implantação se o sistema não funcionar nos primeiros 30 dias.",
+        "A partir do 2º ano, somente a mensalidade — sem novo custo de implantação.",
+        "Sem fidelidade contratual além de 30 dias de aviso prévio para cancelamento."
+      ]
+    },
+
+    systemComparison: {
+      competitorName: "Mobills Premium",
+      rows: [
+        { feature: "Multi-filial (3 unidades)", excel: "false", competitor: "false", artdesign: "true" },
+        { feature: "Bot WhatsApp integrado", excel: "false", competitor: "false", artdesign: "true" },
+        { feature: "Permissões por usuário/filial", excel: "false", competitor: "false", artdesign: "true" },
+        { feature: "Auditoria completa (quem-quando-o quê)", excel: "false", competitor: "false", artdesign: "true" },
+        { feature: "Relatórios consolidados", excel: "Manual", competitor: "Limitado", artdesign: "true" },
+        { feature: "Notificações automáticas", excel: "false", competitor: "true", artdesign: "true" },
+        { feature: "Backup diário automático", excel: "false", competitor: "true", artdesign: "true" },
+        { feature: "Customizado pra Ademicon", excel: "false", competitor: "false", artdesign: "true" },
+        { feature: "Suporte dedicado", excel: "-", competitor: "Genérico", artdesign: "true" },
+        { feature: "Custo Year 1", excel: "R$ 0", competitor: "R$ 199", artdesign: "R$ 9.888" },
+        { feature: "Valor entregue", excel: "Nenhum", competitor: "App pessoal", artdesign: "Operação inteira" }
+      ]
+    },
+
+    faq: [
+      {
+        question: "E se vocês saírem do negócio? Meus dados ficam reféns?",
+        answer: "Não. Seus dados são seus, sempre. Você pode exportar tudo para Excel/CSV a qualquer momento. Além disso, temos backup diário automático e contrato com cláusula de portabilidade — se quiser sair, sai com tudo na mão."
+      },
+      {
+        question: "Quantos usuários posso ter no sistema?",
+        answer: "Ilimitado. Pode cadastrar todos os funcionários das 3 filiais, contador, gerentes — quantos forem necessários. Não cobramos por usuário."
+      },
+      {
+        question: "E se a operação crescer para 5 filiais?",
+        answer: "O sistema já foi pensado pra escalar. O plano atual cobre até 3 filiais. A partir da 4ª, conversamos sobre upgrade — mas o software já suporta tecnicamente."
+      },
+      {
+        question: "Como funciona o bot WhatsApp na prática?",
+        answer: "Você manda mensagem normal: \"Aluguel Centro 12 mil\". O bot entende, lança no sistema e confirma. \"Qual meu saldo?\" — bot responde com saldo das 3 filiais. Sem app extra, sem login — é o mesmo WhatsApp que você já usa."
+      },
+      {
+        question: "Quanto tempo leva pra migrar nossos dados do Excel?",
+        answer: "1 a 2 dias. A gente faz tudo: você manda as planilhas, nós convertemos e validamos. Você só aprova os totais finais antes do go-live."
+      },
+      {
+        question: "Se precisar de algo customizado fora do escopo?",
+        answer: "Conversamos. Customizações dentro do tema (ex: novo relatório, nova categoria especial) entram no roadmap futuro. Customizações maiores são orçadas à parte com prazo definido."
+      },
+      {
+        question: "Qual o horário de suporte?",
+        answer: "Segunda a sexta, das 9h às 18h (horário de SC). Resposta em 24-48h via email/WhatsApp. Para emergências (sistema fora do ar), atendimento imediato."
+      },
+      {
+        question: "Posso cancelar depois?",
+        answer: "Sim, sem penalidade. Basta avisar com 30 dias de antecedência. Você sai com seus dados e sem multa contratual."
+      }
+    ],
+
+    differentials: [
+      "16 anos de mercado entregando sistemas customizados",
+      "Equipe multidisciplinar: design, código, infraestrutura e suporte sob o mesmo teto",
+      "Tecnologia proprietária: ArtAtende CRM (gestão de WhatsApp em produção)",
+      "Metodologia própria com sprints semanais e milestones claros",
+      "Suporte dedicado: cada cliente tem um gestor responsável direto",
+      "Garantia de reembolso integral nos primeiros 30 dias se o sistema não funcionar"
+    ],
+
+    closingQuestion: "Hoje vocês perdem 3 horas todo mês consolidando planilha — e ainda assim erram, ainda assim o contador volta cobrando.\n\nEm 7 semanas isso acaba. Em 17 dias o investimento se paga. A partir daí, só sobra eficiência.\n\nVamos começar segunda?"
   }
 ];
 
