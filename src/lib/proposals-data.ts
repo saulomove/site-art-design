@@ -179,10 +179,23 @@ export interface Proposal {
     items: { name: string; role: string }[];
   }[];
   systemPricing?: {
-    setup: { value: string; label: string; includes: string[]; payment: string };
+    marketValue?: string;
+    marketValueNote?: string;
+    setup: { value: string; label: string; badge?: string; includes: string[]; payment: string };
     monthly: { value: string; label: string; includes: string[]; annualValue?: string; annualNote?: string };
+    standaloneComparison?: {
+      title: string;
+      subtitle: string;
+      items: { item: string; value: string; description?: string }[];
+      totalLabel: string;
+      total: string;
+      artdesignLabel: string;
+      artdesignValue: string;
+      savings: string;
+      closing: string;
+    };
     year1Total: string;
-    paybackDays: string;
+    paybackDays?: string;
     notes?: string[];
   };
   systemComparison?: {
@@ -4169,79 +4182,101 @@ export const proposals: Proposal[] = [
 
     systemStack: [
       {
-        category: "Frontend",
+        category: "Experiência do Usuário",
         items: [
-          { name: "Next.js 14", role: "Framework React de ponta com renderização híbrida" },
-          { name: "TypeScript", role: "Tipagem forte para zero bugs em runtime" },
-          { name: "Tailwind + shadcn/ui", role: "Interface elegante e consistente" },
-          { name: "Recharts", role: "Gráficos interativos profissionais" }
+          { name: "Plataforma de Última Geração", role: "Construída com a mesma tecnologia usada por Netflix, Uber e ChatGPT — performance e estabilidade comprovadas em escala global" },
+          { name: "Sistema à Prova de Erros", role: "Camada de proteção que detecta inconsistências antes de chegar ao usuário — zero crashes em produção" },
+          { name: "Design Profissional Adaptável", role: "Interface limpa que funciona perfeitamente em desktop, tablet e celular sem perder funcionalidade" },
+          { name: "Visualização Inteligente de Dados", role: "Gráficos interativos que mostram o que importa em segundos — sem precisar montar planilha" }
         ]
       },
       {
-        category: "Backend",
+        category: "Motor & Processamento",
         items: [
-          { name: "Next.js API Routes", role: "Servidor Node.js serverless" },
-          { name: "Prisma ORM", role: "Acesso ao banco com type-safety" },
-          { name: "NextAuth.js v5", role: "Autenticação JWT segura" },
-          { name: "Zod", role: "Validação de schemas em runtime" }
+          { name: "Processamento em Nuvem Escalável", role: "Servidores que crescem automaticamente conforme a demanda — nunca trava em momento crítico" },
+          { name: "Banco de Dados Inteligente", role: "Camada de proteção que torna impossível perder ou corromper informações — cada lançamento auditado" },
+          { name: "Autenticação de Nível Bancário", role: "Login com criptografia avançada e proteção contra invasão e roubo de credenciais" },
+          { name: "Validação em Tempo Real", role: "Cada dado é verificado antes de ser salvo — impossível registrar erro de digitação ou estrutura" }
         ]
       },
       {
-        category: "Infraestrutura",
+        category: "Estrutura & Segurança",
         items: [
-          { name: "Vercel", role: "Deploy automático com SSL e CDN global" },
-          { name: "Supabase (PostgreSQL)", role: "Banco gerenciado com backup diário" },
-          { name: "Sentry", role: "Monitoramento de erros em tempo real" },
-          { name: "Resend/SendGrid", role: "Envio transacional de emails" }
+          { name: "Hospedagem Premium Global", role: "Servidores espalhados pelo mundo para acesso rápido de qualquer lugar — SSL bancário incluso" },
+          { name: "Backup Automático Diário", role: "Replicação em múltiplas regiões — seus dados protegidos contra qualquer falha de hardware" },
+          { name: "Monitoramento 24/7 Inteligente", role: "Sistema alerta nossa equipe ANTES de você perceber qualquer problema — manutenção preventiva" },
+          { name: "Comunicação Profissional", role: "Notificações por email entregues com 99,9% de taxa de chegada — sem cair em spam" }
         ]
       },
       {
-        category: "Bot & Integração",
+        category: "Inteligência Conversacional",
         items: [
-          { name: "n8n", role: "Orquestrador de workflows (no nosso VPS)" },
-          { name: "UazAPI", role: "Gateway WhatsApp Business" },
-          { name: "REST API customizada", role: "Endpoint /api/bot/intent" },
-          { name: "Cron Jobs", role: "Notificações diárias automáticas" }
+          { name: "IA Conversacional Própria", role: "Inteligência artificial que entende suas mensagens em linguagem natural — sem comandos rígidos ou códigos para decorar" },
+          { name: "Conexão Oficial WhatsApp Business", role: "Integração validada e estável com o WhatsApp — mensagens chegam e respondem em tempo real" },
+          { name: "Orquestração Inteligente", role: "Camada proprietária da ArtDesign que conecta o WhatsApp à sua operação financeira de forma transparente" },
+          { name: "Automação 24/7", role: "Robôs que trabalham por você mesmo de madrugada — alertas, lembretes e cobranças automáticas" }
         ]
       }
     ],
 
     systemPricing: {
+      marketValue: "R$ 40.000,00",
+      marketValueNote: "Valor de mercado para um sistema customizado deste porte (multi-filial + bot WhatsApp + auditoria + relatórios profissionais).",
       setup: {
-        value: "R$ 7.500,00",
+        value: "R$ 15.000,00",
         label: "Implantação completa",
-        payment: "50% no início (R$ 3.750) + 50% no go-live (R$ 3.750)",
+        badge: "62% OFF · Indicação Ademicon",
+        payment: "50% no início (R$ 7.500) + 50% no go-live (R$ 7.500)",
         includes: [
-          "Setup técnico de toda a plataforma",
+          "Desenvolvimento do sistema sob medida para a operação Ademicon",
           "Migração de dados históricos (até 12 meses)",
-          "Criação de usuários iniciais e configuração de filiais",
-          "Setup completo do bot WhatsApp",
-          "Treinamento de 2h via Zoom para a equipe",
-          "Primeiro mês de suporte prioritário"
+          "Configuração das 3 filiais (Chapecó Centro, EFAPI e SMO)",
+          "Setup completo da inteligência conversacional do WhatsApp",
+          "Treinamento ao vivo de 2h via Zoom para toda a equipe",
+          "Primeiro mês de suporte prioritário com gestor dedicado"
         ]
       },
       monthly: {
-        value: "R$ 199,00",
-        label: "SaaS mensal",
-        annualValue: "R$ 1.990,00/ano",
-        annualNote: "equivale a R$ 165,83/mês — economia de 17%",
+        value: "R$ 149,00",
+        label: "Estrutura, suporte e manutenção",
+        annualValue: "R$ 1.490,00/ano",
+        annualNote: "equivale a R$ 124,17/mês — economia de 17%",
         includes: [
-          "Até 3 filiais (cobre Chapecó Centro, EFAPI e SMO)",
-          "Usuários ilimitados",
-          "Transações ilimitadas",
-          "Bot WhatsApp completo com notificações",
-          "Backup automático diário",
-          "Auditoria 100% rastreável",
-          "Suporte 24-48h via email/WhatsApp",
-          "Uptime garantido de 99,9%"
+          "Hospedagem premium global com SSL bancário",
+          "Backup automático diário em múltiplas regiões",
+          "Monitoramento 24/7 com alerta proativo",
+          "Suporte técnico dedicado (resposta em 24-48h)",
+          "Atualizações de segurança e novas funcionalidades",
+          "Bot WhatsApp ativo com notificações automáticas",
+          "Uptime garantido de 99,9%",
+          "Usuários e transações ilimitadas"
         ]
       },
-      year1Total: "R$ 9.888,00",
-      paybackDays: "17 dias",
+      standaloneComparison: {
+        title: "Por que vale mais deixar a estrutura conosco",
+        subtitle: "Se vocês fossem manter sozinhos toda a infraestrutura necessária para um sistema deste porte rodar com segurança, pagariam por mês:",
+        items: [
+          { item: "VPS dedicada de produção", value: "R$ 480,00", description: "Servidor robusto com recursos para multi-filial" },
+          { item: "Domínio próprio + certificado SSL", value: "R$ 25,00", description: "Endereço próprio e criptografia bancária" },
+          { item: "Backup gerenciado em nuvem", value: "R$ 120,00", description: "Cópias diárias replicadas em múltiplas regiões" },
+          { item: "Serviço de envio de email", value: "R$ 80,00", description: "Notificações entregues sem cair em spam" },
+          { item: "Monitoramento profissional 24/7", value: "R$ 90,00", description: "Alertas ativos antes do problema afetar usuários" },
+          { item: "Gateway WhatsApp Business oficial", value: "R$ 120,00", description: "Conexão validada com o WhatsApp" },
+          { item: "Suporte técnico (1 dev parcial)", value: "R$ 1.500,00", description: "Para correções, ajustes e dúvidas técnicas" }
+        ],
+        totalLabel: "Custo total se contratado isolado",
+        total: "R$ 2.415,00/mês",
+        artdesignLabel: "Com a ArtDesign",
+        artdesignValue: "R$ 149,00/mês",
+        savings: "R$ 2.266,00/mês de economia",
+        closing: "Mais de R$ 27.000 economizados por ano — e ainda recebem uma equipe técnica dedicada por trás. Sistema, estrutura e suporte: tudo sob a mesma responsabilidade. Se algo trava, vocês têm um único número pra ligar."
+      },
+      year1Total: "R$ 16.788,00",
       notes: [
         "Garantia de reembolso integral da implantação se o sistema não funcionar nos primeiros 30 dias.",
-        "A partir do 2º ano, somente a mensalidade — sem novo custo de implantação.",
-        "Sem fidelidade contratual além de 30 dias de aviso prévio para cancelamento."
+        "A partir do 2º ano, somente a mensalidade de R$ 149/mês — sem novo custo de implantação.",
+        "Sem fidelidade contratual além de 30 dias de aviso prévio para cancelamento.",
+        "Indicação de parceiros Ademicon: desconto de 62% mantido para toda a rede licenciada."
       ]
     },
 
@@ -4257,8 +4292,9 @@ export const proposals: Proposal[] = [
         { feature: "Backup diário automático", excel: "false", competitor: "true", artdesign: "true" },
         { feature: "Customizado pra Ademicon", excel: "false", competitor: "false", artdesign: "true" },
         { feature: "Suporte dedicado", excel: "-", competitor: "Genérico", artdesign: "true" },
-        { feature: "Custo Year 1", excel: "R$ 0", competitor: "R$ 199", artdesign: "R$ 9.888" },
-        { feature: "Valor entregue", excel: "Nenhum", competitor: "App pessoal", artdesign: "Operação inteira" }
+        { feature: "Estrutura e infra inclusas", excel: "-", competitor: "Compartilhada", artdesign: "true" },
+        { feature: "Custo mensal", excel: "R$ 0", competitor: "R$ 199", artdesign: "R$ 149" },
+        { feature: "Valor entregue", excel: "Nenhum", competitor: "App pessoal genérico", artdesign: "Operação inteira sob medida" }
       ]
     },
 

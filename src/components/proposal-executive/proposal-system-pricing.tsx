@@ -1,13 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Wallet, RotateCw, Zap, ShieldCheck } from "lucide-react";
+import { Check, Wallet, RotateCw, Zap, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
 
 interface SystemPricing {
-  setup: { value: string; label: string; includes: string[]; payment: string };
+  marketValue?: string;
+  marketValueNote?: string;
+  setup: { value: string; label: string; badge?: string; includes: string[]; payment: string };
   monthly: { value: string; label: string; includes: string[]; annualValue?: string; annualNote?: string };
+  standaloneComparison?: {
+    title: string;
+    subtitle: string;
+    items: { item: string; value: string; description?: string }[];
+    totalLabel: string;
+    total: string;
+    artdesignLabel: string;
+    artdesignValue: string;
+    savings: string;
+    closing: string;
+  };
   year1Total: string;
-  paybackDays: string;
+  paybackDays?: string;
   notes?: string[];
 }
 
@@ -52,6 +65,13 @@ export function ProposalExecutiveSystemPricing({ pricing, clientName }: Props) {
             viewport={{ once: true }}
             className="bg-white border border-[#0F0F12]/15 p-8 md:p-10 relative"
           >
+            {pricing.setup.badge && (
+              <div className="absolute -top-3 left-6 bg-[#C8302D] text-[#F8F4EC] px-4 py-1.5 flex items-center gap-2">
+                <Sparkles className="w-3 h-3" />
+                <span className="text-[9px] font-bold tracking-[0.3em] uppercase">{pricing.setup.badge}</span>
+              </div>
+            )}
+
             <div className="flex items-start justify-between mb-8 pb-6 border-b border-[#0F0F12]/10">
               <div>
                 <span className="text-[10px] font-bold tracking-[0.3em] text-[#C8302D] uppercase">01 · Implantação</span>
@@ -63,13 +83,26 @@ export function ProposalExecutiveSystemPricing({ pricing, clientName }: Props) {
             </div>
 
             <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.3em] text-[#0F0F12]/55 uppercase mb-2">Valor único</p>
+              {pricing.marketValue && (
+                <div className="mb-3">
+                  <p className="text-[10px] font-bold tracking-[0.3em] text-[#0F0F12]/55 uppercase mb-1">Valor de mercado</p>
+                  <p className="font-playfair text-2xl font-medium text-[#0F0F12]/40 line-through decoration-[#C8302D] decoration-2">
+                    {pricing.marketValue}
+                  </p>
+                </div>
+              )}
+              <p className="text-[10px] font-bold tracking-[0.3em] text-[#C8302D] uppercase mb-2">Seu investimento</p>
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl text-[#C8302D] font-playfair font-medium">R$</span>
                 <span className="font-playfair text-5xl md:text-6xl font-medium text-[#0F0F12] leading-none tracking-tight">
                   {pricing.setup.value.replace("R$ ", "").replace(",00", "")}
                 </span>
               </div>
+              {pricing.marketValueNote && (
+                <p className="text-xs text-[#0F0F12]/60 font-inter italic mt-3 leading-relaxed">
+                  {pricing.marketValueNote}
+                </p>
+              )}
             </div>
 
             <p className="text-[10px] font-bold tracking-[0.3em] text-[#0F0F12]/55 uppercase mb-3">O que inclui</p>
@@ -99,7 +132,7 @@ export function ProposalExecutiveSystemPricing({ pricing, clientName }: Props) {
 
             <div className="flex items-start justify-between mb-8 pb-6 border-b border-[#D4AF6F]/30">
               <div>
-                <span className="text-[10px] font-bold tracking-[0.3em] text-[#D4AF6F] uppercase">02 · SaaS Mensal</span>
+                <span className="text-[10px] font-bold tracking-[0.3em] text-[#D4AF6F] uppercase">02 · Manutenção mensal</span>
                 <h3 className="font-playfair text-2xl font-medium text-[#F8F4EC] mt-1">
                   {pricing.monthly.label}
                 </h3>
@@ -135,31 +168,88 @@ export function ProposalExecutiveSystemPricing({ pricing, clientName }: Props) {
           </motion.div>
         </div>
 
-        {/* Total + Payback */}
+        {/* STANDALONE COMPARISON — PERSUASION */}
+        {pricing.standaloneComparison && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white border border-[#C8302D]/30 p-8 md:p-12 mb-12 relative overflow-hidden"
+          >
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#C8302D] via-[#D4AF6F] to-[#C8302D]" />
+
+            <div className="text-center mb-10">
+              <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.4em] text-[#C8302D] uppercase mb-3">
+                <TrendingDown className="w-4 h-4" />
+                Por que vale mais conosco
+              </span>
+              <h3 className="font-playfair text-2xl md:text-4xl font-medium text-[#0F0F12] leading-tight mb-3">
+                {pricing.standaloneComparison.title}
+              </h3>
+              <p className="text-sm md:text-base text-[#0F0F12]/65 font-inter max-w-3xl mx-auto leading-relaxed">
+                {pricing.standaloneComparison.subtitle}
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-2 mb-8">
+              {pricing.standaloneComparison.items.map((item, i) => (
+                <div key={i} className="flex items-baseline gap-3 py-3 border-b border-[#0F0F12]/10">
+                  <div className="flex-1">
+                    <p className="text-sm font-inter font-semibold text-[#0F0F12]">{item.item}</p>
+                    {item.description && (
+                      <p className="text-xs text-[#0F0F12]/55 font-inter mt-0.5">{item.description}</p>
+                    )}
+                  </div>
+                  <span className="font-playfair text-lg font-medium text-[#0F0F12] shrink-0">
+                    {item.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="max-w-3xl mx-auto bg-[#0F0F12] text-[#F8F4EC] p-6 md:p-8 mb-6">
+              <div className="grid md:grid-cols-3 gap-4 items-center text-center md:text-left">
+                <div className="md:border-r md:border-[#D4AF6F]/20 md:pr-4">
+                  <p className="text-[9px] font-bold tracking-[0.3em] text-[#F8F4EC]/60 uppercase mb-1">{pricing.standaloneComparison.totalLabel}</p>
+                  <p className="font-playfair text-2xl md:text-3xl font-medium text-[#F8F4EC]/50 line-through decoration-[#C8302D] decoration-2">
+                    {pricing.standaloneComparison.total}
+                  </p>
+                </div>
+                <div className="md:border-r md:border-[#D4AF6F]/20 md:pr-4">
+                  <p className="text-[9px] font-bold tracking-[0.3em] text-[#D4AF6F] uppercase mb-1">{pricing.standaloneComparison.artdesignLabel}</p>
+                  <p className="font-playfair text-3xl md:text-4xl font-medium text-[#D4AF6F]">
+                    {pricing.standaloneComparison.artdesignValue}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[9px] font-bold tracking-[0.3em] text-[#C8302D] uppercase mb-1">Sua economia</p>
+                  <p className="font-playfair text-3xl md:text-4xl font-medium text-[#C8302D]">
+                    {pricing.standaloneComparison.savings}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-center max-w-3xl mx-auto font-playfair text-base md:text-lg italic text-[#0F0F12]/80 leading-relaxed">
+              &ldquo;{pricing.standaloneComparison.closing}&rdquo;
+            </p>
+          </motion.div>
+        )}
+
+        {/* Year 1 Total */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-[#0F0F12] text-[#F8F4EC] p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center mb-10"
+          className="bg-[#0F0F12] text-[#F8F4EC] p-8 md:p-10 text-center mb-10"
         >
-          <div className="md:border-r md:border-[#D4AF6F]/20 md:pr-8">
-            <p className="text-[10px] font-bold tracking-[0.4em] text-[#D4AF6F] uppercase mb-3">Investimento Year 1</p>
-            <p className="font-playfair text-4xl md:text-5xl font-medium text-[#F8F4EC] tracking-tight">
-              {pricing.year1Total}
-            </p>
-            <p className="text-xs text-[#F8F4EC]/55 font-inter mt-2 italic">
-              Implantação + 12 meses de SaaS
-            </p>
-          </div>
-          <div>
-            <p className="text-[10px] font-bold tracking-[0.4em] text-[#C8302D] uppercase mb-3">Payback Estimado</p>
-            <p className="font-playfair text-4xl md:text-5xl font-medium text-[#C8302D] tracking-tight">
-              {pricing.paybackDays}
-            </p>
-            <p className="text-xs text-[#F8F4EC]/55 font-inter mt-2 italic">
-              Considerando economia de 3h/mês de consolidação manual
-            </p>
-          </div>
+          <p className="text-[10px] font-bold tracking-[0.4em] text-[#D4AF6F] uppercase mb-3">Investimento Year 1</p>
+          <p className="font-playfair text-5xl md:text-6xl font-medium text-[#F8F4EC] tracking-tight">
+            {pricing.year1Total}
+          </p>
+          <p className="text-sm text-[#F8F4EC]/55 font-inter mt-3 italic max-w-xl mx-auto">
+            Implantação única + 12 meses de estrutura, suporte e manutenção. A partir do 2º ano, somente a mensalidade.
+          </p>
         </motion.div>
 
         {pricing.notes && pricing.notes.length > 0 && (
