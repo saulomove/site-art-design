@@ -50,6 +50,15 @@ import { ProposalExecutiveDifferentials } from "@/components/proposal-executive/
 import { ProposalExecutiveInvestment } from "@/components/proposal-executive/proposal-investment";
 import { ProposalExecutiveCta } from "@/components/proposal-executive/proposal-cta";
 
+// Biomass imports (industrial / sustentabilidade / exportação)
+import { ProposalBiomassHero } from "@/components/proposal-biomass/proposal-hero";
+import { ProposalBiomassAboutInternational } from "@/components/proposal-biomass/proposal-about-international";
+import { ProposalBiomassAnalysis } from "@/components/proposal-biomass/proposal-analysis";
+import { ProposalBiomassScope } from "@/components/proposal-biomass/proposal-scope";
+import { ProposalBiomassPhases } from "@/components/proposal-biomass/proposal-phases";
+import { ProposalBiomassInvestment } from "@/components/proposal-biomass/proposal-investment";
+import { ProposalBiomassCta } from "@/components/proposal-biomass/proposal-cta";
+
 // Executive system (sistema/SaaS variant)
 import { ProposalExecutiveSystemHero } from "@/components/proposal-executive/proposal-system-hero";
 import { ProposalExecutiveSystemPain } from "@/components/proposal-executive/proposal-system-pain";
@@ -65,6 +74,34 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isLegal = proposal.theme === "legal";
   const isExecutive = proposal.theme === "executive";
   const isPremium = proposal.theme === "premium";
+  const isBiomass = proposal.theme === "biomass";
+
+  if (isBiomass) {
+    return (
+      <>
+        <ProposalBiomassHero proposal={proposal} />
+        <ProposalBiomassAboutInternational />
+        {proposal.analysis && (
+          <ProposalBiomassAnalysis
+            analysis={proposal.analysis}
+            clientName={proposal.clientName}
+          />
+        )}
+        <ProposalBiomassScope services={proposal.services} />
+        {proposal.phases && proposal.phases.length > 0 && (
+          <ProposalBiomassPhases phases={proposal.phases} />
+        )}
+        <ProposalBiomassInvestment
+          investment={proposal.investment}
+          clientName={proposal.clientName}
+        />
+        {proposal.differentials && proposal.differentials.length > 0 && (
+          <ProposalDifferentials differentials={proposal.differentials} />
+        )}
+        <ProposalBiomassCta proposal={proposal} />
+      </>
+    );
+  }
 
   if (isExecutive && proposal.proposalType === "sistema") {
     return (

@@ -135,7 +135,7 @@ export interface Proposal {
     closingText: string;
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
-  theme?: "standard" | "premium" | "legal" | "executive";
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -4343,6 +4343,214 @@ export const proposals: Proposal[] = [
     ],
 
     closingQuestion: "Hoje vocês perdem 3 horas todo mês consolidando planilha — e ainda assim erram, ainda assim o contador volta cobrando.\n\nEm 7 semanas isso acaba. Em 17 dias o investimento se paga. A partir daí, só sobra eficiência.\n\nVamos começar segunda?"
+  },
+
+  // ---- JOMA PELLET ----
+  {
+    slug: "joma-pellet",
+    clientName: "Joma Pellet",
+    contactName: "Maykell",
+    theme: "biomass",
+    greeting: "Preparamos uma estratégia digital completa para transformar o potencial industrial e a certificação da Joma Pellet em vendas reais, autoridade de mercado e crescimento nos segmentos B2B, B2C e de exportação.",
+    validUntil: "2026-06-10",
+    whatsappNumber: "5547996345644",
+    highlights: [
+      "Certificação ENplus A1 — diferencial raríssimo no Brasil",
+      "Estratégia integrada: B2B + B2C + Exportação",
+      "Transparência total — sem margem sobre custos externos",
+      "Permanência por resultado — sem fidelização"
+    ],
+    analysis: {
+      intro: "Realizamos uma análise completa do ecossistema digital da Joma Pellet — site, redes sociais, Mercado Livre, Google e mercado competitivo. O diagnóstico é claro: produto excepcional, presença digital invisível.",
+      strengths: [
+        {
+          title: "Certificação ENplus A1 (BR 039) + ISO 17225-2",
+          description: "A Joma está entre as pouquíssimas fabricantes brasileiras com certificação internacional de pellets. Isso é o maior ativo de vendas que existe no segmento — e está sendo subaproveitado digitalmente."
+        },
+        {
+          title: "Fábrica própria de 3.000 m² com produção própria",
+          description: "Controle total da cadeia produtiva, poder de precificação e capacidade de escala. Isso é impossível de replicar rapidamente por concorrentes — e deve ser comunicado com força."
+        },
+        {
+          title: "Produto 100% pinus conífera virgem, sem aditivos",
+          description: "Qualidade verificável por laudo técnico. Em um mercado onde muitos produtos têm aditivos e baixo padrão, a pureza do produto da Joma é argumento de venda no B2C (pet) e no B2B (indústria e exportação)."
+        },
+        {
+          title: "Localização estratégica no Sul do Brasil + Exportação",
+          description: "Santa Cecília/SC está no coração do polo madeireiro catarinense. Site já bilíngue PT/EN, associada à ABIMCI, com histórico de exportação para o mercado europeu."
+        }
+      ],
+      opportunities: [
+        {
+          title: "Invisível nos termos de busca transacionais",
+          description: "A empresa só aparece no Google quando alguém busca pelo próprio nome. Para 'comprar pellet madeira', 'granulado higiênico pinus' ou 'pellet para lareira', a Joma não existe — e o concorrente aparece patrocinado."
+        },
+        {
+          title: "Zero investimento em tráfego pago (Google Ads e Meta Ads)",
+          description: "Nenhuma campanha ativa identificada. Enquanto isso, concorrentes já compram tráfego no nicho. Há janela de oportunidade clara antes que outros dominem o espaço pago."
+        },
+        {
+          title: "Instagram com 421 seguidores em 3 anos de operação",
+          description: "19 posts e zero Reels com performance expressiva. O perfil existe, mas não cresce. A certificação ENplus A1 sozinha poderia viralizar com o argumento e formato certos."
+        },
+        {
+          title: "Canal Mercado Livre sem otimização e sem reputação",
+          description: "Concorrentes com produtos inferiores têm 1.800 a 3.800 avaliações. A conta da Joma no ML existe mas está invisível no Google Shopping e sem estratégia de avaliações e ML Ads."
+        },
+        {
+          title: "Site sem geração de leads",
+          description: "One-page institucional sem formulário de captura, sem blog, sem SEO técnico por página. Todo visitante que não clicar no WhatsApp é perdido para sempre."
+        },
+        {
+          title: "Apenas 4 avaliações no Google Meu Negócio",
+          description: "Para uma empresa com distribuição nacional, é sinal de ausência de estratégia de pós-venda e coleta de reputação. Isso prejudica conversão B2B e confiança de novos distribuidores."
+        }
+      ],
+      conclusion: "A Joma Pellet tem o melhor produto do mercado — certificado, rastreável e com capacidade industrial real. O problema não é o produto. É que o mercado não consegue encontrá-la. Com uma estratégia digital integrada, isso muda rapidamente."
+    },
+    services: [
+      {
+        name: "Vídeo Institucional",
+        description: "Apresentação profissional da Joma Pellet — quem é, o que produz, seus diferenciais, estrutura, qualidade e certificações. Utilizável no site, redes sociais, WhatsApp comercial e apresentações B2B.",
+        icon: "video",
+        items: [
+          "Captação de imagens na empresa",
+          "Roteiro estratégico + direção de cenas",
+          "Gravações: estrutura, produção, produto e equipe",
+          "Edição profissional com trilha e tratamento de imagem",
+          "Inserção de textos e legendas na tela",
+          "Versão horizontal (site) + adaptação para redes sociais"
+        ],
+        price: "R$ 3.500",
+        priceType: "project"
+      },
+      {
+        name: "Renovação do Site Bilíngue",
+        description: "Novo site moderno, comercial e preparado para gerar contatos — em português e inglês — com foco em credibilidade para clientes nacionais e compradores internacionais.",
+        icon: "globe",
+        items: [
+          "Novo layout responsivo (mobile, tablet e desktop)",
+          "Versão completa em português e inglês",
+          "Páginas: home, empresa, produtos, aplicações, certificações e contato",
+          "Textos comerciais otimizados + botão WhatsApp",
+          "Integração com redes sociais e vídeo institucional",
+          "Otimização básica para Google (SEO on-page)",
+          "Configuração de segurança + treinamento de uso"
+        ],
+        price: "R$ 6.500",
+        priceType: "project"
+      },
+      {
+        name: "Gestão de Redes Sociais",
+        description: "Criação de conteúdos estratégicos para Instagram e Facebook — mantendo a marca ativa, gerando autoridade no segmento e atraindo clientes dos mercados B2B e B2C.",
+        icon: "megaphone",
+        items: [
+          "Planejamento mensal de conteúdo",
+          "12 publicações mensais (3 por semana)",
+          "Artes + legendas estratégicas",
+          "Conteúdos educativos, institucionais e comerciais",
+          "Publicações sobre aplicações, certificações e sustentabilidade",
+          "Stories estratégicos conforme calendário",
+          "Relatório mensal de desempenho"
+        ],
+        price: "R$ 2.200",
+        priceType: "monthly"
+      }
+    ],
+    investment: {
+      totalMonthly: "R$ 3.900",
+      totalLabel: "Pacote Crescimento Digital Joma Pellet",
+      originalPrice: "R$ 10.000",
+      savings: "sem pagamento inicial",
+      packageIncludes: [
+        "Vídeo Institucional completo",
+        "Renovação do site em PT + EN",
+        "Gestão mensal de Instagram e Facebook",
+        "Planejamento estratégico de conteúdo",
+        "Relatório mensal de desempenho",
+        "Google Meu Negócio (otimização básica)",
+        "Suporte estratégico mensal"
+      ],
+      breakdown: [
+        { item: "Vídeo Institucional (projeto único)", value: "R$ 3.500" },
+        { item: "Renovação do Site Bilíngue (projeto único)", value: "R$ 6.500" },
+        { item: "Gestão de Redes Sociais", value: "R$ 2.200/mês" }
+      ],
+      paymentConditions: [
+        "Pacote: R$ 3.900/mês — contrato inicial de 6 meses",
+        "Sem pagamento inicial — site e vídeo diluídos no pacote mensal",
+        "Contratação individual: vídeo 50% aprovação + 50% entrega; site 50% aprovação + 50% publicação",
+        "Pagamento mensal via boleto ou PIX"
+      ],
+      notes: [
+        "Domínio, hospedagem e ferramentas externas não inclusos",
+        "Verba de anúncios (Google Ads / Meta Ads) paga diretamente pelo cliente",
+        "Deslocamentos fora da região combinada orçados separadamente"
+      ]
+    },
+    phases: [
+      {
+        number: 1,
+        title: "Produção",
+        objective: "Gravar o vídeo institucional e desenvolver o novo site bilíngue — base visual e comercial da marca no digital.",
+        deliverables: [
+          "Briefing estratégico e roteiro do vídeo",
+          "Captação de imagens na empresa",
+          "Edição profissional: versão horizontal + adaptação para redes",
+          "Desenvolvimento do novo site PT/EN",
+          "SEO on-page, analytics e pixel Meta configurados",
+          "Treinamento de uso do site",
+          "Publicação do site com vídeo institucional integrado"
+        ],
+        expectedResult: "Site novo no ar, vídeo institucional disponível para todas as frentes comerciais e marca digital com presença profissional imediata."
+      },
+      {
+        number: 2,
+        title: "Ativação",
+        objective: "Iniciar a gestão de redes sociais com cadência estratégica e estruturar o Google Meu Negócio.",
+        deliverables: [
+          "Planejamento editorial do primeiro mês",
+          "Primeiras 12 publicações (educativas, institucionais e comerciais)",
+          "Conteúdos sobre a certificação ENplus A1 e aplicações",
+          "Organização dos Destaques do Instagram",
+          "Otimização completa do perfil no Google Meu Negócio",
+          "Fotos da fábrica e posts no Google Business",
+          "Relatório do primeiro mês"
+        ],
+        expectedResult: "Redes sociais ativas com identidade clara, Google Meu Negócio estruturado e primeiras interações orgânicas com potenciais clientes."
+      },
+      {
+        number: 3,
+        title: "Crescimento",
+        objective: "Ampliar alcance e resultados com tráfego pago, SEO e loja virtual — escalando os canais construídos nas fases anteriores.",
+        deliverables: [
+          "Google Ads e Meta Ads (módulo opcional adicional)",
+          "Estratégia de coleta de avaliações Google (meta: 50+ avaliações)",
+          "Blog SEO com artigos técnicos por aplicação (módulo opcional)",
+          "Loja virtual integrada ao site (módulo opcional)",
+          "Remarketing para visitantes do site",
+          "Relatórios mensais de performance",
+          "Revisão estratégica e planejamento do próximo ciclo"
+        ],
+        expectedResult: "Geração recorrente de leads qualificados, visibilidade nos termos de busca transacionais e canal de vendas diretas estruturado."
+      }
+    ],
+    optionalServices: [
+      "Google Meu Negócio — gestão avançada: R$ 450/mês",
+      "Tráfego Pago (Google Ads + Meta Ads) — gestão: R$ 900/mês (verba de anúncios paga diretamente pelo cliente)",
+      "Blog e SEO — artigos técnicos por segmento: R$ 800/mês",
+      "Loja Virtual com Checkout Mercado Pago — ideal para começar: R$ 2.500 (único)",
+      "Loja Virtual Completa — catálogo, pedidos, estoque e pagamentos: R$ 4.500 (único)"
+    ],
+    differentials: [
+      "Site, vídeo e redes sociais em uma única mensalidade — sem entrada nem surpresas",
+      "Site bilíngue (PT + EN) preparado para comunicar com compradores internacionais",
+      "Cancelamento livre após os 6 meses — permanência exclusivamente por resultado",
+      "Transparência total de custos — sem margem sobre domínio, hospedagem ou ferramentas",
+      "Equipe especializada no mercado industrial catarinense: B2B, pet e exportação",
+      "Entregamos estrutura e autoridade — não apenas posts bonitos"
+    ],
+    closingQuestion: "A Joma Pellet tem o produto certo, a certificação certa e o momento certo — o que falta é ser encontrada por quem precisa exatamente do que vocês fabricam. Vamos mudar isso juntos?"
   }
 ];
 
