@@ -88,6 +88,9 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
           />
         )}
         <ProposalBiomassScope services={proposal.services} />
+        {proposal.optionalServices && proposal.optionalServices.length > 0 && (
+          <ProposalOptionalServices services={proposal.optionalServices} />
+        )}
         {proposal.phases && proposal.phases.length > 0 && (
           <ProposalBiomassPhases phases={proposal.phases} />
         )}

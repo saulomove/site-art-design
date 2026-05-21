@@ -4349,10 +4349,10 @@ export const proposals: Proposal[] = [
   {
     slug: "joma-pellet",
     clientName: "Joma Pellet",
-    contactName: "Maykell",
+    contactName: "Rafael",
     theme: "biomass",
     greeting: "Preparamos uma estratégia digital completa para transformar o potencial industrial e a certificação da Joma Pellet em vendas reais, autoridade de mercado e crescimento nos segmentos B2B, B2C e de exportação.",
-    validUntil: "2026-06-10",
+    validUntil: "2026-05-28",
     whatsappNumber: "5547996345644",
     highlights: [
       "Certificação ENplus A1 — diferencial raríssimo no Brasil",
@@ -4421,7 +4421,7 @@ export const proposals: Proposal[] = [
           "Inserção de textos e legendas na tela",
           "Versão horizontal (site) + adaptação para redes sociais"
         ],
-        price: "R$ 3.500",
+        price: "R$ 1.500",
         priceType: "project"
       },
       {
@@ -4437,7 +4437,7 @@ export const proposals: Proposal[] = [
           "Otimização básica para Google (SEO on-page)",
           "Configuração de segurança + treinamento de uso"
         ],
-        price: "R$ 6.500",
+        price: "R$ 4.500",
         priceType: "project"
       },
       {
@@ -4453,14 +4453,14 @@ export const proposals: Proposal[] = [
           "Stories estratégicos conforme calendário",
           "Relatório mensal de desempenho"
         ],
-        price: "R$ 2.200",
+        price: "R$ 2.000",
         priceType: "monthly"
       }
     ],
     investment: {
-      totalMonthly: "R$ 3.900",
+      totalMonthly: "R$ 1.900",
       totalLabel: "Pacote Crescimento Digital Joma Pellet",
-      originalPrice: "R$ 10.000",
+      originalPrice: "R$ 6.000",
       savings: "sem pagamento inicial",
       packageIncludes: [
         "Vídeo Institucional completo",
@@ -4472,12 +4472,12 @@ export const proposals: Proposal[] = [
         "Suporte estratégico mensal"
       ],
       breakdown: [
-        { item: "Vídeo Institucional (projeto único)", value: "R$ 3.500" },
-        { item: "Renovação do Site Bilíngue (projeto único)", value: "R$ 6.500" },
-        { item: "Gestão de Redes Sociais", value: "R$ 2.200/mês" }
+        { item: "Vídeo Institucional (projeto único)", value: "R$ 1.500" },
+        { item: "Renovação do Site Bilíngue (projeto único)", value: "R$ 4.500" },
+        { item: "Gestão de Redes Sociais", value: "R$ 2.000/mês" }
       ],
       paymentConditions: [
-        "Pacote: R$ 3.900/mês — contrato inicial de 6 meses",
+        "Pacote: R$ 1.900/mês — contrato inicial de 6 meses",
         "Sem pagamento inicial — site e vídeo diluídos no pacote mensal",
         "Contratação individual: vídeo 50% aprovação + 50% entrega; site 50% aprovação + 50% publicação",
         "Pagamento mensal via boleto ou PIX"

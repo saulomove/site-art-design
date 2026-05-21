@@ -131,7 +131,7 @@ export function ProposalBiomassAboutInternational() {
             &ldquo;A Joma Pellet tem certificação internacional e potencial de exportação real. Nossa agência entende o que significa construir autoridade digital para mercados exigentes — porque já fizemos isso para outras empresas brasileiras no exterior.&rdquo;
           </p>
           <p className="mt-6 text-[11px] text-[#C4A035] tracking-[0.3em] uppercase font-semibold">
-            ArtDesign · Chapecó, SC · Desde 2008
+            ArtDesign · Videira, SC · Desde 2008
           </p>
         </motion.div>
       </div>
