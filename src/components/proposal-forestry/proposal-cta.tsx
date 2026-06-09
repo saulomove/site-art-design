@@ -40,8 +40,8 @@ export function ProposalForestryCta({ proposal }: Props) {
           viewport={{ once: true }}
           className="font-playfair text-4xl md:text-5xl lg:text-6xl font-medium text-[#F5EAD5] leading-[1.1]"
         >
-          Vamos construir isso juntos,<br className="hidden md:block" />
-          <span className="italic text-[#C47B20]">{proposal.contactName}?</span>
+          Vamos construir isso<br className="hidden md:block" />
+          <span className="italic text-[#C47B20]">juntos?</span>
         </motion.h2>
 
         {proposal.closingQuestion && (
