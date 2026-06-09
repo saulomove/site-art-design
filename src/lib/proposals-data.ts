@@ -4557,7 +4557,7 @@ export const proposals: Proposal[] = [
   {
     slug: "jaquirana-madeiras",
     clientName: "Jaquirana Madeiras",
-    contactName: "Ricardo",
+    contactName: "Jaquirana Madeiras",
     theme: "forestry",
     greeting: "Preparamos uma estratégia digital completa para transformar a Jaquirana Madeiras em referência no setor florestal do Sul do Brasil — gerando leads de compra de florestas, demanda para venda de toras e autoridade institucional.",
     validUntil: "2026-06-15",

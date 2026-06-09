@@ -11,7 +11,7 @@ export function ProposalForestryCta({ proposal }: Props) {
   const formattedDate = `${day}/${month}/${year}`;
 
   const whatsappMessage = encodeURIComponent(
-    `Olá! Sou ${proposal.contactName} da Jaquirana Madeiras. Recebi a proposta da ArtDesign e gostaria de conversar.`
+    `Olá! Recebi a proposta da ArtDesign para a ${proposal.contactName} e gostaria de conversar.`
   );
   const whatsappLink = `https://wa.me/${proposal.whatsappNumber}?text=${whatsappMessage}`;
 
