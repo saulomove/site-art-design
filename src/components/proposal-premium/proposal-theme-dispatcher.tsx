@@ -59,6 +59,13 @@ import { ProposalBiomassPhases } from "@/components/proposal-biomass/proposal-ph
 import { ProposalBiomassInvestment } from "@/components/proposal-biomass/proposal-investment";
 import { ProposalBiomassCta } from "@/components/proposal-biomass/proposal-cta";
 
+// Forestry imports (setor madeireiro / florestal)
+import { ProposalForestryHero } from "@/components/proposal-forestry/proposal-hero";
+import { ProposalForestryAnalysis } from "@/components/proposal-forestry/proposal-analysis";
+import { ProposalForestryScope } from "@/components/proposal-forestry/proposal-scope";
+import { ProposalForestryInvestment } from "@/components/proposal-forestry/proposal-investment";
+import { ProposalForestryCta } from "@/components/proposal-forestry/proposal-cta";
+
 // Executive system (sistema/SaaS variant)
 import { ProposalExecutiveSystemHero } from "@/components/proposal-executive/proposal-system-hero";
 import { ProposalExecutiveSystemPain } from "@/components/proposal-executive/proposal-system-pain";
@@ -75,6 +82,37 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isExecutive = proposal.theme === "executive";
   const isPremium = proposal.theme === "premium";
   const isBiomass = proposal.theme === "biomass";
+  const isForestry = proposal.theme === "forestry";
+
+  if (isForestry) {
+    return (
+      <>
+        <ProposalForestryHero proposal={proposal} />
+        <ProposalAbout />
+        {proposal.analysis && (
+          <ProposalForestryAnalysis
+            analysis={proposal.analysis}
+            clientName={proposal.clientName}
+          />
+        )}
+        <ProposalForestryScope services={proposal.services} />
+        {proposal.optionalServices && proposal.optionalServices.length > 0 && (
+          <ProposalOptionalServices services={proposal.optionalServices} />
+        )}
+        {proposal.phases && proposal.phases.length > 0 && (
+          <ProposalPhases phases={proposal.phases} />
+        )}
+        <ProposalForestryInvestment
+          investment={proposal.investment}
+          clientName={proposal.clientName}
+        />
+        {proposal.differentials && proposal.differentials.length > 0 && (
+          <ProposalDifferentials differentials={proposal.differentials} />
+        )}
+        <ProposalForestryCta proposal={proposal} />
+      </>
+    );
+  }
 
   if (isBiomass) {
     return (

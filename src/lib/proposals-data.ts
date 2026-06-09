@@ -135,7 +135,7 @@ export interface Proposal {
     closingText: string;
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
-  theme?: "standard" | "premium" | "legal" | "executive" | "biomass";
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -4551,6 +4551,263 @@ export const proposals: Proposal[] = [
       "Entregamos estrutura e autoridade — não apenas posts bonitos"
     ],
     closingQuestion: "A Joma Pellet tem o produto certo, a certificação certa e o momento certo — o que falta é ser encontrada por quem precisa exatamente do que vocês fabricam. Vamos mudar isso juntos?"
+  },
+
+  // ---- JAQUIRANA MADEIRAS ----
+  {
+    slug: "jaquirana-madeiras",
+    clientName: "Jaquirana Madeiras",
+    contactName: "Ricardo",
+    theme: "forestry",
+    greeting: "Preparamos uma estratégia digital completa para transformar a Jaquirana Madeiras em referência no setor florestal do Sul do Brasil — gerando leads de compra de florestas, demanda para venda de toras e autoridade institucional.",
+    validUntil: "2026-07-09",
+    whatsappNumber: "5549999999999",
+    highlights: [
+      "3 frentes estratégicas: compra de florestas, venda de toras e marca",
+      "TikTok já validado com 7 mil seguidores orgânicos",
+      "Nicho com baixíssima concorrência digital profissional",
+      "Sem fidelização — permanência por resultado"
+    ],
+    analysis: {
+      intro: "Realizamos uma análise completa da presença digital da Jaquirana Madeiras. O diagnóstico é claro: operação robusta, conteúdo autêntico e mercado de baixa concorrência digital — mas ainda sem a estrutura para transformar esse potencial em negócios concretos.",
+      strengths: [
+        {
+          title: "Conteúdo real e autêntico das operações",
+          description: "Harvesters, forwarders, carregamentos, caminhões — material visual único que nenhum concorrente consegue replicar. O TikTok com 7 mil seguidores prova que o mercado já quer consumir esse conteúdo."
+        },
+        {
+          title: "TikTok validado organicamente com 7 mil seguidores",
+          description: "7 mil seguidores num nicho B2B florestal é um ativo raro. Confirma que a linguagem visual das operações já tem audiência — falta estrutura para converter esse alcance em negócios."
+        },
+        {
+          title: "Presença física consolidada em RS e SC",
+          description: "Operação em dois estados do Sul significa cobertura regional real, capacidade logística e relações com o mercado já estabelecidas."
+        },
+        {
+          title: "Nicho com baixíssima concorrência digital profissional",
+          description: "Serrarias, laminadoras e proprietários rurais ainda são muito pouco disputados digitalmente. Quem estruturar presença profissional primeiro domina o espaço."
+        }
+      ],
+      opportunities: [
+        {
+          title: "Ausência de site institucional",
+          description: "Toda empresa que pesquisa um fornecedor de toras ou quer vender uma floresta precisa encontrar presença digital profissional. Sem site, a Jaquirana perde credibilidade antes do primeiro contato."
+        },
+        {
+          title: "Comunicação sem segmentação por público",
+          description: "Um produtor rural que quer vender sua floresta tem dores completamente diferentes de uma serraria buscando 5.000 m³ de pinus. A comunicação atual fala para todo mundo — e não converte ninguém."
+        },
+        {
+          title: "Legendas fracas apesar do conteúdo forte",
+          description: "Os vídeos mostram operação real e geram curtidas. Mas faltam história, bastidores com contexto, diferenciais técnicos e CTAs. Conteúdo bom + legenda fraca = alcance sem retorno comercial."
+        },
+        {
+          title: "Zero funil digital de captação de leads",
+          description: "Sem landing pages, formulários ou campanhas segmentadas, cada lead precisa encontrar o WhatsApp por conta própria. A Jaquirana perde oportunidades todos os dias."
+        },
+        {
+          title: "Google Meu Negócio e SEO subutilizados",
+          description: "Proprietários rurais e compradores industriais pesquisam no Google antes de qualquer contato. Hoje a Jaquirana é invisível para termos como 'compra de florestas de pinus RS' ou 'fornecedor de toras SC'."
+        }
+      ],
+      conclusion: "A Jaquirana Madeiras tem o ativo mais difícil de construir no marketing digital: operação real, autêntica e impossível de replicar. O próximo passo é transformar esse ativo em um ecossistema digital que compra mais florestas, vende mais toras e consolida a marca como referência regional."
+    },
+    services: [
+      {
+        name: "Gestão de Redes Sociais",
+        description: "Planejamento estratégico e publicação de conteúdos para Instagram e TikTok com foco nas 3 frentes: compra de florestas, venda de toras e autoridade institucional.",
+        icon: "Megaphone",
+        items: [
+          "Planejamento mensal e calendário editorial",
+          "Criação de artes e legendas estratégicas com CTAs",
+          "Reels institucionais e stories de bastidores",
+          "3 publicações semanais (12-15 posts/mês)",
+          "8 a 12 stories semanais",
+          "Relatório mensal de desempenho"
+        ],
+        price: "R$ 1.490",
+        priceType: "monthly"
+      },
+      {
+        name: "Produção de Vídeos e Conteúdo",
+        description: "Captação e edição profissional dos conteúdos das operações — harvesters, forwarders, transporte e floresta — para Instagram, TikTok e YouTube.",
+        icon: "Video",
+        items: [
+          "Captação de vídeos nas operações florestais",
+          "Edição profissional com trilha e legendas",
+          "Reels para Instagram",
+          "Shorts para YouTube",
+          "Vídeos para TikTok"
+        ],
+        price: "R$ 1.290",
+        priceType: "monthly"
+      },
+      {
+        name: "Google Meu Negócio",
+        description: "Estruturação e gestão do perfil no Google para que proprietários rurais e compradores industriais encontrem a Jaquirana nas buscas locais e regionais.",
+        icon: "MapPin",
+        items: [
+          "Otimização completa do perfil",
+          "Cadastro de produtos e serviços",
+          "Atualizações semanais",
+          "Estratégia de coleta de avaliações",
+          "Gestão da reputação online"
+        ],
+        price: "R$ 490",
+        priceType: "monthly"
+      },
+      {
+        name: "Site Institucional",
+        description: "Site profissional com páginas segmentadas para as 3 frentes: compra de florestas, venda de toras e institucional — com formulários de captação e integração WhatsApp.",
+        icon: "Globe",
+        items: [
+          "Site responsivo (mobile, tablet e desktop)",
+          "Páginas: institucional, compra de florestas e venda de toras",
+          "Formulários de captação de leads por frente",
+          "Integração WhatsApp + SEO inicial",
+          "Opção de locação com manutenção inclusa"
+        ],
+        price: "R$ 4.900",
+        priceType: "project",
+        priceNote: "Implantação única. Locação/manutenção: R$ 390/mês"
+      },
+      {
+        name: "SEO e Posicionamento Google",
+        description: "Posicionamento orgânico para os termos que proprietários rurais e compradores industriais usam ao pesquisar no Google em RS e SC.",
+        icon: "Search",
+        items: [
+          "Pesquisa de palavras-chave por frente de negócio",
+          "Criação de conteúdos estratégicos (blog / landing pages)",
+          "SEO local RS e SC",
+          "Otimização contínua"
+        ],
+        price: "R$ 890",
+        priceType: "monthly"
+      },
+      {
+        name: "Tráfego Pago (Meta + Google Ads)",
+        description: "Campanhas segmentadas por público: proprietários rurais (compra de florestas) e compradores industriais (venda de toras).",
+        icon: "Target",
+        items: [
+          "Meta Ads: compra de florestas e campanhas institucionais",
+          "Google Ads: captação por segmento (floresta + toras)",
+          "Remarketing para visitantes do site",
+          "Relatórios mensais de performance"
+        ],
+        price: "R$ 1.290",
+        priceType: "monthly",
+        priceNote: "Verba de anúncios paga diretamente pelo cliente"
+      },
+      {
+        name: "Consultoria Estratégica",
+        description: "Acompanhamento mensal com análise de indicadores, planejamento de crescimento e alinhamento comercial por frente de negócio.",
+        icon: "LineChart",
+        items: [
+          "Reuniões mensais de estratégia",
+          "Análise de indicadores e KPIs por frente",
+          "Planejamento de crescimento trimestral",
+          "Acompanhamento comercial"
+        ],
+        price: "R$ 690",
+        priceType: "monthly"
+      }
+    ],
+    investment: {
+      totalMonthly: "R$ 4.490",
+      totalLabel: "Pacote Estratégico Jaquirana Madeiras",
+      originalPrice: "R$ 6.140",
+      savings: "R$ 1.650",
+      packageIncludes: [
+        "Gestão de Redes Sociais",
+        "Produção de Vídeos e Conteúdo",
+        "Google Meu Negócio",
+        "SEO e Posicionamento Google",
+        "Tráfego Pago (Meta + Google Ads)",
+        "Consultoria Estratégica",
+        "Relatórios mensais integrados"
+      ],
+      breakdown: [
+        { item: "Gestão de Redes Sociais", value: "R$ 1.490" },
+        { item: "Produção de Vídeos e Conteúdo", value: "R$ 1.290" },
+        { item: "Google Meu Negócio", value: "R$ 490" },
+        { item: "SEO e Posicionamento Google", value: "R$ 890" },
+        { item: "Tráfego Pago (Meta + Google Ads)", value: "R$ 1.290" },
+        { item: "Consultoria Estratégica", value: "R$ 690" }
+      ],
+      paymentConditions: [
+        "Pagamento mensal via boleto ou PIX",
+        "Sem fidelização contratual — permanência por resultado",
+        "Site institucional disponível como módulo adicional"
+      ],
+      notes: [
+        "Verba de anúncios (Meta Ads / Google Ads) paga diretamente pelo cliente",
+        "Domínio, hospedagem e ferramentas externas não inclusos",
+        "Custos de deslocamento para captações presenciais por conta do contratante"
+      ]
+    },
+    phases: [
+      {
+        number: 1,
+        title: "Fundação",
+        objective: "Estruturar as bases digitais: redes sociais, Google Meu Negócio e início da produção de conteúdo estratégico.",
+        deliverables: [
+          "Diagnóstico estratégico e planejamento editorial",
+          "Organização dos perfis Instagram e TikTok",
+          "Primeiros conteúdos das 3 frentes (floresta, toras, institucional)",
+          "Otimização completa do Google Meu Negócio",
+          "Estratégia de captação de avaliações Google",
+          "Setup de métricas e relatórios",
+          "Início das produções de vídeo nas operações"
+        ],
+        expectedResult: "Perfis organizados com identidade clara, Google Meu Negócio estruturado e primeiros conteúdos estratégicos com CTAs para cada público."
+      },
+      {
+        number: 2,
+        title: "Captação",
+        objective: "Criar o motor de geração de leads: site, tráfego pago e SEO segmentado por frente de negócio.",
+        deliverables: [
+          "Site institucional com páginas por frente de negócio",
+          "Formulários de captação de leads (compra floresta / venda toras)",
+          "Início das campanhas Meta Ads e Google Ads segmentadas",
+          "Primeiros artigos de SEO (ex: como vender floresta de pinus RS)",
+          "Remarketing para visitantes do site",
+          "Integração de leads com WhatsApp",
+          "Relatório do segundo mês com análise de resultados"
+        ],
+        expectedResult: "Leads qualificados chegando pelas 2 frentes comerciais, site convertendo visitas em contatos e tráfego pago ativo com segmentação por público."
+      },
+      {
+        number: 3,
+        title: "Autoridade",
+        objective: "Consolidar a Jaquirana como referência digital no setor florestal do Sul do Brasil.",
+        deliverables: [
+          "Série 'Quanto vale sua floresta?' — conteúdo educativo",
+          "Série 'Da floresta à indústria' — processo completo",
+          "'Jaquirana Responde' com Ricardo Castilhos",
+          "Blog de autoridade sobre o setor florestal",
+          "SEO avançado para termos regionais",
+          "Relatórios estratégicos trimestrais",
+          "Planejamento de crescimento para o próximo ciclo"
+        ],
+        expectedResult: "Jaquirana reconhecida como referência digital no setor florestal de RS e SC, com geração recorrente de leads qualificados nas duas frentes comerciais."
+      }
+    ],
+    optionalServices: [
+      "Site Institucional (implantação única) — R$ 4.900",
+      "Site Institucional (locação + manutenção) — R$ 390/mês",
+      "Fotografia e Drone (operações florestais) — sob orçamento",
+      "Portal de Avaliação de Florestas — lead qualificado por hectares, cidade e idade do pinus",
+      "Mapa de Operações digital (RS + SC) — ferramenta de credibilidade B2B"
+    ],
+    differentials: [
+      "Estratégia segmentada por frente: compra de florestas, venda de toras e posicionamento institucional",
+      "Experiência em B2B industrial e agronegócio no Sul do Brasil",
+      "Transparência total — sem margem sobre custos externos",
+      "Sem fidelização contratual — permanência exclusivamente por resultado",
+      "Relatórios mensais com dados reais por frente de negócio",
+      "Time que entende a linguagem do setor: do harvester ao lead qualificado"
+    ],
+    closingQuestion: "A Jaquirana Madeiras já tem o ativo mais raro do marketing digital: operação real, autêntica e impossível de replicar. O próximo passo é transformar isso em negócios concretos — mais florestas compradas, mais toras vendidas, mais autoridade construída."
   }
 ];
 
