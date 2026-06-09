@@ -4625,7 +4625,7 @@ export const proposals: Proposal[] = [
           "8 a 12 stories semanais",
           "Relatório mensal de desempenho"
         ],
-        price: "R$ 1.490",
+        price: "R$ 590",
         priceType: "monthly"
       },
       {
@@ -4639,7 +4639,7 @@ export const proposals: Proposal[] = [
           "Shorts para YouTube",
           "Vídeos para TikTok"
         ],
-        price: "R$ 1.290",
+        price: "R$ 490",
         priceType: "monthly"
       },
       {
@@ -4653,7 +4653,7 @@ export const proposals: Proposal[] = [
           "Estratégia de coleta de avaliações",
           "Gestão da reputação online"
         ],
-        price: "R$ 490",
+        price: "R$ 190",
         priceType: "monthly"
       },
       {
@@ -4665,11 +4665,11 @@ export const proposals: Proposal[] = [
           "Páginas: institucional, compra de florestas e venda de toras",
           "Formulários de captação de leads por frente",
           "Integração WhatsApp + SEO inicial",
-          "Opção de locação com manutenção inclusa"
+          "Manutenção mensal inclusa no pacote"
         ],
-        price: "R$ 4.900",
+        price: "R$ 3.500",
         priceType: "project",
-        priceNote: "Implantação única. Locação/manutenção: R$ 390/mês"
+        priceNote: "Valor total diluído e incluso no pacote mensal — sem custo adicional"
       },
       {
         name: "SEO e Posicionamento Google",
@@ -4681,7 +4681,7 @@ export const proposals: Proposal[] = [
           "SEO local RS e SC",
           "Otimização contínua"
         ],
-        price: "R$ 890",
+        price: "R$ 390",
         priceType: "monthly"
       },
       {
@@ -4694,7 +4694,7 @@ export const proposals: Proposal[] = [
           "Remarketing para visitantes do site",
           "Relatórios mensais de performance"
         ],
-        price: "R$ 1.290",
+        price: "R$ 490",
         priceType: "monthly",
         priceNote: "Verba de anúncios paga diretamente pelo cliente"
       },
@@ -4708,36 +4708,38 @@ export const proposals: Proposal[] = [
           "Planejamento de crescimento trimestral",
           "Acompanhamento comercial"
         ],
-        price: "R$ 690",
+        price: "R$ 290",
         priceType: "monthly"
       }
     ],
     investment: {
-      totalMonthly: "R$ 4.490",
+      totalMonthly: "R$ 2.250",
       totalLabel: "Pacote Estratégico Jaquirana Madeiras",
-      originalPrice: "R$ 6.140",
-      savings: "R$ 1.650",
+      originalPrice: "R$ 2.830",
+      savings: "R$ 580",
       packageIncludes: [
         "Gestão de Redes Sociais",
         "Produção de Vídeos e Conteúdo",
         "Google Meu Negócio",
+        "Site Institucional (R$ 3.500 incluso — sem custo adicional)",
         "SEO e Posicionamento Google",
         "Tráfego Pago (Meta + Google Ads)",
         "Consultoria Estratégica",
         "Relatórios mensais integrados"
       ],
       breakdown: [
-        { item: "Gestão de Redes Sociais", value: "R$ 1.490" },
-        { item: "Produção de Vídeos e Conteúdo", value: "R$ 1.290" },
-        { item: "Google Meu Negócio", value: "R$ 490" },
-        { item: "SEO e Posicionamento Google", value: "R$ 890" },
-        { item: "Tráfego Pago (Meta + Google Ads)", value: "R$ 1.290" },
-        { item: "Consultoria Estratégica", value: "R$ 690" }
+        { item: "Gestão de Redes Sociais", value: "R$ 590" },
+        { item: "Produção de Vídeos e Conteúdo", value: "R$ 490" },
+        { item: "Google Meu Negócio", value: "R$ 190" },
+        { item: "Site Institucional (diluído no pacote)", value: "R$ 390" },
+        { item: "SEO e Posicionamento Google", value: "R$ 390" },
+        { item: "Tráfego Pago (Meta + Google Ads)", value: "R$ 490" },
+        { item: "Consultoria Estratégica", value: "R$ 290" }
       ],
       paymentConditions: [
         "Pagamento mensal via boleto ou PIX",
         "Sem fidelização contratual — permanência por resultado",
-        "Site institucional disponível como módulo adicional"
+        "Site institucional (R$ 3.500) incluso e diluído no pacote — sem entrada"
       ],
       notes: [
         "Verba de anúncios (Meta Ads / Google Ads) paga diretamente pelo cliente",
