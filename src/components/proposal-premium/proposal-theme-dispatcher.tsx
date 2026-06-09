@@ -59,6 +59,13 @@ import { ProposalBiomassPhases } from "@/components/proposal-biomass/proposal-ph
 import { ProposalBiomassInvestment } from "@/components/proposal-biomass/proposal-investment";
 import { ProposalBiomassCta } from "@/components/proposal-biomass/proposal-cta";
 
+// Industrial imports (ferramentas / equipamentos / oficina)
+import { ProposalIndustrialHero } from "@/components/proposal-industrial/proposal-hero";
+import { ProposalIndustrialAnalysis } from "@/components/proposal-industrial/proposal-analysis";
+import { ProposalIndustrialScope } from "@/components/proposal-industrial/proposal-scope";
+import { ProposalIndustrialInvestment } from "@/components/proposal-industrial/proposal-investment";
+import { ProposalIndustrialCta } from "@/components/proposal-industrial/proposal-cta";
+
 // Forestry imports (setor madeireiro / florestal)
 import { ProposalForestryHero } from "@/components/proposal-forestry/proposal-hero";
 import { ProposalForestryAnalysis } from "@/components/proposal-forestry/proposal-analysis";
@@ -84,6 +91,37 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isPremium = proposal.theme === "premium";
   const isBiomass = proposal.theme === "biomass";
   const isForestry = proposal.theme === "forestry";
+  const isIndustrial = proposal.theme === "industrial";
+
+  if (isIndustrial) {
+    return (
+      <>
+        <ProposalIndustrialHero proposal={proposal} />
+        <ProposalAbout />
+        {proposal.analysis && (
+          <ProposalIndustrialAnalysis
+            analysis={proposal.analysis}
+            clientName={proposal.clientName}
+          />
+        )}
+        <ProposalIndustrialScope services={proposal.services} />
+        {proposal.optionalServices && proposal.optionalServices.length > 0 && (
+          <ProposalOptionalServices services={proposal.optionalServices} />
+        )}
+        {proposal.phases && proposal.phases.length > 0 && (
+          <ProposalPhases phases={proposal.phases} />
+        )}
+        <ProposalIndustrialInvestment
+          investment={proposal.investment}
+          clientName={proposal.clientName}
+        />
+        {proposal.differentials && proposal.differentials.length > 0 && (
+          <ProposalDifferentials differentials={proposal.differentials} />
+        )}
+        <ProposalIndustrialCta proposal={proposal} />
+      </>
+    );
+  }
 
   if (isForestry) {
     return (

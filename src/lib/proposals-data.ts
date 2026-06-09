@@ -135,7 +135,7 @@ export interface Proposal {
     closingText: string;
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
-  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry";
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -4810,6 +4810,235 @@ export const proposals: Proposal[] = [
       "Time que entende a linguagem do setor: do harvester ao lead qualificado"
     ],
     closingQuestion: "A Jaquirana Madeiras já tem o ativo mais raro do marketing digital: operação real, autêntica e impossível de replicar. O próximo passo é transformar isso em negócios concretos — mais florestas compradas, mais toras vendidas, mais autoridade construída."
+  },
+
+  // ---- MC EQUIPAMENTOS E SERVIÇOS ----
+  {
+    slug: "mc-equipamentos",
+    clientName: "MC Equipamentos",
+    contactName: "MC Equipamentos",
+    theme: "industrial",
+    greeting: "Após análise da presença digital da MC Equipamentos e Serviços, identificamos uma grande oportunidade: a marca já é reconhecida em Santa Cecília e região — o que falta é transformar essa autoridade local em clientes novos todos os meses através do digital.",
+    validUntil: "2026-07-09",
+    whatsappNumber: "5549999999999",
+    highlights: [
+      "Marca já reconhecida localmente — falta presença digital consistente",
+      "Concorrência digital praticamente ausente na região",
+      "Oficina e loja: dois motores de receita para explorar",
+      "Sem fidelização — permanência por resultado"
+    ],
+    analysis: {
+      intro: "Realizamos uma análise completa da presença digital da MC Equipamentos e Serviços. A marca tem fundações sólidas — loja física consolidada, nota 5 estrelas no Google, produto diversificado. O diagnóstico revela: o potencial existe, mas está sendo desperdiçado por falta de estratégia digital.",
+      strengths: [
+        {
+          title: "Marca visual profissional e bem definida",
+          description: "A identidade da MC já está estabelecida. Isso elimina uma etapa cara do marketing — o problema não é identidade visual, é visibilidade digital."
+        },
+        {
+          title: "Nota 5 estrelas no Google + loja física consolidada",
+          description: "Reputação positiva comprovada. Clientes satisfeitos existem — falta transformar essa satisfação em avaliações ativas e novos clientes via Google."
+        },
+        {
+          title: "Oficina própria com alto potencial de margem",
+          description: "Serviços de oficina geram mais margem que venda de produtos. Esse ativo praticamente não aparece nas redes — uma oportunidade enorme sendo ignorada."
+        },
+        {
+          title: "Produto diversificado: ferramentas, lubrificantes, soldagem, EPIs",
+          description: "Catálogo amplo significa múltiplos públicos para atingir: mecânicos, agricultores, transportadores, construtores — cada um com dores específicas."
+        },
+        {
+          title: "Localização estratégica na BR 116",
+          description: "Rodovia de alto fluxo significa clientes em trânsito. Uma presença forte no Google Meu Negócio converte 'perto de mim' em visita na loja."
+        }
+      ],
+      opportunities: [
+        {
+          title: "Conteúdo sem persuasão — catálogo que não vende",
+          description: "Posts mostram produtos, não soluções. Ninguém compra uma ferramenta porque viu a foto dela. As pessoas compram para resolver um problema: produtividade, economia de tempo, menos parada."
+        },
+        {
+          title: "Google Meu Negócio com apenas 3 avaliações",
+          description: "Uma empresa com nota 5 e 3 avaliações não aparece nas buscas locais. Meta: 50 avaliações em 90 dias — isso coloca a MC no topo para 'ferramentas Santa Cecília'."
+        },
+        {
+          title: "Oficina invisível nas redes sociais",
+          description: "Antes e depois, recuperação de peças, serviços executados — esse conteúdo gera autoridade e confiança. Hoje está completamente ausente no perfil."
+        },
+        {
+          title: "Zero site institucional ou catálogo online",
+          description: "Clientes que pesquisam antes de comprar não encontram a MC no Google além do Maps. Um site com catálogo e integração WhatsApp captura esse público 24h por dia."
+        },
+        {
+          title: "Nenhuma campanha paga ativa",
+          description: "Em cidades pequenas como Santa Cecília, pouquíssimos concorrentes investem em Meta Ads. O custo para dominar o espaço regional é muito menor do que em mercados mais disputados."
+        }
+      ],
+      conclusion: "A MC Equipamentos tem tudo o que os algoritmos precisam: operação real, produto diversificado e reputação positiva. O que falta é uma estratégia que transforme essa estrutura em clientes novos toda semana — na loja física, na oficina e pelo WhatsApp."
+    },
+    services: [
+      {
+        name: "Gestão de Redes Sociais",
+        description: "Planejamento e publicação de conteúdo estratégico no Instagram e Facebook, focado em converter seguidores em clientes da loja e da oficina.",
+        icon: "Megaphone",
+        items: [
+          "Planejamento mensal e calendário editorial",
+          "Artes profissionais e legendas persuasivas",
+          "12 publicações mensais + 12 Stories",
+          "4 Reels mensais",
+          "Estratégia de crescimento da marca",
+          "Relatório mensal de desempenho"
+        ],
+        price: "R$ 790",
+        priceType: "monthly"
+      },
+      {
+        name: "Produção de Fotos e Vídeos",
+        description: "Captação profissional mensal na loja e oficina para produção de conteúdo real — ferramentas em ação, bastidores, equipe, demonstrações.",
+        icon: "Camera",
+        items: [
+          "1 visita mensal de captação",
+          "Fotos profissionais de produtos e ambiente",
+          "Vídeos para Reels e Stories",
+          "Bastidores da oficina e loja",
+          "Banco de imagens atualizado mensalmente"
+        ],
+        price: "R$ 450",
+        priceType: "monthly"
+      },
+      {
+        name: "Captação com Drone",
+        description: "Imagens aéreas da empresa para fortalecer a percepção de marca sólida e profissional — fachada, pátio, estrutura e vídeo institucional.",
+        icon: "Plane",
+        items: [
+          "Imagens aéreas da fachada e estrutura",
+          "Vídeo institucional com drone",
+          "Material para site e redes sociais",
+          "Fortalece percepção de empresa consolidada"
+        ],
+        price: "R$ 300",
+        priceType: "project"
+      },
+      {
+        name: "Google Meu Negócio",
+        description: "Otimização e gestão ativa do perfil para que a MC apareça no topo das buscas locais quando clientes procuram ferramentas e oficina em Santa Cecília.",
+        icon: "MapPin",
+        items: [
+          "Otimização completa do perfil e categorias",
+          "Publicações semanais com produtos e serviços",
+          "Estratégia de captação de avaliações (meta: 50 em 90 dias)",
+          "Atualização de fotos e informações",
+          "Monitoramento e relatório mensal"
+        ],
+        price: "R$ 290",
+        priceType: "monthly"
+      },
+      {
+        name: "Tráfego Pago (Meta Ads)",
+        description: "Campanhas segmentadas para alcançar mecânicos, agricultores, transportadores e construtores na região — gerando contatos diretos no WhatsApp.",
+        icon: "Target",
+        items: [
+          "Configuração do Gerenciador de Anúncios",
+          "Campanhas de alcance e mensagens WhatsApp",
+          "Segmentação regional por interesse e profissão",
+          "Remarketing para visitantes do perfil",
+          "Relatórios mensais de performance"
+        ],
+        price: "R$ 490",
+        priceType: "monthly",
+        priceNote: "Verba de anúncios paga diretamente pelo cliente"
+      }
+    ],
+    investment: {
+      totalMonthly: "R$ 1.290",
+      totalLabel: "Pacote Completo MC Equipamentos",
+      originalPrice: "R$ 2.320",
+      savings: "R$ 1.030",
+      packageIncludes: [
+        "Gestão completa de Redes Sociais",
+        "Produção mensal de Fotos e Vídeos",
+        "Gestão do Google Meu Negócio",
+        "Gestão de Campanhas Meta Ads",
+        "1 Captação com Drone por mês",
+        "Planejamento Estratégico",
+        "Relatório Mensal Integrado"
+      ],
+      breakdown: [
+        { item: "Gestão de Redes Sociais", value: "R$ 790" },
+        { item: "Produção de Fotos e Vídeos", value: "R$ 450" },
+        { item: "Google Meu Negócio", value: "R$ 290" },
+        { item: "Meta Ads (gestão)", value: "R$ 490" },
+        { item: "Captação com Drone", value: "R$ 300" }
+      ],
+      paymentConditions: [
+        "Pagamento mensal via boleto ou PIX",
+        "Sem fidelização contratual — permanência por resultado",
+        "Contrato ativo enquanto for interessante para ambas as partes"
+      ],
+      notes: [
+        "Verba de anúncios (Meta Ads / Google Ads) paga diretamente pelo cliente",
+        "Custos de deslocamento, alimentação e hospedagem (quando necessários) por conta do contratante",
+        "Vídeos extras, eventos e campanhas especiais orçados separadamente"
+      ]
+    },
+    phases: [
+      {
+        number: 1,
+        title: "Fundação",
+        objective: "Estruturar as bases: perfis de redes sociais, Google Meu Negócio e início da produção de conteúdo estratégico.",
+        deliverables: [
+          "Diagnóstico e planejamento editorial completo",
+          "Organização visual dos perfis Instagram e Facebook",
+          "Primeiros conteúdos: loja, oficina e produtos em destaque",
+          "Otimização completa do Google Meu Negócio",
+          "Lançamento da estratégia de captação de avaliações",
+          "Primeira captação com drone (institucional)",
+          "Setup de métricas e relatórios"
+        ],
+        expectedResult: "Perfis organizados e ativos, Google Meu Negócio otimizado e primeiros conteúdos estratégicos publicados com foco em conversão."
+      },
+      {
+        number: 2,
+        title: "Ativação",
+        objective: "Lançar as campanhas pagas e ampliar o alcance regional com conteúdo de oficina e produto em ação.",
+        deliverables: [
+          "Lançamento das campanhas Meta Ads (WhatsApp + alcance)",
+          "Série 'Ferramenta em Ação' — Reels de produtos funcionando",
+          "Série 'Bastidores da Oficina' — antes e depois",
+          "Segmentação de públicos por profissão e interesse",
+          "Relatório do segundo mês com análise de resultados"
+        ],
+        expectedResult: "Contatos chegando pelo WhatsApp via campanhas, engajamento crescente nas redes e oficina ganhando visibilidade."
+      },
+      {
+        number: 3,
+        title: "Conversão",
+        objective: "Consolidar a MC como referência digital em ferramentas e oficina na região e escalar os resultados.",
+        deliverables: [
+          "Série 'Dica do Mecânico' — autoridade técnica",
+          "Série 'Produto da Semana' — conversão direta",
+          "Remarketing para públicos engajados",
+          "Meta de 50 avaliações no Google atingida",
+          "Relatório estratégico com KPIs e planejamento de crescimento"
+        ],
+        expectedResult: "MC Equipamentos como referência digital em Santa Cecília — aparecendo no Google, gerando leads e convertendo seguidores em clientes da loja e da oficina."
+      }
+    ],
+    optionalServices: [
+      "Google Ads (pesquisa local) — gestão R$ 290/mês (verba separada)",
+      "Site Institucional com catálogo — orçamento sob consulta",
+      "WhatsApp Business estruturado (catálogo, etiquetas, automações)",
+      "Cobertura de eventos e inaugurações — sob orçamento",
+      "Campanhas sazonais (Dia do Trabalhador, Black Friday, etc.)"
+    ],
+    differentials: [
+      "Estratégia focada em conversão local: loja física + WhatsApp + oficina",
+      "Conteúdo técnico que educa e vende — solução, não produto",
+      "Meta de 50 avaliações Google em 90 dias para dominar busca local",
+      "Sem fidelização contratual — permanência exclusivamente por resultado",
+      "Transparência total sobre verbas — sem margem sobre anúncios",
+      "Experiência em varejo local, B2B e nichos industriais no Sul do Brasil"
+    ],
+    closingQuestion: "A MC já tem reputação, produto e estrutura. O que falta é ser encontrada por quem ainda não conhece. Com presença digital consistente, a loja que hoje depende de indicação começa a receber clientes novos todos os dias — pela busca do Google, pelo Instagram e pelo WhatsApp."
   }
 ];
 
