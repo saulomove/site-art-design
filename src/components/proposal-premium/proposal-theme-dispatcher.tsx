@@ -63,6 +63,7 @@ import { ProposalBiomassCta } from "@/components/proposal-biomass/proposal-cta";
 import { ProposalForestryHero } from "@/components/proposal-forestry/proposal-hero";
 import { ProposalForestryAnalysis } from "@/components/proposal-forestry/proposal-analysis";
 import { ProposalForestryScope } from "@/components/proposal-forestry/proposal-scope";
+import { ProposalForestryTrafficBudget } from "@/components/proposal-forestry/proposal-traffic-budget";
 import { ProposalForestryInvestment } from "@/components/proposal-forestry/proposal-investment";
 import { ProposalForestryCta } from "@/components/proposal-forestry/proposal-cta";
 
@@ -96,6 +97,7 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
           />
         )}
         <ProposalForestryScope services={proposal.services} />
+        <ProposalForestryTrafficBudget />
         {proposal.optionalServices && proposal.optionalServices.length > 0 && (
           <ProposalOptionalServices services={proposal.optionalServices} />
         )}
