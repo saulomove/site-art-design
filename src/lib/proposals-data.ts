@@ -4560,7 +4560,7 @@ export const proposals: Proposal[] = [
     contactName: "Ricardo",
     theme: "forestry",
     greeting: "Preparamos uma estratégia digital completa para transformar a Jaquirana Madeiras em referência no setor florestal do Sul do Brasil — gerando leads de compra de florestas, demanda para venda de toras e autoridade institucional.",
-    validUntil: "2026-07-09",
+    validUntil: "2026-06-15",
     whatsappNumber: "5549988446685",
     highlights: [
       "3 frentes estratégicas: compra de florestas, venda de toras e marca",
