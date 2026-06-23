@@ -85,11 +85,11 @@ export function ProposalPastoralTrafficBudget() {
               </h3>
               <p className="text-sm md:text-base text-[#EDE5CC]/55 font-inter leading-relaxed">
                 A estratégia é validar antes de escalar. Começamos com uma verba
-                mínima — em torno de R$&nbsp;17/dia (≈&nbsp;R$&nbsp;500/mês por
-                plataforma) — para entender o que ressoa com criadores de
-                cavalos e haras da região. Conforme os resultados aparecem,
-                aumentamos a verba com segurança, investindo mais no que
-                funciona e pausando o que não converte.
+                mínima — em torno de R$&nbsp;10/dia — para entender o que
+                ressoa com criadores de cavalos e haras da região. Conforme o
+                retorno sobre o investimento aparece, aumentamos a verba com
+                segurança: investindo mais no que gera resultado e pausando o
+                que não converte. Sem desperdício, sem risco desnecessário.
               </p>
             </div>
 
@@ -100,17 +100,17 @@ export function ProposalPastoralTrafficBudget() {
               </p>
               <div className="flex items-baseline justify-center gap-1 mb-2">
                 <span className="font-playfair text-3xl font-medium text-[#C9A037]">
-                  R$ 17
+                  R$ 10
                 </span>
                 <span className="text-sm text-[#EDE5CC]/40 font-inter">/dia</span>
               </div>
               <p className="text-xs text-[#EDE5CC]/35 font-inter mb-5">
-                ≈ R$ 500/mês por plataforma
+                ≈ R$ 300/mês por plataforma
               </p>
               <div className="h-[1px] bg-[#C9A037]/15 mb-5" />
               <p className="text-xs text-[#EDE5CC]/40 font-inter leading-relaxed">
-                Com R$&nbsp;17/dia já é possível testar, aprender e iniciar a
-                captação de clientes para a Alfafa Santa Fé.
+                Com R$&nbsp;10/dia já é possível testar, aprender e iniciar a
+                captação de clientes — e escalar conforme o ROI comprova o resultado.
               </p>
             </div>
           </div>

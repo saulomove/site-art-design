@@ -5048,7 +5048,7 @@ export const proposals: Proposal[] = [
     contactName: "Celso",
     theme: "pastoral",
     greeting: "Após analisar o perfil da Alfafa Santa Fé, identificamos algo claro: a qualidade do produto e a estrutura produtiva são excepcionais — mas a imagem digital ainda não reflete esse nível de excelência. É exatamente isso que vamos mudar juntos.",
-    validUntil: "2026-07-23",
+    validUntil: "2026-06-29",
     whatsappNumber: "5549999998132",
     closingQuestion: "Pronto para transformar a Alfafa Santa Fé na referência em alfafa premium do Sul do Brasil?",
     highlights: [
@@ -5222,10 +5222,10 @@ export const proposals: Proposal[] = [
       }
     ],
     investment: {
-      totalMonthly: "R$ 2.490",
+      totalMonthly: "R$ 1.650",
       totalLabel: "Pacote Completo Alfafa Santa Fé",
       originalPrice: "R$ 3.450",
-      savings: "R$ 960",
+      savings: "R$ 1.800",
       packageIncludes: [
         "Gestão completa do Google Meu Negócio",
         "Gestão estratégica do Instagram (12 conteúdos/mês)",
