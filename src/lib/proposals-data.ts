@@ -135,7 +135,7 @@ export interface Proposal {
     closingText: string;
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
-  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial";
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -5039,6 +5039,281 @@ export const proposals: Proposal[] = [
       "Experiência em varejo local, B2B e nichos industriais no Sul do Brasil"
     ],
     closingQuestion: "A MC já tem reputação, produto e estrutura. O que falta é ser encontrada por quem ainda não conhece. Com presença digital consistente, a loja que hoje depende de indicação começa a receber clientes novos todos os dias — pela busca do Google, pelo Instagram e pelo WhatsApp."
+  },
+
+  // ── ALFAFA SANTA FÉ ─────────────────────────────────────────
+  {
+    slug: "alfafa-santa-fe",
+    clientName: "Alfafa Santa Fé",
+    contactName: "Celso",
+    theme: "pastoral",
+    greeting: "Após analisar o perfil da Alfafa Santa Fé, identificamos algo claro: a qualidade do produto e a estrutura produtiva são excepcionais — mas a imagem digital ainda não reflete esse nível de excelência. É exatamente isso que vamos mudar juntos.",
+    validUntil: "2026-07-23",
+    whatsappNumber: "5549999998132",
+    closingQuestion: "Pronto para transformar a Alfafa Santa Fé na referência em alfafa premium do Sul do Brasil?",
+    highlights: [
+      "Produto premium com apelo visual único — lavouras, máquinas, colheita",
+      "Mercado de equinos em crescimento — criadores de crioulo + haras",
+      "Produção própria do campo à entrega — diferencial raro de explorar",
+      "Sem presença digital consistente — campo aberto para liderança"
+    ],
+    analysis: {
+      intro: "Realizamos uma análise completa da presença digital da Alfafa Santa Fé. A marca tem um produto de excelência, forte apelo visual e um mercado em crescimento. O diagnóstico revela: o potencial é enorme, mas a comunicação digital ainda está muito aquém da qualidade do que é produzido no campo.",
+      strengths: [
+        {
+          title: "Produto premium com forte apelo visual",
+          description: "A alfafa tipo A tem cor verde intensa, folhas preservadas e aparência de alto valor. Isso facilita muito a geração de conteúdo e reforça naturalmente o posicionamento premium."
+        },
+        {
+          title: "Produção própria do plantio à entrega",
+          description: "Pouquíssimos concorrentes controlam toda a cadeia. 'Da lavoura até o seu animal' é uma narrativa poderosa que gera confiança e autoridade impossíveis de copiar."
+        },
+        {
+          title: "Forte apelo visual da operação no campo",
+          description: "Lavouras extensas, máquinas de enfardamento, colheita, carregamentos — essa operação gera conteúdo autêntico e emocionalmente envolvente que a concorrência simplesmente não consegue replicar."
+        },
+        {
+          title: "Mercado de nutrição animal em crescimento",
+          description: "O mercado de cavalos crioulos, haras e criadores premium está em franca expansão no Sul do Brasil. Quem compra alfafa tipo A é um cliente de alto valor e recorrente."
+        },
+        {
+          title: "Produto de recompra com alta fidelização",
+          description: "Quem aprova a qualidade compra novamente. Isso reduz o custo de aquisição de clientes no longo prazo e abre caminho para contratos recorrentes com haras e centros de treinamento."
+        }
+      ],
+      opportunities: [
+        {
+          title: "Falta de autoridade e posicionamento digital",
+          description: "Hoje o perfil mostra o produto, mas ainda não transmite autoridade. Um possível comprador não consegue entender quem é a empresa, há quanto tempo atua ou por que é melhor que outras opções."
+        },
+        {
+          title: "Ausência de prova social e resultados",
+          description: "Existem poucos conteúdos mostrando clientes, haras atendidos, resultados nos animais ou depoimentos. O mercado agro compra baseado em confiança — e confiança se constrói com prova."
+        },
+        {
+          title: "Ausência no Google — perda de oportunidades diárias",
+          description: "Quando criadores pesquisam 'alfafa para cavalos SC' ou 'feno de alfafa premium', a Alfafa Santa Fé praticamente não existe no Google. Cada busca sem resposta é uma venda perdida."
+        },
+        {
+          title: "Sem estratégia de captação de novos clientes",
+          description: "O Instagram funciona como vitrine, mas não existe uma estrutura de geração contínua de leads. Sem anúncios segmentados e Google Meu Negócio, o crescimento depende apenas de indicação."
+        },
+        {
+          title: "Posicionamento ainda de 'produtor', não de marca premium",
+          description: "A comunicação atual transmite uma fazenda que vende alfafa. O objetivo é construir percepção de marca referência — o que permitirá cobrar por qualidade, não apenas competir por preço."
+        }
+      ],
+      conclusion: "A Alfafa Santa Fé tem tudo o que é preciso: produto de excelência, estrutura produtiva própria e um mercado que valoriza qualidade. O que falta é uma estratégia que transforme essa operação em autoridade digital — fazendo com que mais haras, criadores e produtores encontrem, confiem e escolham a ASF."
+    },
+    contentSuggestions: [
+      {
+        format: "Post Fixo",
+        theme: "Por que a alfafa é a rainha das forrageiras?",
+        hook: "A alimentação do seu animal começa pela qualidade do que vai para o cocho.",
+        description: "Conteúdo educativo sobre os diferenciais nutricionais: 20–25% proteína bruta, cálcio, fósforo e digestibilidade. Posiciona a ASF como referência técnica no mercado."
+      },
+      {
+        format: "Post Fixo",
+        theme: "Da lavoura ao cocho — a história por trás de cada fardo",
+        hook: "Cada fardo tem uma história de cuidado, manejo e qualidade.",
+        description: "Apresenta o diferencial da produção própria: do plantio ao enfardamento e à entrega. Gera confiança e diferencia a marca de revendedores e intermediários."
+      },
+      {
+        format: "Carrossel",
+        theme: "5 sinais de que a alimentação pode estar limitando o desempenho do seu cavalo",
+        hook: "Seu cavalo está rendendo menos do que deveria?",
+        description: "Conteúdo de autoridade sobre nutrição equina: pelagem sem brilho, baixa condição corporal, pouca disposição. CTA direto para solicitar orçamento da ASF."
+      },
+      {
+        format: "Carrossel",
+        theme: "Como produzimos nossa alfafa premium",
+        hook: "Tudo começa na lavoura. Deixa a gente te mostrar.",
+        description: "Bastidores da produção slide a slide: plantio → crescimento → corte → secagem → enfardamento → entrega. Processo completo que gera confiança e autoridade."
+      },
+      {
+        format: "Reels",
+        theme: "O dia da colheita na Alfafa Santa Fé",
+        hook: "Poucos minutos de vídeo. Meses de dedicação no campo.",
+        description: "Drone + máquinas + equipe em ação durante o corte. Formato de alto alcance orgânico, conteúdo autêntico que a concorrência não consegue replicar."
+      },
+      {
+        format: "Reels",
+        theme: "Por dentro da Alfafa Santa Fé",
+        hook: "Conheça quem está por trás da qualidade que chega até você.",
+        description: "Celso falando sobre a história da fazenda, os valores e o compromisso com a qualidade. Humaniza a marca e gera a conexão emocional que fecha negócios."
+      }
+    ],
+    services: [
+      {
+        name: "Google Meu Negócio",
+        description: "Criação e gestão completa do perfil no Google para que a Alfafa Santa Fé apareça nas buscas regionais quando criadores, haras e produtores procuram alfafa premium.",
+        icon: "MapPin",
+        items: [
+          "Criação ou otimização completa do perfil",
+          "Configuração estratégica de categorias e serviços",
+          "Descrição institucional e inserção de produtos",
+          "Publicações mensais com conteúdo e fotos",
+          "Estratégia de captação de avaliações",
+          "Monitoramento e atualizações frequentes"
+        ],
+        price: "R$ 390",
+        priceType: "monthly"
+      },
+      {
+        name: "Gestão de Redes Sociais",
+        description: "Planejamento estratégico e publicação de conteúdo profissional no Instagram, com foco em transformar seguidores em clientes recorrentes da Alfafa Santa Fé.",
+        icon: "Megaphone",
+        items: [
+          "Planejamento mensal e calendário editorial",
+          "12 conteúdos estratégicos por mês",
+          "Artes profissionais e legendas persuasivas",
+          "Posts fixos, carrosséis, Reels e Stories",
+          "Estratégia de crescimento orgânico",
+          "Relatório mensal de desempenho"
+        ],
+        price: "R$ 990",
+        priceType: "monthly"
+      },
+      {
+        name: "Captação de Fotos e Vídeos",
+        description: "Visita presencial mensal para captação profissional — lavoura, máquinas, colheita, enfardamento, entregas e bastidores. A operação da ASF é o maior patrimônio de conteúdo que existe.",
+        icon: "Camera",
+        items: [
+          "1 visita mensal de captação presencial",
+          "Fotos profissionais da lavoura e produção",
+          "Vídeos para Reels e Stories",
+          "Imagens aéreas com drone",
+          "Bastidores da colheita e enfardamento",
+          "Banco de imagens atualizado mensalmente"
+        ],
+        price: "R$ 790",
+        priceType: "monthly"
+      },
+      {
+        name: "Produção de Reels",
+        description: "Produção contínua de vídeos estratégicos — processo de produção, dia de colheita, entregas, curiosidades sobre nutrição animal e bastidores. Reels são o maior canal de alcance orgânico.",
+        icon: "Video",
+        items: [
+          "Até 4 Reels mensais",
+          "Roteirização e edição profissional",
+          "Motion graphics e legendas dinâmicas",
+          "Inserção de identidade visual ASF",
+          "Formatos otimizados para Instagram",
+          "Conteúdo de alto alcance orgânico"
+        ],
+        price: "R$ 490",
+        priceType: "monthly"
+      },
+      {
+        name: "Gestão de Tráfego Pago",
+        description: "Campanhas segmentadas no Meta Ads e Google Ads para alcançar criadores de cavalos, haras e pecuaristas no Sul do Brasil — gerando pedidos e orçamentos de forma contínua.",
+        icon: "Target",
+        items: [
+          "Campanhas de alcance e reconhecimento de marca",
+          "Campanhas para WhatsApp (pedidos diretos)",
+          "Segmentação por perfil equino, pecuarista e rural",
+          "Remarketing para visitantes do perfil",
+          "Monitoramento diário e otimizações constantes",
+          "Relatórios mensais de performance"
+        ],
+        price: "R$ 790",
+        priceType: "monthly",
+        priceNote: "Verba de anúncios paga diretamente pelo cliente (mín. R$ 500/mês)"
+      }
+    ],
+    investment: {
+      totalMonthly: "R$ 2.490",
+      totalLabel: "Pacote Completo Alfafa Santa Fé",
+      originalPrice: "R$ 3.450",
+      savings: "R$ 960",
+      packageIncludes: [
+        "Gestão completa do Google Meu Negócio",
+        "Gestão estratégica do Instagram (12 conteúdos/mês)",
+        "4 Reels profissionais mensais",
+        "1 captação presencial mensal (foto + vídeo + drone)",
+        "Gestão de campanhas Meta Ads e Google Ads",
+        "Planejamento editorial e calendário de conteúdo",
+        "Reuniões de acompanhamento mensais",
+        "Relatórios integrados de desempenho"
+      ],
+      breakdown: [
+        { item: "Google Meu Negócio", value: "R$ 390" },
+        { item: "Gestão de Redes Sociais", value: "R$ 990" },
+        { item: "Captação Foto e Vídeo + Drone", value: "R$ 790" },
+        { item: "Produção de Reels", value: "R$ 490" },
+        { item: "Gestão de Tráfego Pago (Meta + Google)", value: "R$ 790" }
+      ],
+      paymentConditions: [
+        "Pagamento mensal via boleto ou PIX",
+        "Sem fidelização contratual — permanência por resultado",
+        "Contrato ativo enquanto for interessante para ambas as partes"
+      ],
+      notes: [
+        "Verba de anúncios (Meta Ads / Google Ads) paga diretamente pelo cliente — recomendação mínima: R$ 500/mês por plataforma",
+        "Custos de deslocamento para Rio Bonito – Lebon Régis por conta do contratante",
+        "Feiras agropecuárias, eventos e campanhas sazonais orçados separadamente"
+      ]
+    },
+    phases: [
+      {
+        number: 1,
+        title: "Fundação",
+        objective: "Estruturar as bases digitais da marca: Google Meu Negócio, identidade do perfil, primeiros conteúdos de autoridade e início das captações.",
+        deliverables: [
+          "Diagnóstico completo e planejamento editorial",
+          "Criação ou otimização do Google Meu Negócio",
+          "Organização visual e bio estratégica do Instagram",
+          "Primeira captação presencial: lavoura, máquinas e produção",
+          "Primeiros posts de autoridade: produto, processo e marca",
+          "Configuração dos destaques: Quem Somos, Produção, Clientes, Orçamentos",
+          "Setup de métricas e relatório inicial"
+        ],
+        expectedResult: "Perfil organizado, Google Meu Negócio ativo e primeiros conteúdos estratégicos publicados com identidade visual consistente e foco em autoridade."
+      },
+      {
+        number: 2,
+        title: "Crescimento",
+        objective: "Ativar as campanhas pagas, ampliar o alcance regional e construir os pilares de autoridade com conteúdo de produção, nutrição animal e bastidores.",
+        deliverables: [
+          "Lançamento das campanhas Meta Ads (WhatsApp + alcance)",
+          "Série 'Da lavoura ao cocho' — Reels com processo completo",
+          "Série 'Nutrição que faz diferença' — posts técnicos sobre alfafa",
+          "Segmentação de públicos: criadores de cavalos, haras, pecuaristas",
+          "Estratégia de captação de avaliações no Google (meta: 20+ em 60 dias)",
+          "Relatório do segundo mês com análise de resultados"
+        ],
+        expectedResult: "Contatos chegando pelo WhatsApp via campanhas, crescimento orgânico do perfil e ASF ganhando reconhecimento junto a haras e criadores regionais."
+      },
+      {
+        number: 3,
+        title: "Referência",
+        objective: "Consolidar a Alfafa Santa Fé como referência em alfafa premium no Sul do Brasil, escalando resultados e expandindo o alcance regional.",
+        deliverables: [
+          "Série 'Resultados ASF' — clientes e animais em destaque",
+          "Série 'Por dentro da ASF' — humanização da marca e família",
+          "Google Ads ativo para captar buscas de intenção de compra",
+          "Remarketing para públicos engajados com maior intenção",
+          "Meta de 50+ avaliações no Google para dominar buscas locais",
+          "Relatório estratégico com KPIs e planejamento de escala"
+        ],
+        expectedResult: "Alfafa Santa Fé como referência reconhecida no Sul do Brasil — aparecendo no Google, gerando leads qualificados de haras e criadores e consolidando posição premium no mercado."
+      }
+    ],
+    optionalServices: [
+      "Site Institucional com catálogo e integração WhatsApp — orçamento sob consulta",
+      "Google Ads (pesquisa local) — gestão R$ 390/mês (verba separada)",
+      "Cobertura de feiras agropecuárias e eventos rurais — sob orçamento",
+      "WhatsApp Business estruturado (catálogo, etiquetas, automações)",
+      "Campanhas sazonais (abertura de safra, feiras regionais, etc.)"
+    ],
+    differentials: [
+      "Estratégia focada em resultado comercial — pedidos e orçamentos reais, não apenas seguidores",
+      "Conteúdo autêntico do campo: nenhum concorrente tem o que a ASF tem para mostrar",
+      "Google Meu Negócio ativo para captar buscas de criadores, haras e pecuaristas",
+      "Sem fidelização contratual — permanência exclusivamente por resultado",
+      "Transparência total sobre verbas — sem margem da ArtDesign sobre anúncios",
+      "Experiência em agronegócio e nichos premium no Sul do Brasil"
+    ]
   }
 ];
 

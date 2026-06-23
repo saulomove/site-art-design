@@ -66,6 +66,15 @@ import { ProposalIndustrialScope } from "@/components/proposal-industrial/propos
 import { ProposalIndustrialInvestment } from "@/components/proposal-industrial/proposal-investment";
 import { ProposalIndustrialCta } from "@/components/proposal-industrial/proposal-cta";
 
+// Pastoral imports (agronegócio premium / alfafa)
+import { ProposalPastoralHero } from "@/components/proposal-pastoral/proposal-hero";
+import { ProposalPastoralAnalysis } from "@/components/proposal-pastoral/proposal-analysis";
+import { ProposalPastoralContentStrategy } from "@/components/proposal-pastoral/proposal-content-strategy";
+import { ProposalPastoralScope } from "@/components/proposal-pastoral/proposal-scope";
+import { ProposalPastoralTrafficBudget } from "@/components/proposal-pastoral/proposal-traffic-budget";
+import { ProposalPastoralInvestment } from "@/components/proposal-pastoral/proposal-investment";
+import { ProposalPastoralCta } from "@/components/proposal-pastoral/proposal-cta";
+
 // Forestry imports (setor madeireiro / florestal)
 import { ProposalForestryHero } from "@/components/proposal-forestry/proposal-hero";
 import { ProposalForestryAnalysis } from "@/components/proposal-forestry/proposal-analysis";
@@ -92,6 +101,39 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isBiomass = proposal.theme === "biomass";
   const isForestry = proposal.theme === "forestry";
   const isIndustrial = proposal.theme === "industrial";
+  const isPastoral = proposal.theme === "pastoral";
+
+  if (isPastoral) {
+    return (
+      <>
+        <ProposalPastoralHero proposal={proposal} />
+        <ProposalAbout />
+        {proposal.analysis && (
+          <ProposalPastoralAnalysis
+            analysis={proposal.analysis}
+            clientName={proposal.clientName}
+          />
+        )}
+        <ProposalPastoralContentStrategy contentSuggestions={proposal.contentSuggestions} />
+        <ProposalPastoralScope services={proposal.services} />
+        <ProposalPastoralTrafficBudget />
+        {proposal.optionalServices && proposal.optionalServices.length > 0 && (
+          <ProposalOptionalServices services={proposal.optionalServices} />
+        )}
+        {proposal.phases && proposal.phases.length > 0 && (
+          <ProposalPhases phases={proposal.phases} />
+        )}
+        <ProposalPastoralInvestment
+          investment={proposal.investment}
+          clientName={proposal.clientName}
+        />
+        {proposal.differentials && proposal.differentials.length > 0 && (
+          <ProposalDifferentials differentials={proposal.differentials} />
+        )}
+        <ProposalPastoralCta proposal={proposal} />
+      </>
+    );
+  }
 
   if (isIndustrial) {
     return (
