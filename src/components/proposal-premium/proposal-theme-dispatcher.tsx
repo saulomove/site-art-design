@@ -75,6 +75,21 @@ import { ProposalPastoralTrafficBudget } from "@/components/proposal-pastoral/pr
 import { ProposalPastoralInvestment } from "@/components/proposal-pastoral/proposal-investment";
 import { ProposalPastoralCta } from "@/components/proposal-pastoral/proposal-cta";
 
+// Campo imports (proposta multi-empresa — agro/florestal)
+import { ProposalCampoHero } from "@/components/proposal-campo/proposal-hero";
+import { ProposalCampoDiagnosis } from "@/components/proposal-campo/proposal-diagnosis";
+import { ProposalCampoObjective } from "@/components/proposal-campo/proposal-objective";
+import { ProposalCampoScope } from "@/components/proposal-campo/proposal-scope";
+import { ProposalCampoSocial } from "@/components/proposal-campo/proposal-social";
+import { ProposalCampoSites } from "@/components/proposal-campo/proposal-sites";
+import { ProposalCampoCapture } from "@/components/proposal-campo/proposal-capture";
+import { ProposalCampoAuthority } from "@/components/proposal-campo/proposal-authority";
+import { ProposalCampoFuture } from "@/components/proposal-campo/proposal-future";
+import { ProposalCampoRoadmap } from "@/components/proposal-campo/proposal-roadmap";
+import { ProposalCampoInvestment } from "@/components/proposal-campo/proposal-investment";
+import { ProposalCampoPartnership } from "@/components/proposal-campo/proposal-partnership";
+import { ProposalCampoCta } from "@/components/proposal-campo/proposal-cta";
+
 // Forestry imports (setor madeireiro / florestal)
 import { ProposalForestryHero } from "@/components/proposal-forestry/proposal-hero";
 import { ProposalForestryAnalysis } from "@/components/proposal-forestry/proposal-analysis";
@@ -102,6 +117,42 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isForestry = proposal.theme === "forestry";
   const isIndustrial = proposal.theme === "industrial";
   const isPastoral = proposal.theme === "pastoral";
+  const isCampo = proposal.theme === "campo";
+
+  if (isCampo) {
+    const companies = proposal.companies ?? [];
+    const hasCompanies = companies.length > 0;
+
+    return (
+      <>
+        <ProposalCampoHero proposal={proposal} />
+        <ProposalAbout />
+        {hasCompanies && <ProposalCampoDiagnosis companies={companies} />}
+        {proposal.objectiveChain && (
+          <ProposalCampoObjective objectiveChain={proposal.objectiveChain} />
+        )}
+        <ProposalCampoScope services={proposal.services} />
+        {hasCompanies && <ProposalCampoSocial companies={companies} />}
+        {hasCompanies && <ProposalCampoSites companies={companies} />}
+        {hasCompanies && <ProposalCampoCapture companies={companies} />}
+        {hasCompanies && (
+          <ProposalCampoAuthority
+            companies={companies}
+            authorityPillars={proposal.authorityPillars}
+          />
+        )}
+        {proposal.optionalServices && proposal.optionalServices.length > 0 && (
+          <ProposalCampoFuture optionalServices={proposal.optionalServices} />
+        )}
+        {proposal.phases && proposal.phases.length > 0 && (
+          <ProposalCampoRoadmap phases={proposal.phases} />
+        )}
+        {hasCompanies && <ProposalCampoInvestment companies={companies} />}
+        <ProposalCampoPartnership investment={proposal.investment} />
+        <ProposalCampoCta proposal={proposal} />
+      </>
+    );
+  }
 
   if (isPastoral) {
     return (

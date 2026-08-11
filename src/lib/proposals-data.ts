@@ -21,6 +21,10 @@ export interface ProposalInvestment {
   breakdown?: { item: string; value: string }[];
   setupItems?: { item: string; value: string }[];
   setupFee?: string;
+  setupLabel?: string;
+  setupIncludes?: string[];
+  setupOriginalPrice?: string;
+  setupNote?: string;
   paymentConditions?: string[];
   notes?: string[];
   profilePricing?: ProposalProfilePricing[];
@@ -100,6 +104,64 @@ export interface ProposalBeforeAfter {
   expectedResults: string;
 }
 
+// ------------------------------------------------------------
+// Propostas multi-empresa (duas marcas em um único documento)
+// ------------------------------------------------------------
+
+export interface ProposalCompanyDiagnosis {
+  positives: string[];
+  attentionIntro: string;
+  attentionPoints: string[];
+  opportunity: string;
+}
+
+export interface ProposalCompanyPricingRow {
+  item: string;
+  value: string;
+  type: "project" | "monthly" | "session";
+}
+
+export interface ProposalCompany {
+  key: string;
+  name: string;
+  shortName: string;
+  handle: string;
+  tagline: string;
+  location?: string;
+  /** Acento visual da empresa dentro do tema. */
+  accent: "moss" | "gold";
+  /** Chave do iconMap local do tema (nunca usada para montar classe Tailwind). */
+  icon: string;
+  diagnosis: ProposalCompanyDiagnosis;
+  socialApproach: string;
+  socialPriorities: string[];
+  siteStructure: string[];
+  siteNote: string;
+  droneShots: string[];
+  contentExamples: string[];
+  profileHighlights: string[];
+  pricing: ProposalCompanyPricingRow[];
+}
+
+export interface ProposalAuthorityPillar {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface ProposalObjectiveChain {
+  intro: string;
+  chain: string[];
+  conclusion: string;
+}
+
+export interface ProposalValueAnchor {
+  notList: string[];
+  statement: string;
+  perceptions: string[];
+  closing: string;
+}
+
 export interface Proposal {
   slug: string;
   clientName: string;
@@ -135,7 +197,11 @@ export interface Proposal {
     closingText: string;
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
-  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral";
+  companies?: ProposalCompany[];
+  authorityPillars?: ProposalAuthorityPillar[];
+  objectiveChain?: ProposalObjectiveChain;
+  valueAnchor?: ProposalValueAnchor;
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -5313,6 +5379,547 @@ export const proposals: Proposal[] = [
       "Sem fidelização contratual — permanência exclusivamente por resultado",
       "Transparência total sobre verbas — sem margem da ArtDesign sobre anúncios",
       "Experiência em agronegócio e nichos premium no Sul do Brasil"
+    ]
+  },
+  {
+    slug: "massaneiro-udk",
+    clientName: "Massaneiro Mudas Florestais + UDK Consultoria",
+    contactName: "Lean",
+    theme: "campo",
+    greeting:
+      "Massaneiro Mudas Florestais e UDK Consultoria já possuem algo que muitas empresas levam anos tentando construir: experiência prática, operação real, conhecimento técnico e mercado. Neste projeto, o objetivo não é simplesmente publicar nas redes sociais ou buscar novos clientes — é transformar toda essa estrutura que já existe no mundo físico em presença, credibilidade e autoridade no ambiente digital.",
+    validUntil: "2026-08-26",
+    whatsappNumber: "5549988446685",
+    closingQuestion:
+      "Vamos fazer o digital mostrar tudo aquilo que Massaneiro e UDK já são?",
+    objectiveChain: {
+      intro:
+        "Não queremos transformar Massaneiro e UDK em empresas dependentes das redes sociais para conseguir clientes. Queremos construir um ecossistema digital institucional.",
+      chain: [
+        "Operação real",
+        "Conteúdo",
+        "Presença digital",
+        "Autoridade",
+        "Confiança"
+      ],
+      conclusion:
+        "Assim, quando alguém conhecer as empresas por indicação, parceria, relacionamento comercial ou pesquisa, encontrará uma estrutura digital que confirma a credibilidade que elas já possuem presencialmente."
+    },
+    companies: [
+      {
+        key: "massaneiro",
+        name: "Massaneiro Mudas Florestais",
+        shortName: "Massaneiro",
+        handle: "@massaneiro.mudasflorestais",
+        tagline: "Erva-Mate, Eucalipto e Pinus",
+        location: "BR 116, km 97 — Monte Castelo/SC",
+        accent: "moss",
+        icon: "Sprout",
+        diagnosis: {
+          positives: [
+            "Nome e posicionamento de mercado já definidos",
+            "Segmento muito claro: Erva-Mate, Eucalipto e Pinus",
+            "Localização física já apresentada no perfil",
+            "Identidade visual existente",
+            "Operação real com grande potencial para produção de conteúdo",
+            "Possibilidade de mostrar viveiro, mudas, processos, equipe, produção e estrutura"
+          ],
+          attentionIntro:
+            "Hoje o Instagram possui seguidores, porém não possui conteúdo publicado. Isso cria uma diferença muito grande entre a empresa que existe fisicamente e aquilo que uma pessoa encontra ao pesquisar a marca digitalmente.",
+          attentionPoints: [
+            "Ausência de conteúdo institucional",
+            "Ausência de portfólio visual",
+            "Ausência de apresentação da estrutura",
+            "Ausência de conteúdo sobre os produtos",
+            "Ausência de Facebook estruturado",
+            "Ausência de presença organizada no Google",
+            "Ausência de site institucional",
+            "Falta de caminhos claros de contato",
+            "Identidade visual ainda pouco explorada digitalmente"
+          ],
+          opportunity:
+            "A Massaneiro não necessita de um volume excessivo de conteúdo. O melhor posicionamento é uma comunicação mais enxuta, visual e consistente, priorizando qualidade, estrutura, produção, espécies, conhecimento e bastidores. O objetivo será fazer com que o perfil funcione como uma verdadeira vitrine institucional da empresa."
+        },
+        socialApproach:
+          "Presença mais objetiva, visual e institucional — cadência consistente, sem depender de volume.",
+        socialPriorities: [
+          "Mudas",
+          "Espécies",
+          "Estrutura",
+          "Produção",
+          "Equipe",
+          "Logística",
+          "Bastidores",
+          "Conhecimento técnico",
+          "Qualidade e desenvolvimento das plantas"
+        ],
+        siteStructure: [
+          "Home",
+          "Empresa",
+          "Estrutura",
+          "Mudas",
+          "Erva-Mate",
+          "Eucalipto",
+          "Pinus",
+          "Localização",
+          "Contato"
+        ],
+        siteNote:
+          "O site funcionará como catálogo institucional e apresentação da empresa.",
+        droneShots: [
+          "Viveiro",
+          "Produção",
+          "Propriedades",
+          "Estrutura",
+          "Áreas cultivadas",
+          "Logística",
+          "Dimensão da operação"
+        ],
+        contentExamples: [
+          "O que observar antes de escolher uma muda de erva-mate.",
+          "Qual a importância da qualidade da muda no desenvolvimento da floresta?",
+          "O início de uma boa produção começa muito antes do plantio."
+        ],
+        profileHighlights: [
+          "Sobre",
+          "Mudas",
+          "Estrutura",
+          "Produção",
+          "Localização",
+          "Contato"
+        ],
+        pricing: [
+          { item: "Refinamento / Identidade Visual", value: "R$ 1.290", type: "project" },
+          { item: "Estruturação Instagram + Facebook + Meta", value: "R$ 490", type: "project" },
+          { item: "Implantação Google Perfil da Empresa", value: "R$ 590", type: "project" },
+          { item: "Site Institucional Massaneiro", value: "R$ 2.490", type: "project" },
+          { item: "Gestão Estratégica de Redes Sociais", value: "R$ 1.290", type: "monthly" },
+          { item: "Gestão e atualização Google", value: "R$ 390", type: "monthly" },
+          { item: "Captação profissional de foto e vídeo", value: "R$ 790", type: "session" },
+          { item: "Captação aérea com drone", value: "R$ 490", type: "session" }
+        ]
+      },
+      {
+        key: "udk",
+        name: "UDK Consultoria",
+        shortName: "UDK",
+        handle: "@udkconsultoria",
+        tagline: "Agronegócio · Bovinocultura de Leite e Corte",
+        location: "Reprodução · Sanidade · Nutrição · Gestão",
+        accent: "gold",
+        icon: "Beef",
+        diagnosis: {
+          positives: [
+            "Nicho bem definido",
+            "Serviços técnicos com grande potencial de autoridade",
+            "Atuação em bovinocultura de leite e corte",
+            "Conhecimento em reprodução, sanidade, nutrição e gestão",
+            "WhatsApp já disponível no perfil",
+            "Experiência prática capaz de gerar conteúdos extremamente relevantes",
+            "Grande potencial para conteúdo educativo e de campo"
+          ],
+          attentionIntro:
+            "O perfil já possui um início de comunicação, porém ainda existe uma distância considerável entre a dimensão do trabalho desenvolvido pela UDK e aquilo que está sendo apresentado digitalmente.",
+          attentionPoints: [
+            "Consistência visual",
+            "Apresentação dos serviços",
+            "Prova de conhecimento técnico",
+            "Rotina de campo",
+            "Resultados e cases",
+            "Conteúdos educativos",
+            "Vídeos",
+            "Presença dos profissionais",
+            "Depoimentos",
+            "Google",
+            "Facebook",
+            "Site",
+            "Organização dos destaques",
+            "Identidade institucional"
+          ],
+          opportunity:
+            "Na UDK podemos trabalhar uma comunicação mais ativa e educativa, aproveitando a rotina de atendimento para transformar conhecimento técnico em conteúdo. Cada visita, propriedade, diagnóstico, orientação e acompanhamento possui potencial para fortalecer a percepção de autoridade da marca. Aqui o conteúdo terá um volume naturalmente maior que na Massaneiro, porém sempre priorizando conteúdo relevante em vez de simplesmente quantidade."
+        },
+        socialApproach:
+          "Presença mais dinâmica e técnica — a rotina de campo vira conteúdo educativo e prova de autoridade.",
+        socialPriorities: [
+          "Manejo",
+          "Reprodução",
+          "Nutrição",
+          "Sanidade",
+          "Gestão",
+          "Produção leiteira",
+          "Gado de corte",
+          "Rotina nas propriedades",
+          "Conteúdo educativo",
+          "Resultados e evolução das propriedades"
+        ],
+        siteStructure: [
+          "Home",
+          "UDK",
+          "Áreas de atuação",
+          "Bovinocultura de Leite",
+          "Bovinocultura de Corte",
+          "Reprodução",
+          "Sanidade",
+          "Nutrição",
+          "Gestão",
+          "Conteúdos",
+          "Contato"
+        ],
+        siteNote:
+          "Além de apresentar a empresa, o site poderá se tornar uma verdadeira base de conteúdo técnico e autoridade no agronegócio.",
+        droneShots: [
+          "Propriedades atendidas",
+          "Rebanhos",
+          "Instalações",
+          "Fazendas",
+          "Pastagens",
+          "Rotina de campo"
+        ],
+        contentExamples: [
+          "3 sinais de que a reprodução do rebanho precisa de atenção.",
+          "Produzir mais leite nem sempre significa lucrar mais.",
+          "O erro silencioso na alimentação que pode diminuir a produtividade."
+        ],
+        profileHighlights: [
+          "Sobre",
+          "Serviços",
+          "Leite",
+          "Corte",
+          "Campo",
+          "Resultados",
+          "Contato"
+        ],
+        pricing: [
+          { item: "Refinamento / Identidade Visual", value: "R$ 1.290", type: "project" },
+          { item: "Estruturação Instagram + Facebook + Meta", value: "R$ 490", type: "project" },
+          { item: "Implantação Google Perfil da Empresa", value: "R$ 590", type: "project" },
+          { item: "Site Institucional UDK", value: "R$ 3.490", type: "project" },
+          { item: "Gestão Estratégica de Redes Sociais", value: "R$ 1.790", type: "monthly" },
+          { item: "Gestão e atualização Google", value: "R$ 390", type: "monthly" },
+          { item: "Captação profissional de foto e vídeo", value: "R$ 990", type: "session" },
+          { item: "Captação aérea com drone", value: "R$ 490", type: "session" }
+        ]
+      }
+    ],
+    services: [
+      {
+        name: "Identidade Visual e Posicionamento",
+        description:
+          "As empresas já possuem logotipos, mas uma marca precisa ir além do arquivo da logo. Vamos transformar a identidade existente em um sistema visual consistente, para que qualquer comunicação seja imediatamente reconhecida como Massaneiro ou UDK.",
+        icon: "Palette",
+        items: [
+          "Avaliação das marcas atuais",
+          "Refinamento ou redesign quando necessário",
+          "Definição de cores e tipografia",
+          "Aplicações digitais e elementos gráficos",
+          "Padrão fotográfico",
+          "Capas, templates e assinatura visual",
+          "Padronização em Instagram, Facebook, Google e site"
+        ]
+      },
+      {
+        name: "Instagram — Estruturação e Gestão",
+        description:
+          "O Instagram será utilizado principalmente como ferramenta de posicionamento, autoridade e apresentação institucional. Todo o conteúdo será planejado estrategicamente.",
+        icon: "Instagram",
+        items: [
+          "Planejamento editorial e definição de pautas",
+          "Criação das artes e edição de fotografias",
+          "Edição de vídeos, Reels e carrosséis",
+          "Textos e legendas",
+          "Organização visual do perfil",
+          "Publicação e direcionamento de comunicação",
+          "Acompanhamento do desempenho"
+        ]
+      },
+      {
+        name: "Facebook — Presença Institucional",
+        description:
+          "Mesmo que o Instagram seja o principal canal de conteúdo, o Facebook continua sendo um importante ponto de validação da marca. Dessa maneira, as marcas deixam de depender de apenas um canal.",
+        icon: "Facebook",
+        items: [
+          "Criação ou estruturação das páginas",
+          "Padronização de identidade",
+          "Configuração de informações e contatos",
+          "Integração Instagram + Facebook (Meta Business)",
+          "Inserção de localização",
+          "Organização da apresentação",
+          "Distribuição estratégica dos conteúdos"
+        ]
+      },
+      {
+        name: "Google Perfil da Empresa",
+        description:
+          "Ser encontrado também é autoridade. Quando alguém pesquisar por Massaneiro Mudas Florestais ou UDK Consultoria, precisamos controlar aquilo que essa pessoa encontrará. As avaliações também podem se transformar em uma poderosa prova social.",
+        icon: "MapPin",
+        items: [
+          "Criação ou reivindicação do perfil",
+          "Configuração de endereço, telefone e horário",
+          "Área de atuação e categorias",
+          "Descrição estratégica",
+          "Fotografias, serviços e produtos",
+          "Atualização de informações e acompanhamento",
+          "Estratégia de avaliações"
+        ]
+      },
+      {
+        name: "Site Institucional",
+        description:
+          "As redes sociais apresentam. O Google encontra. O site consolida a autoridade. Nossa proposta é desenvolver sites institucionais modernos, rápidos e responsivos para cada empresa.",
+        icon: "Globe",
+        items: [
+          "Estrutura de páginas planejada por empresa",
+          "Layout responsivo e carregamento rápido",
+          "Apresentação de estrutura, produtos e serviços",
+          "Catálogo institucional (Massaneiro)",
+          "Base de conteúdo técnico (UDK)",
+          "Localização e caminhos claros de contato",
+          "Integração com WhatsApp"
+        ]
+      },
+      {
+        name: "Captação Profissional de Fotos e Vídeos",
+        description:
+          "Esse será um dos maiores diferenciais do projeto. As duas empresas possuem uma enorme vantagem: existe conteúdo acontecendo todos os dias. Nossa função será transformar isso em material profissional.",
+        icon: "Camera",
+        items: [
+          "Instalações, viveiros, plantações e propriedades",
+          "Animais, equipamentos e processos",
+          "Equipe, atendimentos e rotina",
+          "Bastidores e depoimentos",
+          "Entrevistas e vídeos institucionais",
+          "Vídeos educativos",
+          "Banco profissional de imagens"
+        ]
+      },
+      {
+        name: "Captação com Drone",
+        description:
+          "O drone permitirá produzir imagens que dificilmente seriam obtidas de outra maneira — e mostra a real dimensão das empresas. Uma única captação gera ativos para vários canais.",
+        icon: "Plane",
+        items: [
+          "Imagens aéreas da estrutura e da operação",
+          "Áreas cultivadas, propriedades e pastagens",
+          "Material para Instagram e Facebook",
+          "Material para Google e site",
+          "Reels e vídeos institucionais",
+          "Apresentações comerciais"
+        ]
+      },
+      {
+        name: "Copywriting e SEO",
+        description:
+          "Todo o conteúdo será desenvolvido pensando nas pesquisas realizadas pelo público, trabalhando palavras relacionadas ao segmento de cada empresa de maneira natural.",
+        icon: "PenTool",
+        items: [
+          "Legendas e títulos",
+          "Biografias dos perfis",
+          "Textos do site",
+          "Descrição no Google",
+          "Descrição dos serviços",
+          "Conteúdos educativos"
+        ]
+      },
+      {
+        name: "Monitoramento e Estratégia",
+        description:
+          "O trabalho não termina quando o conteúdo é publicado. As informações coletadas orientarão os próximos conteúdos.",
+        icon: "BarChart3",
+        items: [
+          "Alcance e visualizações",
+          "Crescimento e interações",
+          "Conteúdos com melhor desempenho",
+          "Visitas aos perfis e pesquisas",
+          "Acessos e comportamento da audiência",
+          "Reuniões estratégicas de acompanhamento"
+        ]
+      }
+    ],
+    authorityPillars: [
+      {
+        number: "01",
+        title: "Quem somos",
+        description: "História, pessoas, estrutura e propósito."
+      },
+      {
+        number: "02",
+        title: "O que fazemos",
+        description: "Produtos, serviços, processos e conhecimento."
+      },
+      {
+        number: "03",
+        title: "Como fazemos",
+        description:
+          "Bastidores, tecnologia, metodologia, acompanhamento e rotina."
+      },
+      {
+        number: "04",
+        title: "Por que confiar",
+        description:
+          "Experiência, clientes, resultados, estrutura, depoimentos e conhecimento técnico."
+      }
+    ],
+    phases: [
+      {
+        number: 1,
+        title: "Fundação",
+        objective:
+          "Organizar as marcas, as redes sociais, o Google e toda a estrutura visual, deixando o planejamento pronto para a produção começar.",
+        deliverables: [
+          "Estratégia e planejamento editorial das duas marcas",
+          "Refinamento e padronização das identidades visuais",
+          "Estruturação de Instagram, Facebook e Meta Business",
+          "Criação ou reivindicação do Google Perfil da Empresa",
+          "Organização visual e biografias dos perfis",
+          "Definição dos destaques de cada empresa"
+        ],
+        expectedResult:
+          "Massaneiro e UDK com bases digitais organizadas, identidade padronizada e planejamento aprovado para iniciar a produção."
+      },
+      {
+        number: 2,
+        title: "Construção",
+        objective:
+          "Sair a campo: captação profissional, criação do banco de imagens e início da nova comunicação nos perfis.",
+        deliverables: [
+          "Captação profissional de fotos e vídeos nas duas operações",
+          "Captação aérea com drone",
+          "Montagem do banco profissional de imagens",
+          "Primeiros conteúdos institucionais publicados",
+          "Início da cadência de Reels e carrosséis",
+          "Desenvolvimento dos sites institucionais"
+        ],
+        expectedResult:
+          "Perfis com conteúdo real da operação, banco de imagens formado e sites em construção com material próprio."
+      },
+      {
+        number: 3,
+        title: "Autoridade",
+        objective:
+          "Transformar o conhecimento técnico que hoje existe dentro das empresas em conteúdo — e em percepção de autoridade.",
+        deliverables: [
+          "Conteúdos técnicos e educativos das duas marcas",
+          "Bastidores, estrutura e rotina de campo",
+          "Cases e resultados das propriedades atendidas",
+          "Depoimentos e presença dos profissionais",
+          "Estratégia de avaliações no Google",
+          "Otimização contínua a partir dos dados"
+        ],
+        expectedResult:
+          "As duas marcas reconhecidas como referência técnica em seus segmentos, com prova social acumulando no Google."
+      },
+      {
+        number: 4,
+        title: "Consolidação",
+        objective:
+          "Fazer site, Google, redes sociais e conteúdo trabalharem juntos como um único ecossistema.",
+        deliverables: [
+          "Sites institucionais no ar e integrados aos perfis",
+          "Google Perfil da Empresa ativo e alimentado",
+          "Conteúdo distribuído de forma coordenada entre os canais",
+          "Copywriting e SEO aplicados em todos os pontos",
+          "Relatórios de desempenho e reuniões estratégicas",
+          "Planejamento do ciclo seguinte"
+        ],
+        expectedResult:
+          "Ecossistema digital institucional completo: quem pesquisar pelas marcas encontrará uma estrutura à altura do que elas representam presencialmente."
+      }
+    ],
+    optionalServices: [
+      "Meta Ads e Google Ads",
+      "Landing pages e campanhas institucionais",
+      "Materiais gráficos, catálogos e apresentações comerciais",
+      "Materiais para eventos e feiras",
+      "Vídeos institucionais e fotografia profissional",
+      "Campanhas de recrutamento",
+      "Automações e WhatsApp",
+      "Desenvolvimento web, sistemas e soluções digitais"
+    ],
+    investment: {
+      totalMonthly: "R$ 4.990",
+      totalLabel: "Gestão Completa Mensal — Massaneiro + UDK",
+      originalPrice: "R$ 6.000",
+      packageIncludes: [
+        "Gestão do Instagram da Massaneiro",
+        "Gestão do Instagram da UDK",
+        "Gestão do Facebook das duas empresas",
+        "Gestão do Google das duas empresas",
+        "Planejamento estratégico",
+        "Cronogramas de conteúdo",
+        "Design",
+        "Copywriting",
+        "Reels",
+        "Carrosséis",
+        "Conteúdo institucional",
+        "Conteúdo educativo",
+        "Edição de fotos",
+        "Edição de vídeos",
+        "Captação de conteúdo conforme planejamento",
+        "Captação aérea conforme necessidade das pautas",
+        "Banco de fotos e vídeos",
+        "Otimização dos perfis",
+        "Acompanhamento de resultados",
+        "Reuniões estratégicas",
+        "Suporte da agência"
+      ],
+      setupFee: "R$ 8.900",
+      setupLabel: "Implantação — Parceria Digital Completa",
+      setupOriginalPrice: "R$ 10.720",
+      setupIncludes: [
+        "Estratégia das duas marcas",
+        "Refinamento das duas identidades",
+        "Estruturação do Instagram",
+        "Estruturação do Facebook",
+        "Meta Business",
+        "Google Perfil da Empresa",
+        "Site institucional Massaneiro",
+        "Site institucional UDK",
+        "Organização visual dos perfis",
+        "Estrutura inicial de conteúdo",
+        "Planejamento editorial"
+      ],
+      setupItems: [
+        { item: "Implantação Massaneiro", value: "R$ 4.860" },
+        { item: "Implantação UDK", value: "R$ 5.860" }
+      ],
+      setupNote:
+        "O pagamento da implantação poderá ser negociado de acordo com a estrutura comercial da proposta.",
+      paymentConditions: [
+        "Implantação e gestão mensal contratadas em conjunto pelas duas empresas",
+        "Gestão mensal paga via boleto ou PIX",
+        "Sem fidelização contratual — permanência por resultado"
+      ],
+      notes: [
+        "Os valores individuais de cada empresa permanecem disponíveis caso a contratação seja separada — a condição especial existe justamente pela operação conjunta.",
+        "Custos de deslocamento para captações fora da região de Monte Castelo/SC por conta do contratante.",
+        "Verbas de anúncio (Meta Ads e Google Ads), quando contratadas, são pagas diretamente pelo cliente às plataformas."
+      ]
+    },
+    valueAnchor: {
+      notList: [
+        "apenas artes",
+        "apenas posts",
+        "apenas vídeos",
+        "apenas um site"
+      ],
+      statement:
+        "Estarão contratando uma equipe responsável por construir e manter a imagem digital de duas empresas.",
+      perceptions: [
+        "Essa empresa é estruturada.",
+        "Eles entendem do que fazem.",
+        "Existe experiência aqui.",
+        "É uma empresa em que eu posso confiar."
+      ],
+      closing: "É isso que significa autoridade digital."
+    },
+    differentials: [
+      "Duas empresas, duas identidades e uma única estratégia integrada de autoridade digital",
+      "Conteúdo baseado na operação real — nenhum concorrente tem o que Massaneiro e UDK têm para mostrar",
+      "Captação profissional própria: fotos, vídeos e drone inclusos na gestão mensal",
+      "Presença construída em quatro frentes: Instagram, Facebook, Google e site institucional",
+      "Sem fidelização contratual — permanência exclusivamente por resultado",
+      "Agência full service com mais de 16 anos de estrada e atuação em 8 países"
     ]
   }
 ];
