@@ -79,7 +79,7 @@ export function ProposalCampoSites({ companies }: Props) {
                   <div className="flex items-center gap-2 mb-3">
                     <Globe className={`w-4 h-4 ${a.text}`} />
                     <span
-                      className={`text-[10px] tracking-[0.3em] uppercase font-semibold font-inter ${a.text}`}
+                      className={`text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter ${a.text}`}
                     >
                       Papel do site
                     </span>

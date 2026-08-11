@@ -50,10 +50,10 @@ export function ProposalCampoHero({ proposal }: Props) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-10 inline-flex items-center gap-3 px-6 py-3 border border-[#EFEBE0]/15 bg-[#EFEBE0]/[0.03] backdrop-blur-xl"
+          className="mb-10 inline-flex items-center gap-2.5 sm:gap-3 px-4 sm:px-6 py-3 border border-[#EFEBE0]/15 bg-[#EFEBE0]/[0.03] backdrop-blur-xl"
         >
-          <Handshake className="w-4 h-4 text-[#CBA65C]" />
-          <span className="text-[11px] font-semibold tracking-[0.28em] text-[#EFEBE0]/70 uppercase font-inter">
+          <Handshake className="w-4 h-4 flex-shrink-0 text-[#CBA65C]" />
+          <span className="text-[11px] font-semibold tracking-[0.14em] sm:tracking-[0.28em] text-[#EFEBE0]/70 uppercase font-inter text-left leading-relaxed">
             Proposta de Presença Digital · Monte Castelo/SC
           </span>
         </motion.div>
@@ -119,7 +119,7 @@ export function ProposalCampoHero({ proposal }: Props) {
                     {company.name}
                   </div>
                   <div
-                    className={`text-[10px] tracking-[0.18em] uppercase font-inter mt-1 ${a.text}`}
+                    className={`text-[11px] tracking-[0.1em] sm:tracking-[0.18em] uppercase font-inter mt-1 leading-relaxed ${a.text}`}
                   >
                     {company.tagline}
                   </div>
@@ -141,7 +141,7 @@ export function ProposalCampoHero({ proposal }: Props) {
               <Handshake className="w-5 h-5 text-[#EFEBE0]/60" />
             </div>
             <div className="text-left">
-              <div className="text-[10px] tracking-[0.2em] uppercase text-[#EFEBE0]/35 font-inter mb-0.5">
+              <div className="text-[11px] md:text-[10px] tracking-[0.15em] md:tracking-[0.2em] uppercase text-[#EFEBE0]/35 font-inter mb-0.5">
                 Apresentado a
               </div>
               <div className="text-sm font-semibold font-inter text-[#EFEBE0]">
@@ -155,7 +155,7 @@ export function ProposalCampoHero({ proposal }: Props) {
               <Calendar className="w-5 h-5 text-[#EFEBE0]/60" />
             </div>
             <div className="text-left">
-              <div className="text-[10px] tracking-[0.2em] uppercase text-[#EFEBE0]/35 font-inter mb-0.5">
+              <div className="text-[11px] md:text-[10px] tracking-[0.15em] md:tracking-[0.2em] uppercase text-[#EFEBE0]/35 font-inter mb-0.5">
                 Válida até
               </div>
               <div className="text-sm font-semibold font-inter text-[#EFEBE0]">
@@ -173,7 +173,7 @@ export function ProposalCampoHero({ proposal }: Props) {
         transition={{ duration: 0.8, delay: 1.5 }}
         className="relative z-10 mt-16 sm:absolute sm:bottom-10 sm:left-1/2 sm:-translate-x-1/2 sm:mt-0 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] tracking-[0.25em] uppercase text-[#EFEBE0]/25 font-inter">
+        <span className="text-[11px] md:text-[10px] tracking-[0.18em] md:tracking-[0.25em] uppercase text-[#EFEBE0]/25 font-inter">
           Rolar para ler
         </span>
         <motion.div

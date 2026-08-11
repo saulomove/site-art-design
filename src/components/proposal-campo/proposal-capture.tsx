@@ -61,7 +61,7 @@ export function ProposalCampoCapture({ companies }: Props) {
                 <div className="flex items-center gap-3 mb-6">
                   <Icon className={`w-5 h-5 ${a.text}`} />
                   <span
-                    className={`text-[10px] tracking-[0.3em] uppercase font-semibold font-inter ${a.text}`}
+                    className={`text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter ${a.text}`}
                   >
                     {company.shortName}
                   </span>

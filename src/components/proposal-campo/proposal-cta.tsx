@@ -57,7 +57,7 @@ export function ProposalCampoCta({ proposal }: Props) {
             >
               <div className="inline-flex items-center gap-2 mb-4">
                 <div className="h-[1px] w-8 bg-[#EFEBE0]/25" />
-                <span className="text-[10px] tracking-[0.3em] uppercase font-semibold font-inter text-[#EFEBE0]/40">
+                <span className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter text-[#EFEBE0]/40">
                   O que vocês estão contratando
                 </span>
                 <div className="h-[1px] w-8 bg-[#EFEBE0]/25" />
@@ -79,7 +79,7 @@ export function ProposalCampoCta({ proposal }: Props) {
             >
               {/* Não estão contratando */}
               <div className="bg-[#131412] border border-[#EFEBE0]/[0.07] p-8 md:p-10">
-                <p className="text-[10px] tracking-[0.3em] uppercase font-semibold font-inter text-[#EFEBE0]/30 mb-6">
+                <p className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter text-[#EFEBE0]/30 mb-6">
                   Não estão contratando
                 </p>
                 <ul className="space-y-3.5">
@@ -108,7 +108,7 @@ export function ProposalCampoCta({ proposal }: Props) {
                   <div className="w-[2px] h-6 bg-[#CBA65C] ml-auto" />
                 </div>
 
-                <p className="text-[10px] tracking-[0.3em] uppercase font-semibold font-inter text-[#CBA65C]/80 mb-6">
+                <p className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter text-[#CBA65C]/80 mb-6">
                   Estão contratando
                 </p>
                 <p className="font-playfair text-xl md:text-2xl font-medium text-[#EFEBE0] leading-relaxed">

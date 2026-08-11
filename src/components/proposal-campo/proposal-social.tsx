@@ -56,7 +56,7 @@ export function ProposalCampoSocial({ companies }: Props) {
                   <div className="flex items-center gap-2 mb-4">
                     <Instagram className={`w-4 h-4 ${a.textLight}`} />
                     <span
-                      className={`text-[10px] tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
+                      className={`text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
                     >
                       Prioridades de conteúdo
                     </span>
@@ -83,7 +83,7 @@ export function ProposalCampoSocial({ companies }: Props) {
                   <div className="flex items-center gap-2 mb-4">
                     <LayoutGrid className={`w-4 h-4 ${a.textLight}`} />
                     <span
-                      className={`text-[10px] tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
+                      className={`text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
                     >
                       Destaques do perfil
                     </span>

@@ -99,21 +99,23 @@ export function CampoDivider({
 }) {
   if (tone === "joint") {
     return (
-      <div className="absolute top-0 left-0 right-0 flex items-center justify-center pointer-events-none">
+      <div className="absolute top-0 left-0 right-0 flex items-center justify-center pt-9 md:pt-12 pointer-events-none">
         <div
-          className={`h-[1px] w-24 ${onLight ? ACCENT.moss.ruleLight : ACCENT.moss.rule}`}
+          className={`h-[1px] w-10 sm:w-16 md:w-24 ${onLight ? ACCENT.moss.ruleLight : ACCENT.moss.rule}`}
         />
-        <Sprout
-          className={`mx-3 h-4 w-4 ${onLight ? ACCENT.moss.textLight : ACCENT.moss.text}`}
-        />
-        <Handshake
-          className={`h-5 w-5 ${onLight ? "text-[#0A0A09]/50" : "text-[#EFEBE0]/50"}`}
-        />
-        <Beef
-          className={`mx-3 h-4 w-4 ${onLight ? ACCENT.gold.textLight : ACCENT.gold.text}`}
-        />
+        <div className="flex items-center gap-4 px-5">
+          <Sprout
+            className={`h-4 w-4 ${onLight ? ACCENT.moss.textLight : ACCENT.moss.text}`}
+          />
+          <Handshake
+            className={`h-[18px] w-[18px] ${onLight ? "text-[#0A0A09]/45" : "text-[#EFEBE0]/45"}`}
+          />
+          <Beef
+            className={`h-4 w-4 ${onLight ? ACCENT.gold.textLight : ACCENT.gold.text}`}
+          />
+        </div>
         <div
-          className={`h-[1px] w-24 ${onLight ? ACCENT.gold.ruleLight : ACCENT.gold.rule}`}
+          className={`h-[1px] w-10 sm:w-16 md:w-24 ${onLight ? ACCENT.gold.ruleLight : ACCENT.gold.rule}`}
         />
       </div>
     );
@@ -123,10 +125,10 @@ export function CampoDivider({
   const Icon = tone === "moss" ? Sprout : Beef;
 
   return (
-    <div className="absolute top-0 left-0 right-0 flex items-center justify-center pointer-events-none">
-      <div className={`h-[1px] w-32 ${onLight ? a.ruleLight : a.rule}`} />
-      <Icon className={`mx-4 h-5 w-5 ${onLight ? a.textLight : a.text}`} />
-      <div className={`h-[1px] w-32 ${onLight ? a.ruleLight : a.rule}`} />
+    <div className="absolute top-0 left-0 right-0 flex items-center justify-center pt-9 md:pt-12 pointer-events-none">
+      <div className={`h-[1px] w-16 sm:w-24 md:w-32 ${onLight ? a.ruleLight : a.rule}`} />
+      <Icon className={`mx-5 h-[18px] w-[18px] ${onLight ? a.textLight : a.text}`} />
+      <div className={`h-[1px] w-16 sm:w-24 md:w-32 ${onLight ? a.ruleLight : a.rule}`} />
     </div>
   );
 }
@@ -161,7 +163,7 @@ export function CampoSectionHeader({
       <div className="inline-flex items-center gap-2 mb-4">
         <div className={`h-[1px] w-8 ${ruleColor}`} />
         <span
-          className={`text-[10px] tracking-[0.3em] uppercase font-semibold font-inter ${eyebrowColor}`}
+          className={`text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter ${eyebrowColor}`}
         >
           {eyebrow}
         </span>
@@ -228,8 +230,10 @@ export function CampoCompanyBadge({
         >
           {name}
         </h3>
+        {/* tracking reduzido no mobile: o handle é um token sem espaços e
+            não quebra — com 0.18em ele estourava a caixa do card em 390px */}
         <p
-          className={`text-[11px] tracking-[0.18em] uppercase font-inter mt-1 ${
+          className={`text-[11px] tracking-[0.06em] sm:tracking-[0.18em] uppercase font-inter mt-1 break-words ${
             onLight ? a.textLight : a.text
           }`}
         >

@@ -65,7 +65,7 @@ export function ProposalCampoPartnership({ investment }: Props) {
         >
           <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
             <div>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#6E8F5E] font-inter font-semibold mb-2">
+              <p className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-[#6E8F5E] font-inter font-semibold mb-2">
                 Etapa única
               </p>
               <h3 className="font-playfair text-xl md:text-2xl font-medium text-[#EFEBE0] mb-5">
@@ -115,7 +115,7 @@ export function ProposalCampoPartnership({ investment }: Props) {
               <p className="font-playfair text-4xl md:text-5xl font-medium text-[#6E8F5E] leading-none">
                 {investment.setupFee}
               </p>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-[#EFEBE0]/35 font-inter mt-2">
+              <p className="text-[11px] md:text-[10px] tracking-[0.15em] md:tracking-[0.2em] uppercase text-[#EFEBE0]/35 font-inter mt-2">
                 Contratação conjunta
               </p>
             </div>
@@ -140,8 +140,8 @@ export function ProposalCampoPartnership({ investment }: Props) {
             {/* Badge */}
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2.5 px-5 py-2.5 mb-8 border border-[#CBA65C]/40 bg-[#CBA65C]/[0.07]">
-                <Handshake className="w-3.5 h-3.5 text-[#CBA65C]" />
-                <span className="text-[10px] font-semibold tracking-[0.3em] uppercase font-inter text-[#CBA65C]">
+                <Handshake className="w-3.5 h-3.5 flex-shrink-0 text-[#CBA65C]" />
+                <span className="text-[11px] md:text-[10px] font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase font-inter text-[#CBA65C] text-left leading-relaxed">
                   A proposta que queremos fechar
                 </span>
               </div>
@@ -157,7 +157,7 @@ export function ProposalCampoPartnership({ investment }: Props) {
 
             {/* Preço */}
             <div className="text-center mb-10">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter mb-4">
+              <p className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter mb-4">
                 Condição especial Massaneiro + UDK
               </p>
               <div className="flex items-baseline justify-center gap-2">
@@ -177,7 +177,7 @@ export function ProposalCampoPartnership({ investment }: Props) {
             {investment.splitItems && investment.splitItems.length > 0 && (
               <div className="mb-10">
                 {investment.splitLabel && (
-                  <p className="text-center text-[10px] tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter mb-5">
+                  <p className="text-center text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter mb-5">
                     {investment.splitLabel}
                   </p>
                 )}
@@ -188,13 +188,13 @@ export function ProposalCampoPartnership({ investment }: Props) {
                     return (
                       <div
                         key={item.label}
-                        className={`flex items-center justify-between gap-4 border p-6 ${tone.border} ${tone.bg}`}
+                        className={`flex flex-col sm:flex-row items-center sm:justify-between gap-3 sm:gap-4 border p-6 text-center sm:text-left ${tone.border} ${tone.bg}`}
                       >
-                        <div className="flex items-center gap-3 min-w-0">
+                        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 min-w-0">
                           <SplitIcon
                             className={`w-5 h-5 flex-shrink-0 ${tone.text}`}
                           />
-                          <span className="text-sm font-inter text-[#EFEBE0]/75 leading-tight">
+                          <span className="text-sm font-inter text-[#EFEBE0]/75 leading-snug">
                             {item.label}
                           </span>
                         </div>
@@ -231,7 +231,7 @@ export function ProposalCampoPartnership({ investment }: Props) {
             {investment.packageIncludes &&
               investment.packageIncludes.length > 0 && (
                 <div className="border-t border-[#EFEBE0]/10 pt-8">
-                  <p className="text-[10px] tracking-[0.3em] uppercase text-[#EFEBE0]/40 font-inter font-semibold mb-6 text-center">
+                  <p className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-[#EFEBE0]/40 font-inter font-semibold mb-6 text-center">
                     Tudo isto está incluso — nas duas contas
                   </p>
                   <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
@@ -251,7 +251,7 @@ export function ProposalCampoPartnership({ investment }: Props) {
             {/* Exclusões */}
             {investment.exclusions && investment.exclusions.length > 0 && (
               <div className="mt-8 pt-8 border-t border-[#EFEBE0]/10">
-                <p className="text-[10px] tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter font-semibold mb-4 text-center">
+                <p className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter font-semibold mb-4 text-center">
                   As duas únicas coisas fora do valor
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
@@ -281,7 +281,7 @@ export function ProposalCampoPartnership({ investment }: Props) {
                 transition={{ duration: 0.8 }}
                 className="bg-[#151614] border border-[#EFEBE0]/[0.07] p-8"
               >
-                <p className="text-[10px] tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter font-semibold mb-4">
+                <p className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter font-semibold mb-4">
                   Condições
                 </p>
                 <ul className="space-y-3">
@@ -308,7 +308,7 @@ export function ProposalCampoPartnership({ investment }: Props) {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="bg-[#151614] border border-[#EFEBE0]/[0.07] p-8"
             >
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter font-semibold mb-4">
+              <p className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-[#EFEBE0]/35 font-inter font-semibold mb-4">
                 Observações
               </p>
               <ul className="space-y-3">

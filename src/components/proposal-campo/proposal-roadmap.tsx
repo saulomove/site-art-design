@@ -92,7 +92,7 @@ export function ProposalCampoRoadmap({ phases }: Props) {
                     </ul>
 
                     <div className="mt-auto pt-5 border-t border-[#EFEBE0]/[0.07]">
-                      <span className="flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-semibold font-inter text-[#EFEBE0]/30 mb-2">
+                      <span className="flex items-center gap-2 text-[11px] md:text-[10px] tracking-[0.18em] md:tracking-[0.25em] uppercase font-semibold font-inter text-[#EFEBE0]/30 mb-2">
                         <Flag className="w-3 h-3" />
                         Resultado
                       </span>

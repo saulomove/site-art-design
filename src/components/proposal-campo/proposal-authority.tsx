@@ -44,7 +44,7 @@ export function ProposalCampoAuthority({ companies, authorityPillars }: Props) {
                 <div className="flex items-center gap-3 mb-6">
                   <Icon className={`w-5 h-5 ${a.textLight}`} />
                   <span
-                    className={`text-[10px] tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
+                    className={`text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
                   >
                     {company.shortName}
                   </span>
@@ -98,7 +98,7 @@ export function ProposalCampoAuthority({ companies, authorityPillars }: Props) {
             >
               <div className="inline-flex items-center gap-2 mb-4">
                 <div className="h-[1px] w-8 bg-[#0A0A09]/25" />
-                <span className="text-[10px] tracking-[0.3em] uppercase font-semibold font-inter text-[#0A0A09]/45">
+                <span className="text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter text-[#0A0A09]/45">
                   Estratégia de autoridade
                 </span>
                 <div className="h-[1px] w-8 bg-[#0A0A09]/25" />

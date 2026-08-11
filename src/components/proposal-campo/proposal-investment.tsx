@@ -93,7 +93,7 @@ export function ProposalCampoInvestment({ companies }: Props) {
                 {/* Subtotais */}
                 <div className="mt-auto grid grid-cols-2 gap-3">
                   <div className={`p-5 border ${a.borderLight} ${a.bgSoftLight}`}>
-                    <p className="text-[10px] tracking-[0.25em] uppercase font-inter text-[#0A0A09]/45 mb-2">
+                    <p className="text-[11px] md:text-[10px] tracking-[0.08em] md:tracking-[0.25em] uppercase font-inter text-[#0A0A09]/45 mb-2">
                       Implantação
                     </p>
                     <p
@@ -103,7 +103,7 @@ export function ProposalCampoInvestment({ companies }: Props) {
                     </p>
                   </div>
                   <div className={`p-5 border ${a.borderLight} ${a.bgSoftLight}`}>
-                    <p className="text-[10px] tracking-[0.25em] uppercase font-inter text-[#0A0A09]/45 mb-2">
+                    <p className="text-[11px] md:text-[10px] tracking-[0.08em] md:tracking-[0.25em] uppercase font-inter text-[#0A0A09]/45 mb-2">
                       Recorrente
                     </p>
                     <p

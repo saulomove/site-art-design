@@ -43,19 +43,22 @@ export function ProposalCampoObjective({ objectiveChain }: Props) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.9 }}
-          className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-3 mb-14"
+          className="grid grid-cols-1 md:grid-cols-5 gap-1 md:gap-3 mb-14"
         >
           {objectiveChain.chain.map((link, idx) => {
             const tone = CHAIN_TONES[idx] ?? CHAIN_TONES[CHAIN_TONES.length - 1];
             const isLast = idx === objectiveChain.chain.length - 1;
 
             return (
-              <div key={link} className="relative flex md:block items-center gap-4">
+              <div
+                key={link}
+                className="relative flex flex-col items-center md:block"
+              >
                 <div
-                  className={`flex-1 md:flex-none border p-6 md:p-7 h-full flex flex-col justify-center min-h-[7rem] ${tone.border} ${tone.bg}`}
+                  className={`w-full border px-6 py-5 md:p-7 h-full flex flex-col justify-center md:min-h-[7rem] ${tone.border} ${tone.bg}`}
                 >
                   <span
-                    className={`font-inter text-[10px] font-semibold tracking-[0.3em] tabular-nums mb-3 ${tone.text}`}
+                    className={`font-inter text-[11px] md:text-[10px] font-semibold tracking-[0.25em] md:tracking-[0.3em] tabular-nums mb-2 md:mb-3 ${tone.text}`}
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
@@ -64,11 +67,11 @@ export function ProposalCampoObjective({ objectiveChain }: Props) {
                   </span>
                 </div>
 
-                {/* Conector */}
+                {/* Conector: abaixo e centralizado no mobile, ao lado no desktop */}
                 {!isLast && (
                   <>
                     <ChevronRight
-                      className={`md:hidden w-5 h-5 flex-shrink-0 rotate-90 ${tone.text} opacity-50`}
+                      className={`md:hidden w-5 h-5 my-2 rotate-90 ${tone.text} opacity-50`}
                     />
                     <ChevronRight
                       className={`hidden md:block absolute top-1/2 -right-[13px] -translate-y-1/2 w-5 h-5 z-10 ${tone.text} opacity-60`}

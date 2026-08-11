@@ -54,7 +54,7 @@ export function ProposalCampoDiagnosis({ companies }: Props) {
                     <div className="flex items-center gap-2 mb-6">
                       <CheckCircle2 className={`w-4 h-4 ${a.textLight}`} />
                       <span
-                        className={`text-[10px] tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
+                        className={`text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
                       >
                         Pontos positivos
                       </span>
@@ -80,7 +80,7 @@ export function ProposalCampoDiagnosis({ companies }: Props) {
                     <div className="flex items-center gap-2 mb-6">
                       <AlertCircle className={`w-4 h-4 ${a.text}`} />
                       <span
-                        className={`text-[10px] tracking-[0.3em] uppercase font-semibold font-inter ${a.text}`}
+                        className={`text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter ${a.text}`}
                       >
                         Pontos de atenção
                       </span>
@@ -90,7 +90,7 @@ export function ProposalCampoDiagnosis({ companies }: Props) {
                       {company.diagnosis.attentionIntro}
                     </p>
 
-                    <p className="text-[10px] tracking-[0.2em] uppercase text-[#EFEBE0]/30 font-inter mb-4">
+                    <p className="text-[11px] md:text-[10px] tracking-[0.15em] md:tracking-[0.2em] uppercase text-[#EFEBE0]/30 font-inter mb-4">
                       Oportunidades identificadas
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -118,7 +118,7 @@ export function ProposalCampoDiagnosis({ companies }: Props) {
                   <div className="flex items-center gap-2 mb-4">
                     <Lightbulb className={`w-4 h-4 ${a.textLight}`} />
                     <span
-                      className={`text-[10px] tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
+                      className={`text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-semibold font-inter ${a.textLight}`}
                     >
                       A oportunidade da {company.shortName}
                     </span>
