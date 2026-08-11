@@ -25,6 +25,11 @@ export interface ProposalInvestment {
   setupIncludes?: string[];
   setupOriginalPrice?: string;
   setupNote?: string;
+  /** Divisão do valor conjunto entre as partes (ex.: R$ 900 por perfil). */
+  splitLabel?: string;
+  splitItems?: { label: string; value: string }[];
+  /** O que explicitamente NÃO está incluso — renderizado em destaque. */
+  exclusions?: string[];
   paymentConditions?: string[];
   notes?: string[];
   profilePricing?: ProposalProfilePricing[];
@@ -5837,9 +5842,18 @@ export const proposals: Proposal[] = [
       "Desenvolvimento web, sistemas e soluções digitais"
     ],
     investment: {
-      totalMonthly: "R$ 4.990",
+      totalMonthly: "R$ 1.800",
       totalLabel: "Gestão Completa Mensal — Massaneiro + UDK",
       originalPrice: "R$ 6.000",
+      splitLabel: "Na prática, o custo por perfil",
+      splitItems: [
+        { label: "Massaneiro Mudas Florestais", value: "R$ 900" },
+        { label: "UDK Consultoria", value: "R$ 900" }
+      ],
+      exclusions: [
+        "Custos de deslocamento para captações fora da região de Monte Castelo/SC",
+        "Verbas de anúncio (Meta Ads e Google Ads), quando contratadas, pagas diretamente às plataformas"
+      ],
       packageIncludes: [
         "Gestão do Instagram da Massaneiro",
         "Gestão do Instagram da UDK",
@@ -5863,7 +5877,7 @@ export const proposals: Proposal[] = [
         "Reuniões estratégicas",
         "Suporte da agência"
       ],
-      setupFee: "R$ 8.900",
+      setupFee: "R$ 6.890",
       setupLabel: "Implantação — Parceria Digital Completa",
       setupOriginalPrice: "R$ 10.720",
       setupIncludes: [
@@ -5891,9 +5905,8 @@ export const proposals: Proposal[] = [
         "Sem fidelização contratual — permanência por resultado"
       ],
       notes: [
-        "Os valores individuais de cada empresa permanecem disponíveis caso a contratação seja separada — a condição especial existe justamente pela operação conjunta.",
-        "Custos de deslocamento para captações fora da região de Monte Castelo/SC por conta do contratante.",
-        "Verbas de anúncio (Meta Ads e Google Ads), quando contratadas, são pagas diretamente pelo cliente às plataformas."
+        "A condição só existe na contratação conjunta: é uma operação única atendendo duas marcas, com a mesma ida a campo, o mesmo planejamento e a mesma equipe. Contratadas separadamente, valem as tabelas individuais acima.",
+        "Os valores individuais de cada empresa permanecem disponíveis caso apenas uma das marcas siga com o projeto."
       ]
     },
     valueAnchor: {
