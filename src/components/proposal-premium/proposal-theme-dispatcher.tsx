@@ -75,6 +75,16 @@ import { ProposalPastoralTrafficBudget } from "@/components/proposal-pastoral/pr
 import { ProposalPastoralInvestment } from "@/components/proposal-pastoral/proposal-investment";
 import { ProposalPastoralCta } from "@/components/proposal-pastoral/proposal-cta";
 
+// ACIAV imports (adesão à plataforma ACIAV Saúde — identidade do produto)
+import { ProposalAciavHero } from "@/components/proposal-aciav/proposal-hero";
+import { ProposalAciavComparison } from "@/components/proposal-aciav/proposal-comparison";
+import { ProposalAciavModules } from "@/components/proposal-aciav/proposal-modules";
+import { ProposalAciavTimeline } from "@/components/proposal-aciav/proposal-timeline";
+import { ProposalAciavInvestment } from "@/components/proposal-aciav/proposal-investment";
+import { ProposalAciavNext } from "@/components/proposal-aciav/proposal-next";
+import { ProposalAciavFaq } from "@/components/proposal-aciav/proposal-faq";
+import { ProposalAciavCta } from "@/components/proposal-aciav/proposal-cta";
+
 // Campo imports (proposta multi-empresa — agro/florestal)
 import { ProposalCampoHero } from "@/components/proposal-campo/proposal-hero";
 import { ProposalCampoDiagnosis } from "@/components/proposal-campo/proposal-diagnosis";
@@ -117,6 +127,31 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isForestry = proposal.theme === "forestry";
   const isIndustrial = proposal.theme === "industrial";
   const isPastoral = proposal.theme === "pastoral";
+  const isAciav = proposal.theme === "aciav";
+
+  if (isAciav) {
+    return (
+      <>
+        <ProposalAciavHero proposal={proposal} />
+        {proposal.beforeAfter && (
+          <ProposalAciavComparison beforeAfter={proposal.beforeAfter} />
+        )}
+        <ProposalAciavModules services={proposal.services} />
+        {proposal.phases && proposal.phases.length > 0 && (
+          <ProposalAciavTimeline phases={proposal.phases} />
+        )}
+        <ProposalAciavInvestment investment={proposal.investment} />
+        {proposal.optionalServices && proposal.optionalServices.length > 0 && (
+          <ProposalAciavNext optionalServices={proposal.optionalServices} />
+        )}
+        {proposal.faq && proposal.faq.length > 0 && (
+          <ProposalAciavFaq faq={proposal.faq} />
+        )}
+        <ProposalAciavCta proposal={proposal} />
+      </>
+    );
+  }
+
   const isCampo = proposal.theme === "campo";
 
   if (isCampo) {

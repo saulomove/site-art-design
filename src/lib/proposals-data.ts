@@ -206,7 +206,7 @@ export interface Proposal {
   authorityPillars?: ProposalAuthorityPillar[];
   objectiveChain?: ProposalObjectiveChain;
   valueAnchor?: ProposalValueAnchor;
-  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo";
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo" | "aciav";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -5934,7 +5934,269 @@ export const proposals: Proposal[] = [
       "Sem fidelização contratual — permanência exclusivamente por resultado",
       "Agência full service com mais de 16 anos de estrada e atuação em 8 países"
     ]
-  }
+  },
+  {
+    slug: "acic-cacador",
+    clientName: "ACIC — Associação Empresarial de Caçador",
+    contactName: "Eduardo Tombini",
+    theme: "aciav",
+    proposalType: "sistema",
+    greeting:
+      "A ACIC não vai contratar o desenvolvimento de um sistema. Vai receber a sua própria unidade dentro do ACIAV Saúde — a mesma plataforma que já está construída, testada e em operação em Videira, com todos os painéis, o aplicativo publicado nas lojas e a rede credenciada. No ar em 7 dias úteis a partir da assinatura.",
+    validUntil: "2026-09-03",
+    whatsappNumber: "5549988446685",
+    closingQuestion:
+      "Vamos abrir a unidade da ACIC e levar o benefício de saúde para as empresas associadas de Caçador?",
+
+    highlights: [
+      "Plataforma pronta e em operação real — não é um projeto a construir",
+      "Unidade própria da ACIC, com dados isolados dos de Videira",
+      "Aplicativo já publicado na Google Play e na App Store",
+      "Rede credenciada de Videira importada e sincronizada na implantação",
+      "Go-live em 7 dias úteis após a assinatura",
+    ],
+
+    beforeAfter: {
+      beforeTitle: "Construir uma plataforma equivalente do zero",
+      beforeItems: [
+        "Investimento de R$ 30.000 em desenvolvimento",
+        "Cerca de 6 meses até o go-live",
+        "Risco de escopo, prazo e retrabalho ao longo do projeto",
+        "Publicação nas lojas a fazer do zero, com filas de review",
+        "Rede credenciada a construir sem nenhuma base inicial",
+        "Acompanhamento técnico necessário durante todo o período",
+      ],
+      afterTitle: "Aderir ao ACIAV Saúde como unidade ACIC",
+      afterItems: [
+        "Investimento de R$ 3.900 na implantação",
+        "7 dias úteis até o go-live",
+        "Plataforma validada em operação real em Videira",
+        "Aplicativo já disponível na Google Play e na App Store",
+        "Credenciados de Videira importados e sincronizados na largada",
+        "Suporte, melhorias e atualizações contínuas por R$ 500/mês",
+      ],
+      expectedResults:
+        "A ACIC entra num sistema que já passou pela parte difícil: o que em Videira levou meses de desenvolvimento, validação e ajuste, em Caçador é configuração.",
+    },
+
+    services: [
+      {
+        name: "Painel de Gestão da ACIC",
+        description:
+          "O centro de comando da unidade. É por aqui que a ACIC cadastra empresas associadas, credencia clínicas e profissionais, acompanha os atendimentos e enxerga o desempenho do convênio em Caçador.",
+        icon: "LayoutDashboard",
+        items: [
+          "Cadastro e gestão das empresas associadas",
+          "Credenciamento de clínicas, laboratórios e profissionais",
+          "Visão de vidas ativas, atendimentos e movimentação",
+          "Gestão de beneficiários titulares e dependentes",
+          "Relatórios e indicadores da unidade",
+          "Configurações e políticas próprias da ACIC",
+        ],
+      },
+      {
+        name: "Painel da Empresa (RH)",
+        description:
+          "Cada empresa associada recebe o seu próprio acesso. O RH cadastra e gerencia os colaboradores sem depender da ACIC para operações do dia a dia.",
+        icon: "Building2",
+        items: [
+          "Cadastro de colaboradores e dependentes",
+          "Ativação e inativação de beneficiários",
+          "Acompanhamento da utilização pela equipe",
+          "Relatórios da empresa",
+          "Gestão autônoma, sem intermediação da associação",
+        ],
+      },
+      {
+        name: "Painel do Credenciado",
+        description:
+          "Clínicas, laboratórios e profissionais credenciados validam o atendimento na hora, direto no painel — sem telefonema, sem papel e sem dúvida sobre quem é beneficiário.",
+        icon: "Stethoscope",
+        items: [
+          "Validação e confirmação de atendimentos",
+          "Consulta de elegibilidade do beneficiário",
+          "Histórico de atendimentos realizados",
+          "Dados do estabelecimento sempre atualizados",
+        ],
+      },
+      {
+        name: "Aplicativo do Associado",
+        description:
+          "O beneficiário leva a carteirinha no bolso. Aplicativo disponível para Android e iOS, além do acesso pelo navegador — mesma experiência que os associados de Videira já usam.",
+        icon: "Smartphone",
+        items: [
+          "Carteirinha digital com QR Code",
+          "Rede credenciada com busca por especialidade",
+          "App para Android (Google Play) e iOS (App Store)",
+          "Acesso também pelo navegador, sem instalar nada",
+          "Login por CPF, sem burocracia",
+          "Dependentes vinculados ao titular",
+        ],
+      },
+      {
+        name: "Unidade própria e isolamento de dados",
+        description:
+          "A ACIC recebe a sua própria unidade dentro da plataforma. A arquitetura do sistema é multi-inquilino desde a origem: cada unidade enxerga exclusivamente os seus dados.",
+        icon: "ShieldCheck",
+        items: [
+          "Empresas, beneficiários e credenciados exclusivos da ACIC",
+          "Nenhum dado de Caçador visível para Videira, e vice-versa",
+          "Identidade e políticas configuráveis por unidade",
+          "Usuários e permissões próprios da associação",
+          "Registro de auditoria das operações",
+        ],
+      },
+    ],
+
+    phases: [
+      {
+        number: 1,
+        title: "Criação da unidade",
+        objective:
+          "Abrir a unidade da ACIC dentro da plataforma e deixar a base configurada com a identidade e as regras da associação.",
+        deliverables: [
+          "Criação da unidade ACIC Caçador no sistema",
+          "Configuração de identidade e dados institucionais",
+          "Definição de políticas de acesso e segurança",
+          "Criação dos usuários de gestão da associação",
+        ],
+        expectedResult:
+          "Unidade da ACIC criada e isolada, pronta para receber empresas, credenciados e beneficiários.",
+      },
+      {
+        number: 2,
+        title: "Cadastro e importação",
+        objective:
+          "Popular a base de Caçador — incluindo a importação e sincronização da rede credenciada de Videira.",
+        deliverables: [
+          "Cadastro das empresas associadas indicadas pela ACIC",
+          "Importação dos credenciados de Videira para a base de Caçador",
+          "Sincronização das duas redes",
+          "Cadastro dos credenciados próprios de Caçador",
+        ],
+        expectedResult:
+          "Base da ACIC populada, com rede credenciada disponível desde o primeiro dia em vez de começar vazia.",
+      },
+      {
+        number: 3,
+        title: "Acessos e validação",
+        objective:
+          "Liberar os acessos de cada perfil e validar os fluxos de ponta a ponta antes de abrir para os associados.",
+        deliverables: [
+          "Criação dos acessos de RH das empresas",
+          "Criação dos acessos dos credenciados",
+          "Teste do fluxo completo: cadastro, carteirinha e validação de atendimento",
+          "Conferência do app nas lojas com a unidade da ACIC",
+        ],
+        expectedResult:
+          "Todos os perfis funcionando e testados, sem surpresa no dia da abertura.",
+      },
+      {
+        number: 4,
+        title: "Treinamento e go-live",
+        objective:
+          "Treinar as equipes da ACIC, das empresas e dos credenciados, e colocar a operação no ar.",
+        deliverables: [
+          "Treinamento da equipe de gestão da ACIC",
+          "Orientação para o RH das empresas associadas",
+          "Orientação para os credenciados",
+          "Material de apoio e canal de suporte",
+          "Go-live da unidade",
+        ],
+        expectedResult:
+          "Convênio no ar em Caçador, com as equipes sabendo operar o sistema sem depender da agência.",
+      },
+    ],
+
+    investment: {
+      setupFee: "R$ 3.900",
+      setupLabel: "Implantação da unidade ACIC Caçador",
+      setupIncludes: [
+        "Criação e configuração da unidade da ACIC",
+        "Cadastro das empresas associadas",
+        "Importação dos credenciados de Videira",
+        "Sincronização das redes de Videira e Caçador",
+        "Criação dos acessos de todos os perfis",
+        "Treinamento das equipes",
+      ],
+      setupItems: [
+        { item: "1ª parcela — na assinatura", value: "R$ 1.300" },
+        { item: "2ª parcela — 28 dias", value: "R$ 1.300" },
+        { item: "3ª parcela — 56 dias", value: "R$ 1.300" },
+      ],
+      setupNote:
+        "Parcelado em 3x no boleto: a primeira à vista, na assinatura, e as demais em 28 e 56 dias.",
+      totalMonthly: "R$ 500",
+      totalLabel: "Mensalidade — suporte, melhorias e atualizações",
+      packageIncludes: [
+        "Suporte técnico à ACIC, às empresas e aos credenciados",
+        "Melhorias e novas funcionalidades da plataforma",
+        "Atualizações de segurança e manutenção evolutiva",
+        "Hospedagem e infraestrutura da unidade",
+        "Manutenção do aplicativo nas lojas",
+        "Backup e monitoramento",
+      ],
+      paymentConditions: [
+        "Implantação: R$ 3.900 em 3x no boleto — à vista, 28 dias e 56 dias",
+        "Mensalidade: primeira cobrança 30 dias após a conclusão da implantação",
+        "Implantação concluída em 7 dias úteis a partir da assinatura",
+      ],
+      notes: [
+        "Toda melhoria feita na plataforma passa a valer também para a unidade da ACIC, sem custo adicional.",
+        "Os valores de adesão das empresas associadas e as condições comerciais com os credenciados são definidos pela própria ACIC.",
+      ],
+    },
+
+    optionalServices: [
+      "Notificação de sincronização entre as unidades: quando Videira cadastrar um novo credenciado, a gestão de Caçador recebe o aviso na barra de notificação e sincroniza com um clique — e o mesmo no sentido inverso",
+      "Relatórios personalizados conforme a necessidade da associação",
+      "Integrações com sistemas já usados pela ACIC",
+      "Campanhas de divulgação do convênio para as empresas associadas",
+      "Materiais de apresentação e treinamento adicionais",
+    ],
+
+    faq: [
+      {
+        question: "Os dados de Caçador ficam separados dos de Videira?",
+        answer:
+          "Sim. A plataforma é multi-inquilino desde a arquitetura: cada unidade tem o seu próprio identificador e toda consulta ao banco é filtrada por ele. As empresas, os beneficiários e os credenciados da ACIC são exclusivos da ACIC — nenhum usuário de Videira enxerga dado de Caçador, e vice-versa.",
+      },
+      {
+        question: "A ACIC precisa de equipe técnica para operar?",
+        answer:
+          "Não. A ACIC opera pelo painel de gestão, que é feito para uso administrativo. A parte técnica — servidor, banco de dados, atualizações, app nas lojas — fica inteiramente com a ArtDesign e está coberta pela mensalidade.",
+      },
+      {
+        question: "Podemos ter credenciados exclusivos de Caçador?",
+        answer:
+          "Sim. A ACIC credencia livremente clínicas, laboratórios e profissionais da região. A importação da rede de Videira serve para que Caçador não comece do zero — mas a rede própria da ACIC é gerida pela ACIC.",
+      },
+      {
+        question: "Quando começa a cobrança da mensalidade?",
+        answer:
+          "Trinta dias após a conclusão da implantação. Como a implantação leva 7 dias úteis a partir da assinatura, a primeira mensalidade cai cerca de um mês depois do sistema já estar no ar e em uso.",
+      },
+      {
+        question: "O aplicativo já existe ou precisa ser desenvolvido?",
+        answer:
+          "Já existe e já está publicado na Google Play e na App Store. Os associados da ACIC usam o mesmo aplicativo dos de Videira, entrando na unidade de Caçador — não há desenvolvimento nem espera por aprovação de loja.",
+      },
+      {
+        question: "E se a plataforma evoluir depois que entrarmos?",
+        answer:
+          "A ACIC recebe as evoluções junto. Como é uma plataforma única atendendo várias unidades, toda melhoria entra para todo mundo — isso está incluso na mensalidade.",
+      },
+    ],
+
+    differentials: [
+      "Plataforma em operação real, não um projeto no papel",
+      "Go-live em 7 dias úteis contra os cerca de 6 meses de um desenvolvimento",
+      "Rede credenciada de Videira disponível na largada",
+      "Aplicativo já publicado nas duas lojas",
+      "Evoluções da plataforma incluídas na mensalidade",
+      "Suporte direto com quem desenvolveu o sistema",
+    ],
+  },
 ];
 
 // ============================================================
