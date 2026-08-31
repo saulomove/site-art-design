@@ -66,8 +66,24 @@ export const contracts: Record<string, ContractEntry> = {
     signatureCity: "Caçador/SC",
     signatureDate: "",
   },
+  "acic-cacador": {
+    slug: "acic-cacador",
+    template: "adesao-aciav",
+    contractNumber: "051/2026",
+    startDate: "",
+    clientName: "ACIC - Associação Empresarial de Caçador",
+    clientDocument: "83.059.667/0001-97",
+    clientAddress: "Av. Barão do Rio Branco, 327 - Centro",
+    clientCityState: "Caçador/SC",
+    clientCep: "89500-000",
+    clientRepresentative: "Eduardo Tombini",
+    monthlyValue: "R$ 500,00",
+    monthlyValueFull: "quinhentos reais",
+    paymentDay: "",
+    signatureCity: "Caçador/SC",
+    signatureDate: "",
+  },
 };
-
 /* ------------------------------------------------------------------ */
 /*  Editable Field Components                                         */
 /* ------------------------------------------------------------------ */

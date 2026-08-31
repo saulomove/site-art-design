@@ -202,6 +202,8 @@ export interface Proposal {
     closingText: string;
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
+  /** Slug do contrato em /contrato/[slug] — habilita o botão "Gerar contrato". */
+  contractSlug?: string;
   companies?: ProposalCompany[];
   authorityPillars?: ProposalAuthorityPillar[];
   objectiveChain?: ProposalObjectiveChain;
@@ -5937,6 +5939,7 @@ export const proposals: Proposal[] = [
   },
   {
     slug: "acic-cacador",
+    contractSlug: "acic-cacador",
     clientName: "ACIC — Associação Empresarial de Caçador",
     contactName: "Eduardo Tombini",
     theme: "aciav",

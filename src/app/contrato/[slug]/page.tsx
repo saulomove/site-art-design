@@ -10,6 +10,7 @@ import {
 } from "@/components/contract/contract-shared";
 import { TemplateEcossistemaDigital } from "@/components/contract/template-ecossistema-digital";
 import { TemplateEcommerce } from "@/components/contract/template-ecommerce";
+import { TemplateAdesaoAciav } from "@/components/contract/template-adesao-aciav";
 
 interface ContractPageProps {
   params: Promise<{ slug: string }>;
@@ -144,6 +145,9 @@ export default function ContractPage({ params }: ContractPageProps) {
         )}
         {template === "ecommerce" && (
           <TemplateEcommerce {...templateProps} />
+        )}
+        {template === "adesao-aciav" && (
+          <TemplateAdesaoAciav {...templateProps} />
         )}
       </div>
 

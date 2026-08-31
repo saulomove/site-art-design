@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { Proposal } from "@/lib/proposals-data";
-import { MessageCircle, Activity, Building2 } from "lucide-react";
+import { MessageCircle, Activity, Building2, FileText } from "lucide-react";
 import { AciavBadge, AciavHighlight, AciavCheck } from "./aciav-ui";
 
 interface Props {
@@ -67,15 +67,29 @@ export function ProposalAciavCta({ proposal }: Props) {
             </p>
           )}
 
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-3 rounded-full bg-[#e85d1f] px-9 py-5 text-base font-bold text-white transition-colors duration-300 hover:bg-[#cf4f15]"
-          >
-            <MessageCircle className="h-5 w-5" />
-            Falar no WhatsApp
-          </a>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#e85d1f] px-9 py-5 text-base font-bold text-white transition-colors duration-300 hover:bg-[#cf4f15] sm:w-auto"
+            >
+              <MessageCircle className="h-5 w-5" />
+              Falar no WhatsApp
+            </a>
+
+            {proposal.contractSlug && (
+              <a
+                href={`/contrato/${proposal.contractSlug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-white px-9 py-5 text-base font-bold text-[#08494a] ring-1 ring-white/30 transition-colors duration-300 hover:bg-[#e6f3f2] sm:w-auto"
+              >
+                <FileText className="h-5 w-5" />
+                Gerar contrato
+              </a>
+            )}
+          </div>
 
           <p className="mt-6 text-sm text-white/45">
             Proposta válida até {formattedDate}
@@ -122,7 +136,7 @@ export function ProposalAciavCta({ proposal }: Props) {
                 CNPJ 51.035.885/0001-03
               </p>
               <p className="mt-1 text-sm text-[#2b3b48]/70">
-                Videira — SC · (49) 98844-6685
+                Caçador — SC · (49) 98844-6685
               </p>
             </div>
           </div>
