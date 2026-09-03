@@ -65,7 +65,7 @@ function ServiceCard({ service, index }: { service: ProposalService; index: numb
             {service.price}
           </span>
           <span className="block text-[10px] uppercase tracking-[0.18em] text-[#CCCCCC]/40">
-            {isMonthly ? "por mês" : "etapa única"}
+            {isMonthly ? "por mês" : "valor de referência"}
           </span>
         </div>
       </div>
@@ -114,11 +114,15 @@ export function ProposalVinicolaServices({ services }: Props) {
           <div className="mb-20">
             <div className="mb-10 flex flex-col gap-3 border-b border-[#CCCCCC]/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <VinicolaEyebrow>Fundação · etapa única</VinicolaEyebrow>
+                <VinicolaEyebrow>Fundação · incluída na mensalidade</VinicolaEyebrow>
                 <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#CCCCCC]/55">
                   O que precisa acontecer antes de qualquer verba de mídia.
-                  Corrigir a operação e instalar medição — sem isso, todo
-                  investimento seguinte é feito às cegas.
+                  Os valores ao lado são de referência, para a Santa Augusta
+                  saber o que cada frente vale — mas{" "}
+                  <span className="text-[#CA8B35]">
+                    nenhuma delas é cobrada à parte
+                  </span>
+                  : todas entram na mensalidade, sem custo de entrada.
                 </p>
               </div>
               <span className="font-mono text-xs tracking-[0.14em] text-[#CA8B35]/70">

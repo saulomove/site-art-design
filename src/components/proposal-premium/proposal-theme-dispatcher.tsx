@@ -82,6 +82,7 @@ import { ProposalVinicolaFindings } from "@/components/proposal-vinicola/proposa
 import { ProposalVinicolaAssets } from "@/components/proposal-vinicola/proposal-assets";
 import { ProposalVinicolaProof } from "@/components/proposal-vinicola/proposal-proof";
 import { ProposalVinicolaBenchmark } from "@/components/proposal-vinicola/proposal-benchmark";
+import { ProposalVinicolaAgency } from "@/components/proposal-vinicola/proposal-agency";
 import { ProposalVinicolaServices } from "@/components/proposal-vinicola/proposal-services";
 import { ProposalVinicolaContent } from "@/components/proposal-vinicola/proposal-content";
 import { ProposalVinicolaRoadmap } from "@/components/proposal-vinicola/proposal-roadmap";
@@ -162,6 +163,7 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
         {proposal.benchmark && (
           <ProposalVinicolaBenchmark benchmark={proposal.benchmark} />
         )}
+        <ProposalVinicolaAgency />
         <ProposalVinicolaServices services={proposal.services} />
         <ProposalVinicolaContent
           contentSuggestions={proposal.contentSuggestions}

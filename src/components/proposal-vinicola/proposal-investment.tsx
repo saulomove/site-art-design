@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ProposalInvestment, ProposalGoal } from "@/lib/proposals-data";
-import { Minus, Info } from "lucide-react";
+import { Info, Unlock } from "lucide-react";
 import {
   VinicolaDivider,
   VinicolaSectionHeader,
@@ -26,10 +26,10 @@ export function ProposalVinicolaInvestment({ investment, goals }: Props) {
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <VinicolaSectionHeader
-          eyebrow="Pacote completo"
-          title="Tudo junto, pela condição que"
-          italic="não existe separado"
-          lead="As frentes se sustentam entre si: o site precisa da medição, a mídia precisa do site, o conteúdo precisa da captação. Contratadas isoladamente, somam R$ 21.500 de implantação e R$ 9.600 por mês."
+          eyebrow="Investimento"
+          title="Sem entrada, sem fidelidade."
+          italic="Uma mensalidade só."
+          lead="As frentes se sustentam entre si: o site precisa da medição, a mídia precisa do site, o conteúdo precisa da captação. Contratadas isoladamente somariam R$ 21.500 de implantação e R$ 9.600 por mês. Aqui, tudo entra num valor único."
         />
 
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
@@ -52,22 +52,9 @@ export function ProposalVinicolaInvestment({ investment, goals }: Props) {
             <p className="mt-1 font-playfair text-5xl font-medium text-white md:text-6xl">
               {investment.setupFee}
             </p>
-
-            {investment.setupItems && investment.setupItems.length > 0 && (
-              <div className="mt-7 space-y-2 border-y border-[#CCCCCC]/10 py-5">
-                {investment.setupItems.map((row, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-baseline justify-between gap-4 text-[13px]"
-                  >
-                    <span className="text-[#CCCCCC]/50">{row.item}</span>
-                    <span className="flex-shrink-0 font-mono tabular-nums text-[#CCCCCC]/80">
-                      {row.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
+            <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-[#CA8B35]">
+              Nenhuma taxa de implantação
+            </p>
 
             {investment.setupIncludes && (
               <ul className="mt-7 flex-1 space-y-3">
@@ -138,29 +125,100 @@ export function ProposalVinicolaInvestment({ investment, goals }: Props) {
           </motion.div>
         </div>
 
-        {/* Fora do valor */}
-        {investment.exclusions && investment.exclusions.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6 }}
-            className="mt-6 border border-[#CCCCCC]/10 bg-[#121110] p-8"
-          >
-            <VinicolaEyebrow>Fora do honorário</VinicolaEyebrow>
-            <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-              {investment.exclusions.map((item, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-3 text-[14px] leading-relaxed text-[#CCCCCC]/55"
-                >
-                  <Minus className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#CCCCCC]/30" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
+        {/* Sem fidelidade — o argumento de menor risco da proposta */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7 }}
+          className="mt-6 border border-[#CA8B35]/30 bg-[#CA8B35]/[0.05] p-10 text-center md:p-14"
+        >
+          <div className="flex justify-center">
+            <Unlock className="h-6 w-6 text-[#CA8B35]" />
+          </div>
+          <h3 className="mx-auto mt-6 max-w-3xl font-playfair text-2xl font-medium leading-snug text-white md:text-4xl">
+            Não trabalhamos com contrato de fidelidade.
+          </h3>
+          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-[#CCCCCC]/65 md:text-base">
+            A relação é mês a mês. Nenhuma multa, nenhum prazo mínimo, nenhuma
+            cláusula prendendo a Santa Augusta a uma agência que não esteja
+            entregando. Preferimos ser renovados pelo resultado do mês anterior
+            do que garantidos por contrato — é o que nos obriga a mostrar
+            trabalho todo mês.
+          </p>
+        </motion.div>
+
+        {/* Verba de tráfego pago */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-6 border border-[#CCCCCC]/10 bg-[#121110] p-8 md:p-10"
+        >
+          <VinicolaEyebrow>Fora do honorário · verba de anúncio</VinicolaEyebrow>
+          <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-[#CCCCCC]/60">
+            A única coisa que não está inclusa é a verba de anúncio, paga
+            diretamente ao Google e à Meta. Nossa sugestão é começar pequeno,
+            provar o retorno e só então aumentar.
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="border border-[#CCCCCC]/10 bg-[#0B0B0B] p-6">
+              <span className="text-[10px] uppercase tracking-[0.22em] text-[#CCCCCC]/40">
+                Meta Ads
+              </span>
+              <p className="mt-3 font-playfair text-3xl font-medium text-[#CA8B35]">
+                R$ 10
+                <span className="ml-1 text-sm font-normal text-[#CCCCCC]/40">
+                  /dia
+                </span>
+              </p>
+              <p className="mt-2 text-[13px] text-[#CCCCCC]/45">
+                Instagram e Facebook
+              </p>
+            </div>
+
+            <div className="border border-[#CCCCCC]/10 bg-[#0B0B0B] p-6">
+              <span className="text-[10px] uppercase tracking-[0.22em] text-[#CCCCCC]/40">
+                Google Ads
+              </span>
+              <p className="mt-3 font-playfair text-3xl font-medium text-[#CA8B35]">
+                R$ 6
+                <span className="ml-1 text-sm font-normal text-[#CCCCCC]/40">
+                  /dia
+                </span>
+              </p>
+              <p className="mt-2 text-[13px] text-[#CCCCCC]/45">
+                Busca e mapa
+              </p>
+            </div>
+
+            <div className="border border-[#CA8B35]/25 bg-[#CA8B35]/[0.05] p-6">
+              <span className="text-[10px] uppercase tracking-[0.22em] text-[#CA8B35]/80">
+                Para começar
+              </span>
+              <p className="mt-3 font-playfair text-3xl font-medium text-white">
+                ~R$ 480
+                <span className="ml-1 text-sm font-normal text-[#CCCCCC]/40">
+                  /mês
+                </span>
+              </p>
+              <p className="mt-2 text-[13px] text-[#CCCCCC]/55">
+                R$ 16 por dia somados
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-7 border-t border-[#CCCCCC]/10 pt-6 text-[14px] leading-relaxed text-[#CCCCCC]/55">
+            A partir daí,{" "}
+            <span className="text-[#CCCCCC]/85">
+              aumentamos conforme o retorno aparecer
+            </span>
+            . Com a medição instalada, cada aumento de verba é decidido com
+            dado de receita na mão — não por achismo nem por pacote fechado.
+          </p>
+        </motion.div>
 
         {/* Condições e notas */}
         <div className="mt-6 grid gap-6 md:grid-cols-2">
