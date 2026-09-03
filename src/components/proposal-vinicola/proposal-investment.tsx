@@ -17,7 +17,7 @@ interface Props {
 
 export function ProposalVinicolaInvestment({ investment, goals }: Props) {
   return (
-    <section className="relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
+    <section id="investimento" className="scroll-mt-[68px] relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
       <VinicolaDivider />
 
       <div className="pointer-events-none absolute inset-0">

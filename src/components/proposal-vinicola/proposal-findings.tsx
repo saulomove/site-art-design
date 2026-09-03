@@ -20,7 +20,7 @@ export function ProposalVinicolaFindings({ findings }: Props) {
   const demais = findings.filter((f) => f.severity !== "critico");
 
   return (
-    <section className="relative overflow-hidden bg-[#F4F0E8] py-24 md:py-32">
+    <section id="achados" className="scroll-mt-[68px] relative overflow-hidden bg-[#F4F0E8] py-24 md:py-32">
       <VinicolaDivider onLight />
 
       <div className="container mx-auto max-w-5xl px-4">

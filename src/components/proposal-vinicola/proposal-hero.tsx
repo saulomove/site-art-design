@@ -14,7 +14,7 @@ export function ProposalVinicolaHero({ proposal }: Props) {
   const formattedDate = `${day}/${month}/${year}`;
 
   return (
-    <section className="relative flex min-h-[95vh] flex-col items-center justify-center overflow-hidden bg-[#0B0B0B] px-4 py-24 sm:py-0">
+    <section id="inicio" className="scroll-mt-[68px] relative flex min-h-[95vh] flex-col items-center justify-center overflow-hidden bg-[#0B0B0B] px-4 py-24 sm:py-0">
       {/* Ambiência */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-[-15%] h-[65%] w-[80%] -translate-x-1/2 rounded-full bg-[#CA8B35]/[0.07] blur-[160px]" />
@@ -48,15 +48,22 @@ export function ProposalVinicolaHero({ proposal }: Props) {
       </div>
 
       <div className="container relative z-10 mx-auto max-w-4xl text-center">
-        {/* Coordenadas */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        {/* Marca do cliente */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mb-10 font-mono text-[10px] tracking-[0.3em] text-[#CA8B35]/70 md:text-[11px]"
+          className="mb-12 flex justify-center"
         >
-          {COORDENADAS}
-        </motion.p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/clientes/santa-augusta/logo-vsa.png"
+            alt="Vinícola Santa Augusta"
+            width={500}
+            height={167}
+            className="h-16 w-auto md:h-20"
+          />
+        </motion.div>
 
         {/* Eyebrow */}
         <motion.p
@@ -110,6 +117,10 @@ export function ProposalVinicolaHero({ proposal }: Props) {
           className="mt-14 flex flex-col items-center justify-center gap-5 text-[11px] uppercase tracking-[0.22em] text-[#CCCCCC]/40 sm:flex-row sm:gap-10"
         >
           <span>{proposal.clientName}</span>
+          <span aria-hidden="true" className="hidden h-3 w-[1px] bg-[#CA8B35]/40 sm:block" />
+          <span className="font-mono normal-case tracking-[0.18em] text-[#CA8B35]/70">
+            {COORDENADAS}
+          </span>
           <span aria-hidden="true" className="hidden h-3 w-[1px] bg-[#CA8B35]/40 sm:block" />
           <span>Videira · Santa Catarina</span>
           <span aria-hidden="true" className="hidden h-3 w-[1px] bg-[#CA8B35]/40 sm:block" />

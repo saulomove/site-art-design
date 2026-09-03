@@ -57,7 +57,7 @@ const TESTIMONIALS = [
 
 export function ProposalVinicolaAgency() {
   return (
-    <section className="relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
+    <section id="artdesign" className="scroll-mt-[68px] relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
       <VinicolaDivider />
 
       <div className="pointer-events-none absolute left-1/2 top-1/3 h-[45%] w-[70%] -translate-x-1/2 rounded-full bg-[#CA8B35]/[0.05] blur-[160px]" />

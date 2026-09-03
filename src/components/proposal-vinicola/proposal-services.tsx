@@ -98,7 +98,7 @@ export function ProposalVinicolaServices({ services }: Props) {
   const mensais = services.filter((s) => s.priceType === "monthly");
 
   return (
-    <section className="relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
+    <section id="proposta" className="scroll-mt-[68px] relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
       <VinicolaDivider />
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4">

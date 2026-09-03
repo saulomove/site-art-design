@@ -24,7 +24,7 @@ export function ProposalVinicolaCta({ proposal }: Props) {
   const whatsappUrl = `https://wa.me/${proposal.whatsappNumber}?text=${whatsappMessage}`;
 
   return (
-    <section className="relative overflow-hidden bg-[#070707] py-24 md:py-32">
+    <section id="fechamento" className="scroll-mt-[68px] relative overflow-hidden bg-[#070707] py-24 md:py-32">
       <VinicolaDivider />
 
       <div className="pointer-events-none absolute inset-0">

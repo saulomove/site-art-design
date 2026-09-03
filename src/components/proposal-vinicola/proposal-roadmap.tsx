@@ -12,7 +12,7 @@ const PHASE_LABELS = ["Dias 1 a 30", "Dias 31 a 60", "Dias 61 a 90"];
 
 export function ProposalVinicolaRoadmap({ phases }: Props) {
   return (
-    <section className="relative overflow-hidden bg-[#F4F0E8] py-24 md:py-32">
+    <section id="plano" className="scroll-mt-[68px] relative overflow-hidden bg-[#F4F0E8] py-24 md:py-32">
       <VinicolaDivider onLight />
 
       <div className="container mx-auto max-w-5xl px-4">

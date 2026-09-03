@@ -9,7 +9,7 @@ interface Props {
 
 export function ProposalVinicolaAssets({ highlights }: Props) {
   return (
-    <section className="relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
+    <section id="ativos" className="scroll-mt-[68px] relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
       <VinicolaDivider />
 
       <div className="pointer-events-none absolute right-0 top-1/4 h-[50%] w-[45%] rounded-full bg-[#CA8B35]/[0.05] blur-[150px]" />

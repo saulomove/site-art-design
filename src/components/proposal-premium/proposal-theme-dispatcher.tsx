@@ -76,6 +76,7 @@ import { ProposalPastoralInvestment } from "@/components/proposal-pastoral/propo
 import { ProposalPastoralCta } from "@/components/proposal-pastoral/proposal-cta";
 
 // Vinicola imports (vinho premium — identidade Santa Augusta)
+import { ProposalVinicolaNav } from "@/components/proposal-vinicola/proposal-nav";
 import { ProposalVinicolaHero } from "@/components/proposal-vinicola/proposal-hero";
 import { ProposalVinicolaVerdict } from "@/components/proposal-vinicola/proposal-verdict";
 import { ProposalVinicolaFindings } from "@/components/proposal-vinicola/proposal-findings";
@@ -146,6 +147,7 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   if (isVinicola) {
     return (
       <>
+        <ProposalVinicolaNav monthlyValue={proposal.investment.totalMonthly} />
         <ProposalVinicolaHero proposal={proposal} />
         <ProposalVinicolaVerdict
           stats={proposal.stats}

@@ -23,7 +23,7 @@ export function ProposalVinicolaVerdict({ stats, auditScores }: Props) {
       : null;
 
   return (
-    <section className="relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
+    <section id="diagnostico" className="scroll-mt-[68px] relative overflow-hidden bg-[#0B0B0B] py-24 md:py-32">
       <VinicolaDivider />
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
