@@ -44,7 +44,7 @@ export function ProposalVinicolaFindings({ findings }: Props) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, delay: Math.min(idx, 5) * 0.06 }}
-                className={`border-l-2 bg-white p-8 md:p-10 ${tone.edgeLight}`}
+                className={`min-w-0 border-l-2 bg-white p-8 md:p-10 ${tone.edgeLight}`}
               >
                 <div className="mb-5 flex flex-wrap items-center gap-3">
                   <span
@@ -108,7 +108,7 @@ export function ProposalVinicolaFindings({ findings }: Props) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.6, delay: Math.min(idx, 4) * 0.06 }}
-                    className="flex flex-col bg-white p-7 md:p-8"
+                    className="flex min-w-0 flex-col bg-white p-7 md:p-8"
                   >
                     <div className="mb-4 flex flex-wrap items-center gap-2.5">
                       <span

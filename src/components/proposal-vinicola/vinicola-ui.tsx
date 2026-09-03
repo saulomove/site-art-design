@@ -211,7 +211,7 @@ export function VinicolaEvidence({
       }`}
     >
       <pre
-        className={`whitespace-pre font-mono text-[11px] leading-relaxed md:text-[12px] ${
+        className={`whitespace-pre-wrap break-words md:whitespace-pre font-mono text-[11px] leading-relaxed md:text-[12px] ${
           onLight ? "text-[#0B0B0B]/70" : "text-[#CCCCCC]/65"
         }`}
       >
