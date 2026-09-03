@@ -75,6 +75,19 @@ import { ProposalPastoralTrafficBudget } from "@/components/proposal-pastoral/pr
 import { ProposalPastoralInvestment } from "@/components/proposal-pastoral/proposal-investment";
 import { ProposalPastoralCta } from "@/components/proposal-pastoral/proposal-cta";
 
+// Vinicola imports (vinho premium — identidade Santa Augusta)
+import { ProposalVinicolaHero } from "@/components/proposal-vinicola/proposal-hero";
+import { ProposalVinicolaVerdict } from "@/components/proposal-vinicola/proposal-verdict";
+import { ProposalVinicolaFindings } from "@/components/proposal-vinicola/proposal-findings";
+import { ProposalVinicolaAssets } from "@/components/proposal-vinicola/proposal-assets";
+import { ProposalVinicolaProof } from "@/components/proposal-vinicola/proposal-proof";
+import { ProposalVinicolaBenchmark } from "@/components/proposal-vinicola/proposal-benchmark";
+import { ProposalVinicolaServices } from "@/components/proposal-vinicola/proposal-services";
+import { ProposalVinicolaContent } from "@/components/proposal-vinicola/proposal-content";
+import { ProposalVinicolaRoadmap } from "@/components/proposal-vinicola/proposal-roadmap";
+import { ProposalVinicolaInvestment } from "@/components/proposal-vinicola/proposal-investment";
+import { ProposalVinicolaCta } from "@/components/proposal-vinicola/proposal-cta";
+
 // ACIAV imports (adesão à plataforma ACIAV Saúde — identidade do produto)
 import { ProposalAciavHero } from "@/components/proposal-aciav/proposal-hero";
 import { ProposalAciavComparison } from "@/components/proposal-aciav/proposal-comparison";
@@ -127,6 +140,45 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isForestry = proposal.theme === "forestry";
   const isIndustrial = proposal.theme === "industrial";
   const isPastoral = proposal.theme === "pastoral";
+  const isVinicola = proposal.theme === "vinicola";
+
+  if (isVinicola) {
+    return (
+      <>
+        <ProposalVinicolaHero proposal={proposal} />
+        <ProposalVinicolaVerdict
+          stats={proposal.stats}
+          auditScores={proposal.auditScores}
+        />
+        {proposal.auditFindings && proposal.auditFindings.length > 0 && (
+          <ProposalVinicolaFindings findings={proposal.auditFindings} />
+        )}
+        {proposal.highlights && proposal.highlights.length > 0 && (
+          <ProposalVinicolaAssets highlights={proposal.highlights} />
+        )}
+        {proposal.beforeAfter && (
+          <ProposalVinicolaProof beforeAfter={proposal.beforeAfter} />
+        )}
+        {proposal.benchmark && (
+          <ProposalVinicolaBenchmark benchmark={proposal.benchmark} />
+        )}
+        <ProposalVinicolaServices services={proposal.services} />
+        <ProposalVinicolaContent
+          contentSuggestions={proposal.contentSuggestions}
+          artDirection={proposal.artDirection}
+        />
+        {proposal.phases && proposal.phases.length > 0 && (
+          <ProposalVinicolaRoadmap phases={proposal.phases} />
+        )}
+        <ProposalVinicolaInvestment
+          investment={proposal.investment}
+          goals={proposal.goals}
+        />
+        <ProposalVinicolaCta proposal={proposal} />
+      </>
+    );
+  }
+
   const isAciav = proposal.theme === "aciav";
 
   if (isAciav) {

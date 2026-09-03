@@ -101,6 +101,63 @@ export interface ContentCalendarProfile {
   days: ContentCalendarDay[];
 }
 
+
+// ------------------------------------------------------------
+// Auditoria de presença digital (tema "vinicola")
+// ------------------------------------------------------------
+
+export interface ProposalAuditFinding {
+  ref: string;
+  severity: "critico" | "atencao" | "forte" | "oportunidade";
+  area: string;
+  title: string;
+  description: string;
+  /** Linhas de evidência transcritas — renderizadas em fonte mono. */
+  evidence?: string[];
+  impact?: string;
+}
+
+export interface ProposalScoreItem {
+  label: string;
+  sublabel?: string;
+  /** Nota de 0 a 10. */
+  score: number;
+}
+
+export interface ProposalBenchmarkRow {
+  name: string;
+  note?: string;
+  highlight?: boolean;
+  cells: string[];
+}
+
+export interface ProposalBenchmark {
+  title: string;
+  intro?: string;
+  columns: string[];
+  rows: ProposalBenchmarkRow[];
+  footnote?: string;
+}
+
+export interface ProposalGoal {
+  indicator: string;
+  today: string;
+  target: string;
+  how: string;
+}
+
+export interface ProposalArtPiece {
+  image: string;
+  format: string;
+  title: string;
+  note: string;
+}
+
+export interface ProposalCaveat {
+  title: string;
+  description: string;
+}
+
 export interface ProposalBeforeAfter {
   beforeTitle: string;
   beforeItems: string[];
@@ -203,12 +260,18 @@ export interface Proposal {
   };
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
   /** Slug do contrato em /contrato/[slug] — habilita o botão "Gerar contrato". */
+  auditFindings?: ProposalAuditFinding[];
+  auditScores?: ProposalScoreItem[];
+  benchmark?: ProposalBenchmark;
+  goals?: ProposalGoal[];
+  caveats?: ProposalCaveat[];
+  artDirection?: ProposalArtPiece[];
   contractSlug?: string;
   companies?: ProposalCompany[];
   authorityPillars?: ProposalAuthorityPillar[];
   objectiveChain?: ProposalObjectiveChain;
   valueAnchor?: ProposalValueAnchor;
-  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo" | "aciav";
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo" | "aciav" | "vinicola";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -6198,6 +6261,789 @@ export const proposals: Proposal[] = [
       "Aplicativo já publicado nas duas lojas",
       "Evoluções da plataforma incluídas na mensalidade",
       "Suporte direto com quem desenvolveu o sistema",
+    ],
+  },
+  {
+    slug: "santa-augusta",
+    clientName: "Vinícola Santa Augusta",
+    contactName: "Vinícola Santa Augusta",
+    theme: "vinicola",
+    greeting:
+      "A Santa Augusta tem produto premiado, marca madura e audiência construída. O que falta não é matéria-prima de marketing — é infraestrutura e operação. Este documento mostra, com evidência verificada página por página, onde está o dinheiro parado. E o que propomos fazer com ele.",
+    validUntil: "2026-09-17",
+    whatsappNumber: "5549988446685",
+    closingQuestion:
+      "Vamos colocar a operação digital no mesmo nível do que já está na garrafa?",
+
+    stats: [
+      {
+        value: "500",
+        label: "Erro em toda a loja do site",
+        subtext:
+          "A vitrine, as 4 categorias e as páginas de produto retornam erro fatal. Ninguém compra pelo domínio da marca.",
+      },
+      {
+        value: "0",
+        label: "Ferramentas de medição",
+        subtext:
+          "Sem GA4, sem Tag Manager, sem Pixel da Meta no site institucional — que é o endereço na ficha do Google.",
+      },
+      {
+        value: "0",
+        label: "Anúncios ativos",
+        subtext:
+          "Nenhuma campanha na Biblioteca da Meta, hoje ou no histórico. Zero mídia paga.",
+      },
+      {
+        value: "78",
+        label: "Posts de blog parados",
+        subtext:
+          "Patrimônio de SEO sem atualização desde 8 de dezembro de 2021. Conteúdo pago e não aproveitado.",
+      },
+    ],
+
+    auditScores: [
+      {
+        label: "Infraestrutura de e-commerce",
+        sublabel: "Domínio, checkout, exibição de preço",
+        score: 2.5,
+      },
+      {
+        label: "Dados e mensuração",
+        sublabel: "GA4, pixels, atribuição, LGPD",
+        score: 3.0,
+      },
+      {
+        label: "SEO técnico e conteúdo",
+        sublabel: "Canonical, schema, blog, on-page",
+        score: 3.8,
+      },
+      {
+        label: "Redes sociais",
+        sublabel: "Alcance, engajamento, formato, conversão",
+        score: 4.8,
+      },
+      {
+        label: "Google Meu Negócio",
+        sublabel: "Ficha, posts, avaliações, respostas",
+        score: 5.2,
+      },
+      {
+        label: "Marca e conteúdo de produto",
+        sublabel: "Identidade, fotografia, fichas técnicas",
+        score: 7.8,
+      },
+    ],
+
+    auditFindings: [
+      {
+        ref: "C-01",
+        severity: "critico",
+        area: "E-commerce",
+        title: "A loja dentro do site oficial está fora do ar",
+        description:
+          "Testamos a vitrine, as quatro categorias e cinco páginas de produto individuais. Todas retornam erro fatal do WordPress. O botão principal da home — “Conheça todos os produtos” — e o item de menu “Vinhos e Espumantes” apontam exatamente para esse erro.",
+        evidence: [
+          "GET /vinhos-e-espumantes/            → 500  “Há um erro crítico no seu site”",
+          "GET /produtos/tinto/                 → 500",
+          "GET /produto/vinho-tinto-imortali/   → 500",
+          "GET /produto/kit-espumante-santa-augusta/ → 500",
+        ],
+        impact:
+          "Quem chega pesquisando a marca no Google encontra uma loja quebrada. É o tráfego mais qualificado que existe, e está sendo perdido inteiro.",
+      },
+      {
+        ref: "C-02",
+        severity: "critico",
+        area: "Arquitetura",
+        title: "A loja que funciona roda no domínio de outra empresa",
+        description:
+          "O endereço loja.santaaugusta.com.br é fachada. A tag canonical, o sitemap inteiro e todos os links internos apontam para o domínio da plataforma. O cliente digita os dados do cartão numa URL que não tem o nome da Santa Augusta.",
+        evidence: [
+          "canonical  → vinicolasantaaugusta.commercesuite.com.br",
+          "sitemap    → 112 de 112 URLs em commercesuite.com.br",
+          "checkout   → commercesuite.com.br/checkout/cart",
+        ],
+        impact:
+          "A autoridade de SEO da loja é creditada a um domínio de terceiro, o abandono sobe no passo mais sensível da compra, e a atribuição de conversão se fragmenta entre hosts diferentes.",
+      },
+      {
+        ref: "C-03",
+        severity: "critico",
+        area: "Dados e mídia",
+        title: "O site que o Google indica não mede absolutamente nada",
+        description:
+          "A loja tem Tag Manager, GA4, Google Ads e Pixel da Meta instalados. O site institucional — que é o link cadastrado na ficha do Google e o destino de toda a busca de marca — não tem nada.",
+        evidence: [
+          "loja.santaaugusta.com.br  → GTM-5GHNRL7 · GA4 G-7DC8YG0M67 · Ads AW-11084625174 · Meta Pixel",
+          "santaaugusta.com.br       → sem GTM · sem GA4 · sem Meta Pixel · sem Google Ads",
+        ],
+        impact:
+          "Não existe público de remarketing formado a partir de quem pesquisa a marca. Sem pixel, todo visitante é perdido para sempre. Qualquer verba investida hoje seria otimizada com dados incompletos.",
+      },
+      {
+        ref: "C-04",
+        severity: "critico",
+        area: "Enoturismo",
+        title: "O negócio de maior margem não existe digitalmente",
+        description:
+          "O Wine Garden é anunciado na bio do Instagram, aos sábados das 14h30 às 20h. A URL /wine-garden/ retorna 404. Não há preço publicado, não há reserva online, e a loja vende apenas garrafas — nenhuma experiência.",
+        evidence: [
+          "GET /wine-garden/  → 404",
+          "GET /sobre-nos/    → 404  (indexada no Google)",
+          "GET /premios/      → 404  (não consta no sitemap)",
+        ],
+        impact:
+          "O turista que pesquisa “vinícola para visitar em Santa Catarina” na quinta à noite, com cartão na mão, não tem como comprar. Ele compra do concorrente que tem checkout.",
+      },
+      {
+        ref: "C-05",
+        severity: "critico",
+        area: "Conversão",
+        title: "Metade das vitrines exibe “Carregando…” no lugar do preço",
+        description:
+          "Nas listas de Destaques, Mais Vendidos, categorias e produtos relacionados, boa parte dos cards nunca resolve o preço. O carrossel duplica os mesmos produtos e a segunda cópia fica travada.",
+        evidence: [
+          "Home     → 8 de 16 cards de “Destaques” com “Carregando...”",
+          "Vinhos   → 9 de 15 cards visíveis sem preço",
+          "PDP      → 4 de 4 produtos relacionados sem preço",
+        ],
+        impact:
+          "Produto sem preço não é comparado, não é clicado e não entra no carrinho. É perda direta de receita em cada sessão, e a correção é de dias.",
+      },
+      {
+        ref: "C-06",
+        severity: "critico",
+        area: "Jurídico · LGPD",
+        title: "Dados obrigatórios ausentes e cookies sem consentimento",
+        description:
+          "O rodapé da loja não traz CNPJ nem endereço físico, exigidos pelo Decreto 7.962/2013 para comércio eletrônico. Nenhum dos dois sites apresenta banner de consentimento, embora a loja carregue Pixel, GA4 e Google Ads. Também não há verificação de idade em loja de bebida alcoólica.",
+        evidence: [
+          "Rodapé da loja → sem CNPJ · sem endereço · 2 telefones e 2 WhatsApps distintos",
+          "Banner LGPD    → ausente nos dois domínios",
+          "Portaria 18+   → ausente",
+        ],
+        impact:
+          "Exposição a notificação do Procon, a sanções da ANPD e a questionamento de autorregulamentação publicitária de bebidas.",
+      },
+      {
+        ref: "A-01",
+        severity: "atencao",
+        area: "Reputação",
+        title: "54 avaliações no Google e nenhuma resposta",
+        description:
+          "A ficha está em 4,4 com 54 avaliações — o maior volume entre as vinícolas locais e a menor nota do grupo. Não há uma única resposta do proprietário, incluindo às críticas. A última atualização publicada é de cinco anos atrás.",
+        evidence: [
+          "Santa Augusta       4,4 · 54 avaliações · 0 respostas",
+          "Vinícola Zago       4,9 · 35 avaliações",
+          "Vinícola Monte Vecchio  4,9 · 52 avaliações",
+        ],
+        impact:
+          "Responder avaliação é o gesto de reputação de menor custo que existe e é fator de posicionamento local. Há 54 conversas em aberto.",
+      },
+      {
+        ref: "A-02",
+        severity: "atencao",
+        area: "Redes sociais",
+        title: "O calendário ignora o dia em que a vinícola fatura",
+        description:
+          "Analisando 36 publicações datadas entre abril e agosto, 72% saem em terça ou quinta. Sábado e domingo somam duas publicações em quatro meses. O Wine Garden funciona justamente aos sábados, das 14h30 às 20h.",
+        evidence: [
+          "Quinta 14 · Terça 12 · Sexta 5 · Quarta 2 · Seg/Sáb/Dom 1 cada",
+          "Intervalo médio 3,5 dias · 13 janelas de silêncio ≥ 5 dias",
+        ],
+        impact:
+          "A marca não comunica no dia e no horário em que está aberta e vendendo experiência. É receita deixada na mesa por calendário, não por verba.",
+      },
+      {
+        ref: "A-03",
+        severity: "atencao",
+        area: "Conversão",
+        title: "O botão “Compre Aqui” da bio está mal formatado",
+        description:
+          "O link na bio aponta para um número de WhatsApp fora do padrão brasileiro: sem o DDI 55 e com um dígito a menos. É o CTA de venda principal do perfil. O agregador usado é de terceiro, sem nenhum parâmetro de rastreio.",
+        evidence: [
+          "Compre Aqui   → wa.me/4999812565   (formato inválido)",
+          "Nosso Site    → commercesuite.com.br  (não é o domínio da marca)",
+          "Enoturismo    → PDF no Google Drive",
+        ],
+        impact:
+          "Sem UTM, nenhuma venda vinda do Instagram pode ser atribuída. E o material de enoturismo de uma marca premium é um PDF em nuvem, sem indexação.",
+      },
+      {
+        ref: "A-04",
+        severity: "atencao",
+        area: "Reputação",
+        title: "Destaque “GOLPE!!!” fixado no perfil",
+        description:
+          "Existe um destaque permanente alertando sobre fraude usando a marca, o que indica histórico de perfis falsos vendendo em nome da vinícola. Não há página oficial de canais verificados no site.",
+        impact:
+          "Risco reputacional real e sem protocolo. Uma página de “canais oficiais” no domínio da marca resolve, protege receita e encerra a dúvida do comprador.",
+      },
+    ],
+
+    highlights: [
+      "Medalha Grande Ouro no Concurso do Espumante Brasileiro 2023 — 13 premiados entre 505 amostras, única vinícola catarinense do evento",
+      "Fichas de rótulo em nível de importadora premium: visual, olfato, paladar, método, corte, temperatura e harmonizações",
+      "Três linhas com escada de preço pronta: Tapera (R$ 83–99), Santa Augusta (R$ 94–150), Fenice (R$ 154–275) e o iMorTali a R$ 391",
+      "18,7 mil seguidores no Instagram com conta verificada e 17 mil no Facebook",
+      "Wine Garden, hospedagem, visitação e Clube VSA já operando fisicamente",
+      "Direção de arte consistente e de alto padrão — o feed tem cara de vinícola premium",
+      "Quatro materiais ricos já produzidos: guias de espumantes, linguagem do vinho, harmonizações e ocasiões",
+      "Loja Tray configurada com frete real, filtros e recuperação de carrinho ativa",
+      "78 artigos de blog já publicados, respondendo exatamente às buscas de quem descobre vinho",
+    ],
+
+    beforeAfter: {
+      beforeTitle: "Post estático — o formato de hoje",
+      beforeItems: [
+        "4 a 12 curtidas por publicação",
+        "Zero comentários na maioria dos posts",
+        "Taxa de engajamento entre 0,02% e 0,06%",
+        "Legenda terminando em “Conheça nossos rótulos. Link na bio.”",
+        "Mesma lista de 13 hashtags repetida em todos os posts",
+        "Sem pergunta, sem enquete, sem convite à conversa",
+      ],
+      afterTitle: "Reels com pessoa — a prova que veio da própria marca",
+      afterItems: [
+        "109 curtidas em 3 horas",
+        "30 comentários e 7 compartilhamentos",
+        "Uma pessoa falando na câmera, comparando dois rótulos",
+        "Terminando com pergunta direta: “TAPERA ou FENICE?”",
+        "Mesma audiência, mesmo perfil, mesmo dia",
+        "Melhor desempenho de produto de todo o período analisado",
+      ],
+      expectedResults:
+        "O problema não é a base nem o volume de publicação. É formato e convite à conversa. E quem provou isso não fomos nós: foi a própria Santa Augusta, numa manhã de quinta-feira.",
+    },
+
+    benchmark: {
+      title: "O que os concorrentes de altitude cobram — publicamente",
+      intro:
+        "Todas as vinícolas abaixo publicam preço de experiência e têm caminho de reserva. A Santa Augusta é a única da lista sem nenhum dos dois.",
+      columns: ["Entrada", "Intermediária", "Premium", "Reserva online"],
+      rows: [
+        {
+          name: "Suzin",
+          note: "São Joaquim",
+          cells: ["R$ 95", "R$ 125", "R$ 145", "Sim, via Wine Locals"],
+        },
+        {
+          name: "Leone di Venezia",
+          cells: ["R$ 128", "R$ 345", "R$ 375", "Parcial"],
+        },
+        {
+          name: "Pericó",
+          cells: ["R$ 130", "R$ 180", "—", "Sim, via Wine Locals"],
+        },
+        {
+          name: "Villa Francioni",
+          cells: ["R$ 150", "R$ 220–280", "R$ 350", "Sim, checkout próprio"],
+        },
+        {
+          name: "Thera",
+          note: "Bom Retiro",
+          cells: ["R$ 139", "R$ 280", "R$ 595", "Sim, loja própria"],
+        },
+        {
+          name: "Casa Valduga",
+          note: "RS, referência",
+          cells: ["R$ 195", "R$ 300–350", "R$ 600", "Parcial"],
+        },
+        {
+          name: "Santa Augusta",
+          highlight: true,
+          cells: [
+            "Nenhum preço publicado",
+            "—",
+            "—",
+            "Não",
+          ],
+        },
+      ],
+      footnote:
+        "Preços coletados nas páginas públicas das vinícolas. O Vale do Rio do Peixe — Videira, Tangará e Pinheiro Preto — concentra cerca de 80% da uva de Santa Catarina e tem oferta digital de experiência quase nula. A barreira para virar a vinícola-âncora da região é baixíssima, e a janela está se fechando: o estado passou de 263 vinícolas em 2020 para 339 em 2026.",
+    },
+
+    services: [
+      {
+        name: "Resgate técnico da operação",
+        description:
+          "A primeira entrega, e a que devolve receita sem depender de mídia. Diagnóstico do erro fatal no servidor, restauração ou redirecionamento das rotas de produto, correção da exibição de preço nas vitrines e limpeza das páginas obsoletas ainda publicadas.",
+        icon: "Wrench",
+        price: "R$ 2.900",
+        priceType: "project",
+        items: [
+          "Leitura do log do servidor e diagnóstico do erro 500",
+          "Restauração das páginas de produto ou redirecionamento 301 para a loja",
+          "Correção do preço “Carregando…” em vitrines, categorias e relacionados",
+          "Correção dos 404 indexados: /sobre-nos/ e /wine-garden/",
+          "Remoção da campanha de Black Friday de 2021 ainda publicada",
+        ],
+      },
+      {
+        name: "Unificação do domínio da loja",
+        description:
+          "Trazer a autoridade de SEO e a confiança do checkout de volta para o nome Santa Augusta. Hoje as 112 URLs da loja e o pagamento rodam no domínio da plataforma.",
+        icon: "Globe",
+        price: "R$ 1.900",
+        priceType: "project",
+        items: [
+          "Definição do domínio próprio como primário no painel da Tray",
+          "Redirecionamento 301 do domínio da plataforma para o da marca",
+          "Regeração do sitemap e reenvio da indexação no Search Console",
+          "Desativação do WooCommerce e unificação da base de cadastros",
+          "Botões de compra do site apontando para a loja",
+        ],
+      },
+      {
+        name: "Camada de medição completa",
+        description:
+          "Pré-requisito de tudo. Sem isto, nenhuma verba pode ser otimizada e nenhum resultado pode ser provado. Instalação nos dois domínios, com medição entre eles.",
+        icon: "BarChart3",
+        price: "R$ 2.400",
+        priceType: "project",
+        items: [
+          "Google Tag Manager nos dois domínios",
+          "GA4 com medição entre domínios e eventos de e-commerce",
+          "Pixel da Meta com API de Conversões",
+          "Tags de conversão do Google Ads e Search Console",
+          "Painel de linha de base documentado no dia 15",
+        ],
+      },
+      {
+        name: "Conformidade legal e LGPD",
+        description:
+          "Fechar a exposição a Procon e ANPD antes de escalar tráfego. Uma loja de bebida alcoólica com pixels rodando e sem consentimento é risco que cresce junto com o investimento.",
+        icon: "ShieldCheck",
+        price: "R$ 1.200",
+        priceType: "project",
+        items: [
+          "CNPJ, razão social e endereço completo no rodapé dos dois sites",
+          "Plataforma de consentimento de cookies integrada ao Tag Manager",
+          "Portaria de verificação de idade",
+          "Revisão da política de privacidade e de trocas",
+          "Remoção da política duplicada",
+        ],
+      },
+      {
+        name: "Novo site institucional e de enoturismo",
+        description:
+          "O ativo que hoje não existe. Um site à altura da marca, com o negócio de maior margem finalmente comprável: Wine Garden com preço, o que inclui, política de cancelamento e reserva online.",
+        icon: "Layout",
+        price: "R$ 8.900",
+        priceType: "project",
+        items: [
+          "Páginas de Wine Garden, visitação, harmonizações, hospedagem e eventos",
+          "Três níveis de experiência com preço publicado e reserva",
+          "Página de prêmios com o Grande Ouro de 2023 em destaque",
+          "Página de canais oficiais, encerrando o problema dos perfis falsos",
+          "Página de links própria, com UTM em cada destino",
+          "SEO on-page: H1, alt, meta e schema de LocalBusiness e Winery",
+        ],
+      },
+      {
+        name: "Reestruturação do Google Meu Negócio",
+        description:
+          "O canal mais próximo do dinheiro do enoturismo e o mais barato de corrigir. Hoje está no ar, mas sem gestão há cinco anos.",
+        icon: "MapPin",
+        price: "R$ 1.800",
+        priceType: "project",
+        items: [
+          "Categorias secundárias, atributos e produtos cadastrados",
+          "Fotografia atual e horário do Wine Garden aos sábados",
+          "Resposta às 54 avaliações existentes, começando pelas críticas",
+          "Link de reserva e botão de agendamento",
+          "Padronização de nome, endereço, telefone e horário em todos os canais",
+        ],
+      },
+      {
+        name: "Sistema de conteúdo e linha editorial",
+        description:
+          "A base que faz a gestão mensal render. Pilares definidos, templates construídos sobre a identidade que já existe, e um padrão de copy que pede ação em vez de terminar em “link na bio”.",
+        icon: "PenTool",
+        price: "R$ 2.400",
+        priceType: "project",
+        items: [
+          "Cinco pilares editoriais: Rosto da vinícola, Altitude, Wine Garden, Harmonização e Bastidor de safra",
+          "Templates de post, carrossel e Reels sobre a identidade atual",
+          "Padrão de copy com pergunta ou tarefa ao fim de cada legenda",
+          "Calendário que ocupa sábado, o dia em que o Wine Garden abre",
+          "Banco de pautas e diretrizes de hashtag",
+        ],
+      },
+      {
+        name: "Gestão de redes sociais",
+        description:
+          "Instagram, Facebook e YouTube Shorts operados com vídeo como formato principal — porque foi o vídeo que a própria marca provou funcionar. Sem quantidade fixa de posts: a régua é a pauta que gera conversa.",
+        icon: "Instagram",
+        price: "R$ 2.900",
+        priceType: "monthly",
+        items: [
+          "Planejamento editorial e aprovação mensal do calendário",
+          "Criação de artes, carrosséis e edição de Reels",
+          "Copywriting com convite à conversa em toda publicação",
+          "Publicação e gestão de comunidade, respondendo comentários e direct",
+          "Republicação dos Reels no Facebook e como Shorts no YouTube",
+          "Consolidação dos dois canais do YouTube e abertura do LinkedIn",
+        ],
+      },
+      {
+        name: "Captação de fotos e vídeos na vinícola",
+        description:
+          "O diferencial que nenhum concorrente da região tem construído. Ida a campo com regularidade para transformar vinhedo, adega, Wine Garden e as pessoas da casa em banco de conteúdo próprio.",
+        icon: "Camera",
+        price: "R$ 1.900",
+        priceType: "monthly",
+        items: [
+          "Captação mensal na vinícola com equipe e equipamento próprios",
+          "Vinhedo, adega, barricas, Wine Garden e bastidor de safra",
+          "As irmãs à frente do negócio e o enólogo na câmera",
+          "Fotografia de produto e de experiência",
+          "Captação aérea com drone conforme a pauta",
+          "Banco de imagens organizado e entregue à vinícola",
+        ],
+      },
+      {
+        name: "Gestão do Google Meu Negócio",
+        description:
+          "Rotina contínua depois da reestruturação: publicações semanais, resposta a toda avaliação nova e um programa ativo de coleta para virar o jogo contra os vizinhos de 4,9.",
+        icon: "Star",
+        price: "R$ 800",
+        priceType: "monthly",
+        items: [
+          "Posts semanais na ficha",
+          "Resposta a 100% das avaliações novas",
+          "Programa de coleta: QR code no Wine Garden, na sacola e no pós-compra",
+          "Atualização de fotos, produtos e horário especial de vindima",
+          "Gestão das Perguntas e Respostas",
+        ],
+      },
+      {
+        name: "Conteúdo de busca — blog e SEO",
+        description:
+          "Recuperar os 78 artigos já publicados vale mais e custa menos do que produzir do zero. Atualizar, datar, categorizar e ligar cada um a um rótulo comprável.",
+        icon: "Search",
+        price: "R$ 900",
+        priceType: "monthly",
+        items: [
+          "Recuperação editorial progressiva dos 78 posts existentes",
+          "Duas pautas novas por mês ancoradas em busca real",
+          "Roteiro de vinícolas em Videira, vinho de altitude, o que fazer na Serra",
+          "Data visível, categorias e busca interna no blog",
+          "Ponte de venda: todo post levando a um produto comprável",
+        ],
+      },
+      {
+        name: "Manutenção e evolução do site e da loja",
+        description:
+          "O site é ativo vivo. Atualizações, correções, novas páginas de campanha e ajustes de conversão testados a partir do que os dados mostrarem.",
+        icon: "Settings",
+        price: "R$ 700",
+        priceType: "monthly",
+        items: [
+          "Atualizações de segurança e plataforma",
+          "Novas páginas e ajustes de campanha",
+          "Testes de conversão na loja e na página de reserva",
+          "Monitoramento de disponibilidade e performance",
+          "Otimização de imagens e velocidade",
+        ],
+      },
+      {
+        name: "E-mail marketing e clube de assinatura",
+        description:
+          "A Confraria já existe no papel e tem regulamento pronto, mas os pontos não podem ser gastos porque a loja estava fora do ar. É a alavanca de receita recorrente mais óbvia do negócio.",
+        icon: "Mail",
+        price: "R$ 900",
+        priceType: "monthly",
+        items: [
+          "Reativação da base com sequência de retomada",
+          "Fluxos de boas-vindas, carrinho abandonado e pós-compra",
+          "Estruturação da Confraria como clube de assinatura com níveis e preço",
+          "Régua de recorrência e curadoria mensal",
+          "Aproveitamento dos quatro materiais ricos já produzidos como isca",
+        ],
+      },
+      {
+        name: "Gestão de mídia paga",
+        description:
+          "Entra por último, e de propósito. Só depois que o funil estiver funcionando e a medição instalada — antes disso, cada real vira aprendizado perdido em jornada quebrada.",
+        icon: "Target",
+        price: "R$ 1.500",
+        priceType: "monthly",
+        items: [
+          "Google Ads: campanha de marca, busca local e Performance Max com catálogo",
+          "Meta Ads: tráfego local por raio para o Wine Garden e remarketing",
+          "Públicos semelhantes a partir da base de compradores",
+          "Campanha de vendas com catálogo integrado",
+          "Verba de anúncio paga direto às plataformas, sugerida a partir de R$ 3.000/mês",
+        ],
+      },
+    ],
+
+    contentSuggestions: [
+      {
+        format: "Reels",
+        theme: "Rosto da vinícola",
+        hook: "“Quem faz o vinho que você bebe?”",
+        description:
+          "As irmãs à frente da vinícola e o enólogo falando na câmera sobre uma decisão real da safra. É o formato que a própria marca já provou: 109 curtidas e 30 comentários em três horas, contra 4 a 12 dos estáticos.",
+      },
+      {
+        format: "Reels",
+        theme: "Altitude",
+        hook: "“Mil metros mudam o vinho. Veja como.”",
+        description:
+          "O que o terroir de altitude catarinense faz com a uva, filmado no vinhedo. Conecta com as coordenadas que a marca já usa como grafismo e justifica o preço antes de o anúncio pedir a compra.",
+      },
+      {
+        format: "Carrossel",
+        theme: "Harmonização aplicável",
+        hook: "“O que servir com Fenice num jantar de sexta”",
+        description:
+          "Harmonização prática, do dia a dia, não enciclopédica. Último card levando direto ao rótulo na loja, com UTM. Reaproveita as fichas de degustação que já existem e são excelentes.",
+      },
+      {
+        format: "Reels",
+        theme: "Wine Garden",
+        hook: "“Sábado, 14h30. É assim que começa.”",
+        description:
+          "Publicado no sábado — o dia em que a vinícola está aberta e faturando, e que hoje concentra 1 post em 4 meses. Mostra a experiência e leva à reserva.",
+      },
+      {
+        format: "Post",
+        theme: "Prova e prêmio",
+        hook: "“13 entre 505. Uma delas é catarinense.”",
+        description:
+          "O Grande Ouro de 2023 no Concurso do Espumante Brasileiro. Hoje esse prêmio não aparece em nenhum canal próprio da marca — é o maior ativo de reputação da empresa, guardado numa gaveta.",
+      },
+      {
+        format: "Carrossel",
+        theme: "Escada de rótulos",
+        hook: "“Por onde começar na Santa Augusta”",
+        description:
+          "Tapera para começar, Santa Augusta para o dia a dia, Fenice para a ocasião, iMorTali para guardar. Transforma a arquitetura de preço que já existe em jornada de entrada, recompra e presente.",
+      },
+      {
+        format: "Reels",
+        theme: "Bastidor de safra",
+        hook: "“O que acontece na adega enquanto você dorme”",
+        description:
+          "Vindima, prensa, barrica, dégorgement. Conteúdo sazonal ancorado no calendário real da vinícola, aproveitando a Vindima de Altitude promovida pela associação estadual entre março e maio.",
+      },
+      {
+        format: "Post",
+        theme: "Conversa direta",
+        hook: "“Tapera ou Fenice? Responde aí.”",
+        description:
+          "Pergunta binária, simples de responder, que gera comentário — o sinal de maior peso na distribuição. Foi exatamente esse o formato do Reels que quebrou o recorde do perfil.",
+      },
+    ],
+
+    artDirection: [
+      {
+        image: "/clientes/santa-augusta/arte-03.jpg",
+        format: "Post · Rótulo topo de linha",
+        title: "iMorTali",
+        note: "Fotografia de produto sobre preto e dourado, com assinatura de exclusividade. O padrão para os rótulos de maior valor agregado.",
+      },
+      {
+        image: "/clientes/santa-augusta/arte-01.jpg",
+        format: "Post · Linha Fenice",
+        title: "O Coração da Adega",
+        note: "Grafismo autoral sobre bordô, com a garrafa como protagonista. Direção de arte que sustenta preço sem precisar dizer o preço.",
+      },
+      {
+        image: "/clientes/santa-augusta/arte-02.jpg",
+        format: "Post · Movimento",
+        title: "Sabor em Movimento",
+        note: "Captação com líquido em movimento. É o tipo de imagem que rende bem em estático e vira Reels de alto desempenho.",
+      },
+      {
+        image: "/clientes/santa-augusta/arte-04.jpg",
+        format: "Post · Institucional",
+        title: "Vinhos que contam histórias",
+        note: "A escada completa de rótulos numa única peça. Serve para apresentação de portfólio, capa de destaque e material de ponto de venda.",
+      },
+    ],
+
+    phases: [
+      {
+        number: 1,
+        title: "Estancar a perda",
+        objective:
+          "Nada aqui depende de criatividade. É correção — e é o que garante que a vinícola veja resultado antes da primeira fatura vencer.",
+        deliverables: [
+          "Erro 500 diagnosticado e resolvido, ou rotas redirecionadas para a loja",
+          "Preço visível em 100% das vitrines e produtos relacionados",
+          "Domínio da loja unificado, com 301 e sitemap regerado",
+          "Rastreamento completo instalado nos dois domínios",
+          "WhatsApp corrigido e padronizado em todos os canais",
+          "CNPJ, endereço, banner LGPD e portaria 18+ publicados",
+        ],
+        expectedResult:
+          "A operação volta a vender pelo domínio da marca, e passa a existir linha de base medida para tudo que vem depois.",
+      },
+      {
+        number: 2,
+        title: "Construir o que falta",
+        objective:
+          "Criar os ativos que hoje não existem, para que a mídia da fase 3 tenha para onde levar as pessoas.",
+        deliverables: [
+          "Site institucional e de enoturismo no ar",
+          "Wine Garden com três níveis de experiência, preço e reserva online",
+          "Página de prêmios com o Grande Ouro de 2023 em destaque",
+          "Ficha do Google reestruturada e as 54 avaliações respondidas",
+          "Instagram virado para vídeo, com sábado ocupado no calendário",
+          "Página de links própria, com UTM em cada destino",
+        ],
+        expectedResult:
+          "O negócio de maior margem passa a ser comprável, e o tráfego de marca encontra caminho em vez de erro.",
+      },
+      {
+        number: 3,
+        title: "Ocupar o território",
+        objective:
+          "Só aqui entra verba de mídia, com funil funcionando e medição instalada. A partir deste ponto, cada real investido pode ser lido em receita.",
+        deliverables: [
+          "Google Ads e Meta Ads com campanha de marca, busca local e catálogo",
+          "Experiências listadas na Wine Locals e nos portais de turismo",
+          "Confraria relançada como clube de assinatura",
+          "Recuperação editorial dos 78 posts, ligados a produto comprável",
+          "Ação com criadores de vinho e turismo da região",
+          "Painel de receita por canal, com reunião de performance",
+        ],
+        expectedResult:
+          "A Santa Augusta ocupa a posição de vinícola-âncora do Vale do Rio do Peixe, com receita recorrente e atribuição por canal.",
+      },
+    ],
+
+    goals: [
+      {
+        indicator: "Páginas de produto funcionando",
+        today: "0%",
+        target: "100%",
+        how: "Verificação técnica",
+      },
+      {
+        indicator: "Engajamento médio por publicação",
+        today: "0,02% a 0,06%",
+        target: "1,0% a 1,5%",
+        how: "Instagram Insights",
+      },
+      {
+        indicator: "Publicações em vídeo",
+        today: "23%",
+        target: "60%",
+        how: "Calendário editorial",
+      },
+      {
+        indicator: "Avaliações no Google",
+        today: "54 · 4,4★",
+        target: "120 · 4,7★",
+        how: "Google Meu Negócio",
+      },
+      {
+        indicator: "Taxa de resposta a avaliações",
+        today: "0%",
+        target: "100%",
+        how: "Google Meu Negócio",
+      },
+      {
+        indicator: "Receita da loja atribuída",
+        today: "Não mensurável",
+        target: "Rastreada por canal",
+        how: "GA4 e painel próprio",
+      },
+      {
+        indicator: "Reservas do Wine Garden",
+        today: "Não existe o canal",
+        target: "Canal ativo e medido",
+        how: "UTM e formulário",
+      },
+    ],
+
+    caveats: [
+      {
+        title: "A base de seguidores pode estar inflada",
+        description:
+          "Engajamento de 0,04% também é sintoma clássico de base adquirida ou herdada de campanhas antigas. Antes de assinar meta de engajamento, vamos abrir o Instagram Insights e olhar alcance real, demografia e proporção de contas ativas. Se a base for inflada, a estratégia muda de “ativar seguidores” para “reconquistar alcance com vídeo e mídia”. Preferimos ajustar a meta agora a quebrar promessa no terceiro mês.",
+      },
+      {
+        title: "A causa do erro 500 só se confirma vendo o log",
+        description:
+          "O padrão é consistente com erro fatal de PHP num plugin ou tema do WooCommerce, quase sempre após atualização de versão no servidor. É diagnóstico provável, não confirmado. O primeiro pedido será acesso ao log — e, se o conserto se mostrar mais profundo, conversamos antes de executar, não depois.",
+      },
+      {
+        title: "Não tivemos acesso a dados internos",
+        description:
+          "Todo o diagnóstico foi feito sobre evidência pública. Faturamento, custo de aquisição atual, volume de visitas ao Wine Garden e histórico de campanhas são desconhecidos. As metas propostas são referências de mercado e serão revistas na primeira reunião com dados reais.",
+      },
+      {
+        title: "Não usamos seguidor como indicador de contrato",
+        description:
+          "Seguidor é a métrica mais fácil de subir e a que menos se converte em receita. Preferimos ser medidos por engajamento sobre base ativa, reservas, pedidos e avaliações.",
+      },
+    ],
+
+    investment: {
+      setupFee: "R$ 14.900",
+      setupLabel: "Implantação — Fundação Digital",
+      setupOriginalPrice: "R$ 21.500",
+      setupIncludes: [
+        "Resgate técnico da operação",
+        "Unificação do domínio da loja",
+        "Camada de medição completa",
+        "Conformidade legal e LGPD",
+        "Novo site institucional e de enoturismo",
+        "Reestruturação do Google Meu Negócio",
+        "Sistema de conteúdo e linha editorial",
+      ],
+      setupItems: [
+        { item: "1ª parcela — na assinatura", value: "R$ 4.967" },
+        { item: "2ª parcela — 30 dias", value: "R$ 4.967" },
+        { item: "3ª parcela — 60 dias", value: "R$ 4.966" },
+      ],
+      setupNote:
+        "Parcelado em 3x sem juros. A Fundação é pré-requisito técnico da gestão mensal: sem ela, qualquer verba de mídia é investida em funil quebrado.",
+      totalMonthly: "R$ 5.900",
+      totalLabel: "Gestão Completa Mensal",
+      originalPrice: "R$ 9.600",
+      packageIncludes: [
+        "Gestão de redes sociais — Instagram, Facebook e YouTube Shorts",
+        "Captação mensal de fotos e vídeos na vinícola",
+        "Produção de Reels, carrosséis e posts sem quantidade fixa",
+        "Copywriting e gestão de comunidade",
+        "Gestão contínua do Google Meu Negócio e programa de avaliações",
+        "Conteúdo de busca: blog, SEO e recuperação dos 78 artigos",
+        "Manutenção e evolução do site e da loja",
+        "E-mail marketing, CRM e clube de assinatura",
+        "Gestão de Google Ads e Meta Ads",
+        "Painel de receita por canal e reunião mensal de performance",
+      ],
+      exclusions: [
+        "Verba de anúncio no Google e na Meta, paga diretamente às plataformas — sugerida a partir de R$ 3.000/mês",
+        "Custos de terceiros eventualmente necessários: licenças, plugins pagos, plataforma de consentimento e hospedagem",
+      ],
+      paymentConditions: [
+        "Implantação em 3x sem juros, iniciando na assinatura",
+        "Gestão mensal com primeira cobrança 30 dias após o início",
+        "Contrato sugerido de 6 meses — tempo mínimo para o ciclo completo de 90 dias mais dois de leitura",
+        "Sem multa de saída após o sexto mês",
+      ],
+      notes: [
+        "Os valores individuais permanecem válidos caso a Santa Augusta prefira contratar frentes separadas — a condição do pacote existe porque as frentes se sustentam entre si.",
+        "Deslocamento para captações está incluso na região de Videira e entorno.",
+      ],
+    },
+
+    differentials: [
+      "Diagnóstico verificado página por página, com evidência transcrita — não é achismo de reunião",
+      "Somos a agência que produz o vídeo, escreve a copy, corrige o servidor e gerencia a mídia: uma única equipe, sem terceirização entre frentes",
+      "Captação própria na vinícola todo mês, com equipe e drone — o ativo que nenhum concorrente da região construiu",
+      "Ordem de execução deliberada: consertar e medir antes de investir verba",
+      "Metas revistas com dados reais na primeira reunião, não prometidas no papel",
+      "Mais de 16 anos de estrada, 449 clientes atendidos e operação em 8 países",
     ],
   },
 ];
