@@ -4,9 +4,22 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 
+export interface NavItem {
+  id: string;
+  label: string;
+  desc: string;
+  noDesktop: boolean;
+}
+
 interface Props {
   /** Valor mensal exibido no botão de atalho — vem de investment.totalMonthly. */
   monthlyValue: string;
+  /** Seções do índice. Se omitido, usa as da proposta de presença digital. */
+  items?: readonly NavItem[];
+  /** Rótulo do botão de investimento no desktop. */
+  investLabel?: string;
+  /** Sufixo após o valor. Vazio para valores que não são mensais. */
+  valueSuffix?: string;
 }
 
 const SECOES = [
@@ -66,7 +79,13 @@ const SECOES = [
   },
 ] as const;
 
-export function ProposalVinicolaNav({ monthlyValue }: Props) {
+export function ProposalVinicolaNav({
+  monthlyValue,
+  items,
+  investLabel = "Investimento ·",
+  valueSuffix = "/mês",
+}: Props) {
+  const SECOES_ATIVAS: readonly NavItem[] = items ?? SECOES;
   const [visivel, setVisivel] = useState(false);
   const [aberto, setAberto] = useState(false);
   const [ativa, setAtiva] = useState<string>("");
@@ -81,7 +100,7 @@ export function ProposalVinicolaNav({ monthlyValue }: Props) {
 
   // Seção ativa por IntersectionObserver — mais barato que ouvir scroll.
   useEffect(() => {
-    const ids = [...SECOES.map((s) => s.id), "investimento"];
+    const ids = [...SECOES_ATIVAS.map((s) => s.id), "investimento"];
     const alvos = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
@@ -100,7 +119,7 @@ export function ProposalVinicolaNav({ monthlyValue }: Props) {
 
     alvos.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [SECOES_ATIVAS]);
 
   // Trava o scroll do corpo enquanto o índice está aberto.
   useEffect(() => {
@@ -155,7 +174,7 @@ export function ProposalVinicolaNav({ monthlyValue }: Props) {
 
               {/* Links — só em telas grandes */}
               <ul className="hidden flex-1 items-center justify-center gap-6 lg:flex">
-                {SECOES.filter((s) => !s.noDesktop).map((secao) => (
+                {SECOES_ATIVAS.filter((s) => !s.noDesktop).map((secao) => (
                   <li key={secao.id}>
                     <button
                       type="button"
@@ -184,11 +203,13 @@ export function ProposalVinicolaNav({ monthlyValue }: Props) {
                       : "bg-[#CA8B35] text-[#0B0B0B] hover:bg-[#E6AE50]"
                   }`}
                 >
-                  <span className="hidden sm:inline">Investimento ·</span>
+                  <span className="hidden sm:inline">{investLabel}</span>
                   <span className="font-playfair text-sm font-medium tracking-normal sm:text-base">
                     {monthlyValue}
                   </span>
-                  <span className="tracking-normal opacity-70">/mês</span>
+                  {valueSuffix && (
+                    <span className="tracking-normal opacity-70">{valueSuffix}</span>
+                  )}
                 </button>
 
                 <button
@@ -235,7 +256,7 @@ export function ProposalVinicolaNav({ monthlyValue }: Props) {
               </div>
 
               <ul className="space-y-px bg-[#CCCCCC]/10">
-                {SECOES.map((secao, idx) => (
+                {SECOES_ATIVAS.map((secao, idx) => (
                   <li key={secao.id}>
                     <button
                       type="button"
@@ -292,7 +313,9 @@ export function ProposalVinicolaNav({ monthlyValue }: Props) {
                   <span className="font-playfair text-3xl font-medium text-[#CA8B35] sm:text-4xl">
                     {monthlyValue}
                   </span>
-                  <span className="text-xs text-[#CCCCCC]/40">/mês</span>
+                  {valueSuffix && (
+                    <span className="text-xs text-[#CCCCCC]/40">{valueSuffix}</span>
+                  )}
                 </span>
               </button>
 

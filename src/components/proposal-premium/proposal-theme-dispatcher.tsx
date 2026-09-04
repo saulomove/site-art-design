@@ -75,8 +75,19 @@ import { ProposalPastoralTrafficBudget } from "@/components/proposal-pastoral/pr
 import { ProposalPastoralInvestment } from "@/components/proposal-pastoral/proposal-investment";
 import { ProposalPastoralCta } from "@/components/proposal-pastoral/proposal-cta";
 
+// Genyus imports (sistema Genyus Wine — mesma identidade da vinícola)
+import { ProposalVinicolaNav, type NavItem } from "@/components/proposal-vinicola/proposal-nav";
+import { ProposalGenyusHero } from "@/components/proposal-genyus/proposal-hero";
+import { ProposalGenyusPlanilha } from "@/components/proposal-genyus/proposal-planilha";
+import { ProposalGenyusGuarda } from "@/components/proposal-genyus/proposal-guarda";
+import { ProposalGenyusTelas } from "@/components/proposal-genyus/proposal-telas";
+import { ProposalGenyusErp } from "@/components/proposal-genyus/proposal-erp";
+import { ProposalGenyusModules } from "@/components/proposal-genyus/proposal-modules";
+import { ProposalGenyusRoadmap } from "@/components/proposal-genyus/proposal-roadmap";
+import { ProposalGenyusInvestment } from "@/components/proposal-genyus/proposal-investment";
+import { ProposalGenyusCta } from "@/components/proposal-genyus/proposal-cta";
+
 // Vinicola imports (vinho premium — identidade Santa Augusta)
-import { ProposalVinicolaNav } from "@/components/proposal-vinicola/proposal-nav";
 import { ProposalVinicolaHero } from "@/components/proposal-vinicola/proposal-hero";
 import { ProposalVinicolaVerdict } from "@/components/proposal-vinicola/proposal-verdict";
 import { ProposalVinicolaFindings } from "@/components/proposal-vinicola/proposal-findings";
@@ -134,6 +145,15 @@ import { ProposalExecutiveSystemComparison } from "@/components/proposal-executi
 
 import type { Proposal } from "@/lib/proposals-data";
 
+const GENYUS_NAV: readonly NavItem[] = [
+  { id: "planilha", label: "O diagnóstico", desc: "O que as duas planilhas revelam, apurado linha a linha", noDesktop: false },
+  { id: "guarda", label: "A guarda", desc: "O vinho parado por anos e a receita que escapa — com simulador", noDesktop: false },
+  { id: "telas", label: "As telas", desc: "Como cada perfil usa o sistema, da balança à diretoria", noDesktop: false },
+  { id: "erp", label: "Integração", desc: "Como o Genyus Wine conversa com o CIA Sistemas", noDesktop: false },
+  { id: "modulos", label: "Módulos", desc: "Safra, guarda, adega, BI, CRM e a DaIA", noDesktop: false },
+  { id: "entregas", label: "Entregas", desc: "Oito semanas, com algo funcionando a cada quinzena", noDesktop: true },
+];
+
 export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isLegal = proposal.theme === "legal";
   const isExecutive = proposal.theme === "executive";
@@ -142,6 +162,38 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isForestry = proposal.theme === "forestry";
   const isIndustrial = proposal.theme === "industrial";
   const isPastoral = proposal.theme === "pastoral";
+  const isGenyus = proposal.theme === "genyus";
+
+  if (isGenyus) {
+    return (
+      <>
+        <ProposalVinicolaNav
+          monthlyValue={proposal.investment.setupFee ?? proposal.investment.totalMonthly}
+          items={GENYUS_NAV}
+          investLabel="Projeto ·"
+          valueSuffix=""
+        />
+        <ProposalGenyusHero proposal={proposal} />
+        <ProposalGenyusPlanilha
+          stats={proposal.stats}
+          findings={proposal.auditFindings}
+        />
+        <ProposalGenyusGuarda />
+        <ProposalGenyusTelas screens={proposal.screens} />
+        <ProposalGenyusErp />
+        <ProposalGenyusModules
+          services={proposal.services}
+          systemModules={proposal.systemModules}
+        />
+        {proposal.systemSprints && proposal.systemSprints.length > 0 && (
+          <ProposalGenyusRoadmap sprints={proposal.systemSprints} />
+        )}
+        <ProposalGenyusInvestment investment={proposal.investment} />
+        <ProposalGenyusCta proposal={proposal} />
+      </>
+    );
+  }
+
   const isVinicola = proposal.theme === "vinicola";
 
   if (isVinicola) {

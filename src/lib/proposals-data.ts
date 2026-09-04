@@ -106,6 +106,15 @@ export interface ContentCalendarProfile {
 // Auditoria de presença digital (tema "vinicola")
 // ------------------------------------------------------------
 
+
+export interface ProposalScreenSpec {
+  key: string;
+  title: string;
+  role: string;
+  description: string;
+  points: string[];
+}
+
 export interface ProposalAuditFinding {
   ref: string;
   severity: "critico" | "atencao" | "forte" | "oportunidade";
@@ -261,6 +270,7 @@ export interface Proposal {
   ecosystemAnalyses?: ProposalEcosystemAnalysisItem[];
   /** Slug do contrato em /contrato/[slug] — habilita o botão "Gerar contrato". */
   auditFindings?: ProposalAuditFinding[];
+  screens?: ProposalScreenSpec[];
   auditScores?: ProposalScoreItem[];
   benchmark?: ProposalBenchmark;
   goals?: ProposalGoal[];
@@ -271,7 +281,7 @@ export interface Proposal {
   authorityPillars?: ProposalAuthorityPillar[];
   objectiveChain?: ProposalObjectiveChain;
   valueAnchor?: ProposalValueAnchor;
-  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo" | "aciav" | "vinicola";
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo" | "aciav" | "vinicola" | "genyus";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -7041,6 +7051,467 @@ export const proposals: Proposal[] = [
       "Ordem de execução deliberada: consertar e medir antes de investir verba",
       "Metas revistas com dados reais na primeira reunião, não prometidas no papel",
       "Mais de 16 anos de estrada, 449 clientes atendidos e operação em 8 países",
+    ],
+  },
+  {
+    slug: "santa-augusta-genyus-wine",
+    clientName: "Vinícola Santa Augusta",
+    contactName: "Vinícola Santa Augusta",
+    theme: "genyus",
+    proposalType: "sistema",
+    greeting:
+      "A Santa Augusta presta serviço de vinificação para 14 produtores e movimenta mais de meio milhão de reais por safra nesse serviço. Todo esse controle vive hoje em duas planilhas. Este documento mostra o que elas revelam — e propõe o sistema que a Fran já começou a desenhar sozinha no Excel.",
+    validUntil: "2026-09-18",
+    whatsappNumber: "5549988446685",
+    closingQuestion:
+      "Vamos tirar meio milhão de reais por safra da planilha e colocar num sistema que avisa antes de o dinheiro escapar?",
+
+    stats: [
+      {
+        value: "R$ 641 mil",
+        label: "Movimento da safra 2026",
+        subtext:
+          "Prensagem e vinificação somados, apurados linha a linha nas 75 entradas da planilha de safra.",
+      },
+      {
+        value: "91%",
+        label: "Das linhas sem nota fiscal",
+        subtext:
+          "68 de 75 recebimentos não têm número de nota registrado. Não dá para saber, olhando, o que foi faturado e o que não foi.",
+      },
+      {
+        value: "32%",
+        label: "De inflação na sua dashboard",
+        subtext:
+          "A mesma carga da Serra do Sol aparece em três linhas, e a tabela dinâmica soma o peso três vezes.",
+      },
+      {
+        value: "14 meses",
+        label: "O lote mais antigo parado",
+        subtext:
+          "Pinot Noir da CATA, recebido em 10/04/2025, ainda consta como fermentando — e sem nenhuma cobrança de guarda associada.",
+      },
+    ],
+
+    auditFindings: [
+      {
+        ref: "P-01",
+        severity: "critico",
+        area: "Faturamento",
+        title: "Três etapas de cobrança, e nenhuma delas com controle de emissão",
+        description:
+          "A operação cobra em três momentos distintos, cada um com sua nota. Mas na planilha da safra apenas 7 das 75 linhas registram número de nota. O restante fica no escuro: pode ter sido faturado, pode não ter.",
+        evidence: [
+          "1ª etapa · Desengace e prensagem   R$ 1,25 por quilo de uva",
+          "2ª etapa · Vinificação              R$ 3,25 por litro produzido",
+          "3ª etapa · Envase                   R$ 4,10 por garrafa",
+          "",
+          "Linhas com nota registrada:  7 de 75   (9%)",
+        ],
+        impact:
+          "Cada etapa não faturada é receita que já foi trabalhada e entregue. Não há como auditar isso numa planilha de 16 abas sem somar tudo à mão, produtor por produtor.",
+      },
+      {
+        ref: "P-02",
+        severity: "critico",
+        area: "Guarda",
+        title: "O vinho de terceiro fica anos parado e ninguém cobra por isso",
+        description:
+          "A planilha termina na litragem produzida. O que acontece depois — o vinho ocupando tanque por um, dois ou três anos — não tem coluna, não tem tarifa e não tem alerta. Hoje a cobrança da guarda é feita caso a caso, o que na prática significa quando alguém lembra.",
+        evidence: [
+          "CATA · Pinot Noir · safra 2025",
+          "Recebido em 10/04/2025 · 5.000 kg → 3.400 L",
+          "Status na planilha hoje: FERMENTANDO",
+          "Tempo em guarda: 14 meses · Valor cobrado por isso: nenhum",
+        ],
+        impact:
+          "É o maior vazamento da operação, e o mais silencioso: ninguém sente falta de uma receita que nunca foi lançada.",
+      },
+      {
+        ref: "P-03",
+        severity: "critico",
+        area: "Confiabilidade",
+        title: "Três linhas são fisicamente impossíveis — e viraram fatura",
+        description:
+          "Não se extrai mais litro do que o peso da uva que entrou. O rendimento médio da casa é 70,2%, exatamente a faixa técnica correta. Mas há linhas acima de 100%, o que só pode ser erro de digitação ou mistura de partidas não registrada.",
+        evidence: [
+          "Suzin           Sauvignon Blanc   3.246 kg → 4.300 L   =  132%",
+          "Serra do Sol    Sangiovese        3.578 kg → 4.400 L   =  123%",
+          "Água Escondida  Chardonnay          258 kg →   310 L   =  120%",
+          "",
+          "Rendimento médio real da vinícola: 70,2%",
+        ],
+        impact:
+          "A linha da Suzin virou fatura de R$ 13.975. Pelo rendimento real da casa seriam cerca de 2.270 L — uma diferença de aproximadamente R$ 6.600 numa única linha.",
+      },
+      {
+        ref: "P-04",
+        severity: "atencao",
+        area: "Dados",
+        title: "A planilha não consegue somar a si mesma",
+        description:
+          "Peso e litragem foram digitados como texto em várias células, misturando número e observação no mesmo campo. Nenhuma fórmula alcança esses valores.",
+        evidence: [
+          '"3000kg"      "1541,kg"      "2707L"',
+          '"600L de sb barricado + 150"',
+          '"310L sauvignon blanc cata"',
+          "",
+          "29 grafias distintas de varietal, com duplicatas por espaço e caixa",
+        ],
+        impact:
+          "Qualquer total tirado dessa base precisa de limpeza manual antes. É por isso que o número nunca bate entre duas pessoas.",
+      },
+      {
+        ref: "P-05",
+        severity: "forte",
+        area: "Operação",
+        title: "A operação em si é boa — o controle é que não acompanha",
+        description:
+          "O rendimento médio de 70,2% está exatamente na faixa técnica esperada, e a conversão de litro para garrafa fecha em 750 ml em todas as linhas conferidas. Não há problema de processo produtivo. O problema é que nada disso é medido no momento em que acontece.",
+        impact:
+          "Isso é uma boa notícia comercial: não estamos propondo consertar a produção. Estamos propondo enxergá-la.",
+      },
+    ],
+
+    screens: [
+      {
+        key: "recebimento",
+        title: "Recebimento na balança",
+        role: "Produção · celular",
+        description:
+          "A primeira tela do fluxo, feita para ser usada em pé, com luva, na chegada do caminhão. Poucos campos, letra grande, foto da nota e da carga. Gera o lote e imprime a etiqueta com QR.",
+        points: [
+          "Produtor, varietal e peso — nada além disso",
+          "Foto da nota de entrada e da carga anexadas ao lote",
+          "Funciona com internet ruim e sincroniza depois",
+          "Gera o código do lote e a etiqueta com QR na hora",
+        ],
+      },
+      {
+        key: "apontamento",
+        title: "Apontamento de produção",
+        role: "Produção · desktop",
+        description:
+          "Onde se informa a litragem produzida. O sistema calcula o rendimento na hora e compara com a faixa técnica da casa. Fora do intervalo, ele avisa antes de deixar salvar.",
+        points: [
+          "Rendimento calculado automaticamente em litro por quilo",
+          "Alerta imediato quando o número foge da faixa de 55% a 85%",
+          "As três linhas impossíveis da safra 2026 não teriam passado",
+          "Histórico de quem apontou, quando e o que mudou",
+        ],
+      },
+      {
+        key: "guarda",
+        title: "Painel da guarda",
+        role: "Diretoria e administrativo",
+        description:
+          "A tela que não existe hoje em lugar nenhum. Cada lote em guarda com sua barra de tempo colorida, a faixa de tarifa em que está e o valor já acumulado.",
+        points: [
+          "Verde dentro da faixa, âmbar quando falta pouco, vermelho quando virou",
+          "Valor de guarda acumulado por lote e por produtor",
+          "Memória de cálculo aberta, faixa por faixa, para o produtor conferir",
+          "Filtro por produtor, varietal e ano de entrada",
+        ],
+      },
+      {
+        key: "adega",
+        title: "Mapa da adega",
+        role: "Todos os perfis",
+        description:
+          "Os tanques e as barricas como blocos coloridos, com ocupação e status. Bate o olho e sabe o que tem na adega, de quem é e há quanto tempo está lá.",
+        points: [
+          "Ocupação por tanque, em litros e em percentual",
+          "Cor por status: fermentando, em guarda, aguardando envase",
+          "QR na barrica leva direto ao lote pelo celular",
+          "Leitura sincronizada com o cadastro de tanques do ERP",
+        ],
+      },
+      {
+        key: "financeiro",
+        title: "O que há para faturar",
+        role: "Financeiro",
+        description:
+          "A fila do dinheiro. Cada etapa concluída e ainda não faturada aparece aqui, com valor calculado e o produtor correspondente.",
+        points: [
+          "Etapas concluídas sem nota emitida, separadas por etapa",
+          "Guarda acumulada pronta para cobrança no fechamento",
+          "Alerta de lote entregue sem faturamento da terceira etapa",
+          "Exportação para lançamento no CIA Sistemas",
+        ],
+      },
+      {
+        key: "bi",
+        title: "Painel da diretoria",
+        role: "Diretoria",
+        description:
+          "A visão que a Fran quer ter numa olhada: safra por varietal, rendimento por produtor, receita por etapa e projeção do que a guarda vai render.",
+        points: [
+          "Uva processada por cliente, por tipo e por mês",
+          "Rendimento médio por produtor, com desvios destacados",
+          "Receita realizada por etapa contra receita pendente",
+          "Projeção de faturamento de guarda para os próximos meses",
+        ],
+      },
+    ],
+
+    services: [
+      {
+        name: "Módulo Safra",
+        description:
+          "O caminho da uva, do caminhão à garrafa. Recebimento, prensagem, vinificação e envase, cada etapa com seu apontamento, seu valor e sua nota.",
+        icon: "Grape",
+        items: [
+          "Recebimento pelo celular na balança, com foto e etiqueta QR",
+          "As três etapas de cobrança com valor configurável",
+          "Rendimento calculado e validado no momento do apontamento",
+          "Status do lote visível para todos os perfis",
+          "Controle de nota fiscal emitida por etapa",
+        ],
+      },
+      {
+        name: "Módulo Guarda",
+        description:
+          "O que hoje não existe em lugar nenhum. Cada lote parado gera receita conforme o tempo, com política configurável e aviso antes de a faixa virar.",
+        icon: "Timer",
+        items: [
+          "Editor de política com faixas de tempo e valores próprios",
+          "Semáforo por lote: dentro da faixa, perto de virar, vencido",
+          "Notificação em 90, 60 e 30 dias antes da virada",
+          "Valor acumulado por lote e por produtor, com memória de cálculo",
+          "Acúmulo por período, sem retroagir sobre o tempo já corrido",
+        ],
+      },
+      {
+        name: "Mapa da adega",
+        description:
+          "Tanques e barricas como blocos coloridos, com ocupação e status. A tela mais visual do sistema e a que responde “o que tem aqui dentro” sem depender da memória de ninguém.",
+        icon: "LayoutGrid",
+        items: [
+          "Ocupação por tanque em litros e percentual",
+          "Cor por status do lote",
+          "QR na barrica abrindo o lote no celular",
+          "Sincronizado com o cadastro de tanques do ERP",
+        ],
+      },
+      {
+        name: "Painéis e BI",
+        description:
+          "A visão da diretoria e a fila do financeiro. Safra por varietal, rendimento por produtor, receita por etapa e o que está pronto para faturar.",
+        icon: "BarChart3",
+        items: [
+          "Uva processada por cliente, tipo e mês",
+          "Rendimento médio por produtor com desvios destacados",
+          "Receita realizada contra receita pendente por etapa",
+          "Projeção de faturamento da guarda",
+        ],
+      },
+      {
+        name: "CRM multicanal",
+        description:
+          "WhatsApp, Instagram, Facebook e comentários numa fila só, com transferência entre atendentes e histórico preservado.",
+        icon: "MessageSquare",
+        items: [
+          "Uma ou várias conexões de WhatsApp",
+          "Direct do Instagram, Messenger e comentários",
+          "Fila, transferência e histórico por cliente",
+          "Transcrição de áudio por IA",
+        ],
+      },
+      {
+        name: "DaIA, funil e campanhas",
+        description:
+          "A parte que traz venda. A assistente de IA aborda no site e na loja, o funil organiza, e as campanhas trazem o cliente de volta.",
+        icon: "Bot",
+        items: [
+          "DaIA no site institucional e na loja virtual",
+          "Captura de lead automática por tempo de permanência",
+          "Funil visual e ficha completa do cliente",
+          "Campanhas por aniversário, rótulo e tempo sem comprar",
+        ],
+      },
+    ],
+
+    systemModules: [
+      {
+        icon: "MessageSquare",
+        title: "Atendimento multicanal",
+        description:
+          "Uma caixa de entrada só, com fila e transferência entre atendentes. Vários números de WhatsApp e várias pessoas atendendo ao mesmo tempo, sem passar celular de mão em mão.",
+        features: [
+          "WhatsApp — uma ou várias conexões simultâneas",
+          "Direct do Instagram e Messenger do Facebook",
+          "Comentários do Instagram e do Facebook na mesma fila",
+          "Transferência entre atendentes com histórico preservado",
+          "Transcrição automática de áudio pela IA",
+        ],
+      },
+      {
+        icon: "Bot",
+        title: "DaIA no site e na loja",
+        description:
+          "A assistente de IA que já roda em outros clientes nossos, ativada no site institucional e na loja. Aborda o visitante depois de alguns segundos, responde e captura o contato antes que ele vá embora.",
+        features: [
+          "Abordagem automática por tempo de permanência na página",
+          "Captura de nome, contato e interesse direto para o funil",
+          "Responde dúvidas sobre rótulos, visitação e Wine Garden",
+          "Passa para atendente humano quando a conversa pede",
+          "Mesma IA no site, na loja e no WhatsApp",
+        ],
+      },
+      {
+        icon: "Filter",
+        title: "Funil e base de clientes",
+        description:
+          "Todo contato que entra por qualquer canal vira registro. Histórico de compras, visitas ao Wine Garden e conversas no mesmo lugar.",
+        features: [
+          "Funil visual por etapa, com arrastar e soltar",
+          "Ficha do cliente com histórico completo de contato",
+          "Origem de cada lead identificada e rastreada",
+          "Segmentação por rótulo comprado, ticket e recorrência",
+        ],
+      },
+      {
+        icon: "Send",
+        title: "Campanhas e reativação",
+        description:
+          "A base de clientes virando venda. Listas por critério e disparo programado — os aniversariantes do mês, quem comprou Fenice e sumiu, quem visitou e não voltou.",
+        features: [
+          "Listas dinâmicas por aniversário, rótulo e tempo sem comprar",
+          "Cupom e link rastreado dentro da mensagem",
+          "Agendamento e fila de envio com controle de ritmo",
+          "Opt-out respeitado e registrado por contato",
+        ],
+      },
+    ],
+
+    systemSprints: [
+      {
+        number: 1,
+        weeks: "Semanas 1 e 2",
+        title: "Fundação e recebimento",
+        deliverables: [
+          "Ambiente no ar, perfis e permissões configuráveis",
+          "Cadastro de produtores, varietais e tanques",
+          "Tela de recebimento no celular, com foto e etiqueta QR",
+          "Importação das duas planilhas atuais como base histórica",
+        ],
+        milestone: "A próxima carga que chegar já entra pelo sistema.",
+      },
+      {
+        number: 2,
+        weeks: "Semanas 3 e 4",
+        title: "Etapas, rendimento e faturamento",
+        deliverables: [
+          "As três etapas de cobrança com valores configuráveis",
+          "Cálculo de rendimento com alerta de desvio no apontamento",
+          "Fila do que há para faturar, por etapa e por produtor",
+          "Controle de nota emitida por etapa",
+        ],
+        milestone:
+          "Some a pergunta “isso já foi faturado?”. A resposta passa a estar na tela.",
+      },
+      {
+        number: 3,
+        weeks: "Semanas 5 e 6",
+        title: "Guarda e mapa da adega",
+        deliverables: [
+          "Editor de política de guarda com faixas e valores",
+          "Painel da guarda com semáforo e valor acumulado",
+          "Notificações de virada de faixa em 90, 60 e 30 dias",
+          "Mapa da adega com ocupação e status por tanque",
+        ],
+        milestone:
+          "A vinícola passa a ter uma política de guarda — e a cobrar por ela.",
+      },
+      {
+        number: 4,
+        weeks: "Semanas 7 e 8",
+        title: "CRM, DaIA e integração",
+        deliverables: [
+          "Atendimento multicanal com fila e transferência",
+          "DaIA ativa no site institucional e na loja",
+          "Funil, base de clientes e campanhas",
+          "Leitura do CIA Sistemas por API assim que liberada",
+        ],
+        milestone: "O sistema fecha o ciclo: da uva na balança à venda da garrafa.",
+      },
+    ],
+
+    investment: {
+      setupFee: "R$ 6.000",
+      setupLabel: "Desenvolvimento do Genyus Wine",
+      setupIncludes: [
+        "Módulo de safra com as três etapas de cobrança",
+        "Módulo de guarda com política configurável e alertas",
+        "Mapa da adega e etiquetas com QR",
+        "Painéis de produção, financeiro e diretoria",
+        "CRM multicanal com WhatsApp, Instagram e Facebook",
+        "DaIA no site institucional e na loja",
+        "Perfis e permissões configuráveis pela própria vinícola",
+        "Importação do histórico das planilhas atuais",
+      ],
+      setupItems: [
+        { item: "1ª parcela — na assinatura", value: "R$ 2.000" },
+        { item: "2ª parcela — entrega da safra e guarda", value: "R$ 2.000" },
+        { item: "3ª parcela — entrega do CRM e integração", value: "R$ 2.000" },
+      ],
+      setupNote:
+        "Oito semanas até o sistema completo no ar, com entrega em quatro etapas — a cada duas semanas há algo funcionando para usar, não só para ver.",
+      totalMonthly: "R$ 350",
+      totalLabel: "Manutenção, hospedagem e evolução",
+      packageIncludes: [
+        "Hospedagem, banco de dados e backup diário",
+        "Conexão de WhatsApp e infraestrutura da DaIA",
+        "Suporte à Santa Augusta e aos usuários do sistema",
+        "Correções e melhorias contínuas",
+        "Novas telas e relatórios conforme a operação pedir",
+        "Atualizações de segurança",
+      ],
+      exclusions: [
+        "Disparo em massa de campanhas acima do volume de atendimento normal, que pode exigir a API oficial do WhatsApp com custo por conversa",
+      ],
+      paymentConditions: [
+        "Desenvolvimento em 3x, acompanhando as entregas",
+        "Mensalidade a partir da entrega final",
+        "Sem contrato de fidelidade — a relação é mês a mês",
+        "O código e os dados são da Santa Augusta",
+      ],
+      notes: [
+        "A integração com o CIA Sistemas entra assim que a API for liberada. Enquanto isso, o Genyus Wine opera com base própria e importação das planilhas — o sistema não fica parado esperando terceiros.",
+        "Nesta fase a integração é somente leitura. Nenhum dado é escrito no ERP sem uma segunda conversa e um aceite explícito.",
+      ],
+    },
+
+    differentials: [
+      "O sistema não briga com o CIA Sistemas: lê dele e faz o que ele não faz",
+      "Já temos rodando em outros clientes o CRM, a API do WhatsApp, a DaIA e a IA do Gemini",
+      "Perfis e permissões configuráveis pela vinícola, sem depender da agência",
+      "Sem contrato de fidelidade — mês a mês, renovado por resultado",
+      "Oito semanas com entrega a cada quinzena, não um ano de promessa",
+      "Mais de 16 anos de estrada, 449 clientes e sistemas em produção em 8 países",
+    ],
+
+    caveats: [
+      {
+        title: "A política de guarda ainda não existe — e isso é bom",
+        description:
+          "Hoje a cobrança da guarda é feita caso a caso. O sistema não vai apenas registrar uma regra: ele vai ajudar a Santa Augusta a criar a primeira. Por isso o editor de política vem configurável, e não com valores fixos que a gente inventou.",
+      },
+      {
+        title: "A API do CIA Sistemas ainda depende de terceiro",
+        description:
+          "A liberação está em negociação com o fornecedor. O projeto foi desenhado para não depender disso: o Genyus Wine funciona com base própria desde a primeira semana, e a integração entra como ganho quando a API vier. Nesta fase, somente leitura.",
+      },
+      {
+        title: "Campanha em massa tem limite técnico",
+        description:
+          "Atendimento e disparos pontuais rodam na conexão que já usamos. Volume alto de disparo ativo é o cenário em que a Meta bloqueia números, e aí o caminho seguro é a API oficial do WhatsApp, que tem custo por conversa. Preferimos avisar agora a explicar depois.",
+      },
+      {
+        title: "Os números deste documento vêm das suas planilhas",
+        description:
+          "Tudo que está aqui foi apurado linha a linha nos arquivos que a Fran enviou. A planilha de controle de produção usa dados de exemplo em parte das linhas, então os totais dela servem para mostrar o método, não para fechar caixa.",
+      },
     ],
   },
 ];
