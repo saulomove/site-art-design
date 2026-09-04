@@ -113,10 +113,10 @@ export function ProposalGenyusAntesDepois() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.55, delay: Math.min(idx, 6) * 0.05 }}
-              className="grid items-stretch gap-px overflow-hidden bg-[#0B0B0B]/10 lg:grid-cols-[1fr_auto_1fr]"
+              className="grid items-stretch gap-px overflow-hidden bg-[#0B0B0B]/10 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]"
             >
               {/* ANTES — a planilha */}
-              <div className="bg-white p-7 md:p-8">
+              <div className="min-w-0 bg-white p-7 md:p-8">
                 <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1">
                   <span className="bg-[#B5342B]/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#B5342B]">
                     Na planilha
@@ -127,7 +127,7 @@ export function ProposalGenyusAntesDepois() {
                 </div>
 
                 {/* a célula */}
-                <div className="border border-[#0B0B0B]/12 bg-[#F7F7F5]">
+                <div className="min-w-0 border border-[#0B0B0B]/12 bg-[#F7F7F5]">
                   <div className="border-b border-[#0B0B0B]/10 bg-[#0B0B0B]/[0.04] px-3 py-1.5">
                     <span className="font-mono text-[10px] uppercase tracking-wider text-[#0B0B0B]/40">
                       {c.celula}
@@ -149,7 +149,7 @@ export function ProposalGenyusAntesDepois() {
               </div>
 
               {/* DEPOIS — o sistema */}
-              <div className="bg-[#0B0B0B] p-7 md:p-8">
+              <div className="min-w-0 bg-[#0B0B0B] p-7 md:p-8">
                 <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1">
                   <span className="bg-[#CA8B35]/15 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#CA8B35]">
                     No Genyus Wine

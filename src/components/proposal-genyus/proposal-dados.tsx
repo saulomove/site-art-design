@@ -27,7 +27,7 @@ function Grafico({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.65 }}
-      className={`flex flex-col bg-white p-7 md:p-9 ${largo ? "lg:col-span-2" : ""}`}
+      className={`flex min-w-0 flex-col bg-white p-7 md:p-9 ${largo ? "lg:col-span-2" : ""}`}
     >
       <figcaption className="mb-7">
         <span className="font-mono text-[11px] tracking-[0.2em] text-[#8A6A24]/60">{n}</span>
@@ -46,7 +46,7 @@ function Grafico({
 /* ------------------------- A1 · produtores ------------------------ */
 
 const CLIENTES = [
-  { n: "Vinícola Santa Augusta", v: 97984, p: 35.7, propria: true },
+  { n: "Santa Augusta", v: 97984, p: 35.7, propria: true },
   { n: "Suzin", v: 45880, p: 16.7 },
   { n: "Serra do Sol", v: 34425, p: 12.5 },
   { n: "Monte Agudo", v: 32426, p: 11.8 },
@@ -312,6 +312,10 @@ function A4() {
         </div>
       </div>
 
+      <p className="mt-3 text-center text-[10px] uppercase tracking-[0.14em] text-[#8A6A24]/70 lg:hidden">
+        deslize o gráfico para o lado
+      </p>
+
       <ul className="mt-7 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {REND.map((l) => (
           <li key={`${l.c}-${l.u}`} className="border-l-2 border-[#B5342B]/50 bg-[#B5342B]/[0.04] px-4 py-3">
@@ -422,7 +426,7 @@ function A6() {
         </>
       }
     >
-      <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+      <div className="grid min-w-0 gap-8 lg:grid-cols-2 lg:items-center">
       <div>
       <div className="mb-8 flex h-10 w-full overflow-hidden">
         {faixas.map((f) => (
