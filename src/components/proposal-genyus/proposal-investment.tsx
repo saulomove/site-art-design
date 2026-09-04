@@ -25,7 +25,7 @@ export function ProposalGenyusInvestment({ investment, packages }: Props) {
           eyebrow="Investimento"
           title="O sistema completo,"
           italic="e uma mensalidade só"
-          lead="Três módulos que se alimentam entre si, entregues em nove semanas. A mensalidade é uma só e não muda com o tamanho do sistema — cobre hospedagem, suporte e evolução."
+          lead="Três módulos que se alimentam entre si, entregues em dez semanas. A mensalidade é uma só e não muda com o tamanho do sistema — cobre hospedagem, suporte e evolução."
         />
 
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-8">
@@ -45,7 +45,7 @@ export function ProposalGenyusInvestment({ investment, packages }: Props) {
               </span>
             </div>
             <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-[#CCCCCC]/45">
-              3x de R$ 5.000 · nove semanas · 20 telas
+              3x de R$ 5.000 · dez semanas · 24 telas
             </p>
 
             {/* o que compõe o pacote */}

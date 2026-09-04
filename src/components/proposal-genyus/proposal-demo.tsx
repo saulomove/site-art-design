@@ -7,6 +7,7 @@ import {
   Send, Bot, QrCode, Users, Search, Bell, MousePointerClick,
   SlidersHorizontal, BellRing, Contact, FileText, History,
   FileSpreadsheet, BarChart3, CalendarDays, UserCheck, Star,
+  CalendarRange, CalendarPlus, BellDot, Wine,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -19,6 +20,7 @@ import {
   ViewPolitica, ViewAlertas, ViewProdutores, ViewExtrato,
   ViewAuditoria, ViewImportar, ViewBi, ViewEventos,
   ViewVisita, ViewPosVisita,
+  ViewCalendario, ViewNovaReserva, ViewAvisosWg, ViewExperiencias,
 } from "./demo-views";
 
 interface Modulo {
@@ -47,8 +49,12 @@ const MODULOS: Modulo[] = [
   { grupo: "CRM", id: "campanhas", label: "Campanhas", icon: Send, titulo: "Campanhas", sub: "A base de clientes virando venda" },
   { grupo: "CRM", id: "daia", label: "DaIA", icon: Bot, titulo: "DaIA", sub: "A assistente no site, na loja e no atendimento" },
 
-  { grupo: "Wine Garden", id: "eventos", label: "Reservas", icon: CalendarDays, titulo: "Reservas e agenda", sub: "O sábado inteiro e de onde veio cada reserva" },
+  { grupo: "Wine Garden", id: "calendario", label: "Calendário", icon: CalendarRange, titulo: "Calendário", sub: "O mês inteiro, com os dias cheios e os vazios", destaque: true },
+  { grupo: "Wine Garden", id: "novareserva", label: "Nova reserva", icon: CalendarPlus, titulo: "Nova reserva", sub: "Cadastro completo do visitante e da experiência" },
+  { grupo: "Wine Garden", id: "eventos", label: "Agenda do dia", icon: CalendarDays, titulo: "Agenda do dia", sub: "O sábado inteiro e de onde veio cada reserva" },
   { grupo: "Wine Garden", id: "visita", label: "A casa agora", icon: UserCheck, titulo: "A casa agora", sub: "Quem está aqui, o que provou e o que levou" },
+  { grupo: "Wine Garden", id: "avisoswg", label: "Avisos", icon: BellDot, titulo: "Avisos e lembretes", sub: "A régua automática do visitante e da equipe" },
+  { grupo: "Wine Garden", id: "experiencias", label: "Experiências", icon: Wine, titulo: "Experiências e capacidade", sub: "O que a vinícola vende, com preço, duração e lugares" },
   { grupo: "Wine Garden", id: "posvisita", label: "Pós-visita", icon: Star, titulo: "Pós-visita e conversão", sub: "Quem visitou, quem voltou e quanto rendeu" },
 
   { grupo: "Base do sistema", id: "bi", label: "Relatórios", icon: BarChart3, titulo: "Relatórios", sub: "A operação em número e em cor, com filtro" },
@@ -85,6 +91,10 @@ export function ProposalGenyusDemo() {
       case "eventos": return <ViewEventos />;
       case "visita": return <ViewVisita />;
       case "posvisita": return <ViewPosVisita />;
+      case "calendario": return <ViewCalendario />;
+      case "novareserva": return <ViewNovaReserva />;
+      case "avisoswg": return <ViewAvisosWg />;
+      case "experiencias": return <ViewExperiencias />;
       default: return <ViewDashboard />;
     }
   };

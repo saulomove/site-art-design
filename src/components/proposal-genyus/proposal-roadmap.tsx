@@ -17,7 +17,7 @@ export function ProposalGenyusRoadmap({ sprints }: Props) {
           eyebrow="Entregas"
           title="Cada módulo entra por conta própria,"
           italic="e nunca some por dois meses"
-          lead="Os três juntos levam nove semanas, com algo funcionando a cada quinzena. Contratados em separado, Gestão de terceiros leva 4 semanas, CRM leva 3 e Wine Garden leva 2 — sempre com a base do sistema no ar desde a primeira entrega."
+          lead="Os três juntos levam dez semanas, com algo funcionando a cada quinzena. Contratados em separado, Gestão de terceiros leva 4 semanas, e CRM e Wine Garden levam 3 cada — sempre com a base do sistema no ar desde a primeira entrega."
         />
 
         <div className="relative">

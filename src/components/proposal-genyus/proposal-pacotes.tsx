@@ -120,7 +120,7 @@ export function ProposalGenyusPacotes({ packages, base }: Props) {
           <div>
             <VinicolaEyebrow>Os três juntos</VinicolaEyebrow>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[#CCCCCC]/65">
-              Contratados de uma vez, os três módulos entram em nove semanas, com
+              Contratados de uma vez, os três módulos entram em dez semanas, com
               algo funcionando a cada quinzena. E a mensalidade continua sendo uma
               só, não importa quantos módulos a vinícola tenha.
             </p>

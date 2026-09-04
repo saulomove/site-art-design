@@ -27,6 +27,13 @@ import {
   Star,
   ShoppingBag,
   UserCheck,
+  ChevronLeft,
+  ChevronRight,
+  Phone,
+  Mail,
+  Clock3,
+  Wine as WineIcon,
+  AlertCircle,
 } from "lucide-react";
 
 /* ================================================================
@@ -1315,6 +1322,326 @@ export function ViewPosVisita() {
           </p>
         </div>
       </div>
+    </div>
+  );
+}
+
+/* ==================== WINE GARDEN · CALENDÁRIO ==================== */
+
+interface Dia { d: number; res?: number; pes?: number; cheio?: boolean; vazio?: boolean; fechado?: boolean; hoje?: boolean }
+
+/** Setembro de 2026 de verdade: dia 1 cai numa terça, e os sábados — os dias
+ *  de Wine Garden — são 5, 12, 19 e 26. Duas células vazias abrem o mês. */
+const SETEMBRO: Dia[] = [
+  { d: 0 }, { d: 0 },
+  { d: 1 }, { d: 2 }, { d: 3 }, { d: 4, res: 1, pes: 6 }, { d: 5, res: 7, pes: 34, cheio: true },
+  { d: 6 }, { d: 7 }, { d: 8 }, { d: 9 }, { d: 10 }, { d: 11, res: 2, pes: 9 }, { d: 12, res: 6, pes: 26, hoje: true },
+  { d: 13 }, { d: 14 }, { d: 15 }, { d: 16 }, { d: 17 }, { d: 18, res: 1, pes: 4 }, { d: 19, res: 4, pes: 18 },
+  { d: 20 }, { d: 21 }, { d: 22 }, { d: 23 }, { d: 24 }, { d: 25 }, { d: 26, vazio: true },
+  { d: 27 }, { d: 28 }, { d: 29 }, { d: 30 }, { d: 0 }, { d: 0 }, { d: 0 },
+];
+
+export function ViewCalendario() {
+  const cor = (x: Dia) => {
+    if (x.vazio) return { bg: "bg-[#B5342B]/15", borda: "border-[#B5342B]/50", txt: "text-[#D4574D]" };
+    if (x.cheio) return { bg: "bg-[#CA8B35]/20", borda: "border-[#CA8B35]/50", txt: "text-[#CA8B35]" };
+    if (x.res) return { bg: "bg-[#4F7A63]/15", borda: "border-[#4F7A63]/35", txt: "text-[#6D9B83]" };
+    return { bg: "", borda: "border-[#CCCCCC]/[0.07]", txt: "text-[#CCCCCC]/25" };
+  };
+  return (
+    <div className="space-y-3">
+      <div className={`${card} flex flex-wrap items-center justify-between gap-3 p-3`}>
+        <div className="flex items-center gap-3">
+          <ChevronLeft className="h-3.5 w-3.5 text-[#CCCCCC]/35" />
+          <p className="font-playfair text-base font-medium text-white">Setembro de 2026</p>
+          <ChevronRight className="h-3.5 w-3.5 text-[#CCCCCC]/35" />
+        </div>
+        <div className="flex flex-wrap items-center gap-4 text-[10px] text-[#CCCCCC]/45">
+          {[["bg-[#4F7A63]", "com reserva"], ["bg-[#CA8B35]", "lotado"], ["bg-[#B5342B]", "sábado vazio"]].map(([c, l]) => (
+            <span key={l} className="flex items-center gap-1.5">
+              <span className={`h-2 w-2 ${c}`} /> {l}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className={`${card} p-4`}>
+        <div className="grid grid-cols-7 gap-1.5">
+          {["dom", "seg", "ter", "qua", "qui", "sex", "sáb"].map((d) => (
+            <span key={d} className={`pb-1.5 text-center ${label}`}>{d}</span>
+          ))}
+          {SETEMBRO.map((x, i) => {
+            if (x.d === 0) return <span key={i} />;
+            const c = cor(x);
+            return (
+              <div
+                key={i}
+                className={`min-h-[54px] border p-1.5 ${c.bg} ${c.borda} ${x.hoje ? "ring-1 ring-[#CA8B35]" : ""}`}
+              >
+                <span className={`text-[11px] font-semibold ${x.res || x.vazio ? "text-white" : "text-[#CCCCCC]/35"}`}>
+                  {x.d}
+                </span>
+                {x.res && (
+                  <span className={`mt-1 block text-[9px] leading-tight ${c.txt}`}>
+                    {x.res} res<br />{x.pes} pes
+                  </span>
+                )}
+                {x.vazio && (
+                  <span className="mt-1 block text-[9px] leading-tight text-[#D4574D]">vazio</span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
+        <div className="flex items-start gap-3 border border-[#B5342B]/30 bg-[#B5342B]/[0.06] p-5">
+          <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#D4574D]" />
+          <div>
+            <p className="text-[12px] font-semibold text-white">
+              Sábado 26 está sem nenhuma reserva, faltando 14 dias
+            </p>
+            <p className="mt-1.5 text-[11px] leading-relaxed text-[#CCCCCC]/55">
+              O sistema avisa com antecedência para dar tempo de disparar campanha
+              na base — em vez de a vinícola descobrir na sexta à noite.
+            </p>
+          </div>
+        </div>
+        <button type="button" className="flex items-center justify-center gap-2 bg-[#CA8B35] px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-[#0B0B0B]">
+          <Send className="h-3.5 w-3.5" /> disparar campanha
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== WINE GARDEN · NOVA RESERVA ==================== */
+
+export function ViewNovaReserva() {
+  const campo = (l: string, v: string, icone?: typeof Phone) => {
+    const I = icone;
+    return (
+      <div>
+        <p className={label}>{l}</p>
+        <div className="mt-1.5 flex items-center gap-2 border border-[#CCCCCC]/12 bg-[#0E0D0C] px-3 py-2.5">
+          {I && <I className="h-3 w-3 flex-shrink-0 text-[#CCCCCC]/30" />}
+          <span className="truncate text-[12px] text-white">{v}</span>
+        </div>
+      </div>
+    );
+  };
+  return (
+    <div className="grid gap-3 lg:grid-cols-[1fr_270px]">
+      <div className={`${card} p-5 md:p-6`}>
+        <p className="font-playfair text-base font-medium text-white">Nova reserva</p>
+        <p className="mt-1 text-[11px] text-[#CCCCCC]/40">
+          Aberta pela equipe, pela DaIA ou pelo próprio visitante no site
+        </p>
+
+        <div className="mt-6 space-y-5">
+          <div>
+            <p className="mb-3 text-[10px] uppercase tracking-[0.18em] text-[#CA8B35]">Quem</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {campo("Nome completo", "Marina Fischer")}
+              {campo("WhatsApp", "(48) 99812-4477", Phone)}
+              {campo("E-mail", "marina.fischer@gmail.com", Mail)}
+              {campo("Cidade", "Florianópolis · SC")}
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-3 text-[10px] uppercase tracking-[0.18em] text-[#CA8B35]">Quando</p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {campo("Data", "sáb · 12/09/2026", CalendarDays)}
+              {campo("Horário", "14h30", Clock3)}
+              {campo("Pessoas", "4", Users)}
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-3 text-[10px] uppercase tracking-[0.18em] text-[#CA8B35]">O quê</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {campo("Experiência", "Degustação guiada · R$ 60/pessoa", WineIcon)}
+              {campo("Ocasião", "Aniversário")}
+              {campo("Origem", "DaIA no site")}
+              {campo("Restrição alimentar", "1 vegetariana")}
+            </div>
+          </div>
+
+          <div>
+            <p className={label}>Observações</p>
+            <div className="mt-1.5 border border-[#CCCCCC]/12 bg-[#0E0D0C] px-3 py-2.5">
+              <span className="text-[12px] leading-relaxed text-[#CCCCCC]/70">
+                Já visitou em março de 2026. Comprou Fenice nas duas vezes — separar
+                para degustação.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          <button type="button" className="bg-[#CA8B35] px-5 py-2.5 text-[11px] font-bold uppercase tracking-wider text-[#0B0B0B]">
+            confirmar reserva
+          </button>
+          <button type="button" className="border border-[#CCCCCC]/15 px-5 py-2.5 text-[11px] uppercase tracking-wider text-[#CCCCCC]/60">
+            cancelar
+          </button>
+        </div>
+      </div>
+
+      <div className="space-y-3">
+        <div className={`${card} p-5`}>
+          <p className={label}>Lugares nesse horário</p>
+          <div className="mt-4 flex h-2.5 w-full overflow-hidden bg-[#CCCCCC]/10">
+            <span className="block h-full w-[65%] bg-[#4F7A63]" />
+          </div>
+          <p className="mt-3 text-[12px] text-[#CCCCCC]/60">
+            <span className="font-semibold text-white">26 de 40</span> ocupados · esta
+            reserva leva a 30
+          </p>
+        </div>
+
+        <div className={`${card} p-5`}>
+          <p className={label}>Já esteve aqui</p>
+          <p className="mt-3 text-[12px] leading-relaxed text-[#CCCCCC]/60">
+            2 visitas · última em 14/03/2026 · gastou R$ 740 no total · gosta de
+            Pinot Noir
+          </p>
+        </div>
+
+        <div className="border border-[#CA8B35]/25 bg-[#CA8B35]/[0.06] p-5">
+          <p className="text-[10px] uppercase tracking-wider text-[#CA8B35]">ao confirmar</p>
+          <ul className="mt-3 space-y-2 text-[11px] leading-snug text-[#CCCCCC]/60">
+            {[
+              "Confirmação no WhatsApp dela na hora",
+              "Lembrete automático na véspera",
+              "Entra no calendário e na agenda do dia",
+              "Ficha atualizada na base do CRM",
+            ].map((x) => (
+              <li key={x} className="flex items-start gap-2">
+                <Check className="mt-[3px] h-2.5 w-2.5 flex-shrink-0 text-[#CA8B35]" />
+                <span>{x}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== WINE GARDEN · AVISOS ==================== */
+
+export function ViewAvisosWg() {
+  const regua = [
+    { q: "Ao confirmar", t: "Confirmação da reserva", c: "WhatsApp", p: "visitante", on: true },
+    { q: "3 dias antes", t: "Como chegar, estacionamento e o que levar", c: "WhatsApp", p: "visitante", on: true },
+    { q: "1 dia antes", t: "Lembrete com pedido de confirmação de presença", c: "WhatsApp", p: "visitante", on: true },
+    { q: "2 h antes", t: "Resumo do dia: quem vem, quantos e restrições", c: "Sistema", p: "equipe", on: true },
+    { q: "2 dias depois", t: "Agradecimento, avaliação e link da loja", c: "WhatsApp", p: "visitante", on: true },
+    { q: "Aniversário", t: "Convite com condição especial para voltar", c: "WhatsApp", p: "visitante", on: false },
+  ];
+  const internos = [
+    { t: "Sábado sem reserva", d: "Avisa 14 dias antes, com tempo de disparar campanha", cor: "#B5342B" },
+    { t: "Lotação atingida", d: "Trava novas reservas e avisa a equipe", cor: "#CA8B35" },
+    { t: "Não compareceu", d: "Marca o no-show na ficha e sugere reconvite", cor: "#CA8B35" },
+    { t: "Grupo acima de 10", d: "Avisa a cozinha e a produção com antecedência", cor: "#4F7A63" },
+  ];
+  return (
+    <div className="grid gap-3 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <div className={`${card} min-w-0`}>
+        <p className={`border-b border-[#CCCCCC]/10 px-4 py-3 ${label}`}>
+          Régua automática do visitante
+        </p>
+        <ul className="divide-y divide-[#CCCCCC]/[0.06]">
+          {regua.map((r) => (
+            <li key={r.t} className="flex min-w-0 items-center gap-3 px-4 py-3.5">
+              <span className="w-[62px] flex-shrink-0 font-mono text-[10px] leading-tight text-[#CA8B35] sm:w-[86px]">{r.q}</span>
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-[12px] text-white">{r.t}</p>
+                <p className="mt-0.5 text-[10px] text-[#CCCCCC]/35">{r.c} · {r.p}</p>
+              </div>
+              <span
+                className={`flex h-4 w-7 flex-shrink-0 items-center px-[2px] ${r.on ? "justify-end bg-[#CA8B35]" : "justify-start bg-[#CCCCCC]/15"}`}
+              >
+                <span className="h-3 w-3 bg-[#0B0B0B]" />
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p className="border-t border-[#CCCCCC]/10 px-4 py-3 text-[10px] text-[#CCCCCC]/35">
+          Cada aviso liga e desliga, e o texto é editado pela vinícola.
+        </p>
+      </div>
+
+      <div className={`${card} min-w-0`}>
+        <p className={`border-b border-[#CCCCCC]/10 px-4 py-3 ${label}`}>
+          Avisos internos, para a equipe
+        </p>
+        <ul className="divide-y divide-[#CCCCCC]/[0.06]">
+          {internos.map((a) => (
+            <li key={a.t} className="flex min-w-0 gap-3 px-4 py-4">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rotate-45" style={{ background: a.cor }} />
+              <div className="min-w-0">
+                <p className="text-[12px] font-semibold text-white">{a.t}</p>
+                <p className="mt-1 text-[11px] leading-snug text-[#CCCCCC]/50">{a.d}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== WINE GARDEN · EXPERIÊNCIAS ==================== */
+
+export function ViewExperiencias() {
+  const exp = [
+    { n: "Degustação guiada", p: "R$ 60", un: "por pessoa", dur: "60 min", cap: "12 lugares", dias: "sáb · 14h30, 16h, 17h30", ativo: true },
+    { n: "Visita técnica + degustação", p: "R$ 120", un: "por pessoa", dur: "90 min", cap: "8 lugares", dias: "sáb · 15h", ativo: true },
+    { n: "Wine Garden livre", p: "R$ 30", un: "entrada", dur: "livre", cap: "40 lugares", dias: "sáb · 14h30 às 20h", ativo: true },
+    { n: "Evento privado", p: "sob consulta", un: "", dur: "a combinar", cap: "até 60", dias: "mediante agenda", ativo: false },
+  ];
+  return (
+    <div className="space-y-3">
+      <div className={`${card} p-4`}>
+        <p className="text-[11px] leading-relaxed text-[#CCCCCC]/60">
+          A vinícola cadastra as experiências que oferece, com preço, duração,
+          lugares e os horários de cada uma. O calendário e a reserva usam isso
+          para saber o que pode ser vendido em cada dia.
+        </p>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        {exp.map((e) => (
+          <div key={e.n} className={`${card} p-5`}>
+            <div className="flex items-start justify-between gap-3">
+              <p className="text-[13px] font-semibold text-white">{e.n}</p>
+              <span
+                className={`flex-shrink-0 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider ${
+                  e.ativo ? "bg-[#4F7A63]/20 text-[#6D9B83]" : "bg-[#CCCCCC]/10 text-[#CCCCCC]/40"
+                }`}
+              >
+                {e.ativo ? "ativa" : "sob demanda"}
+              </span>
+            </div>
+            <p className="mt-4 font-playfair text-2xl font-medium text-[#CA8B35]">
+              {e.p} <span className="text-[11px] font-normal text-[#CCCCCC]/40">{e.un}</span>
+            </p>
+            <ul className="mt-4 space-y-1.5 text-[11px] text-[#CCCCCC]/50">
+              <li className="flex items-center gap-2"><Clock3 className="h-2.5 w-2.5" /> {e.dur}</li>
+              <li className="flex items-center gap-2"><Users className="h-2.5 w-2.5" /> {e.cap}</li>
+              <li className="flex items-center gap-2"><CalendarDays className="h-2.5 w-2.5" /> {e.dias}</li>
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <p className="text-center text-[10px] text-[#CCCCCC]/25">
+        Experiências e valores ilustrativos — cadastrados pela própria vinícola.
+      </p>
     </div>
   );
 }

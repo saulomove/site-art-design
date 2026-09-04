@@ -155,7 +155,7 @@ const GENYUS_NAV: readonly NavItem[] = [
   { id: "planilha", label: "O diagnóstico", desc: "O que as duas planilhas revelam, apurado linha a linha", noDesktop: false },
   { id: "dados", label: "Os gráficos", desc: "A sua safra inteira em gráfico — 75 lotes, 274.722 kg", noDesktop: false },
   { id: "guarda", label: "A guarda", desc: "O vinho parado por anos e a receita que escapa — com simulador", noDesktop: false },
-  { id: "demo", label: "O sistema", desc: "Protótipo navegável — 20 telas para clicar e passear", noDesktop: false },
+  { id: "demo", label: "O sistema", desc: "Protótipo navegável — 24 telas para clicar e passear", noDesktop: false },
   { id: "telas", label: "As telas", desc: "Como cada perfil usa o sistema, da balança à diretoria", noDesktop: true },
   { id: "jornada", label: "Um lote", desc: "Do caminhão à garrafa, acompanhando um lote real da sua planilha", noDesktop: false },
   { id: "antes-depois", label: "Antes e depois", desc: "Sete células reais da planilha e o que o sistema faz com cada uma", noDesktop: true },
@@ -163,7 +163,7 @@ const GENYUS_NAV: readonly NavItem[] = [
   { id: "erp", label: "Integração", desc: "Como o Genyus Wine conversa com o CIA Sistemas", noDesktop: true },
   { id: "exclusivos", label: "Diferenciais", desc: "O que nenhum outro sistema do mercado entrega", noDesktop: true },
   { id: "pacotes", label: "Os 3 módulos", desc: "Gestão de terceiros, CRM e Wine Garden — R$ 5.000 cada", noDesktop: false },
-  { id: "entregas", label: "Entregas", desc: "Nove semanas pelos três, ou 4, 3 e 2 se forem separados", noDesktop: true },
+  { id: "entregas", label: "Entregas", desc: "Dez semanas pelos três, ou 4, 3 e 3 se forem separados", noDesktop: true },
 ];
 
 export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
