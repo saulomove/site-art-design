@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import {
   LayoutDashboard, Grape, Timer, LayoutGrid, MessageSquare, Filter,
   Send, Bot, QrCode, Users, Search, Bell, MousePointerClick,
+  SlidersHorizontal, BellRing, Contact, FileText, History,
+  FileSpreadsheet, BarChart3, CalendarDays,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -14,6 +16,8 @@ import { TelaGuarda, TelaAdega } from "./proposal-telas";
 import {
   ViewDashboard, ViewSafra, ViewAtendimento, ViewFunil,
   ViewCampanhas, ViewEtiqueta, ViewPerfis, ViewDaia,
+  ViewPolitica, ViewAlertas, ViewProdutores, ViewExtrato,
+  ViewAuditoria, ViewImportar, ViewBi, ViewEventos,
 } from "./demo-views";
 
 interface Modulo {
@@ -22,22 +26,35 @@ interface Modulo {
   icon: LucideIcon;
   titulo: string;
   sub: string;
+  grupo: string;
   badge?: string;
   destaque?: boolean;
 }
 
 const MODULOS: Modulo[] = [
-  { id: "dashboard", label: "Painel", icon: LayoutDashboard, titulo: "Painel geral", sub: "O estado da operação numa tela" },
-  { id: "safra", label: "Safra", icon: Grape, titulo: "Safra 2026", sub: "Todos os lotes e em que etapa cada um está" },
-  { id: "guarda", label: "Guarda", icon: Timer, titulo: "Guarda", sub: "O que está parado, há quanto tempo e quanto já vale", destaque: true },
-  { id: "adega", label: "Adega", icon: LayoutGrid, titulo: "Mapa da adega", sub: "Ocupação e status de cada tanque e barrica" },
-  { id: "atendimento", label: "Atendimento", icon: MessageSquare, titulo: "Atendimento", sub: "WhatsApp, Instagram e Facebook numa fila só", badge: "12" },
-  { id: "funil", label: "Funil", icon: Filter, titulo: "Funil de vendas", sub: "Do primeiro contato ao pedido fechado" },
-  { id: "campanhas", label: "Campanhas", icon: Send, titulo: "Campanhas", sub: "A base de clientes virando venda" },
-  { id: "daia", label: "DaIA", icon: Bot, titulo: "DaIA", sub: "A assistente no site, na loja e no atendimento" },
-  { id: "etiquetas", label: "Etiquetas", icon: QrCode, titulo: "Etiquetas e QR", sub: "O lote inteiro na câmera do celular" },
-  { id: "perfis", label: "Perfis", icon: Users, titulo: "Perfis e permissões", sub: "Quem vê o quê, definido pela vinícola" },
+  { grupo: "Adega", id: "dashboard", label: "Painel", icon: LayoutDashboard, titulo: "Painel geral", sub: "O estado da operação numa tela" },
+  { grupo: "Adega", id: "safra", label: "Safra", icon: Grape, titulo: "Safra 2026", sub: "Todos os lotes e em que etapa cada um está" },
+  { grupo: "Adega", id: "guarda", label: "Guarda", icon: Timer, titulo: "Guarda", sub: "O que está parado, há quanto tempo e quanto já vale", destaque: true },
+  { grupo: "Adega", id: "politica", label: "Política", icon: SlidersHorizontal, titulo: "Política de guarda", sub: "As faixas e os valores que a vinícola define", destaque: true },
+  { grupo: "Adega", id: "adega", label: "Adega", icon: LayoutGrid, titulo: "Mapa da adega", sub: "Ocupação e status de cada tanque e barrica" },
+  { grupo: "Adega", id: "etiquetas", label: "Etiquetas", icon: QrCode, titulo: "Etiquetas e QR", sub: "O lote inteiro na câmera do celular" },
+
+  { grupo: "Clientes", id: "atendimento", label: "Atendimento", icon: MessageSquare, titulo: "Atendimento", sub: "WhatsApp, Instagram e Facebook numa fila só", badge: "12" },
+  { grupo: "Clientes", id: "funil", label: "Funil", icon: Filter, titulo: "Funil de vendas", sub: "Do primeiro contato ao pedido fechado" },
+  { grupo: "Clientes", id: "campanhas", label: "Campanhas", icon: Send, titulo: "Campanhas", sub: "A base de clientes virando venda" },
+  { grupo: "Clientes", id: "daia", label: "DaIA", icon: Bot, titulo: "DaIA", sub: "A assistente no site, na loja e no atendimento" },
+  { grupo: "Clientes", id: "eventos", label: "Wine Garden", icon: CalendarDays, titulo: "Wine Garden e visitas", sub: "Reservas do sábado e quem veio da onde" },
+
+  { grupo: "Gestão", id: "produtores", label: "Produtores", icon: Contact, titulo: "Ficha do produtor", sub: "Tudo de um produtor numa tela só" },
+  { grupo: "Gestão", id: "extrato", label: "Extrato", icon: FileText, titulo: "Demonstrativo", sub: "O documento que vai para o produtor" },
+  { grupo: "Gestão", id: "bi", label: "Relatórios", icon: BarChart3, titulo: "Relatórios", sub: "A safra em número e em cor, com filtro" },
+  { grupo: "Gestão", id: "alertas", label: "Alertas", icon: BellRing, titulo: "Central de alertas", sub: "O que exige decisão, e de quem", badge: "4" },
+  { grupo: "Gestão", id: "auditoria", label: "Histórico", icon: History, titulo: "Histórico e auditoria", sub: "Quem mudou o quê, quando e de quanto para quanto" },
+  { grupo: "Gestão", id: "importar", label: "Importar", icon: FileSpreadsheet, titulo: "Importar planilha", sub: "A safra que já passou entrando no sistema" },
+  { grupo: "Gestão", id: "perfis", label: "Perfis", icon: Users, titulo: "Perfis e permissões", sub: "Quem vê o quê, definido pela vinícola" },
 ];
+
+const GRUPOS = ["Adega", "Clientes", "Gestão"] as const;
 
 export function ProposalGenyusDemo() {
   const [ativo, setAtivo] = useState("dashboard");
@@ -54,6 +71,14 @@ export function ProposalGenyusDemo() {
       case "daia": return <ViewDaia />;
       case "etiquetas": return <ViewEtiqueta />;
       case "perfis": return <ViewPerfis />;
+      case "politica": return <ViewPolitica />;
+      case "alertas": return <ViewAlertas />;
+      case "produtores": return <ViewProdutores />;
+      case "extrato": return <ViewExtrato />;
+      case "auditoria": return <ViewAuditoria />;
+      case "importar": return <ViewImportar />;
+      case "bi": return <ViewBi />;
+      case "eventos": return <ViewEventos />;
       default: return <ViewDashboard />;
     }
   };
@@ -93,7 +118,7 @@ export function ProposalGenyusDemo() {
 
           <div className="flex flex-col lg:flex-row">
             {/* Menu lateral — vira barra rolável no celular */}
-            <nav className="flex gap-1 overflow-x-auto border-b border-[#CCCCCC]/10 bg-[#121110] p-2 lg:w-[190px] lg:flex-shrink-0 lg:flex-col lg:overflow-visible lg:border-b-0 lg:border-r lg:p-3">
+            <nav className="flex gap-1 overflow-x-auto border-b border-[#CCCCCC]/10 bg-[#121110] p-2 lg:w-[196px] lg:flex-shrink-0 lg:flex-col lg:overflow-visible lg:border-b-0 lg:border-r lg:p-3">
               <div className="mb-2 hidden px-2 lg:block">
                 <p className="font-playfair text-sm font-medium tracking-[0.14em] text-[#CA8B35]">
                   GENYUS WINE
@@ -102,34 +127,41 @@ export function ProposalGenyusDemo() {
                   Santa Augusta
                 </p>
               </div>
-              {MODULOS.map((m) => {
-                const Icon = m.icon;
-                const on = ativo === m.id;
-                return (
-                  <button
-                    key={m.id}
-                    type="button"
-                    onClick={() => setAtivo(m.id)}
-                    aria-current={on ? "page" : undefined}
-                    className={`flex flex-shrink-0 items-center gap-2.5 px-3 py-2.5 text-left text-[12px] transition-colors ${
-                      on
-                        ? "bg-[#CA8B35] font-semibold text-[#0B0B0B]"
-                        : "text-[#CCCCCC]/60 hover:bg-[#CCCCCC]/[0.06] hover:text-white"
-                    }`}
-                  >
-                    <Icon className="h-3.5 w-3.5 flex-shrink-0" />
-                    <span className="whitespace-nowrap">{m.label}</span>
-                    {m.badge && !on && (
-                      <span className="ml-auto hidden rounded-full bg-[#CA8B35] px-1.5 text-[9px] font-bold text-[#0B0B0B] lg:block">
-                        {m.badge}
-                      </span>
-                    )}
-                    {m.destaque && !on && (
-                      <span className="ml-auto hidden h-1.5 w-1.5 rotate-45 bg-[#CA8B35] lg:block" />
-                    )}
-                  </button>
-                );
-              })}
+              {GRUPOS.map((g) => (
+                <div key={g} className="contents lg:block">
+                  <p className="hidden px-2 pb-1.5 pt-3 text-[9px] uppercase tracking-[0.2em] text-[#CCCCCC]/25 lg:block">
+                    {g}
+                  </p>
+                  {MODULOS.filter((m) => m.grupo === g).map((m) => {
+                    const Icon = m.icon;
+                    const on = ativo === m.id;
+                    return (
+                      <button
+                        key={m.id}
+                        type="button"
+                        onClick={() => setAtivo(m.id)}
+                        aria-current={on ? "page" : undefined}
+                        className={`flex w-auto flex-shrink-0 items-center gap-2.5 px-3 py-2.5 text-left text-[12px] transition-colors lg:w-full ${
+                          on
+                            ? "bg-[#CA8B35] font-semibold text-[#0B0B0B]"
+                            : "text-[#CCCCCC]/60 hover:bg-[#CCCCCC]/[0.06] hover:text-white"
+                        }`}
+                      >
+                        <Icon className="h-3.5 w-3.5 flex-shrink-0" />
+                        <span className="whitespace-nowrap">{m.label}</span>
+                        {m.badge && !on && (
+                          <span className="ml-auto hidden rounded-full bg-[#CA8B35] px-1.5 text-[9px] font-bold text-[#0B0B0B] lg:block">
+                            {m.badge}
+                          </span>
+                        )}
+                        {m.destaque && !on && (
+                          <span className="ml-auto hidden h-1.5 w-1.5 rotate-45 bg-[#CA8B35] lg:block" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              ))}
             </nav>
 
             {/* Dica no celular — a barra de módulos rola na horizontal */}

@@ -7133,13 +7133,13 @@ export const proposals: Proposal[] = [
         area: "Confiabilidade",
         title: "Três linhas são fisicamente impossíveis — e viraram fatura",
         description:
-          "Não se extrai mais litro do que o peso da uva que entrou. O rendimento médio da casa é 70,2%, exatamente a faixa técnica correta. Mas há linhas acima de 100%, o que só pode ser erro de digitação ou mistura de partidas não registrada.",
+          "Não se extrai mais litro do que o peso da uva que entrou. O rendimento médio da casa é 70,9%, exatamente a faixa técnica correta. Mas há linhas acima de 100%, o que só pode ser erro de digitação ou mistura de partidas não registrada.",
         evidence: [
           "Suzin           Sauvignon Blanc   3.246 kg → 4.300 L   =  132%",
           "Serra do Sol    Sangiovese        3.578 kg → 4.400 L   =  123%",
           "Água Escondida  Chardonnay          258 kg →   310 L   =  120%",
           "",
-          "Rendimento médio real da vinícola: 70,2%",
+          "Rendimento médio real da vinícola: 70,9%",
         ],
         impact:
           "A linha da Suzin virou fatura de R$ 13.975. Pelo rendimento real da casa seriam cerca de 2.270 L — uma diferença de aproximadamente R$ 6.600 numa única linha.",
@@ -7167,7 +7167,7 @@ export const proposals: Proposal[] = [
         area: "Operação",
         title: "A operação em si é boa — o controle é que não acompanha",
         description:
-          "O rendimento médio de 70,2% está exatamente na faixa técnica esperada, e a conversão de litro para garrafa fecha em 750 ml em todas as linhas conferidas. Não há problema de processo produtivo. O problema é que nada disso é medido no momento em que acontece.",
+          "O rendimento médio de 70,9% está exatamente na faixa técnica esperada, e a conversão de litro para garrafa fecha em 750 ml em todas as linhas conferidas. Não há problema de processo produtivo. O problema é que nada disso é medido no momento em que acontece.",
         impact:
           "Isso é uma boa notícia comercial: não estamos propondo consertar a produção. Estamos propondo enxergá-la.",
       },

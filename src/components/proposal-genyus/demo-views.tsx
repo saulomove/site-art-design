@@ -13,6 +13,16 @@ import {
   TrendingUp,
   Gift,
   Send,
+  Plus,
+  Trash2,
+  FileSpreadsheet,
+  ArrowRight,
+  Clock,
+  Wine,
+  Download,
+  History,
+  CalendarDays,
+  X,
 } from "lucide-react";
 
 /* ================================================================
@@ -450,7 +460,7 @@ export function ViewEtiqueta() {
         <div className="mt-5 space-y-3">
           {[
             ["Lote", "SUZ-2026-014 · Merlot · Suzin"],
-            ["Entrada", "14/04/2026 · 5.971 kg · nota 12508"],
+            ["Entrada", "14/04/2026 · 5.971 kg · nota não registrada"],
             ["Produção", "4.060 L · rendimento 68%"],
             ["Local", "Tanque T-02 · ocupação 64%"],
             ["Etapas faturadas", "Prensagem e vinificação · envase pendente"],
@@ -600,6 +610,531 @@ export function ViewDaia() {
           <p className="text-[11px] leading-relaxed text-[#CCCCCC]/50">
             Quando não sabe, ela não inventa: passa para um atendente humano com
             o histórico da conversa.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== B1 · POLÍTICA DE GUARDA ==================== */
+
+export function ViewPolitica() {
+  const faixas = [
+    { de: "0", ate: "12", valor: "0,00", un: "R$/L/mês", cor: "#4F7A63", rot: "Cortesia" },
+    { de: "13", ate: "24", valor: "0,12", un: "R$/L/mês", cor: "#CA8B35", rot: "Faixa 2" },
+    { de: "25", ate: "∞", valor: "0,20", un: "R$/L/mês", cor: "#B5342B", rot: "Faixa 3" },
+  ];
+  return (
+    <div className="space-y-3">
+      <div className={`${card} p-5`}>
+        <p className={label}>Editor da política · vinificação de terceiros</p>
+        <p className="mt-3 text-[12px] leading-relaxed text-[#CCCCCC]/60">
+          A regra é da vinícola. O sistema só aplica. Cada faixa tem início, fim,
+          unidade e valor — e vale a partir da data que a Fran escolher, sem
+          retroagir sobre o tempo já corrido.
+        </p>
+      </div>
+
+      <div className={card}>
+        <div className="grid grid-cols-[1fr_1fr_1.2fr_1fr_auto] gap-2 border-b border-[#CCCCCC]/10 px-4 py-3">
+          {["De (meses)", "Até", "Valor", "Unidade", ""].map((h) => (
+            <span key={h} className={label}>{h}</span>
+          ))}
+        </div>
+        {faixas.map((f) => (
+          <div key={f.rot} className="grid grid-cols-[1fr_1fr_1.2fr_1fr_auto] items-center gap-2 border-b border-[#CCCCCC]/[0.06] px-4 py-3 last:border-0">
+            <span className="border border-[#CCCCCC]/12 bg-[#0E0D0C] px-2.5 py-1.5 font-mono text-[12px] text-white">{f.de}</span>
+            <span className="border border-[#CCCCCC]/12 bg-[#0E0D0C] px-2.5 py-1.5 font-mono text-[12px] text-white">{f.ate}</span>
+            <span className="border px-2.5 py-1.5 font-mono text-[12px] font-bold" style={{ borderColor: `${f.cor}55`, color: f.cor }}>
+              R$ {f.valor}
+            </span>
+            <span className="text-[11px] text-[#CCCCCC]/50">{f.un}</span>
+            <Trash2 className="h-3.5 w-3.5 text-[#CCCCCC]/25" />
+          </div>
+        ))}
+        <div className="flex items-center gap-2 px-4 py-3 text-[11px] text-[#CA8B35]">
+          <Plus className="h-3.5 w-3.5" /> adicionar faixa
+        </div>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className={`${card} p-5`}>
+          <p className={label}>Avisar antes de virar</p>
+          <div className="mt-4 flex gap-2">
+            {["90", "60", "30"].map((d) => (
+              <span key={d} className="flex-1 border border-[#CA8B35]/40 bg-[#CA8B35]/10 py-2 text-center font-mono text-[12px] text-[#CA8B35]">
+                {d}d
+              </span>
+            ))}
+          </div>
+          <p className="mt-3 text-[11px] text-[#CCCCCC]/40">Quem recebe: Fran, financeiro e administrativo</p>
+        </div>
+        <div className={`${card} p-5`}>
+          <p className={label}>Simulação com a safra atual</p>
+          <p className="mt-3 font-playfair text-2xl font-medium text-[#CA8B35]">R$ 4.680<span className="text-sm text-[#CCCCCC]/40">/mês</span></p>
+          <p className="mt-2 text-[11px] leading-relaxed text-[#CCCCCC]/45">
+            27 lotes entram na faixa 2 até janeiro · 39.000 L a R$ 0,12
+          </p>
+        </div>
+      </div>
+      <p className="text-center text-[10px] text-[#CCCCCC]/25">
+        Valores ilustrativos — a política real é definida pela vinícola.
+      </p>
+    </div>
+  );
+}
+
+/* ==================== B2 · CENTRAL DE ALERTAS ==================== */
+
+export function ViewAlertas() {
+  const push = [
+    { t: "Lote vira de faixa em 30 dias", d: "CATA · Pinot Noir · 3.000 L · a partir de 10/10 passa a R$ 0,20/L", cor: "#B5342B", h: "há 2 h" },
+    { t: "Rendimento fora da faixa", d: "Suzin · Sauvignon Blanc · 3.246 kg → 4.300 L = 132,5%", cor: "#B5342B", h: "hoje 09:14" },
+    { t: "Etapa concluída sem cobrança", d: "Serra do Sol · Sangiovese · vinificação encerrada, sem nota lançada", cor: "#CA8B35", h: "ontem" },
+    { t: "Tanque liberado", d: "T-07 esvaziou · 8.000 L disponíveis para a próxima entrada", cor: "#4F7A63", h: "ontem" },
+  ];
+  return (
+    <div className="grid gap-3 lg:grid-cols-[260px_1fr]">
+      {/* celular */}
+      <div className="mx-auto w-full max-w-[240px] border-2 border-[#CCCCCC]/15 bg-[#0E0D0C] p-3">
+        <div className="mb-3 flex items-center justify-between px-1">
+          <span className="font-mono text-[9px] text-[#CCCCCC]/35">09:14</span>
+          <span className="font-mono text-[9px] text-[#CCCCCC]/35">100%</span>
+        </div>
+        <div className="space-y-2">
+          {push.slice(0, 2).map((p) => (
+            <div key={p.t} className="border-l-2 bg-[#1A1817] p-3" style={{ borderColor: p.cor }}>
+              <div className="flex items-center gap-1.5">
+                <Wine className="h-2.5 w-2.5" style={{ color: p.cor }} />
+                <span className="text-[8px] uppercase tracking-wider text-[#CCCCCC]/40">Genyus Wine</span>
+              </div>
+              <p className="mt-1.5 text-[11px] font-semibold leading-snug text-white">{p.t}</p>
+              <p className="mt-1 text-[9px] leading-snug text-[#CCCCCC]/50">{p.d}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-center text-[9px] text-[#CCCCCC]/25">no celular da Fran</p>
+      </div>
+
+      {/* central */}
+      <div className={card}>
+        <div className="flex items-center justify-between border-b border-[#CCCCCC]/10 px-4 py-3">
+          <p className={label}>Central de alertas</p>
+          <span className="text-[10px] text-[#CA8B35]">marcar todos como lidos</span>
+        </div>
+        <ul className="divide-y divide-[#CCCCCC]/[0.06]">
+          {push.map((p) => (
+            <li key={p.t} className="flex gap-3 px-4 py-4">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rotate-45" style={{ background: p.cor }} />
+              <div className="min-w-0 flex-1">
+                <div className="flex items-baseline justify-between gap-3">
+                  <p className="text-[12px] font-semibold text-white">{p.t}</p>
+                  <span className="flex-shrink-0 text-[9px] text-[#CCCCCC]/30">{p.h}</span>
+                </div>
+                <p className="mt-1 text-[11px] leading-snug text-[#CCCCCC]/50">{p.d}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <p className="border-t border-[#CCCCCC]/10 px-4 py-3 text-[10px] text-[#CCCCCC]/35">
+          Cada perfil recebe só o que exige ação dele. A diretoria não recebe aviso de tanque.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== B3 · FICHA DO PRODUTOR ==================== */
+
+export function ViewProdutores() {
+  const lotes = [
+    { u: "Cabernet Sauvignon", kg: "8.642", l: "5.876", et: "Envase", cor: "#4F7A63" },
+    { u: "Merlot", kg: "7.140", l: "4.855", et: "Guarda · 4 m", cor: "#CA8B35" },
+    { u: "Merlot", kg: "5.971", l: "4.060", et: "Guarda · 4 m", cor: "#CA8B35" },
+    { u: "Petit Verdot", kg: "4.594", l: "3.124", et: "Fermentando", cor: "#CCCCCC" },
+    { u: "Malbec", kg: "3.994", l: "2.830", et: "Guarda · 4 m", cor: "#CA8B35" },
+    { u: "Sauvignon Blanc", kg: "3.246", l: "4.300", et: "Rendimento 132,5%", cor: "#B5342B" },
+  ];
+  return (
+    <div className="space-y-3">
+      <div className={`${card} p-5`}>
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="font-playfair text-xl font-medium text-white">Suzin</p>
+            <p className="mt-1 text-[11px] text-[#CCCCCC]/40">Produtor · safra 2026 · 11 lotes</p>
+          </div>
+          <div className="flex gap-6 text-right">
+            {[
+              { v: "45.880 kg", l: "Uva entregue" },
+              { v: "31.161 L", l: "Vinho produzido" },
+              { v: "68,0%", l: "Rendimento médio" },
+            ].map((k) => (
+              <div key={k.l}>
+                <p className="font-playfair text-lg font-medium text-[#CA8B35]">{k.v}</p>
+                <p className="mt-0.5 text-[9px] uppercase tracking-wider text-[#CCCCCC]/35">{k.l}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-3">
+        {[
+          { v: "R$ 57.362", l: "Faturado", c: "#4F7A63" },
+          { v: "R$ 68.855", l: "A faturar", c: "#CA8B35" },
+          { v: "R$ 3.741", l: "Guarda acumulada", c: "#B5342B" },
+        ].map((k) => (
+          <div key={k.l} className={`${card} p-4`}>
+            <p className="font-playfair text-xl font-medium" style={{ color: k.c }}>{k.v}</p>
+            <p className={`mt-1 ${label}`}>{k.l}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className={`${card} overflow-x-auto`}>
+        <table className="w-full min-w-[520px] border-collapse text-left">
+          <thead>
+            <tr className="border-b border-[#CCCCCC]/10">
+              {["Variedade", "Peso", "Litragem", "Situação"].map((h) => (
+                <th key={h} className={`px-4 py-3 ${label}`}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {lotes.map((l, i) => (
+              <tr key={i} className="border-b border-[#CCCCCC]/[0.06] last:border-0">
+                <td className="whitespace-nowrap px-4 py-3 text-[12px] text-white">{l.u}</td>
+                <td className="px-4 py-3 font-mono text-[11px] text-[#CCCCCC]/55">{l.kg} kg</td>
+                <td className="px-4 py-3 font-mono text-[11px] text-[#CCCCCC]/55">{l.l} L</td>
+                <td className="whitespace-nowrap px-4 py-3">
+                  <span className="px-2 py-0.5 text-[10px] font-semibold" style={{ background: `${l.cor}22`, color: l.cor }}>
+                    {l.et}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== B4 · EXTRATO DO PRODUTOR ==================== */
+
+export function ViewExtrato() {
+  return (
+    <div className="grid gap-3 lg:grid-cols-[1fr_240px]">
+      <div className="bg-white p-6 text-[#0B0B0B] md:p-8">
+        <div className="flex items-start justify-between border-b border-[#0B0B0B]/10 pb-5">
+          <div>
+            <p className="font-playfair text-base font-semibold tracking-[0.14em]">SANTA AUGUSTA</p>
+            <p className="mt-1 text-[10px] uppercase tracking-wider text-[#0B0B0B]/45">
+              Demonstrativo de vinificação · safra 2026
+            </p>
+          </div>
+          <div className="text-right text-[10px] text-[#0B0B0B]/45">
+            <p>Suzin</p>
+            <p>Emitido 04/09/2026</p>
+          </div>
+        </div>
+
+        <table className="mt-5 w-full border-collapse text-left text-[11px]">
+          <thead>
+            <tr className="border-b border-[#0B0B0B]/10 text-[9px] uppercase tracking-[0.14em] text-[#0B0B0B]/40">
+              <th className="py-2">Etapa</th>
+              <th className="py-2 text-right">Base</th>
+              <th className="py-2 text-right">Tarifa</th>
+              <th className="py-2 text-right">Valor</th>
+            </tr>
+          </thead>
+          <tbody className="text-[#0B0B0B]/75">
+            {[
+              ["1ª · Prensagem e desengace", "45.880 kg", "R$ 1,25/kg", "R$ 57.350"],
+              ["2ª · Vinificação", "31.161 L", "R$ 4,15/L", "R$ 68.855"],
+              ["3ª · Envase", "pendente", "R$ 4,10/gf", "—"],
+              ["Guarda · faixa 2", "10.395 L · 3 m", "R$ 0,12/L/mês", "R$ 3.741"],
+            ].map((r, i) => (
+              <tr key={i} className="border-b border-[#0B0B0B]/[0.06]">
+                <td className="py-2.5">{r[0]}</td>
+                <td className="py-2.5 text-right font-mono">{r[1]}</td>
+                <td className="py-2.5 text-right font-mono">{r[2]}</td>
+                <td className="py-2.5 text-right font-mono font-semibold text-[#0B0B0B]">{r[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div className="mt-5 flex items-baseline justify-between border-t-2 border-[#0B0B0B] pt-4">
+          <span className="text-[11px] uppercase tracking-[0.14em] text-[#0B0B0B]/60">Total do período</span>
+          <span className="font-playfair text-2xl font-medium">R$ 129.946</span>
+        </div>
+        <p className="mt-4 text-[10px] leading-relaxed text-[#0B0B0B]/45">
+          Documento gerado pelo sistema com os lotes do produtor. Sai em PDF, vai
+          por WhatsApp ou e-mail com um clique, e o produtor vê exatamente por
+          que está pagando.
+        </p>
+      </div>
+
+      <div className="space-y-3">
+        {[
+          { i: Download, t: "Baixar PDF" },
+          { i: MessageCircle, t: "Enviar no WhatsApp" },
+          { i: Send, t: "Enviar por e-mail" },
+        ].map((b) => (
+          <button key={b.t} type="button" className={`${card} flex w-full items-center gap-3 p-4 text-left text-[12px] text-[#CCCCCC]/70`}>
+            <b.i className="h-3.5 w-3.5 text-[#CA8B35]" />
+            {b.t}
+          </button>
+        ))}
+        <div className="border border-[#CA8B35]/25 bg-[#CA8B35]/[0.06] p-4">
+          <p className="text-[11px] leading-relaxed text-[#CCCCCC]/65">
+            Hoje esse documento não existe. A conversa com o produtor é feita de
+            memória e de print de planilha.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== B5 · HISTÓRICO E AUDITORIA ==================== */
+
+export function ViewAuditoria() {
+  const log = [
+    { q: "Marcos · produção", a: "alterou litragem do lote SUZ-2026-014", de: "4.300 L", para: "4.060 L", h: "04/09 · 09:14", cor: "#CA8B35" },
+    { q: "Sistema", a: "bloqueou apontamento por rendimento de 132,5%", de: "—", para: "—", h: "04/09 · 09:12", cor: "#B5342B" },
+    { q: "Fran · diretoria", a: "alterou faixa 2 da política de guarda", de: "R$ 0,10/L", para: "R$ 0,12/L", h: "02/09 · 17:40", cor: "#CA8B35" },
+    { q: "Ana · financeiro", a: "lançou nota da 2ª etapa · Serra do Sol", de: "sem nota", para: "NF 12506", h: "01/09 · 11:22", cor: "#4F7A63" },
+    { q: "Tiago · balança", a: "registrou recebimento · Suzin · Merlot", de: "—", para: "5.971 kg", h: "14/04 · 07:48", cor: "#4F7A63" },
+  ];
+  return (
+    <div className="space-y-3">
+      <div className={`${card} flex flex-wrap items-center gap-3 p-4`}>
+        <History className="h-3.5 w-3.5 text-[#CA8B35]" />
+        <p className="text-[12px] text-[#CCCCCC]/60">
+          Toda alteração guarda autor, data, valor anterior e valor novo. Nada é
+          apagado — se um número mudou, existe a quem perguntar.
+        </p>
+      </div>
+      <div className={card}>
+        <ul className="divide-y divide-[#CCCCCC]/[0.06]">
+          {log.map((l, i) => (
+            <li key={i} className="flex gap-3 px-4 py-4">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rotate-45" style={{ background: l.cor }} />
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                  <p className="text-[12px] text-white">
+                    <span className="font-semibold">{l.q}</span>{" "}
+                    <span className="text-[#CCCCCC]/55">{l.a}</span>
+                  </p>
+                  <span className="flex-shrink-0 font-mono text-[9px] text-[#CCCCCC]/30">{l.h}</span>
+                </div>
+                {l.de !== "—" && (
+                  <p className="mt-1.5 flex items-center gap-2 font-mono text-[10px]">
+                    <span className="text-[#CCCCCC]/35 line-through">{l.de}</span>
+                    <ArrowRight className="h-2.5 w-2.5 text-[#CCCCCC]/25" />
+                    <span className="text-[#CA8B35]">{l.para}</span>
+                  </p>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== B6 · IMPORTAR PLANILHA ==================== */
+
+export function ViewImportar() {
+  const achados = [
+    { s: "erro", t: "Data inválida", d: "Berto Aguiar · Pinot Noir · 06/02/20226", a: "corrigir para 06/02/2026" },
+    { s: "erro", t: "Rendimento impossível", d: "Suzin · Sauvignon Blanc · 132,5%", a: "conferir litragem" },
+    { s: "erro", t: "Litro na coluna de peso", d: "Serra do Sol · Sangiovese · \"2707L\"", a: "definir se é kg ou L" },
+    { s: "alerta", t: "Lote sem peso", d: "Celso Panceri · 6.000 L · R$ 25.360", a: "informar peso de entrada" },
+    { s: "alerta", t: "Número de nota inválido", d: "Fabrício · Niágara · nota \"4.5\"", a: "conferir a nota" },
+    { s: "ok", t: "68 lotes prontos", d: "peso, litragem e datas consistentes", a: "importar" },
+  ];
+  const cor = { erro: "#B5342B", alerta: "#CA8B35", ok: "#4F7A63" } as const;
+  return (
+    <div className="space-y-3">
+      <div className={`${card} p-5`}>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <FileSpreadsheet className="h-4 w-4 text-[#4F7A63]" />
+            <div>
+              <p className="text-[12px] font-semibold text-white">SAFRA 2026 - tabela kg.xlsx</p>
+              <p className="mt-0.5 text-[10px] text-[#CCCCCC]/40">15 abas · 75 linhas · lidas em 1,2 s</p>
+            </div>
+          </div>
+          <span className="bg-[#4F7A63]/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#6D9B83]">
+            analisado
+          </span>
+        </div>
+      </div>
+
+      <div className={card}>
+        <p className={`border-b border-[#CCCCCC]/10 px-4 py-3 ${label}`}>
+          O que o sistema encontrou antes de importar
+        </p>
+        <ul className="divide-y divide-[#CCCCCC]/[0.06]">
+          {achados.map((a, i) => (
+            <li key={i} className="flex flex-wrap items-center gap-x-3 gap-y-1.5 px-4 py-3">
+              {a.s === "ok" ? (
+                <Check className="h-3.5 w-3.5 flex-shrink-0" style={{ color: cor[a.s] }} />
+              ) : (
+                <X className="h-3.5 w-3.5 flex-shrink-0" style={{ color: cor[a.s as "erro" | "alerta"] }} />
+              )}
+              <span className="text-[12px] font-semibold text-white">{a.t}</span>
+              <span className="text-[11px] text-[#CCCCCC]/45">{a.d}</span>
+              <span className="ml-auto whitespace-nowrap text-[10px] uppercase tracking-wider" style={{ color: cor[a.s as keyof typeof cor] }}>
+                {a.a}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className="text-[11px] leading-relaxed text-[#CCCCCC]/45">
+        A safra que já passou entra no sistema em minutos, com os problemas
+        apontados um a um. Nada é importado errado em silêncio.
+      </p>
+    </div>
+  );
+}
+
+/* ==================== B7 · BI COM FILTROS ==================== */
+
+export function ViewBi() {
+  const barras = [
+    { m: "jan", v: 15 }, { m: "fev", v: 112 }, { m: "mar", v: 79 },
+    { m: "abr", v: 67 }, { m: "mai", v: 0 }, { m: "jun", v: 1 },
+  ];
+  const max = 112;
+  const donut = [
+    { n: "Terceiros", p: 64.3, c: "#4F7A63" },
+    { n: "Própria", p: 35.7, c: "#CA8B35" },
+  ];
+  return (
+    <div className="space-y-3">
+      <div className={`${card} flex flex-wrap items-center gap-2 p-3`}>
+        {["Safra 2026", "Todos os produtores", "Todas as variedades", "Por mês"].map((f, i) => (
+          <span key={f} className={`px-3 py-1.5 text-[11px] ${i === 0 ? "bg-[#CA8B35] font-semibold text-[#0B0B0B]" : "border border-[#CCCCCC]/12 text-[#CCCCCC]/55"}`}>
+            {f}
+          </span>
+        ))}
+        <span className="ml-auto flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-[#CA8B35]">
+          <Download className="h-3 w-3" /> exportar
+        </span>
+      </div>
+
+      <div className="grid gap-3 lg:grid-cols-[1.4fr_1fr]">
+        <div className={`${card} p-5`}>
+          <p className={label}>Uva processada por mês · toneladas</p>
+          <div className="mt-6 flex h-[150px] items-end gap-2">
+            {barras.map((b) => (
+              <div key={b.m} className="flex flex-1 flex-col items-center justify-end">
+                <span className="mb-1.5 font-mono text-[9px] text-[#CCCCCC]/40">{b.v || "—"}</span>
+                <div className="w-full" style={{ height: `${Math.max((b.v / max) * 110, b.v ? 3 : 1)}px`, background: b.v / max > 0.6 ? "#CA8B35" : "#4F7A63" }} />
+                <span className="mt-2 text-[10px] uppercase text-[#CCCCCC]/45">{b.m}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={`${card} p-5`}>
+          <p className={label}>Origem da uva</p>
+          <div className="mt-6 flex items-center gap-5">
+            <svg viewBox="0 0 42 42" className="h-24 w-24 flex-shrink-0 -rotate-90">
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#4F7A63" strokeWidth="7" strokeDasharray="64.3 35.7" />
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#CA8B35" strokeWidth="7" strokeDasharray="35.7 64.3" strokeDashoffset="-64.3" />
+            </svg>
+            <ul className="space-y-2.5">
+              {donut.map((d) => (
+                <li key={d.n} className="flex items-center gap-2.5">
+                  <span className="h-2.5 w-2.5" style={{ background: d.c }} />
+                  <span className="text-[12px] text-[#CCCCCC]/70">{d.n}</span>
+                  <span className="font-mono text-[12px] font-bold text-white">{d.p}%</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-4">
+        {[
+          { v: "274.722", l: "kg recebidos" },
+          { v: "194.748", l: "litros produzidos" },
+          { v: "70,9%", l: "rendimento médio" },
+          { v: "R$ 666.540", l: "faturável apurado" },
+        ].map((k) => (
+          <div key={k.l} className={`${card} p-4`}>
+            <p className="font-playfair text-lg font-medium text-[#CA8B35]">{k.v}</p>
+            <p className={`mt-1 ${label}`}>{k.l}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ==================== B8 · WINE GARDEN ==================== */
+
+export function ViewEventos() {
+  const agenda = [
+    { h: "14:30", n: "Marina Fischer", p: "4 pessoas", t: "Degustação", cor: "#4F7A63" },
+    { h: "16:00", n: "Grupo Hotel Serra", p: "12 pessoas", t: "Visita guiada", cor: "#CA8B35" },
+    { h: "17:30", n: "Restaurante Dom", p: "2 pessoas", t: "Prova técnica", cor: "#4F7A63" },
+    { h: "19:00", n: "Aniversário · Carlos", p: "8 pessoas", t: "Wine Garden", cor: "#CA8B35" },
+  ];
+  return (
+    <div className="grid gap-3 lg:grid-cols-[1fr_260px]">
+      <div className={card}>
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#CCCCCC]/10 px-4 py-3">
+          <div className="flex items-center gap-2">
+            <CalendarDays className="h-3.5 w-3.5 text-[#CA8B35]" />
+            <p className={label}>Sábado · 12 de setembro · 14h30 às 20h</p>
+          </div>
+          <span className="text-[10px] text-[#CCCCCC]/40">26 de 40 lugares</span>
+        </div>
+        <ul className="divide-y divide-[#CCCCCC]/[0.06]">
+          {agenda.map((a) => (
+            <li key={a.h} className="flex items-center gap-4 px-4 py-3.5">
+              <span className="w-11 flex-shrink-0 font-mono text-[12px] text-[#CA8B35]">{a.h}</span>
+              <span className="h-8 w-[2px] flex-shrink-0" style={{ background: a.cor }} />
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-[12px] font-semibold text-white">{a.n}</p>
+                <p className="mt-0.5 text-[10px] text-[#CCCCCC]/45">{a.t} · {a.p}</p>
+              </div>
+              <Check className="h-3.5 w-3.5 flex-shrink-0 text-[#6D9B83]" />
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="space-y-3">
+        <div className={`${card} p-5`}>
+          <div className="flex items-center gap-2">
+            <Bot className="h-3.5 w-3.5 text-[#CA8B35]" />
+            <p className={label}>Quem reservou</p>
+          </div>
+          <ul className="mt-4 space-y-2.5 text-[11px] text-[#CCCCCC]/60">
+            <li className="flex justify-between"><span>DaIA no site</span><span className="font-mono text-white">2</span></li>
+            <li className="flex justify-between"><span>WhatsApp</span><span className="font-mono text-white">1</span></li>
+            <li className="flex justify-between"><span>Instagram</span><span className="font-mono text-white">1</span></li>
+          </ul>
+        </div>
+        <div className="border border-[#CA8B35]/25 bg-[#CA8B35]/[0.06] p-4">
+          <div className="flex items-center gap-2">
+            <Clock className="h-3 w-3 text-[#CA8B35]" />
+            <p className="text-[10px] uppercase tracking-wider text-[#CA8B35]">lembrete automático</p>
+          </div>
+          <p className="mt-2.5 text-[11px] leading-relaxed text-[#CCCCCC]/60">
+            Cada reserva recebe confirmação na hora e lembrete na véspera. Quem
+            veio entra na base e passa a receber as campanhas.
           </p>
         </div>
       </div>
