@@ -88,7 +88,7 @@ import { ProposalGenyusDemo } from "@/components/proposal-genyus/proposal-demo";
 import { ProposalGenyusHierarquia } from "@/components/proposal-genyus/proposal-hierarquia";
 import { ProposalGenyusExclusivos } from "@/components/proposal-genyus/proposal-exclusivos";
 import { ProposalGenyusErp } from "@/components/proposal-genyus/proposal-erp";
-import { ProposalGenyusModules } from "@/components/proposal-genyus/proposal-modules";
+import { ProposalGenyusPacotes } from "@/components/proposal-genyus/proposal-pacotes";
 import { ProposalGenyusRoadmap } from "@/components/proposal-genyus/proposal-roadmap";
 import { ProposalGenyusInvestment } from "@/components/proposal-genyus/proposal-investment";
 import { ProposalGenyusCta } from "@/components/proposal-genyus/proposal-cta";
@@ -155,15 +155,15 @@ const GENYUS_NAV: readonly NavItem[] = [
   { id: "planilha", label: "O diagnóstico", desc: "O que as duas planilhas revelam, apurado linha a linha", noDesktop: false },
   { id: "dados", label: "Os gráficos", desc: "A sua safra inteira em gráfico — 75 lotes, 274.722 kg", noDesktop: false },
   { id: "guarda", label: "A guarda", desc: "O vinho parado por anos e a receita que escapa — com simulador", noDesktop: false },
-  { id: "demo", label: "O sistema", desc: "Protótipo navegável — 18 módulos para clicar e passear", noDesktop: false },
+  { id: "demo", label: "O sistema", desc: "Protótipo navegável — 20 telas para clicar e passear", noDesktop: false },
   { id: "telas", label: "As telas", desc: "Como cada perfil usa o sistema, da balança à diretoria", noDesktop: true },
   { id: "jornada", label: "Um lote", desc: "Do caminhão à garrafa, acompanhando um lote real da sua planilha", noDesktop: false },
   { id: "antes-depois", label: "Antes e depois", desc: "Sete células reais da planilha e o que o sistema faz com cada uma", noDesktop: true },
   { id: "hierarquia", label: "Estrutura", desc: "Os cinco níveis, o que cada um vê e o que o sistema avisa", noDesktop: true },
   { id: "erp", label: "Integração", desc: "Como o Genyus Wine conversa com o CIA Sistemas", noDesktop: true },
-  { id: "exclusivos", label: "Diferenciais", desc: "O que nenhum outro sistema do mercado entrega", noDesktop: false },
-  { id: "modulos", label: "Módulos", desc: "Safra, guarda, adega, BI, CRM e a DaIA", noDesktop: true },
-  { id: "entregas", label: "Entregas", desc: "Oito semanas, com algo funcionando a cada quinzena", noDesktop: true },
+  { id: "exclusivos", label: "Diferenciais", desc: "O que nenhum outro sistema do mercado entrega", noDesktop: true },
+  { id: "pacotes", label: "Os 3 módulos", desc: "Gestão de terceiros, CRM e Wine Garden — R$ 5.000 cada", noDesktop: false },
+  { id: "entregas", label: "Entregas", desc: "Nove semanas pelos três, ou 4, 3 e 2 se forem separados", noDesktop: true },
 ];
 
 export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
@@ -182,7 +182,7 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
         <ProposalVinicolaNav
           monthlyValue={proposal.investment.setupFee ?? proposal.investment.totalMonthly}
           items={GENYUS_NAV}
-          investLabel="Projeto ·"
+          investLabel="Módulo ·"
           valueSuffix=""
         />
         <ProposalGenyusHero proposal={proposal} />
@@ -199,9 +199,9 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
         <ProposalGenyusHierarquia />
         <ProposalGenyusErp />
         <ProposalGenyusExclusivos />
-        <ProposalGenyusModules
-          services={proposal.services}
-          systemModules={proposal.systemModules}
+        <ProposalGenyusPacotes
+          packages={proposal.systemPackages}
+          base={proposal.systemBase}
         />
         {proposal.systemSprints && proposal.systemSprints.length > 0 && (
           <ProposalGenyusRoadmap sprints={proposal.systemSprints} />

@@ -6,7 +6,7 @@ import {
   LayoutDashboard, Grape, Timer, LayoutGrid, MessageSquare, Filter,
   Send, Bot, QrCode, Users, Search, Bell, MousePointerClick,
   SlidersHorizontal, BellRing, Contact, FileText, History,
-  FileSpreadsheet, BarChart3, CalendarDays,
+  FileSpreadsheet, BarChart3, CalendarDays, UserCheck, Star,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -18,6 +18,7 @@ import {
   ViewCampanhas, ViewEtiqueta, ViewPerfis, ViewDaia,
   ViewPolitica, ViewAlertas, ViewProdutores, ViewExtrato,
   ViewAuditoria, ViewImportar, ViewBi, ViewEventos,
+  ViewVisita, ViewPosVisita,
 } from "./demo-views";
 
 interface Modulo {
@@ -32,29 +33,32 @@ interface Modulo {
 }
 
 const MODULOS: Modulo[] = [
-  { grupo: "Adega", id: "dashboard", label: "Painel", icon: LayoutDashboard, titulo: "Painel geral", sub: "O estado da operação numa tela" },
-  { grupo: "Adega", id: "safra", label: "Safra", icon: Grape, titulo: "Safra 2026", sub: "Todos os lotes e em que etapa cada um está" },
-  { grupo: "Adega", id: "guarda", label: "Guarda", icon: Timer, titulo: "Guarda", sub: "O que está parado, há quanto tempo e quanto já vale", destaque: true },
-  { grupo: "Adega", id: "politica", label: "Política", icon: SlidersHorizontal, titulo: "Política de guarda", sub: "As faixas e os valores que a vinícola define", destaque: true },
-  { grupo: "Adega", id: "adega", label: "Adega", icon: LayoutGrid, titulo: "Mapa da adega", sub: "Ocupação e status de cada tanque e barrica" },
-  { grupo: "Adega", id: "etiquetas", label: "Etiquetas", icon: QrCode, titulo: "Etiquetas e QR", sub: "O lote inteiro na câmera do celular" },
+  { grupo: "Gestão de terceiros", id: "dashboard", label: "Painel", icon: LayoutDashboard, titulo: "Painel da safra", sub: "O estado da operação numa tela" },
+  { grupo: "Gestão de terceiros", id: "safra", label: "Safra", icon: Grape, titulo: "Safra 2026", sub: "Todos os lotes e em que etapa cada um está" },
+  { grupo: "Gestão de terceiros", id: "guarda", label: "Guarda", icon: Timer, titulo: "Guarda", sub: "O que está parado, há quanto tempo e quanto já vale", destaque: true },
+  { grupo: "Gestão de terceiros", id: "politica", label: "Política", icon: SlidersHorizontal, titulo: "Política de guarda", sub: "As faixas e os valores que a vinícola define", destaque: true },
+  { grupo: "Gestão de terceiros", id: "adega", label: "Adega", icon: LayoutGrid, titulo: "Mapa da adega", sub: "Ocupação e status de cada tanque e barrica" },
+  { grupo: "Gestão de terceiros", id: "etiquetas", label: "Etiquetas", icon: QrCode, titulo: "Etiquetas e QR", sub: "O lote inteiro na câmera do celular" },
+  { grupo: "Gestão de terceiros", id: "produtores", label: "Produtores", icon: Contact, titulo: "Ficha do produtor", sub: "Tudo de um produtor numa tela só" },
+  { grupo: "Gestão de terceiros", id: "extrato", label: "Extrato", icon: FileText, titulo: "Demonstrativo", sub: "O documento que vai para o produtor" },
 
-  { grupo: "Clientes", id: "atendimento", label: "Atendimento", icon: MessageSquare, titulo: "Atendimento", sub: "WhatsApp, Instagram e Facebook numa fila só", badge: "12" },
-  { grupo: "Clientes", id: "funil", label: "Funil", icon: Filter, titulo: "Funil de vendas", sub: "Do primeiro contato ao pedido fechado" },
-  { grupo: "Clientes", id: "campanhas", label: "Campanhas", icon: Send, titulo: "Campanhas", sub: "A base de clientes virando venda" },
-  { grupo: "Clientes", id: "daia", label: "DaIA", icon: Bot, titulo: "DaIA", sub: "A assistente no site, na loja e no atendimento" },
-  { grupo: "Clientes", id: "eventos", label: "Wine Garden", icon: CalendarDays, titulo: "Wine Garden e visitas", sub: "Reservas do sábado e quem veio da onde" },
+  { grupo: "CRM", id: "atendimento", label: "Atendimento", icon: MessageSquare, titulo: "Atendimento", sub: "WhatsApp, Instagram e Facebook numa fila só", badge: "12" },
+  { grupo: "CRM", id: "funil", label: "Funil", icon: Filter, titulo: "Funil de vendas", sub: "Do primeiro contato ao pedido fechado" },
+  { grupo: "CRM", id: "campanhas", label: "Campanhas", icon: Send, titulo: "Campanhas", sub: "A base de clientes virando venda" },
+  { grupo: "CRM", id: "daia", label: "DaIA", icon: Bot, titulo: "DaIA", sub: "A assistente no site, na loja e no atendimento" },
 
-  { grupo: "Gestão", id: "produtores", label: "Produtores", icon: Contact, titulo: "Ficha do produtor", sub: "Tudo de um produtor numa tela só" },
-  { grupo: "Gestão", id: "extrato", label: "Extrato", icon: FileText, titulo: "Demonstrativo", sub: "O documento que vai para o produtor" },
-  { grupo: "Gestão", id: "bi", label: "Relatórios", icon: BarChart3, titulo: "Relatórios", sub: "A safra em número e em cor, com filtro" },
-  { grupo: "Gestão", id: "alertas", label: "Alertas", icon: BellRing, titulo: "Central de alertas", sub: "O que exige decisão, e de quem", badge: "4" },
-  { grupo: "Gestão", id: "auditoria", label: "Histórico", icon: History, titulo: "Histórico e auditoria", sub: "Quem mudou o quê, quando e de quanto para quanto" },
-  { grupo: "Gestão", id: "importar", label: "Importar", icon: FileSpreadsheet, titulo: "Importar planilha", sub: "A safra que já passou entrando no sistema" },
-  { grupo: "Gestão", id: "perfis", label: "Perfis", icon: Users, titulo: "Perfis e permissões", sub: "Quem vê o quê, definido pela vinícola" },
+  { grupo: "Wine Garden", id: "eventos", label: "Reservas", icon: CalendarDays, titulo: "Reservas e agenda", sub: "O sábado inteiro e de onde veio cada reserva" },
+  { grupo: "Wine Garden", id: "visita", label: "A casa agora", icon: UserCheck, titulo: "A casa agora", sub: "Quem está aqui, o que provou e o que levou" },
+  { grupo: "Wine Garden", id: "posvisita", label: "Pós-visita", icon: Star, titulo: "Pós-visita e conversão", sub: "Quem visitou, quem voltou e quanto rendeu" },
+
+  { grupo: "Base do sistema", id: "bi", label: "Relatórios", icon: BarChart3, titulo: "Relatórios", sub: "A operação em número e em cor, com filtro" },
+  { grupo: "Base do sistema", id: "alertas", label: "Alertas", icon: BellRing, titulo: "Central de alertas", sub: "O que exige decisão, e de quem", badge: "4" },
+  { grupo: "Base do sistema", id: "auditoria", label: "Histórico", icon: History, titulo: "Histórico e auditoria", sub: "Quem mudou o quê, quando e de quanto para quanto" },
+  { grupo: "Base do sistema", id: "importar", label: "Importar", icon: FileSpreadsheet, titulo: "Importar planilha", sub: "A safra que já passou entrando no sistema" },
+  { grupo: "Base do sistema", id: "perfis", label: "Perfis", icon: Users, titulo: "Perfis e permissões", sub: "Quem vê o quê, definido pela vinícola" },
 ];
 
-const GRUPOS = ["Adega", "Clientes", "Gestão"] as const;
+const GRUPOS = ["Gestão de terceiros", "CRM", "Wine Garden", "Base do sistema"] as const;
 
 export function ProposalGenyusDemo() {
   const [ativo, setAtivo] = useState("dashboard");
@@ -79,6 +83,8 @@ export function ProposalGenyusDemo() {
       case "importar": return <ViewImportar />;
       case "bi": return <ViewBi />;
       case "eventos": return <ViewEventos />;
+      case "visita": return <ViewVisita />;
+      case "posvisita": return <ViewPosVisita />;
       default: return <ViewDashboard />;
     }
   };
@@ -93,7 +99,7 @@ export function ProposalGenyusDemo() {
           eyebrow="Protótipo navegável"
           title="Passeie pelo sistema."
           italic="Clique e veja."
-          lead="Não é imagem parada. Use o menu do sistema e navegue pelos módulos como se já estivesse dentro do Genyus Wine — com os dados reais da safra 2026 da Santa Augusta."
+          lead="Não é imagem parada. Use o menu do sistema e navegue pelas telas como se já estivesse dentro do Genyus Wine. O menu está organizado pelos três módulos, com a base do sistema no fim — e os dados são os da safra 2026 da Santa Augusta."
         />
 
         <motion.div

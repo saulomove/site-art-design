@@ -20,9 +20,9 @@ export function ProposalGenyusInvestment({ investment }: Props) {
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <VinicolaSectionHeader
           eyebrow="Investimento"
-          title="Um sistema sob medida"
-          italic="por menos que uma safra perde"
-          lead="Desenvolvimento parcelado acompanhando as entregas, e uma mensalidade que cobre hospedagem, suporte e evolução contínua."
+          title="Cinco mil por módulo,"
+          italic="e uma mensalidade só"
+          lead="Cada módulo é cobrado e entregue separadamente, parcelado em duas vezes. A mensalidade não muda com o número de módulos — cobre hospedagem, suporte e evolução do sistema inteiro."
         />
 
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
@@ -36,10 +36,11 @@ export function ProposalGenyusInvestment({ investment }: Props) {
               <div className="h-[2px] w-8 bg-[#CA8B35]" /><div className="h-8 w-[2px] bg-[#CA8B35]" />
             </div>
             <VinicolaEyebrow>{investment.setupLabel}</VinicolaEyebrow>
-            <div className="mt-6 flex items-baseline gap-2">
+            <div className="mt-6 flex flex-wrap items-baseline gap-x-3">
               <span className="font-playfair text-5xl font-medium text-[#CA8B35] md:text-7xl">{investment.setupFee}</span>
+              <span className="font-playfair text-2xl text-[#CCCCCC]/40">/ módulo</span>
             </div>
-            <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-[#CCCCCC]/45">Pagamento em 3 vezes</p>
+            <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-[#CCCCCC]/45">Cada um em 2x de R$ 2.500 · base do sistema inclusa</p>
 
             {investment.setupItems && (
               <div className="mt-7 space-y-2 border-y border-[#CCCCCC]/10 py-5">
@@ -79,7 +80,7 @@ export function ProposalGenyusInvestment({ investment }: Props) {
               <span className="font-playfair text-5xl font-medium text-white md:text-6xl">{investment.totalMonthly}</span>
               <span className="text-lg text-[#CCCCCC]/40">/mês</span>
             </div>
-            <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-[#CCCCCC]/45">A partir da entrega final</p>
+            <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-[#CCCCCC]/45">Um só, para quantos módulos forem</p>
 
             {investment.packageIncludes && (
               <ul className="mt-7 flex-1 space-y-3 border-t border-[#CCCCCC]/10 pt-7">

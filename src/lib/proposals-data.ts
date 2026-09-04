@@ -313,6 +313,25 @@ export interface Proposal {
     description: string;
     features: string[];
   }[];
+  /** Os módulos vendáveis do sistema, cada um com preço próprio. */
+  systemPackages?: {
+    key: string;
+    name: string;
+    tagline: string;
+    price: string;
+    installments: string;
+    weeks: string;
+    icon: string;
+    pain: string;
+    screens: string[];
+    deliverables: string[];
+    highlight?: boolean;
+  }[];
+  /** O que vem junto com qualquer módulo contratado. */
+  systemBase?: {
+    intro: string;
+    items: { title: string; description: string }[];
+  };
   systemSprints?: {
     number: number;
     weeks: string;
@@ -7384,10 +7403,81 @@ export const proposals: Proposal[] = [
       },
     ],
 
+    systemPackages: [
+      {
+        key: "terceiros",
+        name: "Gestão de terceiros",
+        tagline: "Do caminhão na balança à cobrança da guarda",
+        price: "R$ 5.000",
+        installments: "2x de R$ 2.500",
+        weeks: "4 semanas",
+        icon: "grape",
+        highlight: true,
+        pain: "64,3% de tudo que entra na adega é uva de terceiro, e as três etapas de cobrança dependem de alguém lembrar. A guarda, que é o serviço mais longo, não tem onde ser registrada — e por isso não é cobrada.",
+        screens: ["Painel da safra", "Safra e lotes", "Guarda", "Editor da política de guarda", "Mapa da adega", "Etiquetas e QR", "Ficha do produtor", "Demonstrativo do produtor"],
+        deliverables: [
+          "Recebimento pelo celular na balança, com foto da nota e etiqueta impressa na hora",
+          "As três etapas de cobrança com tarifa configurável e estado visível por etapa",
+          "Validação de rendimento no apontamento — o sistema barra o que a física não permite",
+          "Política de guarda com faixas de tempo e valores definidos pela vinícola",
+          "Alertas de virada de faixa em 90, 60 e 30 dias, para quem precisa agir",
+          "Mapa da adega com ocupação e tempo parado por tanque",
+          "Ficha do produtor e demonstrativo em PDF para enviar por WhatsApp",
+        ],
+      },
+      {
+        key: "crm",
+        name: "CRM",
+        tagline: "O cliente que compra uma vez passa a voltar",
+        price: "R$ 5.000",
+        installments: "2x de R$ 2.500",
+        weeks: "3 semanas",
+        icon: "messages",
+        pain: "As mensagens chegam por WhatsApp, direct do Instagram e comentário no Facebook, cada uma num aparelho, e responde quem viu primeiro. Quem comprou não fica registrado em lugar nenhum — e por isso nunca é reconvidado.",
+        screens: ["Atendimento multicanal", "DaIA", "Funil de vendas", "Campanhas"],
+        deliverables: [
+          "WhatsApp, Instagram e Facebook numa fila só, com transferência entre atendentes",
+          "Histórico do cliente aberto ao lado da conversa: o que comprou e quanto gastou",
+          "DaIA respondendo no site e na loja, e passando para uma pessoa quando não souber",
+          "Funil de vendas do primeiro contato ao pedido fechado",
+          "Base de clientes viva, alimentada por todos os canais",
+          "Campanhas de aniversário e de reativação de quem sumiu",
+        ],
+      },
+      {
+        key: "wine-garden",
+        name: "Wine Garden",
+        tagline: "Quem visita no sábado vira cliente na segunda",
+        price: "R$ 5.000",
+        installments: "2x de R$ 2.500",
+        weeks: "2 semanas",
+        icon: "calendar",
+        pain: "Todo sábado, das 14h30 às 20h, dezenas de pessoas passam pela vinícola, provam os rótulos e vão embora. Nenhum nome fica, nenhuma preferência é anotada, e a próxima campanha não sabe que elas existiram.",
+        screens: ["Reservas e agenda", "A casa agora", "Pós-visita e conversão"],
+        deliverables: [
+          "Reserva pelo site, pela DaIA, pelo WhatsApp e pelo Instagram, com lugares controlados",
+          "Confirmação na hora e lembrete automático na véspera",
+          "Check-in no dia e visão de quem está na casa agora",
+          "Registro do que cada mesa provou e do que levou",
+          "Quem visitou entra na base do CRM com as preferências dela",
+          "Relatório de conversão: quantos visitaram, quantos compraram e quanto renderam depois",
+        ],
+      },
+    ],
+    systemBase: {
+      intro: "Estes cinco itens não são um quarto módulo e não têm preço à parte: vêm com qualquer módulo contratado, porque sem eles nenhum dos outros funciona direito.",
+      items: [
+        { title: "Perfis e permissões", description: "A vinícola cria quantos perfis quiser e marca, item a item, o que cada um vê e pode alterar — inclusive esconder valores de quem só lida com volume." },
+        { title: "Central de alertas", description: "Cada perfil recebe só o que exige ação dele, no sistema e no celular. A diretoria não é avisada sobre tanque." },
+        { title: "Histórico e auditoria", description: "Toda alteração guarda autor, data, valor anterior e valor novo. Se um número mudou, existe a quem perguntar." },
+        { title: "Relatórios", description: "A operação em número e em cor, com filtro por safra, produtor, variedade e período, e exportação quando precisar." },
+        { title: "Importação das planilhas", description: "A safra que já passou entra no sistema em minutos, com os problemas apontados um a um antes de importar." },
+      ],
+    },
     systemSprints: [
       {
         number: 1,
-        weeks: "Semanas 1 e 2",
+        weeks: "Terceiros · semanas 1 e 2",
         title: "Fundação e recebimento",
         deliverables: [
           "Ambiente no ar, perfis e permissões configuráveis",
@@ -7399,66 +7489,62 @@ export const proposals: Proposal[] = [
       },
       {
         number: 2,
-        weeks: "Semanas 3 e 4",
-        title: "Etapas, rendimento e faturamento",
+        weeks: "Terceiros · semanas 3 e 4",
+        title: "Etapas, rendimento e guarda",
         deliverables: [
           "As três etapas de cobrança com valores configuráveis",
           "Cálculo de rendimento com alerta de desvio no apontamento",
-          "Fila do que há para faturar, por etapa e por produtor",
-          "Controle de nota emitida por etapa",
+          "Editor de política de guarda com faixas, valores e alertas",
+          "Mapa da adega, ficha do produtor e demonstrativo em PDF",
         ],
-        milestone:
-          "Some a pergunta “isso já foi faturado?”. A resposta passa a estar na tela.",
+        milestone: "A vinícola passa a ter uma política de guarda — e a cobrar por ela.",
       },
       {
         number: 3,
-        weeks: "Semanas 5 e 6",
-        title: "Guarda e mapa da adega",
-        deliverables: [
-          "Editor de política de guarda com faixas e valores",
-          "Painel da guarda com semáforo e valor acumulado",
-          "Notificações de virada de faixa em 90, 60 e 30 dias",
-          "Mapa da adega com ocupação e status por tanque",
-        ],
-        milestone:
-          "A vinícola passa a ter uma política de guarda — e a cobrar por ela.",
-      },
-      {
-        number: 4,
-        weeks: "Semanas 7 e 8",
-        title: "CRM, DaIA e integração",
+        weeks: "CRM · semanas 5 a 7",
+        title: "Atendimento, DaIA e campanhas",
         deliverables: [
           "Atendimento multicanal com fila e transferência",
           "DaIA ativa no site institucional e na loja",
-          "Funil, base de clientes e campanhas",
-          "Leitura do CIA Sistemas por API assim que liberada",
+          "Funil de vendas e base de clientes unificada",
+          "Campanhas de aniversário e de reativação",
         ],
-        milestone: "O sistema fecha o ciclo: da uva na balança à venda da garrafa.",
+        milestone: "As três caixas de mensagem viram uma fila só, e a base começa a crescer sozinha.",
+      },
+      {
+        number: 4,
+        weeks: "Wine Garden · semanas 8 e 9",
+        title: "Reservas, visita e conversão",
+        deliverables: [
+          "Reservas pelo site, pela DaIA e pelo WhatsApp, com controle de lugares",
+          "Confirmação, lembrete de véspera e check-in no dia",
+          "Registro do que cada mesa provou e levou",
+          "Relatório de conversão de visita em venda",
+        ],
+        milestone: "Quem visitou no sábado passa a existir na base na segunda-feira.",
       },
     ],
 
     investment: {
-      setupFee: "R$ 6.000",
-      setupLabel: "Desenvolvimento do Genyus Wine",
+      setupFee: "R$ 5.000",
+      setupLabel: "Desenvolvimento por módulo",
       setupIncludes: [
-        "Módulo de safra com as três etapas de cobrança",
-        "Módulo de guarda com política configurável e alertas",
-        "Mapa da adega e etiquetas com QR",
-        "Painéis de produção, financeiro e diretoria",
-        "CRM multicanal com WhatsApp, Instagram e Facebook",
-        "DaIA no site institucional e na loja",
         "Perfis e permissões configuráveis pela própria vinícola",
-        "Importação do histórico das planilhas atuais",
+        "Central de alertas no sistema e no celular",
+        "Histórico e auditoria de toda alteração",
+        "Relatórios com filtro e exportação",
+        "Importação das planilhas atuais como base histórica",
+        "Hospedagem, banco de dados e backup diário",
       ],
       setupItems: [
-        { item: "1ª parcela — na assinatura", value: "R$ 2.000" },
-        { item: "2ª parcela — entrega da safra e guarda", value: "R$ 2.000" },
-        { item: "3ª parcela — entrega do CRM e integração", value: "R$ 2.000" },
+        { item: "Um módulo", value: "R$ 5.000" },
+        { item: "Dois módulos", value: "R$ 10.000" },
+        { item: "Os três módulos", value: "R$ 15.000" },
       ],
       setupNote:
-        "Oito semanas até o sistema completo no ar, com entrega em quatro etapas — a cada duas semanas há algo funcionando para usar, não só para ver.",
+        "Cada módulo é parcelado em 2x, acompanhando as entregas dele. Os três juntos ficam em 3x de R$ 5.000. A mensalidade é uma só, independente de quantos módulos a vinícola contratar.",
       totalMonthly: "R$ 350",
-      totalLabel: "Manutenção, hospedagem e evolução",
+      totalLabel: "Manutenção, hospedagem e evolução — do sistema inteiro",
       packageIncludes: [
         "Hospedagem, banco de dados e backup diário",
         "Conexão de WhatsApp e infraestrutura da DaIA",
@@ -7471,12 +7557,14 @@ export const proposals: Proposal[] = [
         "Disparo em massa de campanhas acima do volume de atendimento normal, que pode exigir a API oficial do WhatsApp com custo por conversa",
       ],
       paymentConditions: [
-        "Desenvolvimento em 3x, acompanhando as entregas",
-        "Mensalidade a partir da entrega final",
+        "Cada módulo em 2x, acompanhando as entregas dele",
+        "A mensalidade é única e não muda com o número de módulos",
+        "Mensalidade a partir da entrega do primeiro módulo",
         "Sem contrato de fidelidade — a relação é mês a mês",
         "O código e os dados são da Santa Augusta",
       ],
       notes: [
+        "Os módulos podem ser contratados juntos ou em sequência. Se a vinícola preferir começar pela dor maior, o de Gestão de terceiros funciona sozinho — os outros dois entram quando ela quiser.",
         "A integração com o CIA Sistemas entra assim que a API for liberada. Enquanto isso, o Genyus Wine opera com base própria e importação das planilhas — o sistema não fica parado esperando terceiros.",
         "Nesta fase a integração é somente leitura. Nenhum dado é escrito no ERP sem uma segunda conversa e um aceite explícito.",
       ],

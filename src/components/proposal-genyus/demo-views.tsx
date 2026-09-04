@@ -23,6 +23,10 @@ import {
   History,
   CalendarDays,
   X,
+  Users,
+  Star,
+  ShoppingBag,
+  UserCheck,
 } from "lucide-react";
 
 /* ================================================================
@@ -1135,6 +1139,179 @@ export function ViewEventos() {
           <p className="mt-2.5 text-[11px] leading-relaxed text-[#CCCCCC]/60">
             Cada reserva recebe confirmação na hora e lembrete na véspera. Quem
             veio entra na base e passa a receber as campanhas.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== WINE GARDEN · A CASA AGORA ==================== */
+
+export function ViewVisita() {
+  const mesas = [
+    {
+      m: "Mesa 3", n: "Marina Fischer", p: 4, e: "15:10", st: "Degustando",
+      cor: "#4F7A63",
+      provou: ["Fenice Pinot Noir", "Tapera Merlot", "Espumante Brut"],
+      levou: "2 Fenice · R$ 328",
+    },
+    {
+      m: "Mesa 7", n: "Grupo Hotel Serra", p: 12, e: "16:05", st: "Visita guiada",
+      cor: "#CA8B35",
+      provou: ["Chardonnay", "Sangiovese Rosé"],
+      levou: "—",
+    },
+    {
+      m: "Mesa 1", n: "Carlos e Ana", p: 2, e: "14:40", st: "Fechando conta",
+      cor: "#8A6A24",
+      provou: ["Tapera Merlot", "Licoroso Moscato"],
+      levou: "1 Licoroso · R$ 189",
+    },
+  ];
+  return (
+    <div className="space-y-3">
+      <div className="grid gap-3 sm:grid-cols-4">
+        {[
+          { v: "18", l: "Pessoas na casa", c: "#CA8B35" },
+          { v: "3", l: "Mesas ocupadas", c: "#CCCCCC" },
+          { v: "9", l: "Rótulos provados", c: "#6D9B83" },
+          { v: "R$ 517", l: "Vendido até agora", c: "#CA8B35" },
+        ].map((k) => (
+          <div key={k.l} className={`${card} p-4`}>
+            <p className="font-playfair text-2xl font-medium" style={{ color: k.c }}>{k.v}</p>
+            <p className={`mt-1 ${label}`}>{k.l}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className={card}>
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#CCCCCC]/10 px-4 py-3">
+          <div className="flex items-center gap-2">
+            <UserCheck className="h-3.5 w-3.5 text-[#CA8B35]" />
+            <p className={label}>Quem está na casa · sábado, 17h22</p>
+          </div>
+          <span className="text-[10px] text-[#CCCCCC]/40">fecha às 20h</span>
+        </div>
+
+        <ul className="divide-y divide-[#CCCCCC]/[0.06]">
+          {mesas.map((t) => (
+            <li key={t.m} className="px-4 py-4">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                <span className="font-mono text-[11px] text-[#CA8B35]">{t.m}</span>
+                <span className="text-[12px] font-semibold text-white">{t.n}</span>
+                <span className="flex items-center gap-1 text-[10px] text-[#CCCCCC]/40">
+                  <Users className="h-2.5 w-2.5" /> {t.p}
+                </span>
+                <span className="text-[10px] text-[#CCCCCC]/30">entrou {t.e}</span>
+                <span
+                  className="ml-auto px-2 py-0.5 text-[10px] font-semibold"
+                  style={{ background: `${t.cor}22`, color: t.cor }}
+                >
+                  {t.st}
+                </span>
+              </div>
+
+              <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_auto]">
+                <div className="flex flex-wrap gap-1.5">
+                  {t.provou.map((r) => (
+                    <span key={r} className="border border-[#CCCCCC]/12 px-2 py-1 text-[10px] text-[#CCCCCC]/60">
+                      {r}
+                    </span>
+                  ))}
+                </div>
+                <span className="flex items-center gap-1.5 whitespace-nowrap text-[11px] text-[#CCCCCC]/50">
+                  <ShoppingBag className="h-3 w-3 text-[#6D9B83]" /> {t.levou}
+                </span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <p className="text-[11px] leading-relaxed text-[#CCCCCC]/45">
+        O que cada mesa provou fica registrado. Na semana seguinte, a campanha
+        sabe que a Marina gostou de Pinot Noir — e não manda oferta de branco
+        para ela.
+      </p>
+    </div>
+  );
+}
+
+/* ================== WINE GARDEN · PÓS-VISITA ================== */
+
+export function ViewPosVisita() {
+  const visitantes = [
+    { n: "Marina Fischer", d: "sáb 06/09", prov: "Pinot Noir", lev: "R$ 328", dp: "R$ 412", st: "Recomprou", cor: "#4F7A63" },
+    { n: "Carlos e Ana", d: "sáb 06/09", prov: "Licoroso", lev: "R$ 189", dp: "—", st: "Campanha enviada", cor: "#CA8B35" },
+    { n: "Grupo Hotel Serra", d: "sáb 06/09", prov: "Chardonnay", lev: "—", dp: "R$ 2.100", st: "Virou revenda", cor: "#4F7A63" },
+    { n: "Juliana Prado", d: "sáb 30/08", prov: "Sangiovese", lev: "R$ 96", dp: "—", st: "Sem retorno", cor: "#B5342B" },
+  ];
+  return (
+    <div className="space-y-3">
+      <div className="grid gap-3 sm:grid-cols-3">
+        {[
+          { v: "112", l: "Visitantes no mês", c: "#CCCCCC" },
+          { v: "68%", l: "Entraram na base", c: "#CA8B35" },
+          { v: "R$ 8.940", l: "Compraram depois da visita", c: "#6D9B83" },
+        ].map((k) => (
+          <div key={k.l} className={`${card} p-5`}>
+            <p className="font-playfair text-3xl font-medium" style={{ color: k.c }}>{k.v}</p>
+            <p className={`mt-1.5 ${label}`}>{k.l}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className={`${card} overflow-x-auto`}>
+        <table className="w-full min-w-[560px] border-collapse text-left">
+          <thead>
+            <tr className="border-b border-[#CCCCCC]/10">
+              {["Visitante", "Visita", "Provou", "Levou no dia", "Comprou depois", "Situação"].map((h) => (
+                <th key={h} className={`whitespace-nowrap px-4 py-3 ${label}`}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {visitantes.map((v) => (
+              <tr key={v.n} className="border-b border-[#CCCCCC]/[0.06] last:border-0">
+                <td className="whitespace-nowrap px-4 py-3 text-[12px] font-semibold text-white">{v.n}</td>
+                <td className="whitespace-nowrap px-4 py-3 font-mono text-[11px] text-[#CCCCCC]/45">{v.d}</td>
+                <td className="whitespace-nowrap px-4 py-3 text-[11px] text-[#CCCCCC]/60">{v.prov}</td>
+                <td className="whitespace-nowrap px-4 py-3 font-mono text-[11px] text-[#CCCCCC]/55">{v.lev}</td>
+                <td className="whitespace-nowrap px-4 py-3 font-mono text-[11px] text-white">{v.dp}</td>
+                <td className="whitespace-nowrap px-4 py-3">
+                  <span className="px-2 py-0.5 text-[10px] font-semibold" style={{ background: `${v.cor}22`, color: v.cor }}>
+                    {v.st}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className={`${card} p-5`}>
+          <div className="flex items-center gap-2">
+            <Star className="h-3.5 w-3.5 text-[#CA8B35]" />
+            <p className={label}>Avaliação automática, dois dias depois</p>
+          </div>
+          <p className="mt-4 text-[12px] leading-relaxed text-[#CCCCCC]/60">
+            &ldquo;Marina, foi um prazer receber você no Wine Garden. Como foi sua
+            experiência? E o Fenice, agradou?&rdquo;
+          </p>
+          <div className="mt-4 flex gap-1">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} className={`h-3 w-3 ${i <= 5 ? "fill-[#CA8B35] text-[#CA8B35]" : "text-[#CCCCCC]/20"}`} />
+            ))}
+          </div>
+        </div>
+        <div className="border border-[#CA8B35]/25 bg-[#CA8B35]/[0.06] p-5">
+          <p className="text-[10px] uppercase tracking-wider text-[#CA8B35]">o que isso vale</p>
+          <p className="mt-3 text-[12px] leading-relaxed text-[#CCCCCC]/65">
+            Hoje o sábado termina e a informação vai embora com as pessoas. Com o
+            módulo, cada visita deixa um nome, uma preferência e um motivo para a
+            próxima conversa.
           </p>
         </div>
       </div>
