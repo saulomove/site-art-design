@@ -154,7 +154,7 @@ const LOTES = [
   },
 ] as const;
 
-function TelaGuarda() {
+export function TelaGuarda() {
   return (
     <div className="p-5 md:p-7">
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
@@ -248,7 +248,7 @@ const ST_COR: Record<string, { bar: string; label: string; text: string }> = {
   livre: { bar: "bg-[#CCCCCC]/20", label: "Livre", text: "text-[#CCCCCC]/40" },
 };
 
-function TelaAdega() {
+export function TelaAdega() {
   return (
     <div className="p-5 md:p-7">
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">

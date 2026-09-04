@@ -81,6 +81,9 @@ import { ProposalGenyusHero } from "@/components/proposal-genyus/proposal-hero";
 import { ProposalGenyusPlanilha } from "@/components/proposal-genyus/proposal-planilha";
 import { ProposalGenyusGuarda } from "@/components/proposal-genyus/proposal-guarda";
 import { ProposalGenyusTelas } from "@/components/proposal-genyus/proposal-telas";
+import { ProposalGenyusDemo } from "@/components/proposal-genyus/proposal-demo";
+import { ProposalGenyusHierarquia } from "@/components/proposal-genyus/proposal-hierarquia";
+import { ProposalGenyusExclusivos } from "@/components/proposal-genyus/proposal-exclusivos";
 import { ProposalGenyusErp } from "@/components/proposal-genyus/proposal-erp";
 import { ProposalGenyusModules } from "@/components/proposal-genyus/proposal-modules";
 import { ProposalGenyusRoadmap } from "@/components/proposal-genyus/proposal-roadmap";
@@ -148,8 +151,11 @@ import type { Proposal } from "@/lib/proposals-data";
 const GENYUS_NAV: readonly NavItem[] = [
   { id: "planilha", label: "O diagnóstico", desc: "O que as duas planilhas revelam, apurado linha a linha", noDesktop: false },
   { id: "guarda", label: "A guarda", desc: "O vinho parado por anos e a receita que escapa — com simulador", noDesktop: false },
-  { id: "telas", label: "As telas", desc: "Como cada perfil usa o sistema, da balança à diretoria", noDesktop: false },
-  { id: "erp", label: "Integração", desc: "Como o Genyus Wine conversa com o CIA Sistemas", noDesktop: false },
+  { id: "demo", label: "O sistema", desc: "Protótipo navegável — clique nos módulos e passeie pelas telas", noDesktop: false },
+  { id: "telas", label: "As telas", desc: "Como cada perfil usa o sistema, da balança à diretoria", noDesktop: true },
+  { id: "hierarquia", label: "Estrutura", desc: "Os cinco níveis, o que cada um vê e o que o sistema avisa", noDesktop: true },
+  { id: "erp", label: "Integração", desc: "Como o Genyus Wine conversa com o CIA Sistemas", noDesktop: true },
+  { id: "exclusivos", label: "Diferenciais", desc: "O que nenhum outro sistema do mercado entrega", noDesktop: false },
   { id: "modulos", label: "Módulos", desc: "Safra, guarda, adega, BI, CRM e a DaIA", noDesktop: false },
   { id: "entregas", label: "Entregas", desc: "Oito semanas, com algo funcionando a cada quinzena", noDesktop: true },
 ];
@@ -179,8 +185,11 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
           findings={proposal.auditFindings}
         />
         <ProposalGenyusGuarda />
+        <ProposalGenyusDemo />
         <ProposalGenyusTelas screens={proposal.screens} />
+        <ProposalGenyusHierarquia />
         <ProposalGenyusErp />
+        <ProposalGenyusExclusivos />
         <ProposalGenyusModules
           services={proposal.services}
           systemModules={proposal.systemModules}
