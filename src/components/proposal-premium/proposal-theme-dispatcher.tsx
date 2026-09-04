@@ -180,9 +180,11 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
     return (
       <>
         <ProposalVinicolaNav
-          monthlyValue={proposal.investment.setupFee ?? proposal.investment.totalMonthly}
+          monthlyValue=""
           items={GENYUS_NAV}
-          investLabel="Módulo ·"
+          investCta="Investimento"
+          drawerTitle="Três módulos, um sistema"
+          drawerSub="Veja o que cada um resolve e o pacote completo"
           valueSuffix=""
         />
         <ProposalGenyusHero proposal={proposal} />
@@ -206,7 +208,10 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
         {proposal.systemSprints && proposal.systemSprints.length > 0 && (
           <ProposalGenyusRoadmap sprints={proposal.systemSprints} />
         )}
-        <ProposalGenyusInvestment investment={proposal.investment} />
+        <ProposalGenyusInvestment
+          investment={proposal.investment}
+          packages={proposal.systemPackages}
+        />
         <ProposalGenyusCta proposal={proposal} />
       </>
     );

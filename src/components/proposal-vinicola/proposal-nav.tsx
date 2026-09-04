@@ -18,6 +18,11 @@ interface Props {
   items?: readonly NavItem[];
   /** Rótulo do botão de investimento no desktop. */
   investLabel?: string;
+  /** Texto do botão quando não se quer mostrar valor no topo. */
+  investCta?: string;
+  /** Título e subtítulo do cartão de investimento dentro do índice. */
+  drawerTitle?: string;
+  drawerSub?: string;
   /** Sufixo após o valor. Vazio para valores que não são mensais. */
   valueSuffix?: string;
 }
@@ -83,6 +88,9 @@ export function ProposalVinicolaNav({
   monthlyValue,
   items,
   investLabel = "Investimento ·",
+  investCta = "Investimento",
+  drawerTitle = "Sem entrada e sem fidelidade",
+  drawerSub = "Tudo incluso numa mensalidade só",
   valueSuffix = "/mês",
 }: Props) {
   const SECOES_ATIVAS: readonly NavItem[] = items ?? SECOES;
@@ -203,12 +211,18 @@ export function ProposalVinicolaNav({
                       : "bg-[#CA8B35] text-[#0B0B0B] hover:bg-[#E6AE50]"
                   }`}
                 >
-                  <span className="hidden sm:inline">{investLabel}</span>
-                  <span className="font-playfair text-sm font-medium tracking-normal sm:text-base">
-                    {monthlyValue}
-                  </span>
-                  {valueSuffix && (
-                    <span className="tracking-normal opacity-70">{valueSuffix}</span>
+                  {monthlyValue ? (
+                    <>
+                      <span className="hidden sm:inline">{investLabel}</span>
+                      <span className="font-playfair text-sm font-medium tracking-normal sm:text-base">
+                        {monthlyValue}
+                      </span>
+                      {valueSuffix && (
+                        <span className="tracking-normal opacity-70">{valueSuffix}</span>
+                      )}
+                    </>
+                  ) : (
+                    <span>{investCta}</span>
                   )}
                 </button>
 
@@ -303,20 +317,22 @@ export function ProposalVinicolaNav({
                     Investimento
                   </span>
                   <span className="mt-2 block font-playfair text-xl font-medium text-white">
-                    Sem entrada e sem fidelidade
+                    {drawerTitle}
                   </span>
                   <span className="mt-1 block text-[13px] text-[#CCCCCC]/50">
-                    Tudo incluso numa mensalidade só
+                    {drawerSub}
                   </span>
                 </span>
-                <span className="flex flex-shrink-0 items-baseline gap-1">
-                  <span className="font-playfair text-3xl font-medium text-[#CA8B35] sm:text-4xl">
-                    {monthlyValue}
+                {monthlyValue && (
+                  <span className="flex flex-shrink-0 items-baseline gap-1">
+                    <span className="font-playfair text-3xl font-medium text-[#CA8B35] sm:text-4xl">
+                      {monthlyValue}
+                    </span>
+                    {valueSuffix && (
+                      <span className="text-xs text-[#CCCCCC]/40">{valueSuffix}</span>
+                    )}
                   </span>
-                  {valueSuffix && (
-                    <span className="text-xs text-[#CCCCCC]/40">{valueSuffix}</span>
-                  )}
-                </span>
+                )}
               </button>
 
               <button

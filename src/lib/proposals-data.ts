@@ -7526,8 +7526,8 @@ export const proposals: Proposal[] = [
     ],
 
     investment: {
-      setupFee: "R$ 5.000",
-      setupLabel: "Desenvolvimento por módulo",
+      setupFee: "R$ 15.000",
+      setupLabel: "O sistema completo",
       setupIncludes: [
         "Perfis e permissões configuráveis pela própria vinícola",
         "Central de alertas no sistema e no celular",
@@ -7536,13 +7536,8 @@ export const proposals: Proposal[] = [
         "Importação das planilhas atuais como base histórica",
         "Hospedagem, banco de dados e backup diário",
       ],
-      setupItems: [
-        { item: "Um módulo", value: "R$ 5.000" },
-        { item: "Dois módulos", value: "R$ 10.000" },
-        { item: "Os três módulos", value: "R$ 15.000" },
-      ],
       setupNote:
-        "Cada módulo é parcelado em 2x, acompanhando as entregas dele. Os três juntos ficam em 3x de R$ 5.000. A mensalidade é uma só, independente de quantos módulos a vinícola contratar.",
+        "Dá para contratar em sequência, um módulo por vez a R$ 5.000 em 2x. O de Gestão de terceiros funciona sozinho e resolve a maior perda. Mas é com os três no ar que o ciclo fecha — e a mensalidade é a mesma nos dois caminhos.",
       totalMonthly: "R$ 350",
       totalLabel: "Manutenção, hospedagem e evolução — do sistema inteiro",
       packageIncludes: [
