@@ -43,8 +43,8 @@ const CASOS: readonly Caso[] = [
     problema:
       "3.246 kg de Sauvignon Blanc que geraram 4.300 litros: 132,5% de rendimento. Na planilha de 2025 casos assim aparecem com a explicação escrita ao lado — \"Corte de brancas (estão juntos)\". É um blend de vários lotes lançado numa linha só, porque não há outro lugar para colocar.",
     sistema:
-      "O corte vira um registro próprio: um produto final puxando volume de vários lotes, cada um com a sua fração. O rendimento de cada lote fecha, e cada produtor é cobrado pela parte dele. Fora de um corte, rendimento acima de 100% não salva.",
-    regra: "Registro de corte e validação de rendimento",
+      "O corte vira uma etapa própria, depois da vinificação e antes do envase, puxando de barricas e tanques que podem ser de safras diferentes. Cada recipiente entra com a sua fração, o rendimento de cada lote fecha, e o envase sai rateado por produtor. Fora de um corte, rendimento acima de 100% não salva.",
+    regra: "Corte como etapa, depois da vinificação",
   },
   {
     aba: "FABRICIO",

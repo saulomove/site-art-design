@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
-  Truck, Scale, FlaskConical, Droplets, Timer, Package, FileText,
+  Truck, Scale, FlaskConical, Droplets, Timer, Package, FileText, Blend,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -97,11 +97,23 @@ const JORNADA: readonly Etapa[] = [
     acontece:
       "Aqui a receita evapora. O vinho ocupa tanque por meses e a cobrança da guarda depende de alguém lembrar.",
     sistema:
-      "Doze meses de cortesia, contados a partir de hoje. Em fevereiro de 2027 chega o aviso de 90 dias. Em maio, o lote entra na faixa 2 e passa a acumular sozinho.",
+      "Doze meses de cortesia, contados a partir daqui. Noventa dias antes de virar a faixa chega o primeiro aviso; depois o de 60 e o de 30. Se o vinho for esperar um corte na safra seguinte, o relógio simplesmente continua correndo — e a conta também.",
     valor: "R$ 487/mês",
     valorRot: "a partir do 13º mês",
     cor: "text-[#D4574D]",
     borda: "border-[#B5342B]/40",
+  },
+  {
+    icon: Blend,
+    quando: "antes do envase",
+    quem: "Enologia",
+    titulo: "O corte — onde este lote encontra os outros",
+    acontece:
+      "Aqui a planilha para de acompanhar. O corte é montado com barricas e tanques que podem ser de safras diferentes, e o volume do blend acaba lançado na linha de um lote só. Foi assim que apareceram os rendimentos de 132% e de 230%.",
+    sistema:
+      "O corte é um registro próprio, depois da vinificação. Estes 4.060 litros podem ir inteiros para um rótulo ou se dividir entre dois cortes — e nos dois casos a rastreabilidade até a uva da Suzin continua de pé, com a fração de cada recipiente registrada.",
+    cor: "text-[#CA8B35]",
+    borda: "border-[#CA8B35]/40",
   },
   {
     icon: Package,
@@ -111,7 +123,7 @@ const JORNADA: readonly Etapa[] = [
     acontece:
       "A terceira etapa, R$ 4,10 por garrafa, não tem uma única linha registrada na tabela de safra. Nenhuma.",
     sistema:
-      "4.060 L viram 5.413 garrafas. O sistema calcula, coloca na fila de faturamento e fecha o ciclo do lote.",
+      "4.060 L viram 5.413 garrafas. O sistema calcula, coloca na fila de faturamento e fecha o ciclo do lote. Se o vinho tiver entrado num corte, o envase sai rateado entre os produtores na proporção que cada um entrou.",
     valor: "R$ 22.193",
     valorRot: "3ª etapa · envase",
     cor: "text-[#CA8B35]",

@@ -79,9 +79,9 @@ export function ProposalGenyusGuarda() {
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <VinicolaSectionHeader
           eyebrow="O coração do sistema"
-          title="O vinho fica parado por anos."
-          italic="A cobrança, não."
-          lead="Este é o item que nenhum ERP de prateleira resolve, porque não é engenharia de produção — é regra comercial. E é onde está o dinheiro que hoje escapa sem ninguém sentir falta."
+          title="O vinho fica anos na barrica"
+          italic="porque o processo pede."
+          lead="A vinificação é feita lote a lote, o vinho descansa em barrica ou em tanque, e o corte só acontece no fim, antes do envase — às vezes juntando safras diferentes. A permanência longa não é esquecimento: é método. O que falta não é organizar a adega, é medir esse tempo e cobrar por ele."
         />
 
         {/* O caso real */}
@@ -103,7 +103,9 @@ export function ProposalGenyusGuarda() {
                 Ocupa tanque há {mesesCata} meses. Gerou 3.400 litros. Foi cobrado
                 pela prensagem e pela vinificação — e nada pela guarda, porque não
                 existe onde registrar isso. No mesmo controle há um Malbec do
-                Suzin, recebido em fevereiro de 2025, parado há {mesesSuzin} meses.
+                Suzin, recebido em fevereiro de 2025, há {mesesSuzin} meses na adega.
+                Pode muito bem estar ali de propósito, esperando entrar num corte.
+                O problema não é ele estar lá: é ninguém saber há quanto tempo.
               </p>
             </div>
             <div className="flex-shrink-0 text-center md:text-right">
@@ -153,7 +155,10 @@ export function ProposalGenyusGuarda() {
             Aqui está o ponto exato, e ele não é sobre desorganização: a planilha
             não tem onde registrar quando o vinho saiu. Sem data de saída não
             existe tempo de permanência, e sem tempo de permanência não existe
-            guarda para cobrar. O que falta não é disciplina —{" "}
+            guarda para cobrar. Como o corte pode puxar barricas de anos
+            diferentes, parte desse vinho vai ficar ali de propósito por mais uma
+            safra inteira — e essa é exatamente a permanência que deveria estar
+            sendo faturada. O que falta não é disciplina —{" "}
             <strong className="text-white">é o campo</strong>.
           </p>
         </motion.div>

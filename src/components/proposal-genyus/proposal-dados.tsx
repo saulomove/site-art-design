@@ -268,10 +268,13 @@ function A4() {
           a média apurada é <strong className="text-[#0B0B0B]">70,9%</strong>,
           exatamente a faixa técnica correta. Mas seis lotes ficam fora dela, e o
           arquivo de 2025 explica por quê:{" "}
-          <strong className="text-[#0B0B0B]">são cortes</strong>. O volume de um
-          blend inteiro é lançado contra o peso de um lote só, porque a planilha
-          não tem como dizer que aqueles litros vieram de três lotes diferentes.
-          Não é erro de quem digita — é limitação da ferramenta.
+          <strong className="text-[#0B0B0B]">são cortes</strong>. A vinificação é
+          feita lote a lote; o vinho descansa em barrica ou tanque; e só no fim,
+          antes do envase, é montado o corte — que pode juntar variedades e até
+          safras diferentes. A planilha não tem onde registrar essa etapa, então
+          o volume do corte inteiro cai na linha de um lote só e o rendimento
+          daquele lote estoura. Não é erro de quem digita — é limitação da
+          ferramenta.
         </>
             }
     >
@@ -332,9 +335,11 @@ function A4() {
         </ul>
         <p className="mt-5 text-[14px] leading-relaxed text-[#0B0B0B]/70">
           O sistema não precisa barrar isso. Precisa{" "}
-          <strong className="text-[#0B0B0B]">saber registrar corte</strong>: um
-          produto final puxando volume de vários lotes, cada um com a sua parte.
-          Aí o rendimento fecha, e a cobrança de cada produtor sai certa.
+          <strong className="text-[#0B0B0B]">saber registrar o corte como etapa</strong>,
+          depois da vinificação e antes do envase, puxando de barricas e tanques
+          de safras diferentes, cada um com a sua fração. Aí o rendimento de cada
+          lote fecha, a rastreabilidade até a uva continua de pé, e o envase sai
+          rateado por produtor.
         </p>
       </div>
 

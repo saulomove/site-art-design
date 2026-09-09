@@ -1651,48 +1651,49 @@ export function ViewExperiencias() {
 
 export function ViewCorte() {
   const origem = [
-    { p: "Berto Aguiar", u: "Chardonnay", kg: 710, l: 497, r: "70,0%" },
-    { p: "Berto Aguiar", u: "Sauvignon Blanc", kg: 1146, l: 816, r: "71,2%" },
-    { p: "Monte Agudo", u: "Sauvignon Blanc", kg: 2962, l: 2000, r: "67,5%" },
+    { rec: "Barrica 09", u: "Merlot", p: "Suzin", safra: "2025", l: 1200, meses: 18 },
+    { rec: "Barrica 14", u: "Cabernet Sauvignon", p: "Monte Agudo", safra: "2025", l: 800, meses: 19 },
+    { rec: "Tanque T-02", u: "Merlot", p: "Suzin", safra: "2026", l: 2000, meses: 4 },
   ];
-  const total = 3313;
-  const cobranca = [
-    { p: "Berto Aguiar", l: 1313, v: "R$ 4.267" },
-    { p: "Monte Agudo", l: 2000, v: "R$ 6.500" },
+  const total = 4000;
+  const garrafas = 5333;
+  const rateio = [
+    { p: "Suzin", l: 3200, pct: 80, v: "R$ 17.492" },
+    { p: "Monte Agudo", l: 800, pct: 20, v: "R$ 4.373" },
   ];
   return (
     <div className="space-y-3">
       <div className={`${card} p-5`}>
         <div className="flex flex-wrap items-start justify-between gap-4">
-          <div>
+          <div className="min-w-0">
             <div className="flex items-center gap-2">
               <Blend className="h-3.5 w-3.5 text-[#CA8B35]" />
-              <p className={label}>Produto de corte · safra 2026</p>
+              <p className={label}>Corte · etapa anterior ao envase</p>
             </div>
             <p className="mt-3 font-playfair text-xl font-medium text-white">
-              Corte de brancas
+              Corte de tintos · Reserva
             </p>
             <p className="mt-1 text-[11px] text-[#CCCCCC]/40">
-              Tanque T-05 · 3 lotes de 2 produtores
+              3 recipientes · 2 produtores · duas safras
             </p>
           </div>
           <div className="text-left sm:text-right">
             <p className="font-playfair text-3xl font-medium text-[#CA8B35]">
               {total.toLocaleString("pt-BR")} L
             </p>
-            <p className={`mt-1 ${label}`}>volume do corte</p>
+            <p className={`mt-1 ${label}`}>{garrafas.toLocaleString("pt-BR")} garrafas</p>
           </div>
         </div>
       </div>
 
       <div className={`${card} overflow-x-auto`}>
         <p className={`border-b border-[#CCCCCC]/10 px-4 py-3 ${label}`}>
-          De onde veio cada litro
+          De onde veio cada litro do corte
         </p>
-        <table className="w-full min-w-[560px] border-collapse text-left">
+        <table className="w-full min-w-[600px] border-collapse text-left">
           <thead>
             <tr className="border-b border-[#CCCCCC]/10">
-              {["Produtor", "Lote", "Peso", "Litros no corte", "Rendimento", "Parte"].map((h) => (
+              {["Onde estava", "Vinho", "Produtor", "Safra", "Em guarda", "Litros", "Parte"].map((h) => (
                 <th key={h} className={`whitespace-nowrap px-4 py-3 ${label}`}>{h}</th>
               ))}
             </tr>
@@ -1700,22 +1701,29 @@ export function ViewCorte() {
           <tbody>
             {origem.map((o, i) => (
               <tr key={i} className="border-b border-[#CCCCCC]/[0.06] last:border-0">
-                <td className="whitespace-nowrap px-4 py-3 text-[12px] font-semibold text-white">{o.p}</td>
-                <td className="whitespace-nowrap px-4 py-3 text-[11px] text-[#CCCCCC]/60">{o.u}</td>
-                <td className="whitespace-nowrap px-4 py-3 font-mono text-[11px] text-[#CCCCCC]/50">
-                  {o.kg.toLocaleString("pt-BR")} kg
+                <td className="whitespace-nowrap px-4 py-3 font-mono text-[11px] text-[#CCCCCC]/60">{o.rec}</td>
+                <td className="whitespace-nowrap px-4 py-3 text-[12px] text-white">{o.u}</td>
+                <td className="whitespace-nowrap px-4 py-3 text-[11px] text-[#CCCCCC]/60">{o.p}</td>
+                <td className="whitespace-nowrap px-4 py-3">
+                  <span
+                    className={`px-2 py-0.5 font-mono text-[10px] font-bold ${
+                      o.safra === "2025"
+                        ? "bg-[#B5342B]/20 text-[#D4574D]"
+                        : "bg-[#CCCCCC]/10 text-[#CCCCCC]/60"
+                    }`}
+                  >
+                    {o.safra}
+                  </span>
+                </td>
+                <td className="whitespace-nowrap px-4 py-3 font-mono text-[11px] text-[#CA8B35]">
+                  {o.meses} meses
                 </td>
                 <td className="whitespace-nowrap px-4 py-3 font-mono text-[11px] text-white">
                   {o.l.toLocaleString("pt-BR")} L
                 </td>
-                <td className="whitespace-nowrap px-4 py-3">
-                  <span className="bg-[#4F7A63]/20 px-2 py-0.5 font-mono text-[10px] font-bold text-[#6D9B83]">
-                    {o.r}
-                  </span>
-                </td>
                 <td className="px-4 py-3">
                   <span className="flex items-center gap-2">
-                    <span className="h-[6px] w-16 bg-[#CCCCCC]/10">
+                    <span className="h-[6px] w-14 bg-[#CCCCCC]/10">
                       <span className="block h-full bg-[#CA8B35]" style={{ width: `${(o.l / total) * 100}%` }} />
                     </span>
                     <span className="font-mono text-[10px] text-[#CCCCCC]/45">
@@ -1731,20 +1739,24 @@ export function ViewCorte() {
 
       <div className="grid gap-3 sm:grid-cols-2">
         <div className={`${card} p-5`}>
-          <p className={label}>Cobrança da 2ª etapa · R$ 3,25/L</p>
+          <p className={label}>Envase rateado · R$ 4,10 por garrafa</p>
           <ul className="mt-4 space-y-3">
-            {cobranca.map((c) => (
+            {rateio.map((c) => (
               <li key={c.p} className="flex items-baseline justify-between gap-4">
                 <span className="min-w-0">
                   <span className="block truncate text-[12px] text-white">{c.p}</span>
                   <span className="block font-mono text-[10px] text-[#CCCCCC]/40">
-                    {c.l.toLocaleString("pt-BR")} L no corte
+                    {c.l.toLocaleString("pt-BR")} L · {c.pct}% do corte
                   </span>
                 </span>
                 <span className="flex-shrink-0 font-mono text-[13px] font-bold text-[#CA8B35]">{c.v}</span>
               </li>
             ))}
           </ul>
+          <p className="mt-4 border-t border-[#CCCCCC]/10 pt-3 text-[11px] leading-relaxed text-[#CCCCCC]/45">
+            A guarda de cada recipiente continua contando à parte, pelo tempo que
+            cada vinho ficou lá — inclusive os 18 e 19 meses dos de 2025.
+          </p>
         </div>
 
         <div className="border border-[#4F7A63]/30 bg-[#4F7A63]/[0.06] p-5">
@@ -1753,13 +1765,23 @@ export function ViewCorte() {
             <p className="text-[10px] uppercase tracking-wider text-[#6D9B83]">o que isso resolve</p>
           </div>
           <p className="mt-3.5 text-[12px] leading-relaxed text-[#CCCCCC]/65">
-            Na planilha, o corte inteiro é lançado contra o peso de um lote só — e
-            aparece como 230% de rendimento. Aqui cada lote guarda a sua fração,
-            os três rendimentos ficam dentro da faixa, e cada produtor é cobrado
-            exatamente pelo que entrou dele.
+            A vinificação é feita lote a lote e o corte só acontece no fim, antes
+            do envase, podendo juntar barricas de anos diferentes. A planilha não
+            tem como representar isso: lança o volume do corte na linha de um
+            lote só, e o rendimento daquele lote estoura.
+          </p>
+          <p className="mt-3 text-[12px] leading-relaxed text-[#CCCCCC]/65">
+            Aqui o corte é um registro próprio, posterior à vinificação. Cada
+            recipiente entra com a sua parte, a rastreabilidade até a uva de
+            origem continua de pé, e o envase é rateado por produtor.
           </p>
         </div>
       </div>
+
+      <p className="text-center text-[10px] text-[#CCCCCC]/25">
+        Sem regra fixa: quem monta o corte é o enólogo, e o sistema registra a
+        decisão dele — não o contrário.
+      </p>
     </div>
   );
 }

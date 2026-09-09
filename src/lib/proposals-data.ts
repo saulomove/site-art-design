@@ -7418,7 +7418,7 @@ export const proposals: Proposal[] = [
         deliverables: [
           "Recebimento pelo celular na balança, com foto da nota e etiqueta impressa na hora",
           "As três etapas de cobrança com tarifa configurável e estado visível por etapa",
-          "Registro de corte: um produto final puxando volume de vários lotes, com a fração de cada produtor",
+          "Corte como etapa própria, entre a vinificação e o envase, puxando de barricas e tanques de safras diferentes com a fração de cada produtor",
           "Validação de rendimento no apontamento, com o corte tratado como corte e não como erro",
           "Política de guarda com faixas de tempo e valores definidos pela vinícola",
           "Alertas de virada de faixa em 90, 60 e 30 dias, para quem precisa agir",
