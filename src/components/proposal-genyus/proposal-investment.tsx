@@ -45,7 +45,7 @@ export function ProposalGenyusInvestment({ investment, packages }: Props) {
               </span>
             </div>
             <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-[#CCCCCC]/45">
-              3x de R$ 5.000 · dez semanas · 24 telas
+              3x de R$ 5.000 · dez semanas · 25 telas
             </p>
 
             {/* o que compõe o pacote */}

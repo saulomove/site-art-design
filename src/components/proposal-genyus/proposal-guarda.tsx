@@ -12,6 +12,13 @@ import {
 /** Litragem real produzida na safra 2026, apurada na planilha da vinícola. */
 const LITROS_SAFRA = 194748;
 
+/** Meses corridos desde uma data — para os lotes parados não envelhecerem no texto. */
+function mesesDesde(iso: string) {
+  const d = new Date(iso + "T00:00:00");
+  const h = new Date();
+  return (h.getFullYear() - d.getFullYear()) * 12 + (h.getMonth() - d.getMonth());
+}
+
 function brl(v: number) {
   return v.toLocaleString("pt-BR", {
     style: "currency",
@@ -49,6 +56,10 @@ const FAIXAS = [
 ] as const;
 
 export function ProposalGenyusGuarda() {
+  const mesesCata = mesesDesde("2025-04-10");
+  const mesesSuzin = mesesDesde("2025-02-15");
+  /** Média de permanência dos 65 lotes de 2025 com data, apurada nas planilhas. */
+  const mesesMedio2025 = Math.round(mesesDesde("2025-03-01") * 10) / 10;
   const [percentual, setPercentual] = useState(30);
   const [tarifa, setTarifa] = useState(0.12);
 
@@ -89,20 +100,62 @@ export function ProposalGenyusGuarda() {
                 Consta como fermentando até hoje.
               </p>
               <p className="mt-5 text-[15px] leading-relaxed text-[#CCCCCC]/60">
-                Ocupou tanque por catorze meses. Gerou 3.400 litros. Foi cobrado
-                pela prensagem e pela vinificação — e nada pela guarda, porque
-                não existe onde registrar isso.
+                Ocupa tanque há {mesesCata} meses. Gerou 3.400 litros. Foi cobrado
+                pela prensagem e pela vinificação — e nada pela guarda, porque não
+                existe onde registrar isso. No mesmo controle há um Malbec do
+                Suzin, recebido em fevereiro de 2025, parado há {mesesSuzin} meses.
               </p>
             </div>
             <div className="flex-shrink-0 text-center md:text-right">
               <p className="font-playfair text-6xl font-medium text-[#B5342B] md:text-7xl">
-                14
+                {mesesCata}
               </p>
               <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-[#CCCCCC]/45">
                 meses parado
               </p>
             </div>
           </div>
+        </motion.div>
+
+        {/* A safra de 2025 inteira */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: 0.03 }}
+          className="mb-8 border border-[#B5342B]/30 bg-[#121110] p-8 md:p-10"
+        >
+          <VinicolaEyebrow>E não é um lote. É a safra inteira</VinicolaEyebrow>
+          <h3 className="mt-5 max-w-3xl font-playfair text-xl font-medium leading-snug text-white md:text-2xl">
+            Os 65 lotes de 2025 estão, em média, há {mesesMedio2025} meses na
+            planilha — e apenas um deles tem data de saída registrada.
+          </h3>
+
+          <div className="mt-8 grid gap-px overflow-hidden border border-[#CCCCCC]/10 bg-[#CCCCCC]/10 sm:grid-cols-3">
+            {[
+              { v: "118.797 L", l: "produzidos na safra 2025", s: "distribuídos em 65 lotes com data" },
+              { v: "37 lotes", l: "com 19 meses ou mais", s: "54.057 litros só nessa faixa" },
+              { v: "1 de 66", l: "com saída registrada", s: "a coluna existe em uma aba só" },
+            ].map((k, i) => (
+              <div key={k.l} className="bg-[#0E0D0C] p-6">
+                <p
+                  className={`font-playfair text-3xl font-medium ${i === 2 ? "text-[#D4574D]" : "text-[#CA8B35]"}`}
+                >
+                  {k.v}
+                </p>
+                <p className="mt-3 text-[13px] font-semibold text-white">{k.l}</p>
+                <p className="mt-1.5 text-[12px] leading-snug text-[#CCCCCC]/45">{k.s}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 max-w-3xl text-[15px] leading-relaxed text-[#CCCCCC]/65">
+            Aqui está o ponto exato, e ele não é sobre desorganização: a planilha
+            não tem onde registrar quando o vinho saiu. Sem data de saída não
+            existe tempo de permanência, e sem tempo de permanência não existe
+            guarda para cobrar. O que falta não é disciplina —{" "}
+            <strong className="text-white">é o campo</strong>.
+          </p>
         </motion.div>
 
         {/* A política */}

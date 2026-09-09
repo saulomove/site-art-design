@@ -41,10 +41,10 @@ const CASOS: readonly Caso[] = [
     celula: "Litragem",
     conteudo: "4300",
     problema:
-      "3.246 kg de Sauvignon Blanc que geraram 4.300 litros. É 132,5% de rendimento — mais líquido do que uva entrou. Fisicamente impossível, e ninguém viu.",
+      "3.246 kg de Sauvignon Blanc que geraram 4.300 litros: 132,5% de rendimento. Na planilha de 2025 casos assim aparecem com a explicação escrita ao lado — \"Corte de brancas (estão juntos)\". É um blend de vários lotes lançado numa linha só, porque não há outro lugar para colocar.",
     sistema:
-      "O sistema divide na hora e compara com a faixa da casa. Acima de 100%, não salva. Entre 85% e 100%, pede confirmação de um segundo perfil.",
-    regra: "Validação de rendimento no apontamento",
+      "O corte vira um registro próprio: um produto final puxando volume de vários lotes, cada um com a sua fração. O rendimento de cada lote fecha, e cada produtor é cobrado pela parte dele. Fora de um corte, rendimento acima de 100% não salva.",
+    regra: "Registro de corte e validação de rendimento",
   },
   {
     aba: "FABRICIO",

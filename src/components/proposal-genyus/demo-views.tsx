@@ -34,6 +34,7 @@ import {
   Clock3,
   Wine as WineIcon,
   AlertCircle,
+  Blend,
 } from "lucide-react";
 
 /* ================================================================
@@ -1642,6 +1643,123 @@ export function ViewExperiencias() {
       <p className="text-center text-[10px] text-[#CCCCCC]/25">
         Experiências e valores ilustrativos — cadastrados pela própria vinícola.
       </p>
+    </div>
+  );
+}
+
+/* ==================== CORTE / BLEND ==================== */
+
+export function ViewCorte() {
+  const origem = [
+    { p: "Berto Aguiar", u: "Chardonnay", kg: 710, l: 497, r: "70,0%" },
+    { p: "Berto Aguiar", u: "Sauvignon Blanc", kg: 1146, l: 816, r: "71,2%" },
+    { p: "Monte Agudo", u: "Sauvignon Blanc", kg: 2962, l: 2000, r: "67,5%" },
+  ];
+  const total = 3313;
+  const cobranca = [
+    { p: "Berto Aguiar", l: 1313, v: "R$ 4.267" },
+    { p: "Monte Agudo", l: 2000, v: "R$ 6.500" },
+  ];
+  return (
+    <div className="space-y-3">
+      <div className={`${card} p-5`}>
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-2">
+              <Blend className="h-3.5 w-3.5 text-[#CA8B35]" />
+              <p className={label}>Produto de corte · safra 2026</p>
+            </div>
+            <p className="mt-3 font-playfair text-xl font-medium text-white">
+              Corte de brancas
+            </p>
+            <p className="mt-1 text-[11px] text-[#CCCCCC]/40">
+              Tanque T-05 · 3 lotes de 2 produtores
+            </p>
+          </div>
+          <div className="text-left sm:text-right">
+            <p className="font-playfair text-3xl font-medium text-[#CA8B35]">
+              {total.toLocaleString("pt-BR")} L
+            </p>
+            <p className={`mt-1 ${label}`}>volume do corte</p>
+          </div>
+        </div>
+      </div>
+
+      <div className={`${card} overflow-x-auto`}>
+        <p className={`border-b border-[#CCCCCC]/10 px-4 py-3 ${label}`}>
+          De onde veio cada litro
+        </p>
+        <table className="w-full min-w-[560px] border-collapse text-left">
+          <thead>
+            <tr className="border-b border-[#CCCCCC]/10">
+              {["Produtor", "Lote", "Peso", "Litros no corte", "Rendimento", "Parte"].map((h) => (
+                <th key={h} className={`whitespace-nowrap px-4 py-3 ${label}`}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {origem.map((o, i) => (
+              <tr key={i} className="border-b border-[#CCCCCC]/[0.06] last:border-0">
+                <td className="whitespace-nowrap px-4 py-3 text-[12px] font-semibold text-white">{o.p}</td>
+                <td className="whitespace-nowrap px-4 py-3 text-[11px] text-[#CCCCCC]/60">{o.u}</td>
+                <td className="whitespace-nowrap px-4 py-3 font-mono text-[11px] text-[#CCCCCC]/50">
+                  {o.kg.toLocaleString("pt-BR")} kg
+                </td>
+                <td className="whitespace-nowrap px-4 py-3 font-mono text-[11px] text-white">
+                  {o.l.toLocaleString("pt-BR")} L
+                </td>
+                <td className="whitespace-nowrap px-4 py-3">
+                  <span className="bg-[#4F7A63]/20 px-2 py-0.5 font-mono text-[10px] font-bold text-[#6D9B83]">
+                    {o.r}
+                  </span>
+                </td>
+                <td className="px-4 py-3">
+                  <span className="flex items-center gap-2">
+                    <span className="h-[6px] w-16 bg-[#CCCCCC]/10">
+                      <span className="block h-full bg-[#CA8B35]" style={{ width: `${(o.l / total) * 100}%` }} />
+                    </span>
+                    <span className="font-mono text-[10px] text-[#CCCCCC]/45">
+                      {((o.l / total) * 100).toFixed(0)}%
+                    </span>
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className={`${card} p-5`}>
+          <p className={label}>Cobrança da 2ª etapa · R$ 3,25/L</p>
+          <ul className="mt-4 space-y-3">
+            {cobranca.map((c) => (
+              <li key={c.p} className="flex items-baseline justify-between gap-4">
+                <span className="min-w-0">
+                  <span className="block truncate text-[12px] text-white">{c.p}</span>
+                  <span className="block font-mono text-[10px] text-[#CCCCCC]/40">
+                    {c.l.toLocaleString("pt-BR")} L no corte
+                  </span>
+                </span>
+                <span className="flex-shrink-0 font-mono text-[13px] font-bold text-[#CA8B35]">{c.v}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="border border-[#4F7A63]/30 bg-[#4F7A63]/[0.06] p-5">
+          <div className="flex items-center gap-2">
+            <Check className="h-3.5 w-3.5 text-[#6D9B83]" />
+            <p className="text-[10px] uppercase tracking-wider text-[#6D9B83]">o que isso resolve</p>
+          </div>
+          <p className="mt-3.5 text-[12px] leading-relaxed text-[#CCCCCC]/65">
+            Na planilha, o corte inteiro é lançado contra o peso de um lote só — e
+            aparece como 230% de rendimento. Aqui cada lote guarda a sua fração,
+            os três rendimentos ficam dentro da faixa, e cada produtor é cobrado
+            exatamente pelo que entrou dele.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

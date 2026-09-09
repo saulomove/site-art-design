@@ -260,19 +260,20 @@ function A4() {
     <Grafico
       n="A · 04"
       largo
-      titulo="Seis lotes que a física não explica"
+      titulo="Seis lotes que a planilha não consegue explicar"
       achado={
         <>
-          Cada ponto é um dos <strong className="text-[#0B0B0B]">73 lotes</strong> com peso e
-          litragem registrados. A faixa verde é o rendimento real da casa — a
-          média apurada é <strong className="text-[#0B0B0B]">70,9%</strong>, exatamente a faixa
-          técnica correta. Mas cinco lotes estão acima de 85% e um deles marca{" "}
-          <strong className="text-[#B5342B]">132,5%</strong>: mais litro do que uva
-          entrou. E um lote marca 20%, quatro vezes abaixo do normal. Não é
-          problema de produção — é digitação que ninguém confere. No sistema, o
-          apontamento é barrado na hora.
+          Cada ponto é um dos <strong className="text-[#0B0B0B]">73 lotes</strong> com
+          peso e litragem registrados. A faixa verde é o rendimento real da casa —
+          a média apurada é <strong className="text-[#0B0B0B]">70,9%</strong>,
+          exatamente a faixa técnica correta. Mas seis lotes ficam fora dela, e o
+          arquivo de 2025 explica por quê:{" "}
+          <strong className="text-[#0B0B0B]">são cortes</strong>. O volume de um
+          blend inteiro é lançado contra o peso de um lote só, porque a planilha
+          não tem como dizer que aqueles litros vieram de três lotes diferentes.
+          Não é erro de quem digita — é limitação da ferramenta.
         </>
-      }
+            }
     >
       <div className="overflow-x-auto">
         <div className="min-w-[520px]">
@@ -315,6 +316,27 @@ function A4() {
       <p className="mt-3 text-center text-[10px] uppercase tracking-[0.14em] text-[#8A6A24]/70 lg:hidden">
         deslize o gráfico para o lado
       </p>
+
+      <div className="mt-7 border-l-2 border-[#4F7A63]/50 bg-[#4F7A63]/[0.05] p-6">
+        <p className="text-[10px] uppercase tracking-[0.2em] text-[#4F7A63]">
+          A prova está na planilha de 2025
+        </p>
+        <p className="mt-4 text-[14px] leading-relaxed text-[#0B0B0B]/70">
+          Lá a coluna &ldquo;Produto&rdquo; foi preenchida, e ela entrega o que
+          está acontecendo:
+        </p>
+        <ul className="mt-4 space-y-2 font-mono text-[12px] leading-relaxed text-[#0B0B0B]/60">
+          <li>Monte Agudo · Cab. Sauvignon · 338 kg → 1.700 L · <span className="text-[#0B0B0B]/85">&ldquo;Corte C.S e merlot (estão juntos)&rdquo;</span></li>
+          <li>Monte Agudo · Sauvignon blanc · 369 kg → 850 L · <span className="text-[#0B0B0B]/85">&ldquo;Corte de brancas (estão juntos)&rdquo;</span></li>
+          <li>Berto Aguiar · Moscato Giallo · 546 kg → 620 L · <span className="text-[#0B0B0B]/85">&ldquo;Corte de brancas (Estão juntos)&rdquo;</span></li>
+        </ul>
+        <p className="mt-5 text-[14px] leading-relaxed text-[#0B0B0B]/70">
+          O sistema não precisa barrar isso. Precisa{" "}
+          <strong className="text-[#0B0B0B]">saber registrar corte</strong>: um
+          produto final puxando volume de vários lotes, cada um com a sua parte.
+          Aí o rendimento fecha, e a cobrança de cada produtor sai certa.
+        </p>
+      </div>
 
       <ul className="mt-7 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {REND.map((l) => (

@@ -7,7 +7,7 @@ import {
   Send, Bot, QrCode, Users, Search, Bell, MousePointerClick,
   SlidersHorizontal, BellRing, Contact, FileText, History,
   FileSpreadsheet, BarChart3, CalendarDays, UserCheck, Star,
-  CalendarRange, CalendarPlus, BellDot, Wine,
+  CalendarRange, CalendarPlus, BellDot, Wine, Blend,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -21,6 +21,7 @@ import {
   ViewAuditoria, ViewImportar, ViewBi, ViewEventos,
   ViewVisita, ViewPosVisita,
   ViewCalendario, ViewNovaReserva, ViewAvisosWg, ViewExperiencias,
+  ViewCorte,
 } from "./demo-views";
 
 interface Modulo {
@@ -39,6 +40,7 @@ const MODULOS: Modulo[] = [
   { grupo: "Gestão de terceiros", id: "safra", label: "Safra", icon: Grape, titulo: "Safra 2026", sub: "Todos os lotes e em que etapa cada um está" },
   { grupo: "Gestão de terceiros", id: "guarda", label: "Guarda", icon: Timer, titulo: "Guarda", sub: "O que está parado, há quanto tempo e quanto já vale", destaque: true },
   { grupo: "Gestão de terceiros", id: "politica", label: "Política", icon: SlidersHorizontal, titulo: "Política de guarda", sub: "As faixas e os valores que a vinícola define", destaque: true },
+  { grupo: "Gestão de terceiros", id: "corte", label: "Corte", icon: Blend, titulo: "Corte e blend", sub: "Um produto final puxando volume de vários lotes" },
   { grupo: "Gestão de terceiros", id: "adega", label: "Adega", icon: LayoutGrid, titulo: "Mapa da adega", sub: "Ocupação e status de cada tanque e barrica" },
   { grupo: "Gestão de terceiros", id: "etiquetas", label: "Etiquetas", icon: QrCode, titulo: "Etiquetas e QR", sub: "O lote inteiro na câmera do celular" },
   { grupo: "Gestão de terceiros", id: "produtores", label: "Produtores", icon: Contact, titulo: "Ficha do produtor", sub: "Tudo de um produtor numa tela só" },
@@ -95,6 +97,7 @@ export function ProposalGenyusDemo() {
       case "novareserva": return <ViewNovaReserva />;
       case "avisoswg": return <ViewAvisosWg />;
       case "experiencias": return <ViewExperiencias />;
+      case "corte": return <ViewCorte />;
       default: return <ViewDashboard />;
     }
   };
