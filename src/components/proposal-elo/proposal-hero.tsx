@@ -1,9 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import type { Proposal } from "@/lib/proposals-data";
 import { EloQuote, EloSection, EloSectionHeader, EloReveal, EloPanel } from "./elo-ui";
+
+/** Número que sobe quando entra em cena — dá peso ao dado sem enfeitar. */
+function Contador({ ate, sufixo = "", dur = 1.5 }: { ate: number; sufixo?: string; dur?: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const visivel = useInView(ref, { once: true, margin: "-60px" });
+  const [n, setN] = useState(0);
+
+  useEffect(() => {
+    if (!visivel) return;
+    const c = animate(0, ate, {
+      duration: dur,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (v) => setN(Math.round(v)),
+    });
+    return () => c.stop();
+  }, [visivel, ate, dur]);
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      {n.toLocaleString("pt-BR")}
+      {sufixo}
+    </span>
+  );
+}
 
 export function ProposalEloHero({ proposal }: { proposal: Proposal }) {
   return (
@@ -35,22 +60,40 @@ export function ProposalEloHero({ proposal }: { proposal: Proposal }) {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.08 }}
-          className="mt-12 max-w-4xl font-sans text-[38px] font-bold leading-[1.02] tracking-[-0.028em] text-[#EDF0EF] md:text-[68px]"
+          className="mt-12 max-w-[17ch] font-sans text-[36px] font-bold leading-[1.02] tracking-[-0.03em] text-[#EDF0EF] md:text-[64px]"
         >
-          &ldquo;Você nem sabe.<br />
-          <span className="text-[#E8343C]">Será que atendeu?</span><br />
-          Será que ele prospectou?&rdquo;
+          Quarenta anos de Videplast.{" "}
+          <span className="text-[#E8343C]">Nenhum minuto registrado do que acontece no cliente.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.16 }}
-          className="mt-8 max-w-2xl text-[16px] leading-relaxed text-[#9BA5A7] md:text-[18px]"
+          className="mt-9 max-w-3xl font-sans text-[20px] font-semibold leading-snug text-[#9BA5A7] md:text-[27px]"
         >
-          Fernando, isso foi o senhor, aos dezenove minutos e cinquenta e um segundos da nossa
-          conversa. Esta proposta é a resposta a essa frase — e a nenhuma outra.
+          Cinco fábricas em cinco estados, 3.200 pessoas, frota própria e os maiores nomes da
+          proteína do país como cliente. Tudo isso é medido, planejado e auditado.{" "}
+          <span className="text-[#EDF0EF]">
+            A hora em que o representante entra na sala da compradora é a única parte da operação
+            que não é.
+          </span>
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.26 }}
+          className="mt-11 border-l-2 border-[#E8343C] pl-6"
+        >
+          <p className="max-w-2xl font-sans text-[19px] font-medium italic leading-snug text-[#EDF0EF] md:text-[23px]">
+            &ldquo;A maior dor hoje é essa. Você nem sabe. Será que atendeu? Será que ele
+            prospectou? E como é que foi essa conversa?&rdquo;
+          </p>
+          <p className="mt-3.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[#6B7576]">
+            Fernando · reunião de 10/09/2026 · 19:51
+          </p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 18 }}
@@ -59,16 +102,16 @@ export function ProposalEloHero({ proposal }: { proposal: Proposal }) {
           className="mt-14 grid gap-px overflow-hidden border border-[#272C2E] bg-[#272C2E] sm:grid-cols-2 lg:grid-cols-4"
         >
           {[
-            { v: "20+", l: "representantes PJ", s: "≈50 pessoas em campo" },
-            { v: "5", l: "plantas industriais", s: "SC · GO · MT · RJ · PR" },
-            { v: "0", l: "registro de visita", s: "Excel, e-mail ou papel" },
-            { v: "0", l: "registro de cotação", s: "só o pedido firme existe" },
+            { n: 3200, sufixo: "", l: "funcionários", s: "em cinco estados" },
+            { n: 5, sufixo: "", l: "plantas industriais", s: "Videira · Rio Verde · Várzea Grande · Três Rios · União da Vitória" },
+            { n: 50, sufixo: "", l: "pessoas em campo", s: "20+ representantes PJ e 3 técnicos internos" },
+            { n: 0, sufixo: "", l: "registro do que eles fazem", s: "nem visita, nem cotação, nem amostra", zero: true },
           ].map((k) => (
-            <div key={k.l} className="bg-[#0E1011] p-7">
-              <p className="font-sans text-[38px] font-bold leading-none tracking-[-0.03em] text-[#E8343C] md:text-[46px]">
-                {k.v}
+            <div key={k.l} className={`p-7 ${k.zero ? "bg-[#E8343C]/[0.07]" : "bg-[#0E1011]"}`}>
+              <p className={`font-sans text-[38px] font-bold leading-none tracking-[-0.03em] md:text-[46px] ${k.zero ? "text-[#E8343C]" : "text-[#EDF0EF]"}`}>
+                <Contador ate={k.n} sufixo={k.sufixo} />
               </p>
-              <p className="mt-4 text-[14px] font-semibold text-[#EDF0EF]">{k.l}</p>
+              <p className={`mt-4 text-[14px] font-semibold ${k.zero ? "text-[#E8343C]" : "text-[#EDF0EF]"}`}>{k.l}</p>
               <p className="mt-1.5 text-[12.5px] leading-snug text-[#6B7576]">{k.s}</p>
             </div>
           ))}

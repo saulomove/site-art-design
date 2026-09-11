@@ -2,6 +2,7 @@
 
 import { Tag, ShieldCheck, Database, Zap, Lock, Eye } from "lucide-react";
 import { EloSection, EloSectionHeader, EloReveal, EloPanel, EloEyebrow, EloQuote } from "./elo-ui";
+import { EtiquetaFluxo } from "./etiqueta-fluxo";
 
 /* ==================== A ETIQUETA ==================== */
 
@@ -16,6 +17,12 @@ export function ProposalEloEtiqueta() {
       />
 
       <EloReveal>
+        <div className="mb-14">
+          <EtiquetaFluxo />
+        </div>
+      </EloReveal>
+
+      <EloReveal delay={0.06}>
         <div className="grid gap-5 lg:grid-cols-[1fr_1fr]">
           <div className="border border-[#272C2E] bg-[#15181A] p-8">
             <div className="flex items-center gap-3">
