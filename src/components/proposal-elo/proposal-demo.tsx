@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MousePointerClick, Search, Bell } from "lucide-react";
-import { EloSection, EloSectionHeader, EloReveal } from "./elo-ui";
+import { EloSection, EloSectionHeader, EloReveal, EloHintClique } from "./elo-ui";
 import {
   ViewGestao, ViewAudio, ViewCarteira, ViewFicha, ViewRoteiro, ViewPedido, ViewApp,
 } from "./demo-views";
@@ -63,6 +63,12 @@ export function ProposalEloDemo() {
       />
 
       <EloReveal>
+        <div className="mb-5 flex flex-wrap items-center gap-2.5">
+          <EloHintClique>Troque de perfil e de tela</EloHintClique>
+          <span className="text-[12.5px] text-[#6B7576]">
+            tudo abaixo responde ao clique — não é imagem
+          </span>
+        </div>
         <div className="overflow-hidden border-2 border-[#D51920]/35 bg-white shadow-[0_0_110px_-40px_rgba(213,25,32,0.55)]">
           {/* barra do navegador */}
           <div className="flex items-center gap-2 border-b border-[#DCE0E0] bg-[#EDEFEF] px-4 py-2.5">
@@ -102,7 +108,7 @@ export function ProposalEloDemo() {
                   className={`flex-shrink-0 rounded-[3px] px-3 py-1.5 font-sans text-[11.5px] font-semibold transition-colors ${
                     persona === p.id
                       ? "bg-[#D51920] text-white"
-                      : "text-[#5E6669] hover:bg-[#F6F7F7]"
+                      : "text-[#5E6669] hover:bg-[#EDEFEF] hover:text-[#131516]"
                   }`}
                 >
                   {p.label}
@@ -141,7 +147,7 @@ export function ProposalEloDemo() {
                   className={`flex-shrink-0 border-b-2 py-3 font-sans text-[12.5px] transition-colors ${
                     aba === a.id
                       ? "border-[#D51920] font-semibold text-[#131516]"
-                      : "border-transparent text-[#5E6669] hover:text-[#131516]"
+                      : "border-transparent text-[#5E6669] hover:border-[#DCE0E0] hover:text-[#131516]"
                   }`}
                 >
                   {a.label}

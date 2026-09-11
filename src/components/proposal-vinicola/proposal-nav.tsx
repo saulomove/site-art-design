@@ -196,7 +196,10 @@ export function ProposalVinicolaNav({
               </button>
 
               {/* Links — só em telas grandes */}
-              <ul className="hidden flex-1 items-center justify-center gap-6 lg:flex">
+              {/* A lista inline só aparece quando cabe de verdade. Entre 1024 e
+                  1280 ela colidia com o botão de investimento — abaixo de xl
+                  quem navega é o índice, que lista tudo. */}
+              <ul className="hidden min-w-0 flex-1 items-center justify-center gap-x-5 xl:flex xl:gap-x-6">
                 {SECOES_ATIVAS.filter((s) => !s.noDesktop).map((secao) => (
                   <li key={secao.id}>
                     <button

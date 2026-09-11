@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MessageCircle, Users, Globe, Instagram, Facebook, Mic, type LucideIcon } from "lucide-react";
-import { EloSection, EloSectionHeader, EloReveal, EloPanel, EloEyebrow, EloQuote } from "./elo-ui";
+import { EloSection, EloSectionHeader, EloReveal, EloPanel, EloEyebrow, EloQuote, EloHintClique, EloHintAnima } from "./elo-ui";
 
 interface Canal {
   id: string;
@@ -51,6 +51,10 @@ export function ProposalEloIntegracao() {
       />
 
       <EloReveal>
+        <div className="mb-6 flex flex-wrap items-center gap-2.5">
+          <EloHintAnima>Os canais se alternam</EloHintAnima>
+          <EloHintClique>ou clique num deles</EloHintClique>
+        </div>
         <div className="grid gap-6 lg:grid-cols-[1fr_auto_1fr] lg:items-center">
           {/* canais */}
           <div className="space-y-2.5">
@@ -68,7 +72,8 @@ export function ProposalEloIntegracao() {
                     x: on ? 8 : 0,
                   }}
                   transition={{ duration: 0.4 }}
-                  className="flex w-full items-start gap-3.5 border p-3.5 text-left"
+                  whileHover={{ x: on ? 8 : 4 }}
+                  className="flex w-full items-start gap-3.5 border p-3.5 text-left transition-shadow hover:shadow-[0_0_28px_-14px_rgba(232,52,60,0.7)]"
                 >
                   <Icon className="mt-[3px] h-4 w-4 flex-shrink-0" style={{ color: on ? c.cor : "#6B7576" }} />
                   <span className="min-w-0 flex-1">

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, CheckCheck } from "lucide-react";
-import { EloSection, EloSectionHeader, EloReveal, EloEyebrow } from "./elo-ui";
+import { EloSection, EloSectionHeader, EloReveal, EloEyebrow, EloHintClique, EloHintAnima } from "./elo-ui";
 
 /* ================================================================
    A DaIA — a assistente da Genyus — trabalhando junto com o Elo.
@@ -173,7 +173,10 @@ export function ProposalEloDaia() {
       <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,340px)] lg:gap-14">
         {/* as réguas */}
         <div className="min-w-0">
-          <EloEyebrow>As cinco réguas</EloEyebrow>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <EloEyebrow>As cinco réguas</EloEyebrow>
+            <EloHintClique>Escolha uma</EloHintClique>
+          </div>
           <div className="mt-5 divide-y divide-[#272C2E] border-y border-[#272C2E]">
             {REGUAS.map((g) => {
               const on = g.id === ativa;
@@ -183,12 +186,14 @@ export function ProposalEloDaia() {
                   type="button"
                   onClick={() => setAtiva(g.id)}
                   aria-pressed={on}
-                  className="group relative block w-full py-5 text-left"
+                  className={`group relative block w-full py-5 pl-4 pr-3 text-left transition-colors ${
+                    on ? "bg-[#15181A]" : "hover:bg-[#131617]"
+                  }`}
                 >
                   {on && (
                     <motion.span
                       layoutId="reguaAtiva"
-                      className="absolute inset-y-0 -left-4 w-[2px]"
+                      className="absolute inset-y-0 left-0 w-[3px]"
                       style={{ background: g.cor }}
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     />
@@ -242,6 +247,9 @@ export function ProposalEloDaia() {
 
         {/* o telefone com a conversa */}
         <div className="mx-auto w-full max-w-[340px] min-w-0">
+          <div className="mb-4 flex justify-center lg:justify-start">
+            <EloHintAnima>A conversa vai chegando</EloHintAnima>
+          </div>
           <div className="rounded-[8px] border border-[#272C2E] bg-[#0B0D0E] shadow-[0_30px_70px_-30px_rgba(0,0,0,0.9)]">
             <div className="flex items-center gap-3 border-b border-[#272C2E] px-4 py-3">
               <span

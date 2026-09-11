@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
   MapPin, Mic, Check, ChevronRight, Wifi, WifiOff, Package, User, CalendarDays,
 } from "lucide-react";
-import { EloSection, EloSectionHeader, EloReveal, EloQuote } from "./elo-ui";
+import { EloSection, EloSectionHeader, EloReveal, EloQuote, EloHintClique, EloHintAnima } from "./elo-ui";
 
 /* ================================================================
    O Elo no celular. Não é print: é o app rodando, com aba clicável.
@@ -368,6 +368,9 @@ export function ProposalEloMobile() {
         <div ref={ref} className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1fr)_330px] lg:items-start lg:gap-16">
           {/* coluna de leitura */}
           <div className="min-w-0 lg:pt-6">
+            <div className="mb-6 hidden lg:block">
+              <EloHintAnima>O áudio está sendo transcrito ao vivo</EloHintAnima>
+            </div>
             <AnimatePresence mode="wait">
               <motion.div
                 key={tela}
@@ -426,6 +429,9 @@ export function ProposalEloMobile() {
 
           {/* o aparelho */}
           <div className="mx-auto w-full max-w-[330px]">
+            <div className="mb-5 flex justify-center">
+              <EloHintClique toque>Toque nas abas</EloHintClique>
+            </div>
             <div className="relative rounded-[34px] border-[9px] border-[#272C2E] bg-[#0E1011] shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)]">
               <div className="overflow-hidden rounded-[25px] bg-white">
                 {/* barra de status */}
@@ -495,7 +501,7 @@ export function ProposalEloMobile() {
                         type="button"
                         onClick={() => setTela(id)}
                         aria-pressed={on}
-                        className={`relative flex flex-1 flex-col items-center gap-1 py-2.5 transition-colors ${on ? "text-[#D51920]" : "text-[#5E6669] hover:text-[#131516]"}`}
+                        className={`relative flex flex-1 flex-col items-center gap-1 py-2.5 transition-colors ${on ? "bg-white text-[#D51920]" : "text-[#5E6669] hover:bg-white hover:text-[#131516]"}`}
                       >
                         <Icon className="h-4 w-4" strokeWidth={on ? 2.4 : 1.8} />
                         <span className={`text-[9.5px] ${on ? "font-semibold" : ""}`}>{label}</span>
@@ -514,7 +520,7 @@ export function ProposalEloMobile() {
 
             <p className="mt-5 text-center text-[11.5px] leading-snug text-[#6B7576]">
               Quatro abas, alvo de toque de 44 px, offline por padrão.
-              <br className="hidden sm:block" /> Toque para trocar de tela.
+              <br className="hidden sm:block" /> As quatro telas são reais — toque para percorrer.
             </p>
           </div>
         </div>

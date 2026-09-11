@@ -70,6 +70,14 @@
   h6 {
     @apply tracking-tight;
   }
+
+  /* O navegador dá cursor de seta em <button>. Quem está lendo uma
+     proposta precisa perceber o que é clicável sem tentar. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  summary {
+    cursor: pointer;
+  }
 }
 
 @utility container {

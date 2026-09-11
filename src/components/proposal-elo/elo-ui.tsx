@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MousePointerClick, Hand } from "lucide-react";
 import type { ReactNode } from "react";
 
 /* ================================================================
@@ -211,5 +212,64 @@ export function EloSection({
       <EloDivider />
       <div className="container relative z-10 mx-auto max-w-6xl px-4">{children}</div>
     </section>
+  );
+}
+
+/* ------------------- avisos de interação -------------------------
+   O cliente precisa saber, sem ler manual, onde dá para clicar e o
+   que está andando sozinho. Estas duas pílulas fazem esse trabalho.
+   ---------------------------------------------------------------- */
+
+export function EloHintClique({
+  children = "Clique para trocar",
+  toque = false,
+  className = "",
+}: {
+  children?: ReactNode;
+  toque?: boolean;
+  className?: string;
+}) {
+  const Icon = toque ? Hand : MousePointerClick;
+  return (
+    <motion.span
+      initial={{ opacity: 0, y: 6 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className={`inline-flex items-center gap-2 rounded-full border border-[#E8343C]/45 bg-[#E8343C]/[0.08] px-3.5 py-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E8343C] ${className}`}
+    >
+      <motion.span
+        animate={{ y: [0, -2.5, 0] }}
+        transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+        className="flex"
+      >
+        <Icon className="h-3.5 w-3.5" strokeWidth={2.1} />
+      </motion.span>
+      {children}
+    </motion.span>
+  );
+}
+
+export function EloHintAnima({
+  children = "Anda sozinho",
+  className = "",
+}: {
+  children?: ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center gap-2 rounded-full border border-[#47A87D]/40 bg-[#47A87D]/[0.07] px-3.5 py-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.12em] text-[#47A87D] ${className}`}
+    >
+      <span className="relative flex h-2 w-2">
+        <motion.span
+          className="absolute inset-0 rounded-full bg-[#47A87D]"
+          animate={{ scale: [1, 2.2, 1], opacity: [0.55, 0, 0.55] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+        />
+        <span className="relative h-2 w-2 rounded-full bg-[#47A87D]" />
+      </span>
+      {children}
+    </span>
   );
 }

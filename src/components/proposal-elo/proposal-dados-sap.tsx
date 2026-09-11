@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, ShieldCheck, Ban, ArrowRightLeft, Clock } from "lucide-react";
-import { EloSection, EloSectionHeader, EloReveal, EloPanel, EloEyebrow } from "./elo-ui";
+import { EloSection, EloSectionHeader, EloReveal, EloPanel, EloEyebrow, EloHintClique } from "./elo-ui";
 
 /* ================================================================
    O anexo técnico do César, dentro da proposta. Ele é o gestor de
@@ -129,7 +129,9 @@ function Objetos({ lista, cor }: { lista: Objeto[]; cor: string }) {
               type="button"
               onClick={() => setAberto(on ? null : o.id)}
               aria-expanded={on}
-              className="group flex w-full items-center gap-4 py-5 text-left"
+              className={`group flex w-full items-center gap-4 px-3 py-5 text-left transition-colors ${
+                on ? "bg-[#15181A]" : "hover:bg-[#131617]"
+              }`}
             >
               <span
                 className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[3px] border text-[11px] font-semibold ${mono}`}
@@ -143,13 +145,17 @@ function Objetos({ lista, cor }: { lista: Objeto[]; cor: string }) {
                 </span>
                 <span className="mt-0.5 block text-[12.5px] leading-snug text-[#6B7576]">{o.para}</span>
               </span>
-              <span className={`hidden flex-shrink-0 text-[11px] text-[#6B7576] sm:block ${mono}`}>
-                {o.campos.length} campos
+              <span
+                className={`hidden flex-shrink-0 text-[11px] transition-colors sm:block ${mono} ${
+                  on ? "text-[#9BA5A7]" : "text-[#6B7576] group-hover:text-[#E8343C]"
+                }`}
+              >
+                {on ? `${o.campos.length} campos` : `ver ${o.campos.length} campos`}
               </span>
               {on ? (
                 <Minus className="h-4 w-4 flex-shrink-0 text-[#9BA5A7]" />
               ) : (
-                <Plus className="h-4 w-4 flex-shrink-0 text-[#6B7576] transition-colors group-hover:text-[#EDF0EF]" />
+                <Plus className="h-4 w-4 flex-shrink-0 text-[#9BA5A7] transition-colors group-hover:text-[#E8343C]" />
               )}
             </button>
 
@@ -162,7 +168,7 @@ function Objetos({ lista, cor }: { lista: Objeto[]; cor: string }) {
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <div className="grid gap-x-8 gap-y-2 pb-6 pl-12 sm:grid-cols-2">
+                  <div className="grid gap-x-8 gap-y-2 bg-[#15181A] px-3 pb-6 pl-12 sm:grid-cols-2">
                     {o.campos.map((c) => (
                       <div key={c.n} className="min-w-0 border-l border-[#272C2E] pl-3.5">
                         <p className={`text-[12.5px] text-[#EDF0EF] ${mono}`}>{c.n}</p>
@@ -227,7 +233,8 @@ export function ProposalEloDadosSap() {
 
       {/* alternador */}
       <EloReveal delay={0.1}>
-        <div className="mt-16 flex flex-wrap gap-2">
+        <EloHintClique className="mt-16">Abra cada grupo</EloHintClique>
+        <div className="mt-4 flex flex-wrap gap-2">
           {([
             { id: "a" as const, l: "Grupo A · carga diária", s: "4 objetos · arquivo ou batch" },
             { id: "b" as const, l: "Grupo B · tempo real", s: "5 consultas · REST síncrono" },
@@ -243,7 +250,7 @@ export function ProposalEloDadosSap() {
                 className={`min-w-0 flex-1 border px-5 py-4 text-left transition-colors sm:flex-none ${
                   on
                     ? "border-[#E8343C]/60 bg-[#E8343C]/[0.08]"
-                    : "border-[#272C2E] bg-[#15181A] hover:border-[#3A4143]"
+                    : "border-[#272C2E] bg-[#15181A] hover:border-[#E8343C]/40 hover:bg-[#1C2022]"
                 }`}
               >
                 <span className={`block font-sans text-[13.5px] font-semibold ${on ? "text-[#EDF0EF]" : "text-[#9BA5A7]"}`}>

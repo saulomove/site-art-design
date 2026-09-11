@@ -168,21 +168,21 @@ import { ProposalExecutiveSystemComparison } from "@/components/proposal-executi
 import type { Proposal } from "@/lib/proposals-data";
 
 const ELO_NAV: readonly NavItem[] = [
-  { id: "escuta", label: "O que ouvimos", desc: "As falas da reunião, com o tempo da própria gravação", noDesktop: false },
+  { id: "escuta", label: "O que ouvimos", desc: "As falas da reunião, com o tempo da própria gravação", noDesktop: true },
   { id: "diagnostico", label: "O diagnóstico", desc: "O que já funciona e não se toca, e os quatro buracos", noDesktop: false },
   { id: "graficos", label: "Os números", desc: "Os quatro gráficos que hoje não é possível montar", noDesktop: false },
-  { id: "audio", label: "O áudio", desc: "O representante fala, o Elo escreve — o coração do sistema", noDesktop: false },
+  { id: "audio", label: "O áudio", desc: "O representante fala, o Elo escreve — o coração do sistema", noDesktop: true },
   { id: "sistema", label: "O sistema", desc: "Protótipo navegável — três perfis, sete telas para clicar", noDesktop: false },
   { id: "mobile", label: "No celular", desc: "O app do representante, com as quatro abas para tocar", noDesktop: false },
   { id: "integracao", label: "A integração", desc: "E-mail, WhatsApp, Teams e site num único histórico", noDesktop: false },
-  { id: "daia", label: "A IA junto", desc: "Cinco réguas que cobram, confirmam e reabrem cliente", noDesktop: false },
+  { id: "daia", label: "A IA junto", desc: "Cinco réguas que cobram, confirmam e reabrem cliente", noDesktop: true },
   { id: "porque", label: "Por que o Elo", desc: "A diferença entre comprar um CRM e ter o seu", noDesktop: false },
   { id: "etiqueta", label: "A etiqueta", desc: "Como o representante controla o que a Videplast vê", noDesktop: true },
   { id: "arquitetura", label: "Arquitetura", desc: "Duas fases, somente leitura, sem depender do go-live", noDesktop: true },
   { id: "dados-sap", label: "Dados do SAP", desc: "O anexo técnico: o que o Elo lê, e o que não precisa", noDesktop: true },
   { id: "jornada", label: "Uma visita", desc: "O mesmo dia, com e sem o Elo, do check-in ao painel", noDesktop: true },
   { id: "entregas", label: "Entregas", desc: "Doze semanas em três módulos, algo no ar a cada quinzena", noDesktop: true },
-  { id: "ancora", label: "Cliente-âncora", desc: "O que a Videplast ganha por entrar primeiro", noDesktop: false },
+  { id: "ancora", label: "Cliente-âncora", desc: "O que a Videplast ganha por entrar primeiro", noDesktop: true },
   { id: "ressalvas", label: "Ressalvas", desc: "Os cinco pontos que podem dar trabalho", noDesktop: true },
 ];
 

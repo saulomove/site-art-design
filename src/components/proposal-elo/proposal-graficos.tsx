@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HelpCircle } from "lucide-react";
-import { EloSection, EloSectionHeader, EloReveal, EloEyebrow } from "./elo-ui";
+import { EloSection, EloSectionHeader, EloReveal, EloEyebrow, EloHintClique } from "./elo-ui";
 
 /* ================================================================
    Os quatro gráficos que a Videplast não consegue montar hoje.
@@ -336,8 +336,11 @@ export function ProposalEloGraficos() {
 
       {/* a chave */}
       <EloReveal>
-        <div className="mt-12 flex flex-wrap items-center gap-4">
-          <div className="inline-flex border border-[#272C2E] bg-[#15181A] p-1">
+        <div className="mt-12">
+          <EloHintClique className="mb-4">Vire a chave</EloHintClique>
+        </div>
+        <div className="flex flex-wrap items-center gap-4">
+          <div className="inline-flex border border-[#E8343C]/35 bg-[#15181A] p-1 shadow-[0_0_40px_-14px_rgba(232,52,60,0.55)]">
             {[
               { id: false, l: "Hoje" },
               { id: true, l: "Com o Elo" },
@@ -350,7 +353,7 @@ export function ProposalEloGraficos() {
                   onClick={() => setElo(o.id)}
                   aria-pressed={on}
                   className={`relative px-7 py-3 font-sans text-[13.5px] font-semibold transition-colors ${
-                    on ? "text-[#EDF0EF]" : "text-[#6B7576] hover:text-[#9BA5A7]"
+                    on ? "text-[#EDF0EF]" : "text-[#9BA5A7] hover:bg-[#1C2022] hover:text-[#EDF0EF]"
                   }`}
                 >
                   {on && (
@@ -365,7 +368,7 @@ export function ProposalEloGraficos() {
               );
             })}
           </div>
-          <p className="min-w-0 flex-1 text-[12.5px] leading-snug text-[#6B7576]">
+          <p className="w-full min-w-0 text-[12.5px] leading-snug text-[#6B7576] sm:w-auto sm:flex-1">
             {elo
               ? "Os valores são ilustrativos — não temos a base de vocês. O que não é ilustrativo é que hoje nenhum deles existe."
               : "Este é o estado real da informação hoje, pelo que ouvimos na reunião."}

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Tag, Check, Search, MoreVertical, ShieldCheck, EyeOff } from "lucide-react";
+import { EloHintClique, EloHintAnima } from "./elo-ui";
 
 /* ================================================================
    O fluxo da etiqueta, quadro a quadro, no WhatsApp Business real
@@ -231,6 +232,10 @@ export function EtiquetaFluxo() {
 
       {/* os passos */}
       <div className="min-w-0">
+        <div className="mb-5 flex flex-wrap items-center gap-2.5">
+          <EloHintAnima>Anda sozinho</EloHintAnima>
+          <EloHintClique>ou escolha o passo</EloHintClique>
+        </div>
         <div className="space-y-1">
           {PASSOS.map((p, k) => {
             const on = k === i;
@@ -240,7 +245,9 @@ export function EtiquetaFluxo() {
                 type="button"
                 onClick={() => setI(k)}
                 aria-pressed={on}
-                className="group relative block w-full border-l-2 py-4 pl-5 text-left transition-colors"
+                className={`group relative block w-full border-l-2 py-4 pl-5 pr-3 text-left transition-colors ${
+                  on ? "bg-[#15181A]" : "hover:bg-[#131617]"
+                }`}
                 style={{ borderColor: on ? "#E8343C" : "#272C2E" }}
               >
                 <span className="flex items-baseline gap-3">
