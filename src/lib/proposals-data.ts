@@ -281,7 +281,7 @@ export interface Proposal {
   authorityPillars?: ProposalAuthorityPillar[];
   objectiveChain?: ProposalObjectiveChain;
   valueAnchor?: ProposalValueAnchor;
-  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo" | "aciav" | "vinicola" | "genyus";
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo" | "aciav" | "vinicola" | "genyus" | "elo";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -7601,6 +7601,64 @@ export const proposals: Proposal[] = [
           "Tudo que está aqui foi apurado linha a linha nos arquivos que a Fran enviou. A planilha de controle de produção usa dados de exemplo em parte das linhas, então os totais dela servem para mostrar o método, não para fechar caixa.",
       },
     ],
+  },
+  {
+    slug: "videplast-elo",
+    clientName: "Videplast",
+    contactName: "Fernando",
+    theme: "elo",
+    whatsappNumber: "5549988446685",
+    validUntil: "",
+    services: [],
+    greeting:
+      "A Videplast vende através de vinte e poucos representantes e três vendedores técnicos. O pedido entra, a produção roda, a comissão é paga. O que acontece entre a visita e o pedido — e depois da entrega — não tem registro em lugar nenhum. Este documento propõe o Genyus Elo: o sistema que devolve essa visão sem tocar no que já funciona.",
+    closingQuestion:
+      "Quando o senhor souber, na segunda-feira, tudo o que aconteceu no campo na semana passada — o que muda na sua operação?",
+    investment: {
+      setupFee: "R$ 48.000",
+      setupLabel: "Implantação do Genyus Elo",
+      setupIncludes: [
+        "Os três módulos completos: Campo, Funil e Relacionamento",
+        "Configuração dos perfis e das permissões pela Videplast",
+        "Importação da base de clientes, produtos e carteira",
+        "Treinamento dos representantes e acompanhamento do piloto",
+        "Interface de leitura do SAP na segunda fase, após o go-live",
+      ],
+      setupItems: [
+        { item: "1ª parcela — na assinatura", value: "R$ 12.000" },
+        { item: "2ª parcela — entrega do módulo Campo", value: "R$ 12.000" },
+        { item: "3ª parcela — entrega do módulo Funil", value: "R$ 12.000" },
+        { item: "4ª parcela — entrega do Relacionamento", value: "R$ 12.000" },
+      ],
+      setupNote:
+        "Quatro parcelas amarradas a entregas, não a datas. Cada uma vence quando a parte correspondente estiver no ar e em uso.",
+      totalMonthly: "R$ 3.200",
+      totalLabel: "Faixa Indústria · 26 a 60 usuários",
+      packageIncludes: [
+        "Hospedagem, banco de dados e backup diário",
+        "Conexão de WhatsApp e infraestrutura da IA",
+        "Suporte à Videplast e aos representantes",
+        "Correções e evolução contínua",
+        "Duas janelas de desenvolvimento reservadas por trimestre",
+        "Atualizações de segurança",
+      ],
+      exclusions: [
+        "Disparo em massa acima do volume de atendimento normal, que pode exigir a API oficial do WhatsApp com custo por conversa",
+        "Licenças SAP, middleware BTP e horas do time de TI da Videplast para construir as interfaces do lado deles",
+      ],
+      paymentConditions: [
+        "Implantação em 4x, cada parcela vinculada a uma entrega",
+        "Mensalidade a partir da entrega do primeiro módulo",
+        "A faixa não muda com o crescimento da equipe dentro dela",
+        "Reajuste anual limitado ao IPCA",
+        "Os dados são da Videplast e exportáveis a qualquer momento",
+      ],
+      notes: [
+        "A primeira fase não depende do time de TI da Videplast: o Elo opera com base própria, alimentada por exportação do time comercial.",
+        "A integração com o SAP entra na segunda fase, após o go-live do S/4 HANA, previsto para depois de 20 de outubro.",
+        "Nesta fase a integração é somente leitura. Nenhum dado é escrito no SAP sem uma segunda conversa e aceite explícito.",
+      ],
+    },
   },
 ];
 

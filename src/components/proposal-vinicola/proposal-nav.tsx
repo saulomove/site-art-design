@@ -23,6 +23,14 @@ interface Props {
   /** Título e subtítulo do cartão de investimento dentro do índice. */
   drawerTitle?: string;
   drawerSub?: string;
+  /** Marca exibida na barra. O padrão é a Santa Augusta. */
+  logoSrc?: string;
+  logoAlt?: string;
+  logoClass?: string;
+  /** Cor de acento da barra, para a proposta usar a marca do cliente. */
+  accent?: string;
+  accentHover?: string;
+  cardBg?: string;
   /** Sufixo após o valor. Vazio para valores que não são mensais. */
   valueSuffix?: string;
 }
@@ -92,6 +100,12 @@ export function ProposalVinicolaNav({
   drawerTitle = "Sem entrada e sem fidelidade",
   drawerSub = "Tudo incluso numa mensalidade só",
   valueSuffix = "/mês",
+  logoSrc = "/clientes/santa-augusta/logo-vsa.png",
+  logoAlt = "Vinícola Santa Augusta",
+  logoClass = "h-8 w-auto sm:h-9",
+  accent = "#CA8B35",
+  accentHover = "#E6AE50",
+  cardBg = "#161311",
 }: Props) {
   const SECOES_ATIVAS: readonly NavItem[] = items ?? SECOES;
   const [visivel, setVisivel] = useState(false);
@@ -160,7 +174,8 @@ export function ProposalVinicolaNav({
             exit={{ y: -70, opacity: 0 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
             aria-label="Navegação da proposta"
-            className="fixed inset-x-0 top-1 z-50 border-b border-[#CA8B35]/15 bg-[#0B0B0B]/92 backdrop-blur-md"
+            style={{ "--nav-accent": accent, "--nav-accent-hover": accentHover, "--nav-card": cardBg } as React.CSSProperties}
+            className="fixed inset-x-0 top-1 z-50 border-b border-[var(--nav-accent)]/15 bg-[#0B0B0B]/92 backdrop-blur-md"
           >
             <div className="container mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-4 px-4">
               {/* Marca */}
@@ -172,11 +187,11 @@ export function ProposalVinicolaNav({
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/clientes/santa-augusta/logo-vsa.png"
-                  alt="Vinícola Santa Augusta"
-                  width={500}
+                  src={logoSrc}
+                  alt={logoAlt}
+                  width={706}
                   height={167}
-                  className="h-8 w-auto sm:h-9"
+                  className={logoClass}
                 />
               </button>
 
@@ -190,7 +205,7 @@ export function ProposalVinicolaNav({
                       aria-current={ativa === secao.id ? "true" : undefined}
                       className={`whitespace-nowrap text-[11px] uppercase tracking-[0.14em] transition-colors ${
                         ativa === secao.id
-                          ? "text-[#CA8B35]"
+                          ? "text-[var(--nav-accent)]"
                           : "text-[#CCCCCC]/55 hover:text-[#CCCCCC]"
                       }`}
                     >
@@ -207,8 +222,8 @@ export function ProposalVinicolaNav({
                   onClick={() => irPara("investimento")}
                   className={`flex items-center gap-2 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors sm:px-5 sm:py-2.5 sm:text-xs ${
                     ativa === "investimento"
-                      ? "bg-[#E6AE50] text-[#0B0B0B]"
-                      : "bg-[#CA8B35] text-[#0B0B0B] hover:bg-[#E6AE50]"
+                      ? "bg-[var(--nav-accent-hover)] text-[#0B0B0B]"
+                      : "bg-[var(--nav-accent)] text-[#0B0B0B] hover:bg-[var(--nav-accent-hover)]"
                   }`}
                 >
                   {monthlyValue ? (
@@ -231,7 +246,7 @@ export function ProposalVinicolaNav({
                   onClick={() => setAberto(true)}
                   aria-label="Abrir índice da proposta"
                   aria-expanded={aberto}
-                  className="flex h-10 w-10 items-center justify-center border border-[#CCCCCC]/20 text-[#CCCCCC] transition-colors hover:border-[#CA8B35]/50 hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center border border-[#CCCCCC]/20 text-[#CCCCCC] transition-colors hover:border-[var(--nav-accent)]/50 hover:text-white"
                 >
                   <Menu className="h-4 w-4" />
                 </button>
@@ -249,6 +264,7 @@ export function ProposalVinicolaNav({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
+            style={{ "--nav-accent": accent, "--nav-accent-hover": accentHover, "--nav-card": cardBg } as React.CSSProperties}
             className="fixed inset-0 z-[70] overflow-y-auto bg-[#0B0B0B]/97 backdrop-blur-sm"
             role="dialog"
             aria-modal="true"
@@ -256,14 +272,14 @@ export function ProposalVinicolaNav({
           >
             <div className="container mx-auto max-w-3xl px-4 py-6">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[#CA8B35]">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--nav-accent)]">
                   Índice da proposta
                 </span>
                 <button
                   type="button"
                   onClick={() => setAberto(false)}
                   aria-label="Fechar índice"
-                  className="flex h-10 w-10 items-center justify-center border border-[#CCCCCC]/20 text-[#CCCCCC] transition-colors hover:border-[#CA8B35]/50 hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center border border-[#CCCCCC]/20 text-[#CCCCCC] transition-colors hover:border-[var(--nav-accent)]/50 hover:text-white"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -282,7 +298,7 @@ export function ProposalVinicolaNav({
                       <span
                         className={`font-mono text-[11px] tabular-nums ${
                           ativa === secao.id
-                            ? "text-[#CA8B35]"
+                            ? "text-[var(--nav-accent)]"
                             : "text-[#CCCCCC]/30"
                         }`}
                       >
@@ -291,7 +307,7 @@ export function ProposalVinicolaNav({
                       <span className="min-w-0 flex-1">
                         <span
                           className={`block font-playfair text-lg font-medium ${
-                            ativa === secao.id ? "text-[#CA8B35]" : "text-white"
+                            ativa === secao.id ? "text-[var(--nav-accent)]" : "text-white"
                           }`}
                         >
                           {secao.label}
@@ -310,10 +326,10 @@ export function ProposalVinicolaNav({
               <button
                 type="button"
                 onClick={() => irPara("investimento")}
-                className="mt-4 flex w-full items-center justify-between gap-5 border-2 border-[#CA8B35]/50 bg-[#161311] px-6 py-6 text-left transition-colors hover:border-[#CA8B35]"
+                className="mt-4 flex w-full items-center justify-between gap-5 border-2 border-[var(--nav-accent)]/50 bg-[var(--nav-card)] px-6 py-6 text-left transition-colors hover:border-[var(--nav-accent)]"
               >
                 <span className="min-w-0">
-                  <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-[#CA8B35]">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--nav-accent)]">
                     Investimento
                   </span>
                   <span className="mt-2 block font-playfair text-xl font-medium text-white">
@@ -325,7 +341,7 @@ export function ProposalVinicolaNav({
                 </span>
                 {monthlyValue && (
                   <span className="flex flex-shrink-0 items-baseline gap-1">
-                    <span className="font-playfair text-3xl font-medium text-[#CA8B35] sm:text-4xl">
+                    <span className="font-playfair text-3xl font-medium text-[var(--nav-accent)] sm:text-4xl">
                       {monthlyValue}
                     </span>
                     {valueSuffix && (
@@ -338,7 +354,7 @@ export function ProposalVinicolaNav({
               <button
                 type="button"
                 onClick={() => irPara("fechamento")}
-                className="mt-4 w-full border border-[#CCCCCC]/15 px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#CCCCCC]/70 transition-colors hover:border-[#CA8B35]/40 hover:text-white"
+                className="mt-4 w-full border border-[#CCCCCC]/15 px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#CCCCCC]/70 transition-colors hover:border-[var(--nav-accent)]/40 hover:text-white"
               >
                 Falar com a gente
               </button>
