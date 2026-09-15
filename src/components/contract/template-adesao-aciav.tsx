@@ -114,6 +114,21 @@ export function TemplateAdesaoAciav({
           unidade da CONTRATANTE, sem custo adicional, enquanto vigente este
           contrato.
         </p>
+
+        <p className="mt-4">
+          <strong>2.6.</strong> O licenciamento compreende os módulos, recursos e
+          funcionalidades descritos nesta cláusula, bem como as funcionalidades
+          padrão existentes na plataforma e disponibilizadas às unidades
+          licenciadas.
+        </p>
+        <p className="mt-3">
+          Solicitações de novas funcionalidades, customizações exclusivas,
+          integrações específicas, alterações substanciais de regras de negócio
+          ou desenvolvimentos que não façam parte das funcionalidades padrão
+          existentes poderão ser objeto de{" "}
+          <strong>análise técnica e proposta comercial específica</strong> da
+          CONTRATADA, mediante prévia aprovação da CONTRATANTE.
+        </p>
       </Section>
 
       <Hr />
@@ -136,10 +151,35 @@ export function TemplateAdesaoAciav({
         <SubSection title="3.2. Prazo de implantação">
           <p>
             A implantação será concluída no prazo de{" "}
-            <strong>7 (sete) dias úteis</strong>, contados a partir da assinatura
-            deste contrato e do pagamento da primeira parcela, condicionada ao
-            fornecimento tempestivo, pela CONTRATANTE, das informações
-            necessárias ao cadastro.
+            <strong>7 (sete) dias úteis</strong>, contados cumulativamente a
+            partir:
+          </p>
+          <ul className="mt-2 ml-6 list-none space-y-1">
+            <li>I &ndash; da assinatura deste contrato;</li>
+            <li>II &ndash; do pagamento da primeira parcela da implantação; e</li>
+            <li>
+              III &ndash; do recebimento integral, pela CONTRATADA, das
+              informações, documentos, arquivos, dados e acessos indispensáveis à
+              implantação.
+            </li>
+          </ul>
+          <p className="mt-3">
+            A CONTRATADA deverá solicitar formalmente à CONTRATANTE, através dos
+            canais oficiais de comunicação previstos neste contrato, os dados,
+            documentos e informações necessários, indicando de forma clara o
+            conteúdo solicitado e prazo razoável para sua disponibilização.
+          </p>
+          <p className="mt-3">
+            Caso a CONTRATANTE deixe de disponibilizar integralmente alguma
+            informação indispensável previamente solicitada pela CONTRATADA, o
+            prazo de implantação ficará{" "}
+            <strong>suspenso até seu efetivo recebimento</strong>, sendo
+            automaticamente prorrogado pelo período correspondente ao atraso.
+          </p>
+          <p className="mt-3">
+            Não serão considerados atraso da CONTRATADA os períodos decorrentes
+            de pendências de informações, dados, aprovações, acessos ou demais
+            providências de responsabilidade da CONTRATANTE.
           </p>
         </SubSection>
       </Section>
@@ -213,32 +253,177 @@ export function TemplateAdesaoAciav({
 
       <Hr />
 
-      <Section title="CLÁUSULA 5ª - DA VIGÊNCIA">
-        <p>
-          Este contrato vigora por prazo indeterminado, a partir da data de
-          assinatura, podendo ser rescindido por qualquer das partes, sem ônus,
-          mediante comunicação por escrito com antecedência mínima de 30
-          (trinta) dias.
-        </p>
-        <p className="mt-3">
-          <strong>Não há fidelidade contratual.</strong> O valor da implantação,
-          por se referir a serviço já executado, não é restituível em caso de
-          rescisão.
-        </p>
+      <Section title="CLÁUSULA 5ª - DA VIGÊNCIA E DA RESCISÃO IMOTIVADA">
+        <SubSection title="5.1. Vigência e aviso prévio">
+          <p>
+            Este contrato vigora por prazo indeterminado, a partir da data de
+            assinatura, podendo ser rescindido por qualquer das partes, sem ônus,
+            mediante comunicação por escrito com antecedência mínima de{" "}
+            <strong>30 (trinta) dias</strong>.
+          </p>
+          <p className="mt-3">
+            <strong>Não há fidelidade contratual.</strong>
+          </p>
+        </SubSection>
+
+        <SubSection title="5.2. Rescisão após a conclusão da implantação">
+          <p>
+            Concluída a implantação, o respectivo valor não é restituível, por se
+            referir a serviço integralmente executado.
+          </p>
+        </SubSection>
+
+        <SubSection title="5.3. Rescisão antes da conclusão da implantação">
+          <p>
+            Caso a CONTRATANTE solicite a rescisão do contrato antes da conclusão
+            da implantação, serão devidos à CONTRATADA os valores correspondentes
+            às <strong>atividades e serviços efetivamente executados</strong> até
+            a data do encerramento.
+          </p>
+          <p className="mt-3">
+            Eventual saldo pago antecipadamente correspondente a atividades de
+            implantação ainda não executadas será restituído à CONTRATANTE,
+            devidamente atualizado pelo IPCA, no prazo de até 10 (dez) dias úteis
+            após a apuração dos serviços executados.
+          </p>
+          <p className="mt-3">
+            Para fins de apuração poderão ser consideradas, entre outras
+            atividades previstas na Cláusula 3ª, a criação e configuração da
+            unidade, o cadastro ou a importação de empresas, a configuração ou
+            importação da rede credenciada, a criação de usuários e acessos, as
+            parametrizações, os treinamentos e demais procedimentos técnicos já
+            realizados.
+          </p>
+          <p className="mt-3">
+            Caso a implantação deixe de ser concluída por descumprimento
+            injustificado e comprovadamente imputável exclusivamente à
+            CONTRATADA, serão restituídos à CONTRATANTE os valores
+            correspondentes às atividades não executadas, sem prejuízo da
+            possibilidade de saneamento da pendência quando cabível.
+          </p>
+        </SubSection>
       </Section>
 
       <Hr />
 
-      <Section title="CLÁUSULA 6ª - DAS OBRIGAÇÕES DA CONTRATADA">
-        <ul className="ml-6 list-disc space-y-1">
-          <li>Executar a implantação no prazo e escopo previstos na Cláusula 3ª</li>
-          <li>Manter a plataforma disponível, funcional e atualizada</li>
-          <li>Prestar suporte técnico à CONTRATANTE, às empresas associadas e aos credenciados</li>
-          <li>Manter a hospedagem, a infraestrutura e as rotinas de backup</li>
-          <li>Manter o aplicativo publicado e atualizado nas lojas de aplicativos</li>
-          <li>Garantir o isolamento dos dados da unidade da CONTRATANTE</li>
-          <li>Comunicar previamente manutenções programadas que impliquem indisponibilidade</li>
-        </ul>
+      <Section title="CLÁUSULA 6ª - DAS OBRIGAÇÕES DA CONTRATADA, DO SUPORTE TÉCNICO E DO SLA">
+        <SubSection title="6.1. Obrigações gerais">
+          <ul className="ml-6 list-disc space-y-1">
+            <li>Executar a implantação no prazo e escopo previstos na Cláusula 3ª</li>
+            <li>Manter a plataforma disponível, funcional e atualizada</li>
+            <li>Prestar suporte técnico à CONTRATANTE, às empresas associadas e aos credenciados</li>
+            <li>Manter a hospedagem, a infraestrutura e as rotinas de backup</li>
+            <li>Manter o aplicativo publicado e atualizado nas lojas de aplicativos</li>
+            <li>Garantir o isolamento dos dados da unidade da CONTRATANTE</li>
+            <li>Comunicar previamente manutenções programadas que impliquem indisponibilidade</li>
+          </ul>
+        </SubSection>
+
+        <SubSection title="6.2. Atendimento Técnico e Acordo de Nível de Serviço - SLA">
+          <p>
+            O suporte técnico regular será prestado através dos canais oficiais
+            disponibilizados pela CONTRATADA, especialmente e-mail e WhatsApp de
+            atendimento informados à CONTRATANTE.
+          </p>
+          <p className="mt-3">
+            O horário regular de atendimento será de{" "}
+            <strong>segunda-feira a sexta-feira, das 08h00 às 18h00</strong>,
+            exceto feriados.
+          </p>
+          <p className="mt-3">
+            Os chamados técnicos serão classificados conforme seu grau de
+            impacto:
+          </p>
+
+          <div className="mt-3 space-y-3">
+            <div>
+              <p>
+                <strong>I &ndash; CRÍTICO.</strong> Indisponibilidade total da
+                plataforma ou falha que impeça de forma generalizada sua
+                utilização pelos usuários.
+              </p>
+              <ul className="mt-1 ml-6 list-disc space-y-1">
+                <li>Prazo máximo para primeiro atendimento: 2 (duas) horas</li>
+                <li>
+                  Prazo objetivo para solução ou apresentação de plano técnico de
+                  contingência: até 8 (oito) horas
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p>
+                <strong>II &ndash; ALTO.</strong> Falha em funcionalidade
+                essencial, sem alternativa operacional razoável.
+              </p>
+              <ul className="mt-1 ml-6 list-disc space-y-1">
+                <li>Prazo máximo para primeiro atendimento: 4 (quatro) horas úteis</li>
+                <li>
+                  Prazo objetivo para solução ou apresentação de plano de ação:
+                  até 1 (um) dia útil
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p>
+                <strong>III &ndash; MÉDIO.</strong> Falha parcial que não impeça a
+                operação da plataforma e possua alternativa temporária de
+                utilização.
+              </p>
+              <ul className="mt-1 ml-6 list-disc space-y-1">
+                <li>Prazo máximo para primeiro atendimento: 1 (um) dia útil</li>
+                <li>Prazo objetivo para solução: até 3 (três) dias úteis</li>
+              </ul>
+            </div>
+
+            <div>
+              <p>
+                <strong>IV &ndash; BAIXO.</strong> Erros visuais, dúvidas
+                operacionais, ajustes sem impacto relevante ou demais situações
+                que não comprometam a utilização da plataforma.
+              </p>
+              <ul className="mt-1 ml-6 list-disc space-y-1">
+                <li>Prazo máximo para primeiro atendimento: até 2 (dois) dias úteis</li>
+                <li>
+                  Prazo objetivo para solução: até 5 (cinco) dias úteis ou
+                  inclusão no planejamento técnico da plataforma
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="mt-4">
+            Os prazos previstos para solução poderão ser substituídos pela
+            apresentação de plano de ação, contingência ou previsão técnica
+            quando a resolução depender de desenvolvimento de maior complexidade,
+            investigação técnica, provedores externos, serviços de infraestrutura,
+            APIs, Apple, Google ou qualquer terceiro que não esteja sob controle
+            direto da CONTRATADA.
+          </p>
+          <p className="mt-3">
+            Incidentes classificados como <strong>CRÍTICOS</strong> poderão ser
+            comunicados por canal emergencial disponibilizado pela CONTRATADA,
+            inclusive fora do horário regular de atendimento.
+          </p>
+        </SubSection>
+
+        <SubSection title="6.3. Manutenções programadas">
+          <p>
+            As manutenções programadas que possam ocasionar indisponibilidade
+            relevante da plataforma serão comunicadas à CONTRATANTE com
+            antecedência mínima de <strong>24 (vinte e quatro) horas</strong>,
+            sempre que tecnicamente possível, contendo previsão de início e
+            duração estimada da intervenção.
+          </p>
+          <p className="mt-3">
+            Manutenções emergenciais necessárias à segurança, integridade,
+            estabilidade, correção de vulnerabilidade ou prevenção de danos
+            poderão ser realizadas sem observância do prazo de antecedência
+            acima, devendo a CONTRATADA comunicar a CONTRATANTE tão logo seja
+            razoavelmente possível.
+          </p>
+        </SubSection>
       </Section>
 
       <Hr />
@@ -246,7 +431,13 @@ export function TemplateAdesaoAciav({
       <Section title="CLÁUSULA 7ª - DAS OBRIGAÇÕES DA CONTRATANTE">
         <ul className="ml-6 list-disc space-y-1">
           <li>Efetuar os pagamentos nas condições da Cláusula 4ª</li>
-          <li>Fornecer tempestivamente as informações necessárias à implantação</li>
+          <li>
+            Fornecer tempestivamente as informações, dados, documentos, arquivos
+            e acessos necessários à implantação e operação da plataforma, desde
+            que previamente solicitados pela CONTRATADA através de canal oficial
+            de comunicação, com indicação clara do conteúdo necessário e de prazo
+            razoável para sua disponibilização
+          </li>
           <li>Indicar responsável para comunicação com a CONTRATADA</li>
           <li>Utilizar a plataforma exclusivamente para a finalidade prevista neste contrato</li>
           <li>Responsabilizar-se pela veracidade dos dados que inserir na plataforma</li>
@@ -270,20 +461,132 @@ export function TemplateAdesaoAciav({
             e vice-versa.
           </p>
         </SubSection>
-        <SubSection title="8.2. Titularidade dos dados">
+        <SubSection title="8.2. Titularidade e exportação dos dados">
           <p>
             Os dados operacionais inseridos pela CONTRATANTE e por seus usuários
-            são de titularidade da CONTRATANTE. Em caso de rescisão, a
-            CONTRATANTE poderá solicitar a extração dos seus dados em formato
-            estruturado, no prazo de 30 (trinta) dias contados do encerramento.
+            são de <strong>titularidade da CONTRATANTE</strong>.
+          </p>
+          <p className="mt-3">
+            A CONTRATANTE poderá solicitar, <strong>durante a vigência ou após o
+            encerramento do contrato</strong>, a exportação dos dados de sua
+            titularidade em formato estruturado e usualmente utilizado pela
+            plataforma, sem cobrança adicional pela extração padrão.
+          </p>
+          <p className="mt-3">
+            A gratuidade compreende exclusivamente a geração e disponibilização
+            da exportação padrão existente na plataforma. Serviços adicionais de
+            tratamento, saneamento, transformação, estruturação especial,
+            conversão para formatos específicos, desenvolvimento de rotinas
+            personalizadas, integração com outro sistema ou migração assistida
+            poderão ser objeto de orçamento específico previamente aprovado pela
+            CONTRATANTE.
           </p>
         </SubSection>
-        <SubSection title="8.3. LGPD">
+
+        <SubSection title="8.3. Dados após o encerramento do contrato">
+          <p>
+            Após o encerramento deste contrato, os dados da CONTRATANTE
+            permanecerão disponíveis para solicitação de exportação pelo prazo de
+            até <strong>30 (trinta) dias</strong>.
+          </p>
+          <p className="mt-3">
+            Decorrido esse período, a CONTRATADA poderá promover a eliminação dos
+            dados dos ambientes ativos da plataforma, ressalvadas:
+          </p>
+          <ul className="mt-2 ml-6 list-none space-y-1">
+            <li>I &ndash; hipóteses de conservação exigidas ou autorizadas pela legislação;</li>
+            <li>II &ndash; dados necessários ao exercício regular de direitos;</li>
+            <li>III &ndash; cópias existentes em rotinas automáticas de backup.</li>
+          </ul>
+          <p className="mt-3">
+            Dados existentes em backups serão eliminados de acordo com os ciclos
+            normais e políticas técnicas de retenção da infraestrutura utilizada,
+            ficando vedada sua utilização para qualquer finalidade incompatível
+            com este contrato.
+          </p>
+        </SubSection>
+
+        <SubSection title="8.4. LGPD e finalidade do tratamento">
           <p>
             As partes obrigam-se a observar a Lei nº 13.709/2018 (LGPD). A
-            CONTRATANTE atua como controladora dos dados dos seus beneficiários,
-            e a CONTRATADA como operadora, tratando-os exclusivamente conforme as
-            finalidades deste contrato e as instruções da CONTRATANTE.
+            CONTRATANTE atua como <strong>controladora</strong> dos dados dos seus
+            beneficiários, e a CONTRATADA como <strong>operadora</strong>,
+            tratando-os exclusivamente conforme as finalidades deste contrato e as
+            instruções da CONTRATANTE.
+          </p>
+          <p className="mt-3">
+            A CONTRATADA realizará o tratamento dos dados pessoais exclusivamente
+            na medida necessária à execução do presente contrato, incluindo o
+            funcionamento da plataforma, hospedagem, suporte técnico, manutenção,
+            segurança, backup, monitoramento, prevenção de fraudes, resolução de
+            incidentes e cumprimento de obrigações legais ou regulatórias.
+          </p>
+          <p className="mt-3">
+            É vedada sua utilização para finalidade incompatível com o objeto
+            deste contrato, salvo mediante autorização da CONTRATANTE ou
+            fundamento legal aplicável.
+          </p>
+        </SubSection>
+
+        <SubSection title="8.5. Suboperadores e prestadores de tecnologia">
+          <p>
+            A CONTRATADA poderá utilizar terceiros ou suboperadores para
+            atividades necessárias à prestação dos serviços, incluindo
+            hospedagem, cloud computing, armazenamento, bancos de dados,
+            monitoramento, comunicação, distribuição de aplicativos e demais
+            serviços tecnológicos.
+          </p>
+          <p className="mt-3">
+            A CONTRATADA deverá selecionar fornecedores adequados e exigir, quando
+            aplicável, padrões de segurança e proteção de dados compatíveis com a
+            legislação vigente e com as características do serviço contratado.
+          </p>
+          <p className="mt-3">
+            A CONTRATADA permanecerá responsável pelas obrigações de proteção de
+            dados diretamente relacionadas à contratação e utilização dos
+            respectivos suboperadores, <strong>nos limites de sua atuação e
+            responsabilidade</strong>.
+          </p>
+        </SubSection>
+
+        <SubSection title="8.6. Comunicação de incidente de segurança">
+          <p>
+            A CONTRATADA comunicará à CONTRATANTE, no prazo máximo de{" "}
+            <strong>24 (vinte e quatro) horas contado da ciência</strong> de
+            incidente de segurança relevante que possa comprometer dados pessoais
+            tratados no âmbito deste contrato.
+          </p>
+          <p className="mt-3">
+            A comunicação deverá conter, conforme as informações disponíveis
+            naquele momento:
+          </p>
+          <ul className="mt-2 ml-6 list-none space-y-1">
+            <li>I &ndash; natureza do incidente;</li>
+            <li>II &ndash; categorias de dados potencialmente afetadas;</li>
+            <li>III &ndash; titulares potencialmente envolvidos, quando identificáveis;</li>
+            <li>IV &ndash; medidas de contenção já adotadas;</li>
+            <li>V &ndash; providências preventivas ou corretivas previstas.</li>
+          </ul>
+          <p className="mt-3">
+            As informações iniciais poderão ser complementadas posteriormente
+            conforme o avanço da investigação técnica.
+          </p>
+        </SubSection>
+
+        <SubSection title="8.7. Titularidade dos dados e propriedade intelectual da plataforma">
+          <p>
+            A titularidade dos dados inseridos ou gerados pela CONTRATANTE, suas
+            empresas associadas, credenciados e usuários permanece com a
+            CONTRATANTE e <strong>não se confunde com a propriedade intelectual da
+            plataforma</strong>.
+          </p>
+          <p className="mt-3">
+            Permanecem de propriedade exclusiva da CONTRATADA a plataforma ACIAV
+            Saúde, código-fonte, arquitetura, estrutura multi-inquilino, APIs,
+            componentes, frameworks, interfaces, estrutura lógica do banco de
+            dados, documentação técnica, marca, métodos, funcionalidades,
+            ferramentas e demais ativos tecnológicos que compõem ou viabilizam o
+            funcionamento da solução, nos termos da Cláusula 9ª.
           </p>
         </SubSection>
       </Section>
@@ -323,13 +626,68 @@ export function TemplateAdesaoAciav({
 
       <Hr />
 
-      <Section title="CLÁUSULA 11ª - DA CONFIDENCIALIDADE">
-        <p>
-          Ambas as partes obrigam-se a manter sigilo sobre informações
-          estratégicas, comerciais, financeiras, operacionais e técnicas a que
-          tiverem acesso, durante a vigência deste contrato e pelo prazo de 2
-          (dois) anos após o seu encerramento.
-        </p>
+      <Section title="CLÁUSULA 11ª - DA CONFIDENCIALIDADE E DOS DADOS PESSOAIS">
+        <SubSection title="11.1. Prazo geral de confidencialidade">
+          <p>
+            Ambas as partes obrigam-se a manter sigilo sobre informações
+            estratégicas, comerciais, financeiras, operacionais e técnicas a que
+            tiverem acesso, durante a vigência deste contrato e pelo prazo de{" "}
+            <strong>2 (dois) anos</strong> após o seu encerramento.
+          </p>
+        </SubSection>
+
+        <SubSection title="11.2. Dados pessoais e dados pessoais sensíveis">
+          <p>
+            Independentemente do prazo geral de confidencialidade estabelecido
+            nesta cláusula, os dados pessoais e dados pessoais sensíveis tratados
+            no âmbito da plataforma permanecerão sujeitos aos deveres de sigilo,
+            segurança, proteção e tratamento estabelecidos pela legislação
+            aplicável enquanto estiverem sob a guarda, controle ou
+            responsabilidade de qualquer das partes.
+          </p>
+        </SubSection>
+
+        <SubSection title="11.3. Compartilhamento de informações confidenciais">
+          <p>
+            As informações confidenciais não poderão ser divulgadas a terceiros
+            sem prévia autorização da Parte proprietária da informação.
+          </p>
+          <p className="mt-3">
+            Não será considerada divulgação indevida a disponibilização
+            estritamente necessária:
+          </p>
+          <ul className="mt-2 ml-6 list-none space-y-1">
+            <li>
+              I &ndash; a empregados e colaboradores que necessitem da informação
+              para execução de suas atividades;
+            </li>
+            <li>
+              II &ndash; a prestadores, suboperadores, fornecedores de
+              infraestrutura ou tecnologia necessários à execução deste contrato,
+              desde que sujeitos a deveres adequados de confidencialidade e
+              proteção de dados;
+            </li>
+            <li>
+              III &ndash; em cumprimento a obrigação legal, ordem judicial ou
+              determinação de autoridade competente.
+            </li>
+          </ul>
+          <p className="mt-3">
+            As pessoas que tiverem acesso às informações deverão utilizá-las
+            exclusivamente para a finalidade relacionada à execução deste
+            contrato.
+          </p>
+        </SubSection>
+
+        <SubSection title="11.4. Responsabilidade por violação">
+          <p>
+            A Parte que comprovadamente violar as obrigações de confidencialidade
+            estabelecidas neste contrato responderá pelos{" "}
+            <strong>danos diretos comprovadamente decorrentes de sua conduta</strong>,
+            observados o nexo causal, a extensão efetivamente demonstrada do dano
+            e a legislação aplicável.
+          </p>
+        </SubSection>
       </Section>
 
       <Hr />
