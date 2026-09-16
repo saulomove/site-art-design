@@ -281,7 +281,7 @@ export interface Proposal {
   authorityPillars?: ProposalAuthorityPillar[];
   objectiveChain?: ProposalObjectiveChain;
   valueAnchor?: ProposalValueAnchor;
-  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo" | "aciav" | "vinicola" | "genyus" | "elo";
+  theme?: "standard" | "premium" | "legal" | "executive" | "biomass" | "forestry" | "industrial" | "pastoral" | "campo" | "aciav" | "vinicola" | "genyus" | "elo" | "serra";
   stats?: { value: string; label: string; subtext?: string }[];
   contentSuggestions?: {
     format: string;
@@ -7659,6 +7659,149 @@ export const proposals: Proposal[] = [
         "Nesta fase a integração é somente leitura. Nenhum dado é escrito no SAP sem uma segunda conversa e aceite explícito.",
       ],
     },
+  },
+  {
+    slug: "sindicato-rural-santa-cecilia",
+    clientName: "Sindicato Rural de Santa Cecília",
+    contactName: "Thiago",
+    theme: "serra",
+    proposalType: "social_media",
+    greeting:
+      "Presidente Thiago, esta proposta nasceu de uma busca. Procuramos o Sindicato Rural de Santa Cecília no Google, no Instagram e no Facebook antes de escrever qualquer coisa — e o que encontramos está na primeira seção desta página.",
+    validUntil: "",
+    whatsappNumber: "5549988446685",
+    services: [
+      {
+        name: "Gestão de Instagram e Facebook",
+        description:
+          "As duas contas criadas do zero, configuradas como perfil profissional e conduzidas todo mês — não é só publicar, é responder.",
+        icon: "Instagram",
+        price: "R$ 590",
+        priceType: "monthly",
+        items: [
+          "Criação e configuração profissional dos dois perfis",
+          "Bio, foto, capa, destaques e botões de contato",
+          "Publicação e agendamento de todo o conteúdo do mês",
+          "Resposta a comentários e mensagens diretas em dias úteis",
+          "Relatório mensal simples: alcance, seguidores e mensagens recebidas",
+        ],
+      },
+      {
+        name: "Criação de conteúdo — 2 a 3 posts por semana",
+        description:
+          "De 8 a 12 publicações por mês, escritas e desenhadas para o produtor rural de Santa Cecília, Ponte Alta do Norte e Timbó Grande.",
+        icon: "PenTool",
+        price: "R$ 690",
+        priceType: "monthly",
+        items: [
+          "Calendário aprovado antes do mês começar",
+          "Arte, texto e legenda de cada publicação",
+          "Carrossel, card único, story e capa de Reels",
+          "Divulgação de cada turma de curso do SENAR",
+          "Avisos de prazo: ITR, assembleia, campanhas e convocações",
+        ],
+      },
+      {
+        name: "Google Meu Negócio",
+        description:
+          "O que aparece quando alguém digita “sindicato rural Santa Cecília” no Google ou pede rota no Maps.",
+        icon: "MapPin",
+        price: "R$ 290",
+        priceType: "monthly",
+        items: [
+          "Criação e verificação do perfil da entidade",
+          "Endereço, telefone, e-mail e horário de atendimento corretos",
+          "Fotos da sede, da equipe e dos cursos",
+          "Publicação de novidades e turmas abertas direto no Google",
+          "Acompanhamento e resposta às avaliações",
+        ],
+      },
+      {
+        name: "Design de material gráfico",
+        description:
+          "Banner, folder, cartaz, adesivo, convite e certificado — a arte pronta para impressão, no padrão da entidade.",
+        icon: "Layout",
+        price: "R$ 390",
+        priceType: "monthly",
+        items: [
+          "Arquivos em alta resolução, prontos para gráfica",
+          "Banner de lona, cartaz A3, folder e panfleto",
+          "Adesivo de veículo, faixa de evento e placa de sede",
+          "Convite de assembleia e modelo de certificado",
+          "Arte de fachada e sinalização interna",
+        ],
+      },
+      {
+        name: "Captação em eventos",
+        description:
+          "Quando houver curso, assembleia, dia de campo ou entrega de certificados, a Genyus vai até lá registrar.",
+        icon: "Camera",
+        price: "R$ 300",
+        priceType: "project",
+        priceNote: "por evento — incluído no pacote, sem cobrança à parte",
+        items: [
+          "Fotografia do evento com tratamento",
+          "Vídeo curto para Reels e stories",
+          "Registro das turmas e das entregas de certificado",
+          "Banco de imagens próprio da entidade, que fica com vocês",
+        ],
+      },
+      {
+        name: "Gestão da marca",
+        description:
+          "Uma entidade de 52 anos precisa parecer uma entidade de 52 anos. Padrão visual definido e respeitado em tudo.",
+        icon: "Award",
+        price: "R$ 180",
+        priceType: "monthly",
+        items: [
+          "Padrão de cor, tipografia e uso do logo",
+          "Modelos reaplicáveis para post, ofício e apresentação",
+          "Coerência entre o que é digital e o que é impresso",
+          "Guarda dos arquivos originais editáveis",
+        ],
+      },
+    ],
+    investment: {
+      totalMonthly: "R$ 1.200",
+      totalLabel: "Pacote completo · mensal",
+      originalPrice: "R$ 2.440",
+      savings: "R$ 1.240 por mês",
+      breakdown: [
+        { item: "Gestão de Instagram e Facebook", value: "R$ 590" },
+        { item: "Criação de conteúdo — 8 a 12 posts/mês", value: "R$ 690" },
+        { item: "Google Meu Negócio", value: "R$ 290" },
+        { item: "Design de material gráfico", value: "R$ 390" },
+        { item: "Captação em eventos", value: "R$ 300" },
+        { item: "Gestão da marca", value: "R$ 180" },
+      ],
+      packageIncludes: [
+        "Instagram e Facebook criados, configurados e conduzidos",
+        "De 8 a 12 publicações por mês, com arte e texto",
+        "Stories de apoio e capas de Reels",
+        "Google Meu Negócio criado, verificado e alimentado",
+        "Todo o material gráfico da entidade em arte final",
+        "Captação de imagem e vídeo nos eventos do Sindicato",
+        "Padrão visual da marca definido e mantido",
+        "Relatório mensal e calendário aprovado antes de cada mês",
+      ],
+      exclusions: [
+        "Impressão de qualquer material — entregamos a arte final pronta e indicamos gráficas parceiras da região",
+        "Investimento em anúncios pagos (Meta Ads e Google Ads), que é pago direto à plataforma",
+        "Compra de banco de imagens ou de fontes licenciadas, caso o projeto exija",
+      ],
+      paymentConditions: [
+        "Sem taxa de implantação — a criação dos perfis entra no primeiro mês",
+        "Sem fidelidade contratual",
+        "Mensalidade com vencimento a combinar",
+        "Reajuste anual limitado ao IPCA",
+      ],
+      notes: [
+        "Os perfis, as senhas e todos os arquivos originais são da entidade, do primeiro dia ao último.",
+        "O calendário do mês seguinte é enviado para aprovação antes do dia 25, para que a diretoria saiba exatamente o que será publicado.",
+      ],
+    },
+    closingQuestion:
+      "O Sindicato leva 52 anos formando produtor em Santa Cecília. Quantos ainda não sabem disso?",
   },
 ];
 

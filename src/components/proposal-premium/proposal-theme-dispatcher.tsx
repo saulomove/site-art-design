@@ -88,6 +88,13 @@ import { ProposalEloMobile } from "@/components/proposal-elo/proposal-mobile";
 import { ProposalEloDadosSap } from "@/components/proposal-elo/proposal-dados-sap";
 import { ProposalEloGraficos } from "@/components/proposal-elo/proposal-graficos";
 import { ProposalEloDaia } from "@/components/proposal-elo/proposal-daia";
+
+// Serra imports (Sindicato Rural de Santa Cecília — presença digital)
+import { ProposalSerraHero, ProposalSerraBusca, ProposalSerraTesouro } from "@/components/proposal-serra/proposal-hero";
+import { ProposalSerraFeed } from "@/components/proposal-serra/proposal-feed";
+import { ProposalSerraCronograma } from "@/components/proposal-serra/proposal-cronograma";
+import { ProposalSerraGoogle, ProposalSerraMaterial } from "@/components/proposal-serra/proposal-google";
+import { ProposalSerraServicos, ProposalSerraPacote, ProposalSerraFluxo, ProposalSerraCta } from "@/components/proposal-serra/proposal-investimento";
 import { ProposalEloPorque } from "@/components/proposal-elo/proposal-porque";
 
 // Genyus imports (sistema Genyus Wine — mesma identidade da vinícola)
@@ -186,6 +193,18 @@ const ELO_NAV: readonly NavItem[] = [
   { id: "ressalvas", label: "Ressalvas", desc: "Os cinco pontos que podem dar trabalho", noDesktop: true },
 ];
 
+const SERRA_NAV: readonly NavItem[] = [
+  { id: "busca", label: "O diagnóstico", desc: "O que encontramos ao procurar o Sindicato na internet", noDesktop: false },
+  { id: "tesouro", label: "A oportunidade", desc: "O melhor produto da região — e ele é gratuito", noDesktop: false },
+  { id: "feed", label: "O feed", desc: "Nove publicações reais, prontas para a primeira quinzena", noDesktop: false },
+  { id: "cronograma", label: "10 dias", desc: "O cronograma editorial, dia a dia, com o porquê de cada post", noDesktop: false },
+  { id: "google", label: "Google", desc: "A mesma busca, hoje e com o perfil verificado", noDesktop: false },
+  { id: "material", label: "Impressos", desc: "Banner, folder e adesivo em arte final", noDesktop: true },
+  { id: "servicos", label: "Os serviços", desc: "As seis frentes, com preço avulso de cada uma", noDesktop: true },
+  { id: "fluxo", label: "Como trabalhamos", desc: "Do calendário aprovado ao relatório do mês", noDesktop: true },
+  { id: "investimento", label: "Investimento", desc: "R$ 2.440 avulso, R$ 1.200 no pacote", noDesktop: false },
+];
+
 const GENYUS_NAV: readonly NavItem[] = [
   { id: "planilha", label: "O diagnóstico", desc: "O que as duas planilhas revelam, apurado linha a linha", noDesktop: false },
   { id: "safras", label: "2025 × 2026", desc: "As duas safras lado a lado — a operação cresceu 79%, o controle não", noDesktop: false },
@@ -211,6 +230,39 @@ export function ProposalThemeDispatcher({ proposal }: { proposal: Proposal }) {
   const isIndustrial = proposal.theme === "industrial";
   const isPastoral = proposal.theme === "pastoral";
   const isElo = proposal.theme === "elo";
+  const isSerra = proposal.theme === "serra";
+
+  if (isSerra) {
+    return (
+      <>
+        <ProposalVinicolaNav
+          monthlyValue="R$ 1.200"
+          items={SERRA_NAV}
+          investCta="Investimento"
+          drawerTitle="Presença digital · pacote completo"
+          drawerSub="Instagram, Facebook, Google e material gráfico"
+          valueSuffix="/mês"
+          wordmark="Sindicato Rural"
+          wordmarkSub="Santa Cecília · SC"
+          accent="#C8552F"
+          accentHover="#E0703F"
+          cardBg="#141D19"
+        />
+        <ProposalSerraHero proposal={proposal} />
+        <ProposalSerraBusca />
+        <ProposalSerraTesouro />
+        <ProposalSerraFeed />
+        <ProposalSerraCronograma />
+        <ProposalSerraGoogle />
+        <ProposalSerraMaterial />
+        <ProposalSerraServicos services={proposal.services} />
+        <ProposalSerraFluxo />
+        <ProposalSerraPacote proposal={proposal} />
+        <ProposalSerraCta proposal={proposal} />
+      </>
+    );
+  }
+
 
   if (isElo) {
     return (

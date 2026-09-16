@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Playfair_Display, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display, Inter, Bitter } from "next/font/google";
 import { LayoutWrapper } from "@/components/layout/layout-wrapper";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -14,6 +14,12 @@ const fontPlayfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   weight: ["400", "500", "600", "700"],
+});
+
+const fontBitter = Bitter({
+  subsets: ["latin"],
+  variable: "--font-bitter",
+  display: "swap",
 });
 
 const fontInter = Inter({
@@ -40,7 +46,8 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans text-foreground antialiased",
           fontSans.variable,
           fontPlayfair.variable,
-          fontInter.variable
+          fontInter.variable,
+          fontBitter.variable
         )}
       >
         <LayoutWrapper>{children}</LayoutWrapper>

@@ -25,6 +25,9 @@ interface Props {
   drawerSub?: string;
   /** Marca exibida na barra. O padrão é a Santa Augusta. */
   logoSrc?: string;
+  /** Assinatura tipográfica, para cliente sem arquivo de logo. Tem precedência sobre logoSrc. */
+  wordmark?: string;
+  wordmarkSub?: string;
   logoAlt?: string;
   logoClass?: string;
   /** Cor de acento da barra, para a proposta usar a marca do cliente. */
@@ -101,6 +104,8 @@ export function ProposalVinicolaNav({
   drawerSub = "Tudo incluso numa mensalidade só",
   valueSuffix = "/mês",
   logoSrc = "/clientes/santa-augusta/logo-vsa.png",
+  wordmark,
+  wordmarkSub,
   logoAlt = "Vinícola Santa Augusta",
   logoClass = "h-8 w-auto sm:h-9",
   accent = "#CA8B35",
@@ -185,14 +190,29 @@ export function ProposalVinicolaNav({
                 className="flex-shrink-0 opacity-90 transition-opacity hover:opacity-100"
                 aria-label="Voltar ao topo"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={logoSrc}
-                  alt={logoAlt}
-                  width={706}
-                  height={167}
-                  className={logoClass}
-                />
+                {wordmark ? (
+                  <span className="block text-left leading-none">
+                    <span className="block text-[15px] font-bold tracking-tight text-white sm:text-[17px]">
+                      {wordmark}
+                    </span>
+                    {wordmarkSub && (
+                      <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.18em] text-[var(--nav-accent)]">
+                        {wordmarkSub}
+                      </span>
+                    )}
+                  </span>
+                ) : (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={logoSrc}
+                      alt={logoAlt}
+                      width={706}
+                      height={167}
+                      className={logoClass}
+                    />
+                  </>
+                )}
               </button>
 
               {/* Links — só em telas grandes */}
