@@ -7734,7 +7734,7 @@ export const proposals: Proposal[] = [
       {
         name: "Captação em eventos",
         description:
-          "Quando houver curso, assembleia, dia de campo ou entrega de certificados, a Genyus vai até lá registrar.",
+          "Quando houver curso, assembleia, dia de campo ou entrega de certificados, a ArtDesign vai até lá registrar.",
         icon: "Camera",
         price: "R$ 300",
         priceType: "project",

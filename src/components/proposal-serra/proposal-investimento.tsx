@@ -23,7 +23,7 @@ export function ProposalSerraServicos({ services }: { services: ProposalService[
         eyebrow="Os serviços, um a um"
         title="Cada frente tem preço próprio."
         accent="Porque cada uma dá trabalho por si."
-        lead="Antes de falar em pacote, vale ver o que há dentro dele. São seis frentes, e qualquer agência cobraria por cada uma separadamente. Estes são os valores que a Genyus pratica quando o serviço é contratado sozinho."
+        lead="Antes de falar em pacote, vale ver o que há dentro dele. São seis frentes, e qualquer agência cobraria por cada uma separadamente. Estes são os valores que a ArtDesign pratica quando o serviço é contratado sozinho."
       />
 
       <SerraReveal>
@@ -92,7 +92,7 @@ export function ProposalSerraPacote({ proposal }: { proposal: Proposal }) {
         eyebrow="O investimento"
         title="Somando tudo, dá R$ 2.440 por mês."
         accent="O pacote custa menos da metade."
-        lead="A Genyus trabalha com pacote fechado porque as seis frentes se alimentam: a foto do curso vira post, o post vira novidade no Google, a arte do banner reaproveita o padrão da marca. Separadas, elas custam mais e rendem menos."
+        lead="A ArtDesign trabalha com pacote fechado porque as seis frentes se alimentam: a foto do curso vira post, o post vira novidade no Google, a arte do banner reaproveita o padrão da marca. Separadas, elas custam mais e rendem menos."
       />
 
       <SerraReveal>
@@ -200,7 +200,7 @@ export function ProposalSerraPacote({ proposal }: { proposal: Proposal }) {
 const FLUXO = [
   { n: "01", q: "Até o dia 25", t: "O calendário do mês seguinte", d: "A diretoria recebe o plano completo — data, formato e assunto de cada publicação — e aprova antes de o mês começar. Nada vai ao ar sem vocês saberem." },
   { n: "02", q: "Durante o mês", t: "Produção e publicação", d: "Arte, texto e agendamento por nossa conta. Comentários e mensagens respondidos em dias úteis, com as dúvidas técnicas encaminhadas à secretaria." },
-  { n: "03", q: "Quando houver evento", t: "A Genyus vai até lá", d: "Curso, assembleia, dia de campo ou entrega de certificados: captamos foto e vídeo no local. As imagens ficam num banco que é da entidade." },
+  { n: "03", q: "Quando houver evento", t: "A ArtDesign vai até lá", d: "Curso, assembleia, dia de campo ou entrega de certificados: captamos foto e vídeo no local. As imagens ficam num banco que é da entidade." },
   { n: "04", q: "Quando precisar", t: "Material impresso em arte final", d: "Pediu banner para o curso? Sai no padrão da marca, pronto para a gráfica, dentro da mensalidade — sem orçamento extra a cada peça." },
   { n: "05", q: "No fim do mês", t: "Relatório sem enrolação", d: "Quantas pessoas foram alcançadas, quantas passaram a seguir, quantas mandaram mensagem e quais posts trouxeram mais gente. Uma página, em português." },
 ];
@@ -248,7 +248,7 @@ export function ProposalSerraFluxo() {
 
 export function ProposalSerraCta({ proposal }: { proposal: Proposal }) {
   const msg = encodeURIComponent(
-    "Olá! Sou do Sindicato Rural de Santa Cecília e vi a proposta de presença digital da Genyus. Podemos conversar?"
+    "Olá! Sou do Sindicato Rural de Santa Cecília e vi a proposta de presença digital da ArtDesign. Podemos conversar?"
   );
   return (
     <SerraSection id="fechar">
@@ -277,7 +277,7 @@ export function ProposalSerraCta({ proposal }: { proposal: Proposal }) {
               className="inline-flex items-center gap-3 bg-[#C8552F] px-9 py-5 font-sans text-[15px] font-bold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#E0703F]"
             >
               <MessageCircle className="h-5 w-5" strokeWidth={2.2} />
-              Falar com a Genyus
+              Falar com a ArtDesign
             </a>
             <p className="font-mono text-[12px] tracking-[0.12em] text-[#63756C]">
               Sem taxa de implantação · sem fidelidade · R$ 1.200 por mês
@@ -288,7 +288,7 @@ export function ProposalSerraCta({ proposal }: { proposal: Proposal }) {
         <SerraReveal delay={0.24}>
           <div className="mt-16 border-t border-[#2A3A33] pt-10">
             <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-[#63756C]">
-              Genyus · Agência ArtDesign
+              Agência ArtDesign
             </p>
             <p className="mt-3 text-[13.5px] leading-relaxed text-[#63756C]">
               Proposta preparada para o Sindicato Rural de Santa Cecília a partir de pesquisa

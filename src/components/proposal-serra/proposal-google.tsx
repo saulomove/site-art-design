@@ -255,7 +255,7 @@ export function ProposalSerraMaterial() {
               </span>
             </div>
             <p className="mt-5 text-[14.5px] leading-relaxed text-[#93A69C]">
-              A Genyus não imprime. Agência que revende impressão acaba escolhendo a gráfica pela
+              A ArtDesign não imprime. Agência que revende impressão acaba escolhendo a gráfica pela
               margem, e não pela qualidade.{" "}
               <span className="text-[#EDF2EE]">
                 Preferimos entregar o arquivo final e deixar o Sindicato negociar direto
